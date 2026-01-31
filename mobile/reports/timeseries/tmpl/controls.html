@@ -1,0 +1,10 @@
+<div class="chart-controls">
+<% _.each(all, function(s) {%>
+<label class="chart-control chart-control-loading" data-key="<%= s.key %>">
+    <div class="chart-color" style="background-color: <%= s.color %>"></div>
+    <i class="svg-icon svg-icon-spinner icon-spin"></i>
+    <input type="checkbox" disabled value="<%= s.key %>" name="key"<% if(checked.indexOf(s.key) > -1) {%> checked<% } %>>
+    <%= s.name %>
+</label>
+<% }) %>
+</div>

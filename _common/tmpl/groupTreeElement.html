@@ -1,0 +1,21 @@
+<i class="icon icon-exp"></i>
+<i class="icon icon-check"></i>
+<div class="row branch-row">
+    <table>
+        <tr>
+            <td class="col0">
+                <a class="row-title name" href="javascript:;"><%- name %></a>
+            </td>
+            <td class="col1 nb-items">(<%= nbItems %>)</td>
+            <% if( 'undefined' != typeof editable && editable ){ %>
+            <td class="col-act"><i class="svg-icon svg-icon-caret-down icon-edit"></i></td>
+            <% } %>
+            <% if( 'undefined' != typeof removable && removable ){ %>
+            <td class="col-act"><i class="svg-icon svg-icon-remove icon-remove"></i></td>
+            <% } %>
+        </tr>
+    </table>
+</div>
+<ul class="sub">
+    <li class="placeholder"></li>
+</ul><!--/sub-list l-1-->

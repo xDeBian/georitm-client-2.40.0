@@ -1,0 +1,56 @@
+<table class="l">
+    <tr>
+        <td class="col">
+            <table class="l features">
+                <tr>
+                    <td class="label"><%= i18n.objName %></td>
+                    <td class="value"><%- item.name || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.description %></td>
+                    <td class="value">
+                        <p class="no-margin text-large"><strong><%= shortDescription || emptyString %></strong></p>
+                    </td>
+                </tr><tr>
+                    <td class="label"><%= i18n.country %></td>
+                    <td class="value"><%- settings.Country || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.region %></td>
+                    <td class="value"><%- settings.Region || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.city %></td>
+                    <td class="value"><%- settings.City || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.street %></td>
+                    <td class="value"><%- settings.Street || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.house %> / <%= i18n.building %></td>
+                    <td class="value"><%- settings.House || emptyString %> / <%- settings.Building || emptyString %>
+                </tr><tr>
+                    <td class="label"><%= i18n.gateCode %></td>
+                    <td class="value"><%- settings.GateCode || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.intercomCode %></td>
+                    <td class="value"><%- settings.IntercomCode || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.appartment %></td>
+                    <td class="value"><%- settings.AppNumber || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.objEquipmentIds %></td>
+                    <td class="value"><%- settings.equipmentIds ? JSON.parse(settings.equipmentIds).join(', ') : emptyString %></td>
+                </tr>
+            </table>
+        </td>
+        <td class="col">
+            <table class="l features">
+                <%= col2Html %>
+            </table>
+        </td>
+        <td class="col" style="width:90px">
+            <div class="img-block">
+                <img<% if(!imgPath) {%> style="display:none"<% } %> src="<% if(imgPath) {%><%= imgPath %><% } %>" alt="" />
+            </tr>
+        </td>
+    </tr>
+</table>
+<p class="no-margin"><%= i18n.comments.ucFirst() %>:</p>
+<p class="no-margin text-large"><strong><%= description || emptyString %></strong></p>

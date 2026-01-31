@@ -1,0 +1,69 @@
+<li id="<%= moduleId %>" class="poi-module loading<% if(active) {%> active<% } %>">
+    <div class="tab-toggle-container hint hint-right" data-hint="<%= name %>">
+        <a class="tab-toggle" href="#<%= key %>">
+            <!--<i class="svg-icon svg-icon-location"></i>-->
+            <svg class="svg-icon">
+                <use xlink:href="#smb-location"></use>
+            </svg>
+            <span><%- name %></span>
+        </a>
+    </div>
+    <div class="tab-hor-content">
+        <div class="box-header module-header append">
+
+            <form class="form-search">
+                <div class="input-append input-prepend">
+                    <span class="add-on">
+                        <input name="q" type="text" placeholder="<%= i18n.poiTreeSearchPlaceholder %>" autocomplete="off">
+                        <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+                    </span>
+                    <button class="btn add-on btn-search"><i class="svg-icon svg-icon-search"></i></button>
+                </div>
+            </form>
+
+            <div class="dropdown module-settings add-on">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="svg-icon svg-icon-cog"></i>
+                </a>
+                <ul class="dropdown-menu nav nav-list" role="menu">
+                    <li>
+                        <a class="hide-all" href="javascript:;"><%= i18n.hideAll %></a>
+                    </li><li>
+                        <a class="show-all" href="javascript:;"><%= i18n.showAll %></a>
+                    </li><li>
+                        <a class="reload" href="javascript:;"><%= i18n.reload.ucFirst() %></a>
+                        <!--<h5 class="nav-header">Sort by:</h5>
+                        <ul class="options-list">
+
+                        </ul>-->
+                    </li>
+                </ul>
+            </div>
+
+            <% if(allowCreate){ %>
+            <div class="dropdown module-settings add-on">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="svg-icon svg-icon-plus"></i>
+                </a>
+                <ul class="dropdown-menu nav nav-list" role="menu">
+                    <li>
+                        <a class="add-group" href="javascript:;"><%= i18n.addGroup %></a>
+                    </li><li>
+                        <a class="add-item" href="javascript:;"><%= i18n.addPoi %></a>
+                    </li><% if(App.allowed('poi.import')){ %><li>
+                        <a class="import-poi" href="javascript:;"><%= i18n.importFromFile %></a>
+                    </li><% } %>
+                </ul>
+            </div>
+            <% } %>
+
+        </div>
+        <div class="module-content">
+
+        </div>
+    </div>
+
+    <%= iconsDefs %>
+
+</li>
+

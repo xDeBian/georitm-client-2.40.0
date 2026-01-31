@@ -1,0 +1,40 @@
+<li id="reports" class="<% if(loading) {%>loading<% } %><% if(active) {%> active<% } %>">
+    <div class="tab-toggle-container hint hint-right" data-hint="<%= name %>">
+        <a class="tab-toggle" href="#<%= key %>">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-report"></use>
+            </svg>
+            <span><%- name %></span>
+        </a>
+    </div>
+    <div id="reports-content" class="tab-hor-content">
+        <div class="box-header module-header append">
+            <h2>
+                <%= i18n.reportsCountText.replace('#n#', '<span class="nb-items">0</span>') %>
+            </h2>
+            <div class="dropdown module-settings add-on">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                    <i class="svg-icon svg-icon-cog"></i>
+                </a>
+                <ul class="dropdown-menu nav nav-list" role="menu">
+                    <li>
+                        <a class="remove-all" href="javascript:;"><%= i18n.clearReportsList %></a>
+                    </li>
+                </ul>
+            </div>
+            <% if(adding) {%>
+            <div class="add-on">
+                <a class="btn-add" href="javascript:;" title="<%= i18n.add.ucFirst() %>">
+                    <i class="svg-icon svg-icon-plus"></i>
+                </a>
+            </div>
+            <% } %>
+        </div>
+        <div class="module-content reports-list">
+            <ul class="items-briefs">
+
+            </ul>
+        </div>
+    </div>
+</li>
+

@@ -1,0 +1,50 @@
+<!--<li id="objects-tree" class="<% if(active) {%>active<% } %>">
+    <div class="tab-toggle-container" style="position:relative">
+        <a class="tab-toggle" href="#<%= key %>"><%- name %></a>
+    </div>-->
+    <div id="<%= objType %>-tree" class="tab-hor-content<% if(loading) {%> loading<% } %>">
+        <div class="box-header module-header<% if('undefined' != typeof titleTypes && _.keys(titleTypes.length)){ %> append<% } %>">
+
+            <form class="form-search">
+                <div class="input-append input-prepend">
+                    <span class="add-on">
+                        <input name="q" type="text" placeholder="<%= i18n.searchObjects %>" value="" />
+                        <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+                    </span>
+                    <span class="btn add-on btn-search"><i class="svg-icon svg-icon-search"></i></span>
+                </div>
+            </form>
+
+            <% if('undefined' != typeof titleTypes && _.keys(titleTypes.length)){ %>
+            <div class="dropdown module-settings add-on">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="svg-icon svg-icon-cog"></i>
+                </a>
+                <ul class="dropdown-menu nav nav-list" role="menu">
+                    <li>
+                        <h5 class="nav-header"><%= i18n.objectTitleType %></h5>
+                        <ul class="options-list">
+                            <% _.each(titleTypes, function(type, key){ %>
+                            <li><label>
+                                <input type="radio" name="itemTitle<%= objType.ucFirst() %>" value="<%= key %>"<% if(titleType == key) {%> checked<% } %>>
+                                <%= type %>
+                            </label></li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <% } %>
+
+        </div>
+
+        <div class="module-content georitmTree tree tree-grid">
+            <ul class="main">
+
+            </ul>
+        </div>
+
+        <% if(contextmenu){ print(contextmenu) } %>
+
+    </div>
+</li>

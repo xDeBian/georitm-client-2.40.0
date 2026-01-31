@@ -1,0 +1,12 @@
+<% if(consum100km !== null) {%>
+<tr class="summary" data-row="last">
+    <td colspan="<%= colspan %>" class="sum-header"><%= i18n.sumConsumBy100kmNorm %>:
+        <%= consum100km.toFixed(1) %> <%= i18n.l %></td>
+</tr>
+<% } %>
+<% if(consum1h !== null) {%>
+<tr class="summary">
+    <td colspan="<%= colspan %>" class="sum-header"><%= i18n.sumConsumBy1hNorm %>:
+        <%= consum1h.toFixed(1) %> <%= i18n.l %></td>
+</tr>
+<% } %>

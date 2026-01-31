@@ -1,0 +1,43 @@
+[
+    {
+        "id": 12892,
+        "objs": [
+            {
+                "rev": "07.505.020",
+                "lon": 30.420,
+                "img": "19",
+                "extId": 6985,
+                "isActive": "0",
+                "id": 97909,
+                "isGsmOnline": true,
+                "name": "Дом 1",
+                "isGpsOnline": true,
+                "lat": 59.9630
+            },{
+                "rev": "07.505.007",
+                "lon": 30.42125,
+                "img": "1",
+                "extId": 6987,
+                "isActive": "0",
+                "id": 98081,
+                "isGsmOnline": false,
+                "name": "Дом 2",
+                "isGpsOnline": false,
+                "lat": 59.96347
+            },{
+                "rev": "07.505.007",
+                "img": "7",
+                "extId": 6999,
+                "isActive": "0",
+                "id": 98082,
+                "isGsmOnline": false,
+                "name": "Stat without coordinates",
+                "isGpsOnline": false
+            }
+        ],
+        "name": "Группа домиков",
+        "nbItems": 4,
+        "objsGroups": [],
+        "extId": 24
+    }
+]

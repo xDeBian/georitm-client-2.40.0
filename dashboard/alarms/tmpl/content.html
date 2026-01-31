@@ -1,0 +1,15 @@
+<div class="val-current">
+    <div class="metric"><%=i18n.totalLabel%> <span class="value"><%= total %></span></div>
+</div>
+
+<canvas width="300" height="142" id="gauge"></canvas>
+
+<div class="val-min yellow">
+    <small><%=i18n.beingProcessed%></small>
+    <div class="metric-small value"><%= processed %></div>
+</div>
+
+<div class="val-max red">
+    <small><%=i18n.inQueue%></small>
+    <div class="metric-small value"><%= ( total-processed ) %></div>
+</div>

@@ -1,0 +1,22 @@
+<% if(App.hasMediaServerUrl()) {%>
+<div class="field no-bottom-margin">
+    <label class="radio">
+        <input type="radio" name="videoType" value="ritmrtp" <% if(videoType === 'ritmrtp') { %>checked<% } %> /> RTSP
+    </label>
+</div>
+<% } %>
+<!--<div class="field no-bottom-margin">
+    <label class="radio">
+        <input type="radio" name="videoType" value="webrtc" <% if(videoType === 'webrtc') { %>checked<% } %> /> WebRTC
+    </label>
+</div>-->
+<div class="field">
+    <label class="radio">
+        <input type="radio" name="videoType" value="ivideon" <% if(videoType === 'ivideon') { %>checked<% } %> /> IVideon
+    </label>
+</div>
+
+<div data-type="ritmrtp" class="<% if(videoType !== 'ritmrtp') { %>hidden<% } %>"></div>
+<!--<div data-type="webrtc" class="<% if(videoType !== 'webrtc') { %>hidden<% } %>"></div>-->
+<div data-type="ivideon" class="<% if(videoType !== 'ivideon') { %>hidden<% } %>"></div>
+<div class="video-settings"></div>

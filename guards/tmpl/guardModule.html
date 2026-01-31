@@ -1,0 +1,31 @@
+<li id="guards" class="loading<% if(active) {%> active<% } %>">
+    <div class="tab-toggle-container hint hint-right" data-hint="<%= name %>">
+        <a class="tab-toggle" href="#<%= key %>">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-shield"></use>
+            </svg>
+            <span><%- name %></span>
+        </a>
+    </div>
+    <div id="guard-content" class="tab-hor-content items-tree">
+        <div class="box-header module-header">
+
+            <form class="form-search">
+                <div class="input-append input-prepend">
+                    <span class="add-on">
+                        <input name="q" type="text" placeholder="<%= i18n.searchRRT %>" value="" autocomplete="off" />
+                        <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+                    </span>
+                    <button class="btn add-on btn-search"><i class="svg-icon svg-icon-search"></i></button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="module-content">
+            <div id="guard-tree" class="tree tree-grid slick-tree">
+
+            </div>
+        </div>
+    </div>
+</li>

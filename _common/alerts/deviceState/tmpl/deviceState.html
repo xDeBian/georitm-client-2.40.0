@@ -1,0 +1,123 @@
+<div class="contents">
+    <div data-key="summary" class="content active">
+
+        <table class="table-features">
+        <tr>
+            <td class="features col1">
+                <ul class="indicators">
+                    <li class="indicator indicator-obj-status" data-state="<%= objStatus !== null ? objStatus : 0 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-power"></use>
+                        </svg>
+                        <%= i18n.objStatus %>:
+                        <% if(App.allowed('objects.status.edit')) {%>
+                        <a href="#" class="obj-status" data-page="status">
+                            <%= objStatus !== null ? i18n.objStatuses[objStatus] : '' %>
+                        </a>
+                        <% } else { %>
+                        <strong class="obj-status"><%= objStatus !== null ? i18n.objStatuses[objStatus] : '' %></strong>
+                        <% } %>
+                        <span class="technician"></span>
+                    </li>
+                    <li class="indicator">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-location"></use>
+                        </svg>
+                        <%= i18n.address.ucFirst() %>:
+                        <strong class="address">
+                            <i class="svg-icon svg-icon-spinner icon-spin"></i>
+                        </strong>
+                    </li>
+                    <li class="indicator" data-state="1">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-speed"></use>
+                        </svg>
+                        <%= i18n.speed.ucFirst() %>:
+                        <strong><span class="speed"><%= speed < minMoveSpeed ? 0 : Math._round(speed, 2) %></span> <%= i18n.kmh %></strong>
+                    </li>
+
+                    <li class="indicator isGsmOnline" data-state="<%= isGsmOnline ? 1 : 0 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-connection"></use>
+                        </svg>
+                        <%= i18n.GSMConnection %>:
+                        <strong class="lastGSMConnectionTime nobr"><%= lastGSMConnectionTimeS %></strong>
+                    </li>
+                    <li class="indicator isGpsOnline" data-state="<%= isGpsOnline ? 1 : 0 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-satellite"></use>
+                        </svg>
+                        <%= i18n.coords.ucFirst() %>:
+                        <strong class="lastGPSConnectionTime nobr"><%= lastGPSConnectionTimeS %></strong>
+                    </li>
+                    <li class="indicator" data-state="<%= 'undefined' == typeof localRID ? 0 : 1 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-download"></use>
+                        </svg>
+                        <%= i18n.objTrackReading %>:
+                        <strong>
+                            <span class="localRID"><%= 'undefined' == typeof localRID ? '' : localRID %></span>
+                            <%= i18n.from %>
+                            <span class="remoteRID"><%= 'undefined' == typeof remoteRID ? '' : remoteRID %></span>
+                            (<span class="rid-percent"><%= ridPercent %></span>%)
+                        </strong>
+                    </li>
+                    <li class="indicator power" data-state="<%= power == 0 ? 1 : 0 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-plug"></use>
+                        </svg>
+                        <%= i18n.power.ucFirst() %>:
+                        <strong class="on"><%= i18n.powerOn %></strong>
+                        <strong class="off"><%= i18n.powerOff %></strong>
+                    </li>
+
+                    <% if(App.policeCallAllowed()){ %>
+                    <li class="indicator police" data-state="<%= policeTranslation ? 1 : 0 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-police"></use>
+                        </svg>
+                        <a data-page="police" href="#">
+                            <%= i18n.policeTranslation %>
+                        </a>
+                    </li>
+                    <% } %>
+
+                    <li class="indicator follow-mode" data-state="<%= isFollowed == 1 ? 1 : 0 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-eye"></use>
+                        </svg>
+                        <% if(App.allowed('control.followed')) {%>
+                        <a data-page="follow" href="#">
+                            <%= i18n.followedMode %>
+                        </a>
+                        <% } else { %>
+                            <%= i18n.followedMode %>
+                        <% } %>
+                    </li>
+                </ul>
+            </td>
+
+            <td class="features col2">
+                <ul class="indicators">
+                    <li class="indicator" data-state="<%= hasDriver ? 1 : 0 %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-wheel"></use>
+                        </svg>
+                        <%= i18n.driver.ucFirst() %>:
+                        <strong class="driver"><%= driver %></strong>
+                    </li>
+                </ul>
+                <ul class="indicators discrets"></ul>
+                <ul class="indicators controls"></ul>
+            </td>
+        </tr>
+
+        </table>
+    </div><!--/summary-->
+
+    <div data-key="operate" class="content"></div>
+    <div data-key="status" class="content"></div>
+    <div data-key="police" class="content"></div>
+    <div data-key="follow" class="content"></div>
+
+</div><!--/contents-->

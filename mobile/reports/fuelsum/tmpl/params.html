@@ -1,0 +1,126 @@
+<div class="fuelsum-params">
+
+    <fieldset>
+        <legend><%= i18n.analogSensorForReport %></legend>
+        <label class="radio">
+            <input type="radio" value="1" <% if(anIndex == 1) {%> checked<% } %> name="anIndex"> <%= i18n.analogueSensor %> #1
+        </label>
+        <label class="radio">
+            <input type="radio" value="2" <% if(anIndex == 2) {%> checked<% } %> name="anIndex"> <%= i18n.analogueSensor %> #2
+        </label>
+        <label class="radio">
+            <input type="radio" value="12" <% if(anIndex == 12) {%> checked<% } %> name="anIndex"> <%= i18n.analogueSensor %> #1 + #2
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.filtersSettings %></legend>
+        <label class="checkbox">
+            <input type="checkbox" value="1" name="movingIndex"<% if(movingIndex) {%> checked<% } %>>
+            <%= i18n.removePointsOnParks %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="1" name="ignition"<% if(ignition) {%> checked<% } %>>
+            <%= i18n.removePointsWithNoIgnition %>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.fuelVolumeInTank %></legend>
+        <label class="checkbox">
+            <input type="checkbox" value="startF" name="params"<% if(_.indexOf(params, 'startF') > -1) { %> checked<% } %>>
+            <%= i18n.startVolume %>, <%= i18n.l %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="endF" name="params"<% if(_.indexOf(params, 'endF') > -1) { %> checked<% } %>>
+            <%= i18n.endVolume %>, <%= i18n.l %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="minVolume" name="params"<% if(_.indexOf(params, 'minVolume') > -1) { %> checked<% } %>>
+            <%= i18n.minVolume %>, <%= i18n.l %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="maxVolume" name="params"<% if(_.indexOf(params, 'maxVolume') > -1) { %> checked<% } %>>
+            <%= i18n.maxVolume %>, <%= i18n.l %>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.fuelsAndDischarges %></legend>
+        <label class="checkbox">
+            <input type="checkbox" value="fillVolume" name="params"<% if(_.indexOf(params, 'fillVolume') > -1) { %> checked<% } %>>
+            <%= i18n.fillingsVolume %>, <%= i18n.l %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="plumVolume" name="params"<% if(_.indexOf(params, 'plumVolume') > -1) { %> checked<% } %>>
+            <%= i18n.dischargesVolume %>, <%= i18n.l %>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.totalFuelConsumption %></legend>
+        <label class="checkbox">
+            <input type="checkbox" value="realConsumption" name="params"<% if(_.indexOf(params, 'realConsumption') > -1) { %> checked<% } %>>
+            <%= i18n.totalRealConsumption %>, <%= i18n.l %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="consumption100km" name="params"<% if(_.indexOf(params, 'consumption100km') > -1) { %> checked<% } %>>
+            <%= i18n.avgConsumption %>, <%= i18n.l100km %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="consumption1hIgn" name="params"<% if(_.indexOf(params, 'consumption1hIgn') > -1) { %> checked<% } %>>
+            <%= i18n.avgConsumption1hIgn %>, <%= i18n.l1h %>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.movementParameters %></legend>
+        <label class="checkbox">
+            <input type="checkbox" value="dist" name="params"<% if(_.indexOf(params, 'dist') > -1) { %> checked<% } %>>
+            <%= i18n.runDistance %>, <%= i18n.km %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="avgSpeed" name="params"<% if(_.indexOf(params, 'avgSpeed') > -1) { %> checked<% } %>>
+            <%= i18n.avgSpeed %>, <%= i18n.kmh %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="moveTime" name="params"<% if(_.indexOf(params, 'moveTime') > -1) { %> checked<% } %>>
+            <%= i18n.wayTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="parkTime" name="params"<% if(_.indexOf(params, 'parkTime') > -1) { %> checked<% } %>>
+            <%= i18n.totalParkTime %>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.engineParameters %></legend>
+        <label class="checkbox">
+            <input type="checkbox" value="ignOnTime" name="params"<% if(_.indexOf(params, 'ignOnTime') > -1) { %> checked<% } %>>
+            <%= i18n.ignOnTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="firstIgnTime" name="params"<% if(_.indexOf(params, 'firstIgnTime') > -1) { %> checked<% } %>>
+            <%= i18n.firstIgnTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="lastIgnTime" name="params"<% if(_.indexOf(params, 'lastIgnTime') > -1) { %> checked<% } %>>
+            <%= i18n.lastIgnTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="ignOnMoveTime" name="params"<% if(_.indexOf(params, 'ignOnMoveTime') > -1) { %> checked<% } %>>
+            <%= i18n.ignOnMoveTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="ignOnParkTime" name="params"<% if(_.indexOf(params, 'ignOnParkTime') > -1) { %> checked<% } %>>
+            <%= i18n.ignOnParkTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" value="ignOffParkTime" name="params"<% if(_.indexOf(params, 'ignOffParkTime') > -1) { %> checked<% } %>>
+            <%= i18n.ignOffParkTime %>
+        </label>
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

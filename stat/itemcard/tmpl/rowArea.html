@@ -1,0 +1,28 @@
+<tr>
+    <td class="col-num">
+        <input name="aId[]" type="hidden" value="0">
+        <div class="itext"><input name="aNum[]" type="text" value="" maxlength="2" autocomplete="off"></div>
+    </td>
+    <td>
+        <div class="itext"><input name="aName[]" type="text" value="" maxlength="100"></div>
+    </td>
+    <td class="col-arm-schedule">
+        <select name="aScheduleUuid[]"></select>
+    </td>
+    <% if(allowRoles){ %>
+    <td class="col-roles">
+        <select name="aRoles"
+                class="input-block-level"
+                data-id="0"
+                data-placeholder="<%= i18n.rolesForAreasAll %>"
+                multiple>
+        </select>
+    </td>
+    <% } %>
+    <td>
+        <div class="itext"><input name="aComment[]" type="text" value="" maxlength="100"></div>
+    </td>
+    <td class="col-icon">
+        <i class="svg-icon svg-icon-remove row-remove"></i>
+    </td>
+</tr>

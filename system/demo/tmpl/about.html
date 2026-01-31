@@ -1,0 +1,4 @@
+<h1>Geo<strong>RITM</strong> <%= majorVersion %></h1>
+<p class="selectable"><%= i18n.version %>: <%= version %><% if(ui && ui.version != version) {%> / <%= ui.version %><% } %></p>
+<p><%= i18n.thanksForUsing %></p>
+<%= Array.isArray(aboutInfo) ? aboutInfo.join('') : ( aboutInfo || '' ) %>

@@ -1,0 +1,36 @@
+<tr class="obj">
+    <td colspan="5" class="summary">
+        <div class="sum-header">
+            <strong><%= title %></strong>
+            <% if(dist > 0) {%>
+            <a class="build-track nobr" href="javascript:;"
+               data-id="<%= id %>" data-from="<%= periodStart %>" data-to="<%= periodEnd %>" >
+                <%= i18n.showFullTrack %>
+            </a>
+            <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+            <% } %>
+        </div>
+        <div class="sum-content">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><%= i18n.moveTime %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= moveTime %>"><%= moveTimeS %></span></td>
+                    </tr><tr>
+                        <td><%= i18n.parkTime %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= parkTime %>"><%= parkTimeS %></span></td>
+                    </tr><tr>
+                        <td><%= i18n.runDistance %>, <%= i18n.km %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= dist %>"><%= distS %></span></td>
+                    </tr><tr>
+                        <td><%= i18n.passQuantityExt %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= pcount %>"><%= pcount %></span></td>
+                    </tr><tr>
+                        <td><%= i18n.passQuantity %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= halfPcount %>"><%= Math.floor(halfPcount) %></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>

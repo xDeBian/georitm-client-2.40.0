@@ -1,0 +1,50 @@
+<div class="header clearfix">
+    <div class="header-main">
+        <h4>
+            <% if('undefined' != typeof name && name) {%>
+            <%= name %>
+            <% } else if('undefined' != typeof type.name) {%>
+            <%= type.name %>
+            <% } %>
+        </h4>
+        <% if('undefined' != typeof name && name && 'undefined' != typeof type.name && type.name) {%>
+        <h5><%= type.name %></h5>
+        <% } %>
+    </div>
+    <div class="header-left">
+        <i class="icon-special"></i>
+    </div>
+</div>
+
+<% if('undefined' != typeof addressStr) {%>
+<address data-geoid="<%= geoId %>" class="address"><i class="svg-icon svg-icon-spinner icon-spin"></i> <%= addressStr %></address>
+<% } %>
+
+<!--<%= lat %>, <%= lon %>-->
+<% _.each(actions, function(action){%>
+    <% if(!action.html) {%>
+    <a href="javascript:;" class="<%= action.class %>">
+        <%- action.text %>
+    </a>
+    <% } else if('string' == typeof action.html) { %>
+        <%= action.html %>
+    <% } else if(_.isFunction(action.html)) {%>
+        <%= action.html() %>
+    <% } %>
+<% }); %>
+
+<a href="<%= externalLink %>" target="_blank" class="external-link<% if(isYandex){%> ydx <% } %>"><i class="icon"></i> <%= i18n[isYandex ? 'showOnYandexMap' : 'showOnGoogleMap'] %></a>
+
+<% if(removable || routingModule){%>
+<div class="poi-actions">
+    <% if(removable){%>
+    <a href="javascript:;" class="poi-delete"><%= i18n.delete.ucFirst() %></a>
+    <% } %>
+    <% if(editable){%>
+    <a href="#poi" class="poi-edit"><%= i18n.edit.ucFirst() %></a>
+    <% } %>
+    <% if(routingModule){%>
+    <a href="javascript:;" class="route-to pull-right"><%= i18n.routeHere %></a>
+    <% } %>
+</div>
+<% } %>

@@ -1,0 +1,15 @@
+<p><%= i18n.chooseDeviceType %></p>
+
+<% if( App.getAllDevicesGroups(App.TYPE_MOBILE) || App.allowed('objectgroups.create') ) {%>
+<label class="radio">
+    <input type="radio" name="objType" value="<%= App.TYPE_MOBILE %>" <% if(objType == App.TYPE_MOBILE) {%> checked<% } %>>
+    <%= i18n.deviceTypeVoyager %>
+</label>
+<% } %>
+
+<% if( App.getAllDevicesGroups(App.TYPE_STAT) || App.allowed('objectgroups.create') ) {%>
+<label class="radio">
+    <input type="radio" name="objType" value="<%= App.TYPE_STAT %>" <% if(objType == App.TYPE_STAT) {%> checked<% } %>>
+    <%= i18n.deviceTypeContact %>
+</label>
+<% } %>

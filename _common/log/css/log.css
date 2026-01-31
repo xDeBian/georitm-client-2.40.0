@@ -1,0 +1,141 @@
+/* ძველი
+.closed > #alerts-log {height: 0 !important; overflow: hidden;} */
+
+/* ახალი - მინიმალური სიმაღლის დატოვება */
+.closed > #alerts-log {
+    height: 40px !important;  /* ან რამდენიც გინდა */
+    overflow: hidden;
+}
+
+#alerts-log .module-header h2,
+#alerts-log .module-header .filters,
+#alerts-log .module-header .filter {
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+#alerts-log .module-header h2 {
+    float: none;
+}
+
+#alerts-log .module-header .form-search {
+    position: relative;
+    left: 0;
+    right: 0;
+    padding: 4px 10px;
+    border-left: 0;
+    background: none;
+}
+
+#alerts-log .module-header .form-search .icon-clear {
+    top: 12px;
+    right: 15px;
+}
+
+#alerts-log .module-header .form-search .filter {
+    width: 200px;
+    margin: 0;
+}
+
+#alerts-log .module-header .form-search .filter.active {
+    width: 178px;
+    padding-right: 28px;
+}
+
+#alerts-log .module-header .form-search .filter.active+.icon-clear {
+    display: inline-block;
+}
+
+#alerts-log .btn-play-pause .icon-play,
+#alerts-log.paused .btn-play-pause .icon-stop {
+    display: none;
+}
+
+#alerts-log.paused .btn-play-pause .icon-play {
+    display: inline-block;
+}
+
+#alerts-log .btn-play-pause:after {
+    content: attr(data-hintstop);
+}
+
+#alerts-log.paused .btn-play-pause:after {
+    content: attr(data-hintresume);
+}
+
+#alerts-log .grid-content {
+    overflow-y: hidden;
+}
+
+#alerts-log thead .sorting_asc,
+#alerts-log thead .sorting_desc {
+    background: none;
+}
+
+#alerts-log .dataTables_scrollBody {
+    border-bottom: 0;
+}
+
+#alerts-log .dataTables_empty {
+    display: none;
+}
+
+.narrow #alerts-log .module-header h2 {
+    display: none;
+}
+
+.narrow #alerts-log .module-header .filters {
+    margin-left: 0;
+}
+
+#win-log-filters .jw-content {
+    overflow: visible;
+}
+
+#win-log-filters .control-group {
+    position: relative;
+    z-index: 1;
+}
+
+#win-log-filters .control-group.devices {
+    z-index: 2;
+}
+
+#win-log-filters .row-fluid:last-child .control-group {
+    margin-bottom: 0;
+}
+
+#win-log-filters .control-group input[type="text"],
+#win-log-filters .control-group select {
+    margin: 0;
+}
+
+#win-log-filters .chosen-container .chosen-results {
+    max-height: 200px;
+}
+
+#win-log-filters .chosen-choices {
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+#win-log-filters .chosen-choices .search-field input[type="text"] {
+    height: 28px;
+}
+
+#win-log-filters .chosen-choices .search-choice {
+    max-width: 130px;
+}
+
+#win-log-filters .devices .chosen-choices .search-choice {
+    max-width: 175px;
+}
+
+#win-log-filters .chzn-results li {
+    white-space: nowrap;
+}
+
+#win-log-filters h4 {
+    margin: 0 0 3px;
+}

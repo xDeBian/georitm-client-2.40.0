@@ -1,0 +1,76 @@
+<div class="row-fluid">
+    <div class="control-group span6">
+        <label class="control-label"><%= i18n.armScheduleName %></label>
+        <div class="controls">
+            <input type="text" required class="input-block-level" name="name" value="<%- schedule.name %>" maxlength="50">
+        </div>
+    </div>
+    <div class="control-group span6">
+        <label class="control-label"><%= i18n.armScheduleComment %></label>
+        <div class="controls">
+            <input type="text" class="input-block-level" name="comment" value="<%- schedule.comment %>" maxlength="100">
+        </div>
+    </div>
+</div>
+
+<div class="arm-schedule">
+    <div class="arm-schedule-legend">
+        <span class="arm-schedule-legend-text"><%= i18n.armScheduleLegend %></span>
+    </div>
+    <ul class="arm-schedule-week">
+        <% _.each(days, function(dayName, dayIndex) {%>
+        <li class="arm-schedule-day">
+            <label class="arm-schedule-day-label<% if(dayIndex > 4) {%> weekend<% } %>">
+                <%= dayName %>
+            </label>
+            <ul class="arm-schedule-timeline">
+                <% _.each(hours, function(hour) {%>
+                <li class="arm-schedule-hour">
+                    <% if(dayIndex == 0) {%><label class="arm-schedule-hour-label"><%= hour.padLeft(2) %></label><% } %>
+                    <span class="arm-schedule-hour-half"
+                          data-arm="<%= ( dayIndex * 48 + hour * 2 ) in armPeriods ? 1 : 0 %>"
+                          data-value="<%= hour * 2 %>"></span>
+                    <span class="arm-schedule-hour-half"
+                          data-arm="<%= ( dayIndex * 48 + hour * 2 + 1 ) in armPeriods ? 1 : 0 %>"
+                          data-value="<%= hour * 2 + 1 %>"></span>
+                </li>
+                <% }) %>
+            </ul>
+        </li>
+        <% }) %>
+    </ul><!-- /arm-schedule-week -->
+    <div class="arm-schedule-tips">
+        <div class="arm-schedule-tip">
+            <span class="arm-schedule-hour-half" data-arm="1"></span>
+            <label class="arm-schedule-tip-label"><%= i18n.armScheduleMustBeArmed %></label>
+        </div>
+        <div class="arm-schedule-tip">
+            <span class="arm-schedule-hour-half" data-arm="0"></span>
+            <label class="arm-schedule-tip-label"><%= i18n.armScheduleMayBeDisarmed %></label>
+        </div>
+    </div>
+</div>
+
+<div class="control-group form-inline">
+    <label class="checkbox">
+        <input type="checkbox" name="allowDisarm"<% if(schedule.allowDisarm) {%> checked<% } %>>
+        <%= i18n.armScheduleAllowDisarmLabel %>
+    </label>
+    <span class="allow-disarm-time">
+        <input type="text" maxlength="5" placeholder="00:00"
+               class="input-time" name="allowDisarmPeriod" value="<%= allowDisarmHours %>:<%= allowDisarmMinutes %>"
+               <% if(!schedule.allowDisarm) {%> disabled<% } %>>
+    </span>
+</div>
+<div class="control-group form-inline">
+    <label class="checkbox">
+        <input type="checkbox" name="notArmedAlert"<% if(schedule.notArmedAlert) {%> checked<% } %>>
+        <%= i18n.armScheduleSendNotArmedAlert %>
+    </label>
+</div>
+<div class="control-group form-inline">
+    <label class="checkbox">
+        <input type="checkbox" name="earlyDisarmedAlert"<% if(schedule.earlyDisarmedAlert) {%> checked<% } %>>
+        <%= i18n.armScheduleSendEarlyDisarmedAlertAlert %>
+    </label>
+</div>

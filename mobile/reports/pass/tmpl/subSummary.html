@@ -1,0 +1,11 @@
+<tr>
+    <th><%= i18n.sumPassQuantityExt %></th>
+    <th><%= pcount %></th>
+    <th colspan="2"><%= i18n.totalDistance %>, <%= i18n.km %></th>
+    <th><%= distS %></th>
+</tr>
+<tr<% if(isLast) {%> data-row="last"<% } %>>
+    <th><%= i18n.sumPassQuantity %></th>
+    <th><%= Math.floor(halfPcount) %></th>
+    <th colspan="3">&nbsp;</th>
+</tr>

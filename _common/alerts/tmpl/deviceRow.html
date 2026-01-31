@@ -1,0 +1,14 @@
+<tr data-id="<%- device.id %>" class="row-brief device-brief">
+    <td class="img">
+        <svg class="svg-icon">
+            <use xlink:href="#smb-<%= (device.objType == App.TYPE_MOBILE ? 'car' : 'home') %>"></use>
+        </svg>
+    </td>
+    <td class="info">
+        <h4 class="title"><%- device.name %></h4>
+        <p><%- device.extra || '--' %></p>
+    </td>
+    <td class="row-action">
+        <i class="svg-icon svg-icon-chevron-right"></i>
+    </td>
+</tr>

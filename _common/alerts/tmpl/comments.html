@@ -1,0 +1,19 @@
+<a class="close">&times;</a>
+<% if(comments.length) {%>
+<div class="actions-list clearfix">
+    <div class="row-fluid">
+        <% var rowNum = 0, nbCells = 0; _.each(comments, function(comment, i){ %>
+        <% if(nbCells >= 12) { rowNum++; nbCells = 0;%>
+        </div><div class="row-fluid">
+        <% } %>
+        <button class="btn btn-comment span3 comment"><%= comment.msg %></button>
+        <% nbCells += 3; }) %>
+    </div>
+</div>
+<% } %>
+<form method="post" action="" class="form-horizontal comment-form">
+    <textarea name="action" placeholder="<%= i18n[comments.length ? 'typeAnotherComment' : 'typeComment'] %>..."></textarea>
+    <button type="submit" class="btn">
+        <%= i18n.submitComment %>
+    </button>
+</form>

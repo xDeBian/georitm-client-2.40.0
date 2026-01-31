@@ -1,0 +1,62 @@
+<div class="p-params t-params">
+
+    <fieldset>
+        <legend><%= i18n.params %></legend>
+
+        <% if(App.reportAllowedByType('OUTTEMP')) {%>
+        <label class="radio">
+            <input type="radio" value="OUTTEMP" <% if(dataSource == 'OUTTEMP') {%> checked<% } %> name="dataSource">
+            <%= i18n.externalSensorTemperature %>
+        </label>
+        <% } if(App.reportAllowedByType('DEVTEMP')) {%>
+        <label class="radio">
+            <input type="radio" value="DEVTEMP" <% if(dataSource == 'DEVTEMP') {%> checked<% } %> name="dataSource">
+            <%= i18n.deviceTemperature %>
+        </label>
+        <% } if(App.reportAllowedByType('COOLTEMP')) {%>
+        <label class="radio">
+            <input type="radio" value="COOLTEMP" <% if(dataSource == 'COOLTEMP') {%> checked<% } %> name="dataSource">
+            <%= i18n.coolerTemperature %>
+        </label>
+        <% } %>
+
+        <div class="control-group">
+            <h5><%= i18n.allowedThresholds %></h5>
+
+            <div class="form-horizontal">
+                <label class="label-inline"><%= i18n.rangeFrom %></label>
+                <input type="text" name="thresholds" value="<%= thresholds[0] %>" data-index="0" data-min="-50" data-max="119" class="input-mini">
+                <label class="label-inline"><%= i18n.to %></label>
+                <input type="text" name="thresholds" value="<%= thresholds[1] %>" data-index="1" data-min="-49" data-max="120" class="input-mini">
+                <label class="label-inline">&deg;C</label>
+            </div>
+
+            <!--<div class="slider-cont">
+                <span class="limit min">-30</span>
+                <div class="slider"></div>
+                <span class="limit max">+30</span>
+            </div>-->
+
+        </div>
+
+        <div class="control-group">
+            <h5><%= i18n.minViolationTime %></h5>
+            <div class="form-horizontal">
+                <input type="number" min="0" max="60"
+                       class="input-mini integer"
+                       name="minutes"
+                       value="<%= minutes %>" >
+                <label class="label-inline"><%= i18n.minute %></label>
+                <input type="number" min="<%= minutes > 0 ? 0 : 1 %>" max="<%= minutes < 60 ? 59 : 0 %>"
+                       class="input-mini integer"
+                       name="seconds"
+                       value="<%= minutes < 60 ? seconds : 0 %>"
+                       <% if(minutes == 60) {%> disabled<% } %>>
+                <label class="label-inline"><%= i18n.sec %></label>
+            </div>
+        </div>
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

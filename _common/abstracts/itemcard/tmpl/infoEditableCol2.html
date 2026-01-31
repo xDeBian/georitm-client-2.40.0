@@ -1,0 +1,47 @@
+<div class="field">
+    <label><%= i18n.objOwner %></label>
+    <div class="itext"><input type="text" name="VRC_OWNER" value="<%- settings.VRC_OWNER %>" maxlength="255" /></div>
+</div>
+<div class="field">
+    <label><%= i18n.phone.ucFirst() %> 1</label>
+    <div class="itext"><input type="text" name="PHONE1" value="<%- settings.PHONE1 %>" maxlength="20" /></div>
+</div>
+<div class="field">
+    <label><%= i18n.phone.ucFirst() %> 2</label>
+    <div class="itext"><input type="text" name="PHONE2" value="<%- settings.PHONE2 %>" maxlength="20" /></div>
+</div>
+<div class="field">
+    <label><%= i18n.objOwnerPass %></label>
+    <div class="itext"><input type="text" name="OwnerPassword" value="<%- settings.OwnerPassword %>" maxlength="50" /></div>
+</div>
+<div class="field">
+    <label><%= i18n.objContract %></label>
+    <div class="itext"><input type="text" name="ContractNumber" value="<%- settings.ContractNumber %>" maxlength="20" /></div>
+</div>
+<div class="field">
+    <label><%= i18n.objContractDate %></label>
+    <div class="itext">
+        <input type="text" name="ContractDate" value="<%- settings.ContractDate %>" maxlength="20" class="datepicker" />
+    </div>
+</div>
+<div class="item-groups objs-groups clearfix">
+    <h5><%= i18n.groups.ucFirst() %></h5>
+    <div class="list">
+        <% if(objsGroups && objsGroups.length && tmplGroup) {
+        var sep = '';
+        _.each(objsGroups, function(group){
+        if(App.allowed('objectgroups.edit')) {
+        print(tmplGroup(group));
+        } else {
+        print(sep + group.name);
+        sep = ', ';
+        }
+        })%>
+        <% } %>
+        <div class="clear"></div>
+    </div>
+    <% if(App.allowed('objectgroups.edit')) { %>
+    <input type="text" style="display:none" disabled="disabled" class="itext autocomplete" value="" name="add_objs_group_name" maxlength="50" />
+    <div class="btn btn-add btn-small" title="<%= i18n.addGroup %>"><i class="add-obj-group-link icon-plus"></i></div>
+    <% } %>
+</div><!--/objs-groups-->

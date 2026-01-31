@@ -1,0 +1,117 @@
+<table class="l">
+    <tr>
+        <td class="col">
+
+            <div class="field">
+                <label>IMEI</label>
+                <div class="itext">
+                    <input type="text" name="imei" value="<%- imei %>" maxlength="16" class="integer" autocomplete="off" />
+                </div>
+            </div>
+
+            <% if('undefined' != typeof hardwareTypes) {%>
+            <div class="field">
+                <label><%= i18n.objHardwareType %></label>
+                <div class="select">
+                    <% if(hardwareTypes) {%><select name="objectTypeId">
+                        <option value="0"><%= i18n.objHardwareUnknown %></option>
+                    <% _.each(hardwareTypes, function(type) {%>
+                        <option value="<%= type.id %>"<% if('undefined' != typeof item.deviceTypeId && item.deviceTypeId == type.id) {%> selected<% } %>>
+                            <%= type.name %>
+                        </option>
+                    <% }) %>
+                    </select><% } else { %>
+                        <%= deviceTypeName %>
+                    <% } %>
+                </div>
+            </div>
+            <% } %>
+
+            <!--<div class="field">
+                <label><%= i18n.simCard %> 1</label>
+                <div class="itext"><input type="text" name="SIM" value="<%- settings.SIM %>" maxlength="20" autocomplete="off" /></div>
+            </div><div class="field">
+                <label><%= i18n.simCard %> 2</label>
+                <div class="itext"><input type="text" name="SIM2" value="<%- settings.SIM2 %>" maxlength="20" autocomplete="off" /></div>
+            </div>-->
+
+            <div class="field">
+                <label><%= i18n.simCard %> 1</label>
+                <div class="form-horizontal itext row-fluid">
+                    <div class="span4">
+                        <input type="text" name="SIM" value="<%- settings.SIM %>" maxlength="20" autocomplete="off">
+                    </div>
+                    <div class="span3 text-right"><%= i18n.gsmProvider %></div>
+                    <div class="span5">
+                        <input class="autocomplete" type="text" name="sim1Provider" value="<%- settings.sim1Provider %>" maxlength="50" autocomplete="off">
+                    </div>
+                </div>
+            </div><div class="field">
+                <label><%= i18n.simCard %> 2</label>
+                <div class="form-horizontal itext row-fluid">
+                    <div class="span4">
+                        <input type="text" name="SIM2" value="<%- settings.SIM2 %>" maxlength="20" autocomplete="off">
+                    </div>
+                    <div class="span3 text-right"><%= i18n.gsmProvider %></div>
+                    <div class="span5">
+                        <input class="autocomplete" type="text" name="sim2Provider" value="<%- settings.sim2Provider %>" maxlength="50" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label><%= i18n.password.ucFirst() %></label>
+                <div class="itext"><input type="text" name="PASS" value="<%- settings.PASS %>" maxlength="255" /></div>
+            </div><div class="field">
+                <label><%= i18n.placeInstall %></label>
+                <div class="itext"><input type="text" name="InstallPlace" value="<%- settings.InstallPlace %>" maxlength="255" /></div>
+            </div><div class="field">
+                <label><%= i18n.dateInstall %></label>
+                <div class="itext"><input type="text" name="InstallDate" value="<%- settings.InstallDate %>" maxlength="50" class="datepicker" /></div>
+            </div><div class="field">
+                <label><%= i18n.installer %></label>
+                <div class="itext"><input type="text" name="Installer" value="<%- settings.Installer %>" maxlength="100" /></div>
+            </div>
+        </td>
+
+        <td class="col">
+            <div class="device-img">
+                <img src="<%= deviceImg %>" alt="">
+                <p class="no-margin">
+                    <span class="device-name"><%= deviceTypeName %></span>
+                    <% if(deviceFirmware) {%>
+                        <span style="margin:0 5px"><%= deviceFirmware %></span>
+                    <% } %>
+                    <% if(firmwareUpdateAvailable) {%>
+                        <a class="device-command update-command"
+                           data-status="<%= updateStatus.status %>"
+                           data-command="<%= updateStatus.cmd %>" href="javascript:;" >
+                            <%= updateStatus.txt %>
+                        </a>
+                    <% } %>
+                </p>
+
+                <% if(shellSetupAvailable) {%>
+                <p class="no-margin">
+                    <a class="device-command setup" href="javascript:;" ><%= i18n.setupDevice %></a>
+                </p>
+                <% } %>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="field textarea large text-large no-margin">
+                <label><%= i18n.objExtraHardware %></label>
+                <textarea class="hidden" maxlength="2048" rows="" cols="" name="ExtraHardware"><%- settings.ExtraHardware %></textarea>
+                <div class="editable">
+                    <div class="value"><%= extraHardware %></div>
+                    <div class="edit">
+                        <i class="svg-icon svg-icon-pencil"></i>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

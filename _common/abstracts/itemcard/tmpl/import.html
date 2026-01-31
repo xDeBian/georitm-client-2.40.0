@@ -1,0 +1,14 @@
+<div class="card-extra-action picture-form form-horizontal">
+    <span>XLS, XLSX <%= i18n.upto %> 10Mb</span>
+    <div class="file-upload-input">
+
+        <a data-placeholder="<%= i18n.chooseFile %>..." class="btn btn-file text-left" style="padding-left:10px">
+            <%= i18n.chooseFile %>...
+        </a>
+        <input class="file-import" type="file" name="file" accept=".xls,.xlsx" >
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-submit"><%= i18n.upload.ucFirst() %></button>
+    <a class="btn btn-cancel"><%= i18n.cancel %></a>
+
+</div>

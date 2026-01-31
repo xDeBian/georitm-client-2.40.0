@@ -1,0 +1,30 @@
+<h3 class="rep-table-header"><%= header %></h3>
+<table class="rep-table selectable">
+    <colgroup>
+        <col style="width: 25%">
+    </colgroup>
+    <thead>
+        <tr>
+            <th class="text-left"><%= i18n.drivesafety.indicator %></th>
+            <th><%= i18n.drivesafety.totalQuantity %></th>
+            <th><%= i18n.drivesafety.quantity100km %></th>
+            <th><%= i18n.drivesafety.indicatorWeight %></th>
+            <th><%= i18n.drivesafety.gradeByIndicator %></th>
+            <th><%= i18n.drivesafety.summaryScore %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% _.each(rows, function(row, i) {%>
+        <tr>
+            <td class="text-left"><%= row.indicator %></td>
+            <td><%= row.quantity %></td>
+            <td><%= row.quantity100km %></td>
+            <td><%= row.weight %></td>
+            <td><%= row.score %></td>
+            <% if(i === 0) {%>
+            <td rowspan="<%= rows.length %>"><%= totalScore %></td>
+            <% } %>
+        </tr>
+        <% }) %>
+    </tbody>
+</table><!-- /rep-table -->

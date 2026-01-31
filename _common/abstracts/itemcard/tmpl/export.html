@@ -1,0 +1,8 @@
+<input type="hidden" name="objectId" value="<%= objectId %>" />
+<input type="hidden" name="tzId" value="<%= tzId %>" />
+<% _.each(parts, function(name, key) {%>
+<label class="checkbox">
+    <input type="checkbox" name="parts" value="<%= key %>" <% if(key === 'objectinfo') {%>checked<% } %>>
+    <%= name %>
+</label>
+<% }) %>

@@ -1,0 +1,19 @@
+<div class="find-nearest">
+    <div class="centered-wrapper">
+        <div class="find-nearest-content centered-block">
+            <% _.each(messages, function(msg){ %>
+            <p class="msg"><%= msg %></p>
+            <% }) %>
+
+            <a href="#" class="find-manually<% if(!boundGuards) {%> hidden<% } %>"><%= i18n.rrtSelectManually %></a>
+
+            <div class="field">
+                <span class="help-inline"><%= i18n.anotherRadius %>, <%= i18n.km %></span>
+                <input class="input-mini positive" type="text" value="<%= maxRRTDist || 10 %>" name="maxDist">
+            </div>
+        </div>
+    </div>
+    <div class="guards-list-actions">
+        <button class="btn btn-block btn-action find-nearest-btn"><%= i18n.repeatSearch %></button>
+    </div>
+</div>

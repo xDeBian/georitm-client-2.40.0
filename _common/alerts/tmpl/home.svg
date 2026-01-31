@@ -1,0 +1,5 @@
+<svg class="svg" version="1.1" width="32" height="32" viewBox="0 0 32 32">
+	<path class="svg-path svg-path-door" d="M28,30.893H4V18.542h24V30.893z"/>
+	<path class="svg-path" d="M32,19.044L16,6.303L0,19.044V13.85L16,1.108L32,13.85V19.044z M28,18.582v12.311h-8v-8.207h-8v8.207H4V18.582l12-9.233
+		L28,18.582z"/>
+</svg>

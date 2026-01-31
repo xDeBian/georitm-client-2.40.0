@@ -1,0 +1,1 @@
+define(["util","./JsonSequence"],function(n,e){function t(){e.apply(this,arguments)}return n.extend(t,e),t});

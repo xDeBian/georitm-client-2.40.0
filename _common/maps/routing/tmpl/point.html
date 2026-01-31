@@ -1,0 +1,35 @@
+<li class="form-search<% if(point.text){%> active<% } %>" data-index="<%= i %>">
+    <i class="route-point-marker"></i>
+    <div class="input-prepend">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" data-type="<%= point.type %>">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-<%= icons[point.type] %>"></use>
+            </svg>
+            <span class="caret pull-right"></span>
+        </a>
+        <ul class="dropdown-menu nav nav-list">
+            <% _.each(searchTypes, function(name, key){%>
+            <li><a data-type="<%= key %>" href="javascript:;">
+                <svg class="svg-icon">
+                    <use xlink:href="#smb-<%= icons[key] %>"></use>
+                </svg>
+                <%- name %>
+            </a></li>
+            <% }); %>
+        </ul>
+        <div class="input-append">
+            <span class="add-on">
+                <input type="text" name="routePoint" value="<%= point.text %>"
+                       data-lat="<%= point.lat %>" data-lon="<%= point.lon %>"
+                       tabindex="<%= 1000 + i %>">
+                <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+            </span>
+        </div>
+    </div>
+    <div class="point-tools">
+        <a href="javascript:;" class="move-point move-down"><i class="icon-arrow-down"></i><i class="icon-arrow-up"></i></a>
+        <!--<i class="move-point move-down icon-arrow-down"></i>
+        <i class="move-point move-up icon-arrow-up"></i>
+        <i class="add-point icon-plus"></i>-->
+    </div>
+</li>

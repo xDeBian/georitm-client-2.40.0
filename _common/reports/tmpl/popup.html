@@ -1,0 +1,62 @@
+<% if(type== 'fuelChange') {%>
+<div class="track-info fuel-change-info">
+    <h5><%= name %> [#<%= extId %>]</h5>
+    <ul class="features">
+        <li><%= (delta > 0 ? i18n.filling : i18n.discharge ).ucFirst() %>: <strong><%= delta.toFixed(1) + ' ' + i18n.l %></strong></li>
+        <li data-value="<%= begin %>"><%= beginS %></li>
+        <li><span data-geoid="<%= geoId || 0 %>" class="address"><i class="svg-icon svg-icon-spinner icon-spin"></i>
+            <%- addressStr %>
+        </span></li>
+    </ul>
+</div>
+<% } else if(type== 'accesscard') { %>
+<div class="<%= className %>"">
+<h5><%= name %> [#<%= extId %>]</h5>
+<ul class="features">
+    <li><%= text.idCard %>: <%= card %></li>
+    <li data-value="date"><%= date %></li>
+    <li><span data-geoid="<%= geoId || 0 %>" class="address"><i class="svg-icon svg-icon-spinner icon-spin"></i>
+            <%= addressStr %>
+        </span></li>
+</ul>
+</div>
+<% } else if(type== 'criticalRpm') { %>
+<div class="track-info rpm-info">
+    <ul class="features">
+        <li class="nobr">
+            <%= i18n.date.ucFirst() %>/<%= i18n.time.ucFirst() %>:
+            <strong><%= dateS %> <%= startS %></strong>
+        </li>
+        <li class="nobr"><%= i18n.duration %>: <strong><%= timeS %></strong></li>
+        <li><%= i18n.maximum %>: <strong><%= max %> <%= i18n.rpm %></strong></li>
+        <li><%= i18n.avgValue %>: <strong><%= avg %> <%= i18n.rpm %></strong></li>
+    </ul>
+</div>
+<% } else if(type== 'discreteSwitch') { %>
+<div class="track-info discrete-info">
+    <h5><%= title %></h5>
+    <ul class="features">
+        <li><%= i18n.currentState %>: <strong><%= state %></strong></li>
+        <li class="nobr"><%= i18n.date.ucFirst() %>/<%= i18n.time.ucFirst() %>: <strong><%= start %></strong></li>
+        <li class="nobr"><%= i18n.duration %>: <strong><%= duration %></strong></li>
+    </ul>
+</div>
+<% } else if(type== 'nearestObject') { %>
+<div class="track-info">
+    <h5><%= title %></h5>
+    <ul class="features">
+        <li class="nobr"><%= i18n.time.ucFirst() %>: <strong><%= timeS %></strong></li>
+        <li><%= i18n.distance %>: <strong><%= distanceS %> <%= i18n.km %></strong></li>
+        <li><%= i18n.speed.ucFirst() %>: <strong><%= speedS %> <%= i18n.kmh %></strong></li>
+    </ul>
+</div>
+<% } else if(type== 'passMatrix') { %>
+<div class="track-info">
+    <h5><%= title %></h5>
+    <ul class="features">
+        <li class="nobr"><%= i18n.dateAndTime %>: <strong><%= dateS %></strong></li>
+        <li><%= i18n.pass.enteredTotalShort %>: <strong><%= totalIn %></strong></li>
+        <li><%= i18n.pass.exitedTotalShort %>: <strong><%= totalOut %></strong></li>
+    </ul>
+</div>
+<% } %>

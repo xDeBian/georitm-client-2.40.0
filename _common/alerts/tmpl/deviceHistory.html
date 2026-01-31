@@ -1,0 +1,39 @@
+<div class="tabs-hor-cont">
+    <ul class="tabs-hor">
+        <% if(App.allowed('alerts')) {%>
+        <li class="device-alarms <% if(hasAlarm) {%>active<% } else {%>hidden<% } %>">
+
+            <div class="tab-toggle-container">
+                <a class="tab-toggle" href="#tabs-tr-1"><%= i18n.alarms.ucFirst() %></a>
+            </div>
+            <div class="tab-hor-content selectable infinite" id="tabs-tr-1">
+                <table data-key="alarms"></table>
+                <p class="no-data hidden"><%= i18n.noHistoryRows %></p>
+            </div><!--/tab-hor-content-->
+
+        </li>
+        <% } %>
+        <li class="device-alerts<% if(!hasAlarm || !App.allowed('alerts')) {%> active<% } %>">
+
+            <div class="tab-toggle-container">
+                <a class="tab-toggle" href="#tabs-tr-2"><%= i18n.all.ucFirst() +' '+  i18n.alerts %></a>
+            </div>
+            <div class="tab-hor-content selectable infinite" id="tabs-tr-2">
+                <table data-key="alerts"></table>
+                <p class="no-data hidden"><%= i18n.noHistoryRows %></p>
+            </div><!--/tab-hor-content-->
+
+        </li><li class="device-logs">
+
+        <div class="tab-toggle-container">
+            <a class="tab-toggle" href="#tabs-tr-3"><%= i18n.objectLog %></a>
+        </div>
+        <div class="tab-hor-content selectable infinite" id="tabs-tr-3">
+            <table data-key="logs"></table>
+            <p class="no-data hidden"><%= i18n.noHistoryRows %></p>
+        </div><!--/tab-hor-content-->
+    </li>
+    </ul>
+
+    <table class="history-table"></table>
+</div><!--/tabs-hor-cont-->

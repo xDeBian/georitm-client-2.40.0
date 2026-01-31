@@ -1,0 +1,21 @@
+<tr<% if(isLast) {%> data-row="last"<% } %>>
+    <% _.each(properties, function(v) {%>
+    <td>
+        <a href="#" class="build-another" title="<%= buildAnother %>"
+           data-type="movepark" data-id="<%= id %>"  data-from="<%= start %>" data-to="<%= end %>">
+            <%= v %>
+        </a>
+    </td>
+    <% }) %>
+    <td><%= timeS %></td>
+    <td><%= distanceS %></td>
+    <td><%= speedS %></td>
+    <td class="col-address">
+        <a href="#" class="put-marker" data-id="<%= markerId %>">
+            <% if(typeof address != 'undefined' && address) {print(address)} else { %>
+            <span class="load-address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>"><%= loadAddress %></span>
+            <% } %>
+        </a>
+    </td>
+
+</tr>

@@ -1,0 +1,17 @@
+<% if(App.allowed('alerts.close')) {%>
+    <% if(!device) {%>
+    <button class="btn btn-primary btn-resolve btn-resolve-all"><%= i18n.resolveAllAlarmsShort %></button>
+    <% } else { %>
+    <button class="btn btn-primary btn-resolve btn-resolve-obj"<% if(!device.hasAlarm) {%> disabled<% } %>>
+        <%= i18n.resolveAlarms %>
+    </button>
+    <% } %>
+<% } else if(App.allowed('alarm.create')) { %>
+    <% if(device) {%>
+    <button class="btn btn-danger btn-create-alarm">
+        <%= i18n.createAlarm %>
+    </button>
+    <% } %>
+<% } %>
+
+<a class="btn jw-close"><%= i18n.close.ucFirst() %></a>

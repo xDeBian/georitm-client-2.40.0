@@ -1,0 +1,65 @@
+<div class="run-params">
+
+    <fieldset>
+        <legend><%= i18n.params %></legend>
+        <input type="hidden" name="params" value="fake"><% //else we will have defaults in Report %>
+        <label class="checkbox">
+            <input type="checkbox" name="params" value="moveStartEndTime"<% if(_.indexOf(params, 'moveStartEndTime') != -1) { %> checked<% } %>>
+            <%= i18n.moveStartEndTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="params" value="moveStartEndPlace"<% if(_.indexOf(params, 'moveStartEndPlace') != -1) { %> checked<% } %>>
+            <%= i18n.moveStartEndPlace %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="params" value="moveTime"<% if(_.indexOf(params, 'moveTime') != -1) { %> checked<% } %>>
+            <%= i18n.moveTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="params" value="parkTime"<% if(_.indexOf(params, 'parkTime') != -1) { %> checked<% } %>>
+            <%= i18n.parksTime %>
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="params" value="avgSpeed"<% if(_.indexOf(params, 'avgSpeed') != -1) { %> checked<% } %>>
+            <%= i18n.avgSpeed %>
+        </label>
+        <label class="checkbox">
+            <input
+                data-fuel-consumption="true"
+                type="checkbox"
+                name="params"
+                value="consum100km"<% if(_.indexOf(params, 'consum100km') != -1) { %> checked<% } %>>
+            <%= i18n.calcConsumBy100kmNorm %>
+        </label>
+        <label class="checkbox">
+            <input
+                data-fuel-consumption="true"
+                type="checkbox"
+                name="params"
+                value="consum1h"<% if(_.indexOf(params, 'consum1h') != -1) { %> checked<% } %>>
+            <%= i18n.calcConsumBy1hNorm %>
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend><%= i18n.fuelConsumptionNorm %></legend>
+        <label class="radio">
+            <input type="radio" value="auto" <% if(season == 'auto') {%> checked<% } %> name="season"> <%= i18n.fuelNormAuto %>
+        </label>
+        <label class="radio">
+            <input type="radio" value="summer" <% if(season == 'summer') {%> checked<% } %> name="season"> <%= i18n.fuelNormSummer %>
+        </label>
+        <label class="radio">
+            <input type="radio" value="winter" <% if(season == 'winter') {%> checked<% } %> name="season"> <%= i18n.fuelNormWinter %>
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend><%= i18n.detailReport %></legend>
+        <label class="checkbox">
+            <input data-invert="1" data-invertname="hideDetails" data-invertempty="true"
+                   name="showDetails" type="checkbox" value="1"<% if(showDetails) { %> checked<% } %>>
+            <%= i18n.showRunDistanceOnEveryDay %>
+        </label>
+    </fieldset>
+
+    <%= propertiesHtml %>
+</div>

@@ -1,0 +1,103 @@
+<table class="l cols-3">
+    <tr>
+        <td class="col sensor-settings">
+
+            <div class="field">
+                <label class="select-label"><%= i18n.analogueSensor %> 1</label>
+                <div class="select"><select data-sensor="1" name="AN_TYPE1">
+                    <option value="0"<% if(settings.AN_TYPE1 == 0) {%> selected="selected"<% } %>><%= i18n.fuelLevelSensor %></option>
+                    <option value="1"<% if(settings.AN_TYPE1 == 1) {%> selected="selected"<% } %>><%= i18n.flowSensorOnInput %></option>
+                    <option value="-1"<% if(settings.AN_TYPE1 == -1) {%> selected="selected"<% } %>><%= i18n.flowSensorOnOutput %></option>
+                </select></div>
+            </div>
+            <div class="field sensor-koef a1"<% if(settings.AN_TYPE1 == '0' || _.isUndefined(settings.AN_TYPE1)) {%> style="display:none"<% } %>>
+            <label><%= i18n.impulsesByLiter %></label>
+            <div class="itext"><input class="positive" type="text" name="AN_COEFF1" value="<%= settings.AN_COEFF1 %>" maxlength="10" /></div>
+            </div>
+
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForSummer %>, <%= i18n.l100km %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUM_SUMMER1" value="<%= settings.FCONSUM_SUMMER1 %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForSummer %>, <%= i18n.l1h %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUMH_SUMMER1" value="<%= settings.FCONSUMH_SUMMER1 %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForWinter %>, <%= i18n.l100km %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUM_WINTER1" value="<%= settings.FCONSUM_WINTER1 %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForWinter %>, <%= i18n.l1h %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUMH_WINTER1" value="<%= settings.FCONSUMH_WINTER1 %>" maxlength="10" /></div>
+            </div>
+
+            <div class="fuel-calibration a1"<% if(!_.isUndefined(settings.AN_TYPE1) && settings.AN_TYPE1 != 0) {%> style="display:none"<% } %>>
+            <a class="open-fuel-calibration-table" data-sensor="1" href="javascript:"><%= i18n.calibrationTable %></a>
+            </div>
+        </td><!--/sensor-settings-->
+        <td class="col sensor-settings">
+
+            <div class="field">
+                <label class="select-label"><%= i18n.analogueSensor %> 2</label>
+                <div class="select"><select data-sensor="2" name="AN_TYPE2">
+                    <option value="0"<% if(settings.AN_TYPE2 == 0) {%> selected="selected"<% } %>><%= i18n.fuelLevelSensor %></option>
+                    <option value="1"<% if(settings.AN_TYPE2 == 1) {%> selected="selected"<% } %>><%= i18n.flowSensorOnInput %></option>
+                    <option value="-1"<% if(settings.AN_TYPE2 == -1) {%> selected="selected"<% } %>><%= i18n.flowSensorOnOutput %></option>
+                </select></div>
+            </div>
+            <div class="field sensor-koef a2"<% if(settings.AN_TYPE2 == '0' || _.isUndefined(settings.AN_TYPE2)) {%> style="display:none"<% } %>>
+            <label><%= i18n.impulsesByLiter %></label>
+            <div class="itext"><input class="positive" type="text" name="AN_COEFF2" value="<%= settings.AN_COEFF2 %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForSummer %>, <%= i18n.l100km %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUM_SUMMER2" value="<%= settings.FCONSUM_SUMMER2 %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForSummer %>, <%= i18n.l1h %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUMH_SUMMER2" value="<%= settings.FCONSUMH_SUMMER2 %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForWinter %>, <%= i18n.l100km %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUM_WINTER2" value="<%= settings.FCONSUM_WINTER2 %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.fuelConsumptionNormForWinter %>, <%= i18n.l1h %></label>
+                <div class="itext"><input class="positive" type="text" name="FCONSUMH_WINTER2" value="<%= settings.FCONSUMH_WINTER2 %>" maxlength="10" /></div>
+            </div>
+
+            <div class="fuel-calibration a2"<% if(!_.isUndefined(settings.AN_TYPE2) && settings.AN_TYPE2 != 0) {%> style="display:none"<% } %>>
+            <a class="open-fuel-calibration-table" data-sensor="2" href="javascript:"><%= i18n.calibrationTable %></a>
+            </div>
+        </td>
+
+        <td class="col fuel-filters">
+            <div class="field">
+                <label><%= i18n.tankVolume %>, <%= i18n.l %></label>
+                <div class="itext"><input class="integer" type="text" name="TankVolume" value="<%= settings.TankVolume %>" maxlength="10" /></div>
+            </div>
+
+            <div class="field">
+                <label><%= i18n.minFilling %>, <%= i18n.l %></label>
+                <div class="itext"><input class="positive" type="text" name="MinFill" value="<%= settings.MinFill %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.minDischarge %>, <%= i18n.l %></label>
+                <div class="itext"><input class="positive" type="text" name="MinPlum" value="<%= settings.MinPlum %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.stepOfMedianFilter %></label>
+                <div class="itext"><input class="integer" type="text" name="SmoothMedianStep" value="<%= settings.SmoothMedianStep %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.maxUsedSensorValues %></label>
+                <div class="itext"><input class="integer" type="text" name="RemoveAcpOverflowMax" value="<%= settings.RemoveAcpOverflowMax %>" maxlength="10" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.minUsedSensorValues %></label>
+                <div class="itext"><input class="integer" type="text" name="RemoveAcpOverflowMin" value="<%= settings.RemoveAcpOverflowMin %>" maxlength="10" /></div>
+            </div>
+        </td><!--/fuel-filters-->
+    </tr>
+</table><!--/cols-3-->

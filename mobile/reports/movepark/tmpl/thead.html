@@ -1,0 +1,19 @@
+<tr data-head="<%= headIndex %>">
+    <th rowspan="<%= rowspan %>">#</th>
+    <th rowspan="<%= rowspan %>"><%= i18n.action %></th>
+    <th rowspan="<%= rowspan %>" data-key="start"><%= i18n.actionStart %></th>
+    <th rowspan="<%= rowspan %>" data-key="end"><%= i18n.actionEnd %></th>
+    <th rowspan="<%= rowspan %>" data-key=""><%= i18n.actionTime %></th>
+    <% if(showParks) {%>
+    <th colspan="<%= rowspan %>" data-key="address"><%= i18n.parkAddress %></th>
+    <% } else if(showMoves) {%>
+    <th style="width:20%" data-key="avgSpeed"><%= i18n.avgSpeed %>, <%= i18n.kmh %></th>
+    <th style="width:20%" data-key="distance"><%= i18n.runDistance %>, <%= i18n.km %></th>
+    <% } %>
+</tr>
+<% if(showParks && showMoves) {%>
+<tr data-head="<%= headIndex %>">
+    <th data-key="avgSpeed"><%= i18n.avgSpeed %>, <%= i18n.kmh %></th>
+    <th data-key="distance"><%= i18n.runDistance %>, <%= i18n.km %></th>
+</tr>
+<% } %>

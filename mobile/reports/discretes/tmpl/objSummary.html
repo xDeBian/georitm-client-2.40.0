@@ -1,0 +1,28 @@
+<div class="summary">
+    <div class="sum-header">
+        <strong><%= i18n.summaryData %></strong>
+        <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+    </div>
+    <div class="sum-content">
+        <table>
+            <tbody>
+                <tr>
+                    <td><%= i18n.totalMoveTime %></td>
+                    <td class="value"><span class="rep-time-data" data-value="<%= totalMoveTime %>"><%= totalMoveTimeS %></span></td>
+                </tr><tr>
+                    <td><%= i18n.totalDistance %>, <%= i18n.km %></td>
+                    <td class="value" data-value="<%= totalDistance %>">
+                        <% if(App.reportAllowedByType('MOVEPARK')) {%>
+                        <a href="javascript:;" class="build-another" title="<%= i18n.build.ucFirst() + ' ' + i18n.reportsNames.movepark %>"
+                           data-type="movepark" data-id="<%= id %>" data-from="<%= start %>" data-to="<%= end %>">
+                            <%= totalDistanceS %>
+                        </a>
+                        <% } else { %>
+                        <%= totalDistanceS %>
+                        <% } %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

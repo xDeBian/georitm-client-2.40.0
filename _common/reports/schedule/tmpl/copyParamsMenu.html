@@ -1,0 +1,21 @@
+<% if(tasks.length) {%>
+<div class="dropdown-menu-header">
+    <label class="checkbox checkbox-all">
+        <input type="checkbox" value="all"> <%= i18n.selectAll %>
+    </label>
+</div>
+<ul class="nav nav-list">
+    <% _.each(tasks, function(t) {%>
+    <li>
+        <label class="checkbox">
+            <input type="checkbox" value="<%= t.id || t.uuid %>"> <%- t.name %>
+        </label>
+    </li>
+    <% }) %>
+</ul>
+<div class="dropdown-menu-footer">
+    <a href="#" class="btn btn-primary btn-copy"<% if(!tasks.length) {%> disabled<% } %>><%= i18n.copy %></a>
+</div>
+<% } else {%>
+<%= i18n.noTasksToCopyReportParameters %>
+<% } %>

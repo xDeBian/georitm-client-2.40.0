@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"
+xmlns="http://www.topografix.com/GPX/1/0" creator="glebpl"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+  <time>2011-09-22T18:56:51Z</time>
+  <trk>
+    <name>test track</name>
+    <trkseg>
+      <% _.each(points, function(point){%>
+      <trkpt lat="<%= point.lat %>" lon="<%= point.lon %>">
+        <time><% print(Date.format(dateFormat, point.date * App.MS)) %>Z</time>
+      </trkpt>
+      <% })%>
+    </trkseg>
+  </trk>
+</gpx>

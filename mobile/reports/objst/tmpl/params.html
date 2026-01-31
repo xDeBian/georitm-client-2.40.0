@@ -1,0 +1,58 @@
+<fieldset data-key="prop">
+    <legend><label class="checkbox"><input type="checkbox" class="select-all no-validation"
+        <% if(checkedProps.length >= totalProps) {%> checked<% } %>>
+        <%= i18n.objProps %>
+    </label></legend>
+
+    <% _.each(allProps, function(name, key){%>
+
+    <label class="checkbox">
+        <input type="checkbox" value="<%= key %>"
+        <% if(_.indexOf(checkedProps, key) != -1) { %> checked<% } %> name="prop">
+        <%= name %>
+    </label>
+
+    <% }) %>
+
+</fieldset>
+
+<fieldset data-key="sf">
+    <legend><label class="checkbox"><input type="checkbox" class="select-all no-validation"
+        <% if(checkedSf.length >= totalSf) {%> checked<% } %>>
+        <%= i18n.objState %>
+    </label></legend>
+
+    <% _.each(allSf, function(name, key){%>
+
+    <label class="checkbox">
+        <input type="checkbox" value="<%= key %>"
+        <% if(_.indexOf(checkedSf, key) != -1) { %> checked<% } %> name="sf">
+        <%= name %>
+    </label>
+
+    <% }) %>
+
+</fieldset>
+
+<fieldset>
+    <legend><%= i18n.objectFault %></legend>
+
+    <label class="checkbox">
+        <input type="checkbox" value="noGpsMinutes" name="noGpsMinutes"<% if(typeof noGpsMinutes != 'undefined' && noGpsMinutes) { %> checked<% } %>> <%= i18n.noGpsSignalTime %>:
+    </label>
+    <div class="objst-damage">
+        <label class="objst-damage-field"><input type="text" name="gps_days" value="<%= gps_days %>" maxlength="2" /> <%= i18n.DateTime.labels2[7] %></label>
+        <label class="objst-damage-field"><input type="text" name="gps_hours" value="<%= gps_hours %>" maxlength="2" /> <%= i18n.DateTime.labels2[4] %></label>
+        <label class="objst-damage-field"><input type="text" name="gps_minutes" value="<%= gps_minutes %>" maxlength="2" /> <%= i18n.DateTime.labels2[5] %></label>
+    </div>
+
+    <label class="checkbox">
+        <input type="checkbox" value="noGsmMinutes" name="noGsmMinutes"<% if(typeof noGsmMinutes != 'undefined' && noGsmMinutes) { %> checked<% } %>> <%= i18n.noGsmSignalTime %>:
+    </label>
+    <div class="objst-damage">
+        <label class="objst-damage-field"><input type="text" name="gsm_days" value="<%= gsm_days %>" maxlength="2" /> <%= i18n.DateTime.labels2[7] %></label>
+        <label class="objst-damage-field"><input type="text" name="gsm_hours" value="<%= gsm_hours %>" maxlength="2" /> <%= i18n.DateTime.labels2[4] %></label>
+        <label class="objst-damage-field"><input type="text" name="gsm_minutes" value="<%= gsm_minutes %>" maxlength="2" /> <%= i18n.DateTime.labels2[5] %></label>
+    </div>
+
+</fieldset>

@@ -1,0 +1,7 @@
+<tr data-head="1">
+    <th><%= i18n.date.ucFirst() %></th>
+
+    <% _.each(statuses, function(key) {%>
+    <th><%= statusNames[key] %></th>
+    <% }) %>
+</tr>

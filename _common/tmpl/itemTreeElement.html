@@ -1,0 +1,19 @@
+<i class="icon icon-leaf" data-item="<%= id %>"></i>
+<div class="row leaf-row">
+    <table><tr>
+        <td class="col0">
+            <a href="javascript:;" data-item="<%= id %>">
+                <em class="name" title="# <%= id %>"><%- name %></em>
+            </a>
+        </td>
+        <% if( extraCols ){ _.each(extraCols, function(col,i){ %>
+        <td class="col<%= i+1 %><%if(col.addClass){ print(' ' + col.addClass); }%>"><%= col.value %></td>
+        <% }); } %>
+        <% if( editable ){ %>
+        <td class="col-act"><i class="icon icon-edit"></i></td>
+        <% } %>
+        <% if( removable ){ %>
+        <td class="col-act"><i class="icon icon-remove"></i></td>
+        <% } %>
+    </tr></table>
+</div>

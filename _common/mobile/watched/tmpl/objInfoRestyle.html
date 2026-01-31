@@ -1,0 +1,141 @@
+<div data-key="summary" class="content active">
+    <div class="features">
+        <ul>
+            <li data-prop="deviceTypeName"
+                class="<% if(prerender) {%>loading<% } %><% if('deviceTypeName' in hiddenProps) {%> hidden<% } %>">
+                <%= i18n.device %>:
+                <strong>
+                    <% if(prerender) {%><i class="svg-icon svg-icon-spinner icon-spin"></i><% } %>
+                    <%= deviceTypeName || '--' %>
+                    <% if(rev) {%>(<%= rev %>)<% } %>
+                </strong>
+            </li>
+            <li data-prop="licenseNumber"<% if('licenseNumber' in hiddenProps) {%> class="hidden"<% } %>>
+                <%= i18n.licenseNumber %>:
+                <strong class="licenseNumber"><%- licenseNumber || '-' %></strong>
+            </li>
+            <li data-prop="address"<% if('address' in hiddenProps) {%> class="hidden"<% } %>>
+                <%= i18n.address.ucFirst() %>:
+                <strong data-geoid="<%= geoId %>" class="address"><i class="svg-icon svg-icon-spinner icon-spin"></i><% if(addressStr != null) { %><%- addressStr %><% } else { %><%= i18n.addressNotFound %> [0,0]<% } %> </strong>
+            </li>
+        </ul>
+        <a data-page="staff" class="hidden" href="#"><%= i18n.showStaff %></a>
+    </div>
+
+    <div class="features-col-group clearfix">
+        <div class="features features-col">
+
+            <div class="widgets-group">
+                <div class="widget <%= activeWidget == 'speed' ? 'active' : '' %>" data-value="speed">
+                    <strong class="widget-value speed"><%= speed < minSpeed ? 0 : Math._round(speed, 2) %></strong>
+                    <small class="widget-value-units"><%= i18n.kmh %></small>
+                    <strong class="widget-label"><%= i18n.speed.ucFirst() %></strong>
+                </div>
+                <div class="widget widget-power <%= activeWidget == 'power' ? 'active' : '' %><%= prerender ? ' loading' : '' %>"
+                     data-value="power" data-state="<%= !prerender ? ( power == 0 ? 1 : 0 ) : '' %>">
+                    <strong class="widget-value"><i class="svg-icon svg-icon-spinner icon-spin"></i></strong>
+                    <small class="widget-value-units">--</small>
+                    <strong class="widget-label"><%= i18n.power.ucFirst() %></strong>
+                </div>
+                <div class="widget <%= activeWidget == 'alt' ? 'active' : '' %>"
+                     data-value="alt">
+                    <strong class="widget-value alt"><%= alt %></strong>
+                    <small class="widget-value-units"><%= i18n.m %></small>
+                    <strong class="widget-label"><%= i18n.altitude %></strong>
+                </div>
+                <% if(showTemperature) {%>
+                    <div class="widget widget-temperature temperature-panel <%= activeWidget == 'temperature' ? 'active' : '' %> <%= tempClass %> " data-value="temperature">
+                        <div class="temperature-panel-value">
+                            <span><%= temperature %></span>
+                        </div>
+                        <p class="temperature-panel-units">&deg;C</p>
+                        <p class="temperature-panel-name"><%= tempDetector %></p>
+                    </div>
+                <% } %>
+                <div class="widget<%= activeWidget == 'rid' ? ' active' : '' %><%= prerender ? ' loading' : '' %>"
+                     data-value="rid">
+                    <strong<% if(!prerender) {%> data-hint="<%= localRID + ' ' + i18n.from + ' ' + remoteRID %>"<% } %>
+                            class="widget-value rid-percent hint-top">
+                        <i class="svg-icon svg-icon-spinner icon-spin"></i>
+                        <%= ridPercent %>
+                    </strong>
+                    <small class="widget-value-units">%</small>
+                    <strong class="widget-label"><%= i18n.objTrackReading %></strong>
+                </div>
+                <ul class="widgets-nav">
+                    <li class="widgets-nav-item <%= activeWidget == 'speed' ? 'active' : '' %>"
+                        data-value="speed">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-speed"></use>
+                        </svg>
+                    </li>
+                    <li class="widgets-nav-item <%= activeWidget == 'power' ? 'active' : '' %>"
+                        data-value="power" data-state="<%= !prerender ? ( power == 0 ? 1 : 0 ) : '' %>">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-plug"></use>
+                        </svg>
+                    </li>
+                    <li class="widgets-nav-item <%= activeWidget == 'alt' ? 'active' : '' %>" data-value="alt">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-altitude"></use>
+                        </svg>
+                    </li>
+                    
+                    <% if(showTemperature) {%>
+                        <li class="widgets-nav-item <%= activeWidget == 'temperature' ? 'active' : '' %> nav-<%= tempClass %> " data-value="temperature">
+                            <svg class="svg-icon">
+                                <use xlink:href="#smb-temperature"></use>
+                            </svg>
+                        </li>
+                    <% } %>
+
+                    <li class="widgets-nav-item <%= activeWidget == 'rid' ? 'active' : '' %>" data-value="rid">
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-percent"></use>
+                        </svg>
+                    </li>
+                </ul>
+            </div><!--/.widgets-group-->
+
+            <%= !compact ? htmlConnections : '' %>
+
+        </div><!--/features features-col-->
+
+        <div class="features features-col">
+
+            <%= compact ? htmlConnections : '' %>
+
+            <ul class="list-group indicators">
+                <li class="list-group-item indicator follow-mode"
+                    data-state="<%= isFollowed == 1 ? 1 : 0 %>"<% if(controlFollowed) {%> data-page="follow""<% } %>>
+                    <svg class="svg-icon list-group-item-icon">
+                        <use xlink:href="#smb-eye"></use>
+                    </svg>
+                    <% if(controlFollowed) {%>
+                    <svg class="svg-icon more-action">
+                        <use xlink:href="#smb-chevron-right"></use>
+                    </svg>
+                    <% } %>
+                    <div class="info">
+                        <h4><%= i18n.followedMode %></h4>
+                        <p class="extra off"><%= i18n.switchedOffShort %></p>
+                        <p class="extra on"><%= i18n.switchedOnShort %></p>
+                    </div>
+                </li>
+            </ul>
+
+            <% if(!prerender) {%>
+            <ul class="list-group indicators controls state-loading"></ul>
+            <ul class="list-group indicators discrets"></ul>
+            <% } %>
+
+        </div><!--/features-col -->
+
+    </div><!--/features-col-group-->
+
+</div><!--/content summary-->
+
+<div data-key="staff" class="content staff"></div><!--/content staff-->
+<div data-key="operate" class="content operate"></div><!--/content operate-->
+<div data-key="follow" class="content"></div><!--/content follow-->
+

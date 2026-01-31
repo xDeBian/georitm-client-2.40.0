@@ -1,0 +1,25 @@
+<div class="rep-meta selectable">
+    <% if(!_.isUndefined(objectsList)) {%>
+    <%= objectsList %>
+    <% } %>
+
+    <%if('undefined' != typeof startTime && 'undefined' != typeof endTime) {%>
+        <p class="dates"><%= i18n.reportPeriod %>:
+            <span class="nobr"><%= Date.format(i18n.DateTime.longFormat, startTime) %></span> -
+            <span class="nobr"><%= Date.format(i18n.DateTime.longFormat, endTime) %></span>
+        </p>
+    <% } else if('undefined' != typeof time) {%>
+        <p class="dates">
+            <%= i18n.dataForDate.ucFirst() %>: <%= Date.format(i18n.DateTime.longFormat, time) %>
+        </p>
+    <% } %>
+
+    <% if(!_.isUndefined(zonesStr)) {%>
+    <p class="dates">
+        <%= zonesStr %>
+    </p>
+    <% } %>
+
+    <%if(tzName) {%><p class="dates"><%= tzName %></p><% } %>
+
+</div>

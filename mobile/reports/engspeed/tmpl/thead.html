@@ -1,0 +1,25 @@
+<colgroup>
+    <!--<col style="width:11%" />
+    <col style="width:11%" />
+    <col style="width:11%" />
+    <col style="width:11%" />
+    <col style="width:11%" />
+    <col style="width:11%" />
+    <col style="width:11%" />
+    <col style="width:23%" />-->
+</colgroup>
+<tr class="summary">
+    <td class="sum-header" colspan="7">
+        <h3><%= i18n.violationOfCriticalRpm %> <%= threshold + '&nbsp;' + i18n.rpm %></h3>
+        <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+    </td>
+</tr>
+<tr data-head="1">
+    <th><%= i18n.date.ucFirst() %></th>
+    <th><%= i18n.actionStart %></th>
+    <th><%= i18n.duration %></th>
+    <th><%= i18n.avgValue + ', ' + i18n.rpm %></th>
+    <th><%= valueHdr + ', ' + i18n.rpm %></th>
+    <th><%= i18n.runDistance %>, <%= i18n.km %></th>
+    <th><%= i18n.place %></th>
+</tr>

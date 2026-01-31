@@ -1,0 +1,33 @@
+<fieldset>
+
+    <div class="form-search<%= address ? ' active' : '' %>">
+        <div class="input-append input-prepend">
+            <span class="add-on">
+                <input name="address" type="text" placeholder="<%= i18n.specifyAddress %>" value="<%= address %>" autocomplete="off">
+                <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+            </span>
+            <a class="btn add-on btn-search" href="javascript:;"><i class="svg-icon svg-icon-search"></i></a>
+        </div>
+    </div>
+
+    <div class="map"></div>
+
+    <input type="hidden" name="lat" value="<%= lat %>">
+    <input type="hidden" name="lon" value="<%= lon %>">
+
+    <div class="control-group">
+        <label><%= i18n.maxDistance %></label>
+        <input type="text" class="positive input-mini"
+               name="maxDistance" value="<%= maxDistance %>" autocomplete="off" maxlength="2">
+        <span class="help-inline no-padding"><%= i18n.km %></span>
+    </div>
+
+    <div class="control-group">
+        <label><%= i18n.distanceReport.timeRangeLabel %></label>
+        <input type="number" min="1" max="1440" class="input-mini"
+               name="timeRange" value="<%= timeRange %>" autocomplete="off">
+        <span class="help-inline no-padding"><%= i18n.minute %></span>
+    </div>
+</fieldset>
+
+<%= propertiesHtml %>

@@ -1,0 +1,4 @@
+<div class="rep-chart clearfix<% if('undefined' != typeof addClass){ print(' ' + addClass) }%>"
+    <% if('undefined' != typeof data) { _.each(data, function(value, key){ print('data-' + key+'="' + value + '"') })}%>>
+    <div<% if('undefined' != typeof id){ print(' id="'+ id + '"') }%> class="chart-content"></div>
+</div>

@@ -1,0 +1,24 @@
+<h3 class="rep-table-header"><%= i18n.discretes.historyHeader %></h3>
+<table class="selectable rep-table discretes-history-table">
+    <colgroup>
+        <col style="width: 12%; text-align: left" />
+        <col style="width: 12%" />
+        <col style="width: 12%" />
+        <col style="width: 15%" />
+        <col style="width: 10%" />
+        <col style="width: 10%" />
+        <col style="width: 30%" />
+    </colgroup>
+    <tbody>
+        <tr data-head="2">
+            <th><%= i18n.actionStart%></th>
+            <th><%= i18n.actionEnd%></th>
+            <th><%= i18n.duration %></th>
+            <th><%= i18n.discretParam %></th>
+            <th><%= i18n.currentState %></th>
+            <th><%= i18n.runDistance %>, <%= i18n.km %></th>
+            <th><%= i18n.place %></th>
+        </tr>
+        <%= tbodyHtml %>
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "RRT Group 1",
+    "nbItems": 2,
+    "guardGroups": [],
+    "guards": [{
+      "id": 1,
+      "name": "Zenit",
+      "person": "Сидр Петров",
+      "phone": "+79112223654",
+      "comment": "Комментарии группы гбр",
+      "lat": 59.95310,
+      "lon": 30.286,
+      "isOnline": false,
+      "speed": 0.0,
+      "course": 56.0,
+      "guardCall": {
+        "ts": 1460546623039,
+        "acceptTs": 1460546623039,
+        "target": {"name": "Object name", "extId": 11610, "id": 38166}
+      }
+    },{
+      "id": 11,
+      "name": "Соколы Ильича",
+      "person": "Амангельды Молдагазыевич",
+      "phone": "+79112223654",
+      "comment": "Комментарии группы гбр",
+      "lat": 59.941,
+      "lon": 30.278,
+      "isOnline": true,
+      "speed": 40.0,
+      "course": 215.0
+    }]
+  },{
+    "id": 2,
+    "name": "RRT Group 2",
+    "nbItems": 0,
+    "guardGroups": [{
+      "id": 22,
+      "name": "Sub Group 22",
+      "nbItems": 0,
+      "guardGroups": [],
+      "guards": []
+    }],
+    "guards": []
+  }
+]

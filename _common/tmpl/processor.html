@@ -1,0 +1,214 @@
+<form action="" method="post" class="no-margin">
+    <div class="box-header"<% if(!objectsDefined) {%> style="padding-right:120px"<% } %>>
+        <h2><%= header %></h2>
+        <% if(!objectsDefined) {%>
+        <div class="switch-toggle switch-objtype" onclick="">
+            <input id="radio-mobile-objects" name="objType" type="radio" value="mobile"<% if(objType == 'mobile') {%> checked<% } %>>
+            <label for="radio-mobile-objects" onclick="">
+                <svg class="svg-icon">
+                    <use xlink:href="#smb-car"></use>
+                </svg>
+                <!--<i class="icon-active svg-icon svg-icon-car-w"></i>-->
+            </label>
+
+            <input id="radio-stat-objects" name="objType" type="radio" value="stat"<% if(objType == 'stat') {%> checked<% } %>>
+            <label for="radio-stat-objects" onclick="">
+                <svg class="svg-icon">
+                    <use xlink:href="#smb-home"></use>
+                </svg>
+                <!--<i class="icon svg-icon svg-icon-home"></i>-->
+                <!--<i class="icon-active svg-icon svg-icon-home-w"></i>-->
+            </label>
+            <a class="btn btn-primary"></a>
+        </div>
+        <% } %>
+        <a class="close btn-cancel">&times;</a>
+    </div>
+    <div class="box-content clearfix">
+        <div class="left">
+            <% if(report) {%>
+            <select class="no-margin" name="type"></select>
+            <% } %>
+
+            <% if(!item) { %>
+            <div class="selected-models"></div>
+            <% } %>
+
+            <% if(chooseTime || daterange) {%>
+            <div class="time-range">
+
+                <div class="row">
+                    <div class="date from hidden">
+                        <div class="clearfix">
+                            <h5 class="pull-left"><%= i18n.date.ucFirst() %> <%= i18n.fromDate %>:</h5>
+                        </div>
+                        <div class="datepicker date-from"></div>
+                        <input type="hidden" name="dateFrom" value="">
+                        <div class="control-group">
+                            <label class="inline"><strong><%=i18n.time.ucFirst() + ' ' + i18n.fromDate %>:</strong></label>
+                            <div class="input-append bootstrap-timepicker no-margin">
+                                <input type="text" name="timeFrom" value="00:00" class="input-time" >
+                                <span class="add-on">
+                                    <i class="icon-time"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date to hidden">
+                        <div class="clearfix">
+                            <h5 class="pull-left"><%= i18n.date.ucFirst() %> <%= i18n.to %>:</h5>
+                        </div>
+                        <div class="datepicker date-to"></div>
+                        <input type="hidden" name="dateTo" value="" class="input-date input-small" >
+                        <div class="control-group">
+                            <label class="inline"><strong><%=i18n.time.ucFirst() + ' ' + i18n.to %>:</strong></label>
+                            <div class="input-append bootstrap-timepicker no-margin">
+                                <input type="text" name="timeTo" value="23:59" class="input-time" >
+                            <span class="add-on">
+                                <i class="icon-time"></i>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="date single hidden">
+                        <div class="clearfix">
+                            <h5 class="pull-left"><%= i18n.date.ucFirst() %>:</h5>
+                        </div>
+                        <div class="datepicker date-single"></div>
+                        <input type="hidden" name="date" value="">
+                        <div class="control-group">
+                            <label class="inline"><strong><%=i18n.time.ucFirst() %>:</strong></label>
+                            <div class="input-append bootstrap-timepicker no-margin">
+                                <input type="text" name="time" value="00:00" class="input-time" >
+                                <span class="add-on">
+                                    <i class="icon-time"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!--/row-->
+
+                <div class="btn-group autoselect">
+                    <a data-value="curDay" class="btn"><%= i18n.DateTime.today %></a>
+                    <a data-value="prevDay" class="btn"><%= i18n.DateTime.yesturday %></a>
+                    <% if(report) {%>
+                    <a data-value="curMonth" class="btn"><%= i18n.current.ucFirst() %> <%= i18n.month %></a>
+                    <a data-value="prevMonth" class="btn"><%= i18n.prev.ucFirst() %> <%= i18n.month %></a>
+                    <% } else if(track) {%>
+                    <a data-value="curWeek" class="btn"><%= i18n.curWeek %></a>
+                    <a data-value="prevWeek" class="btn"><%= i18n.prevWeek %></a>
+                    <% } %>
+                </div>
+
+            </div><!--/time-range-->
+
+            <div class="timezone">
+                <select name="tzId" class="no-margin">
+                    <% var sel = false; _.each(App.getTimezonesList(), function(tz){
+                    var selected = !sel
+                    && (
+                    ( 'undefined' != typeof tzId && tzId == tz.id )
+                    || ( 'undefined' != typeof tzMin && tzMin == tz.offset )
+                    || ( 'undefined' != typeof tz && tz * 60 == tz.offset )
+                    )
+                    %>
+                    <option value="<%= tz.id %>"
+                    <% if(selected) { sel = true;%> selected<% } %>>
+                    <%= App.getFullTimezoneName(tz) %>
+                    </option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <% } %>
+
+            <% if(daterange && report) {%>
+
+            <div class="time-range-filters<% if(!showTimeRangeFilters) {%> hidden<% } %>">
+                <div class="control-group">
+                    <div class="dropdown">
+                        <a class="btn btn-block dropdown-toggle text-left" data-toggle="dropdown">
+                            <span class="btn-text">&nbsp;</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu nav nav-list">
+                            <% _.each(_.range(1,7), function(i) {%>
+                            <li>
+                                <label class="checkbox">
+                                    <input name="filterDays" type="checkbox" value="<%= i %>"<% if(!showTimeRangeFilters) {%> disabled<% } %>
+                                    <% if(!daysFilterData || daysFilterData.indexOf(i) != -1) {%> checked<% } %>>
+                                    <%= i18n.DateTime.dayNames[i] %>
+                                </label>
+                            </li>
+                            <% }) %>
+                            <li>
+                                <label class="checkbox">
+                                    <input name="filterDays" type="checkbox" value="7"<% if(!showTimeRangeFilters) {%> disabled<% } %>
+                                    <% if(!daysFilterData || daysFilterData.indexOf(7) != -1) {%> checked<% } %>>
+                                    <%= i18n.DateTime.dayNames[0] %>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="control-group no-margin">
+                    <label class="checkbox">
+                        <input type="checkbox" name="rangesFilter"<% if(useTimeFilterData) {%> checked<% } %>>
+                        <%= i18n.dataOnlyInsideRange %>
+                    </label>
+                    <label class="control-label"><%= i18n.fromDate %>:</label>
+                    <div class="input-append bootstrap-timepicker no-margin">
+                        <input type="text" name="filterTimeFrom"  class="input-time"
+                               value="<%= timeFilterData ? timeFilterData[0] : '00:00' %>"
+                               <% if(!useTimeFilterData) {%> disabled<% } %>>
+                        <span class="add-on">
+                            <i class="icon-time"></i>
+                        </span>
+                    </div>
+                    <label class="control-label"><%= i18n.till %>:</label>
+                    <div class="input-append bootstrap-timepicker no-margin">
+                        <input type="text" name="filterTimeTo" class="input-time"
+                               value="<%= timeFilterData ? timeFilterData[1] : '00:00' %>"
+                               <% if(!useTimeFilterData) {%> disabled<% } %>>
+                        <span class="add-on">
+                            <i class="icon-time"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <% } %>
+
+        </div><!--/left-->
+
+        <% if(report && reportTypes) {%>
+        <div class="report-params">
+            <!--<h4><%= i18n.reportParams %></h4>-->
+            <div class="content"></div>
+        </div>
+        <% } %>
+
+    </div><!--/box-content-->
+    <div class="box-footer clearfix">
+
+        <% if(daterange && report) {%>
+        <a class="toggle-time-range-filters pull-left" href="#">
+            <% if(!showTimeRangeFilters) {%>
+            <%= i18n.optionalTimeSettings %>
+            <% } else { %>
+            <%= i18n.hideOptionalTimeSettings %>
+            <% } %>
+        </a>
+        <% } %>
+
+        <% if(track) {%>
+            <a class="btn btn-primary" data-target="tracks" href="javascript:;"><%= i18n.build.ucFirst() %></a>
+        <% } else if(report) {%>
+            <a class="btn btn-primary" data-target="reports" href="javascript:;"><%= i18n.build.ucFirst() %></a>
+        <% } %>
+
+        <a class="btn btn-cancel" href="javascript:;"><%= i18n.cancel.ucFirst() %></a>
+    </div>
+</form>

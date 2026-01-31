@@ -1,0 +1,10 @@
+<tr data-row="last">
+    <th colspan="<%= colspan %>"
+    <% if(colspan > 1) {%> class="text-right"<% } %>><%= i18n.summary %></th>
+    <% _.each(values, function(v){ %>
+    <th><%= v %></th>
+    <% }) %>
+    <% _.each(scores, function(score){ %>
+    <th data-grade="<%= score.grade %>"><%= score.value %></th>
+    <% }) %>
+</tr>

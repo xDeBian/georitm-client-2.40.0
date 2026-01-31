@@ -1,0 +1,52 @@
+<h3><%= i18n.alertsDirectory %></h3>
+
+<!--<div class="grid-container selectable">-->
+<div class="grid selectable">
+    <table class="display" width="100%">
+        <thead>
+            <tr>
+                <th class="text-left"><%= i18n.alertCode %></th>
+                <th class="text-left"><%= i18n.alertMessage %></th>
+                <th class="text-left"><%= i18n.alertsGroup %></th>
+                <th><%= i18n.alertsLog %></th>
+                <th><%= i18n.alarmsWindow %></th>
+                <!--<th><%= i18n.alertRelaying %></th>-->
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+    </table>
+    <!--<div class="grid-header">
+        <table>
+            <thead>
+            <tr>
+                <th class="col-code"><%= i18n.alarmCode %></th>
+                <th>Text and presentation</th>
+                <th>Group</th>
+                <th class="col-checkbox">Is Alarm</th>
+                <th class="col-checkbox">Is Alarm</th>
+                <th class="col-checkbox">Is Alarm</th>
+                <th class="col-icon">&nbsp;</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="grid-viewport">
+        <div class="grid-content">
+            <table>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>-->
+</div>
+
+<div class="footer">
+    <a href="javascript:;" class="add-row-link"><%= i18n.alertAdd %></a>
+    <a href="javascript:;" class="restore-defaults-link"><%= i18n.alertsRestoreAll %></a>
+</div>
+
+<ul class="nav nav-list context-menu" style="display:none">
+    <li><a href="#" data-action="rowedit"><%= i18n.alertEdit %></a></li>
+    <li><a href="#" data-action="rowdelete"><%= i18n.alertDelete %></a></li>
+</ul>
+
+

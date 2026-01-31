@@ -1,0 +1,23 @@
+<h4 class="obj-title selectable">#<%= extId %> <%- objTitle %></h4>
+<% if(areas && areas.length) {%>
+<ul class="areas-list selectable">
+    <% _.each(areas, function(a){ %>
+    <li class="area-item">
+        <h5 class="area-state">
+            <strong><%- a.name ? a.name + ' ('+a.num+')' : i18n.objArea + ' ' + a.num %></strong> - <%= a.stateText %>
+        </h5>
+        <% if(a.zones.length) { %>
+        <ul class="zones-list">
+        <%_.each(a.zones, function(z){ %>
+            <li class="zone-item">
+                <strong><%- z.name ? z.name + ' ('+z.num+')' : i18n.objZone + ' ' + z.num %></strong> - <%= z.stateText %>
+            </li>
+        <% }) %>
+        </ul>
+        <% } %>
+    </li>
+    <% }) %>
+</ul>
+<% } else { %>
+    <%= i18n.noAreasData %>
+<% } %>

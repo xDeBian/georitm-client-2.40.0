@@ -1,0 +1,54 @@
+<div class="subheader">
+    <a data-target="summary" class="back" href="#">
+        <i class="icon-arrow-left"></i>
+    </a>
+    <h5><%= i18n.assignedStaff %></h5>
+</div>
+<div class="staff-content">
+<% _.each(driversInfo, function(info) { %>
+<ul class="features">
+    <li>
+        <span class="name"><%= info.staff.position.name %></span>
+        <span class="value"><%= ( info.staff.name + ( info.staff.id ? ' (ID='+info.staff.id+')' : '' )) %></span>
+    </li>
+    <% if('undefined' != typeof info.staff.interval || 1) {%>
+    <li>
+        <span class="name"><%= i18n.workInterval %>:</span>
+        <span class="value"><%= Date.format('H:i', info.startTime) %> - <%= Date.format('H:i', info.endTime) %></span>
+    </li>
+    <% } %>
+    <% if('undefined' != typeof info.staff.odometr) {%>
+    <li>
+        <span class="name"><%= i18n.odometer %>:</span>
+        <span class="value"><%= info.staff.odometer %></span>
+    </li>
+    <% } %>
+    <% if('undefined' != typeof info.staff.recordTime) {%>
+    <li>
+        <span class="name"><%= i18n.recordTime %>:</span>
+        <span class="value"><%= info.staff.recordTime %></span>
+    </li>
+    <% } %>
+    <% if('undefined' != typeof info.staff.state) {%>
+    <li>
+        <span class="name"><%= i18n.staffState %>:</span>
+        <span class="value"><%= info.staff.state %></span>
+    </li>
+    <% } %>
+    <% if('undefined' != typeof info.staff.phone) {%>
+    <li>
+        <span class="name"><%= i18n.phones.ucFirst() %>:</span>
+        <span class="value"><% print(info.staff.phone.replace(/([\+0-9\(\)]+)/g,"<a href='callto:$1'>$1</a>")) %></span>
+    </li>
+    <% } %>
+    <% if('undefined' != typeof info.staff.comment) {%>
+    <li>
+        <span class="name"><%= i18n.comments %>:</span>
+        <span class="value"><%= info.staff.comment %></span>
+    </li>
+    <% } %>
+</ul>
+<% }); %>
+
+<p class="no-data<%= driversInfo.length ? ' hidden' : ''%>"><%= i18n.noStaffAssigned %></p>
+</div><!--/staff-content-->

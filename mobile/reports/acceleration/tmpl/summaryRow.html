@@ -1,0 +1,15 @@
+<tr<% if(isLast) {%> data-row="last"<% } %> class="<%= rowClass %>">
+    <% _.each(props, function(prop) {%>
+<td class="text-center"><%= prop in data ? data[prop] : '' %></td>
+    <% }) %>
+<% if(showAccel) { %>
+<td data-key="exceed_b1" data-value="<%= data.exceed_b1 %>"><%= data.exceed_b1 %></td>
+<% } %>
+<% if(showBraking) { %>
+<td data-key="exceed_b2" data-value="<%= data.exceed_b2 %>"><%= data.exceed_b2 %></td>
+<% } %>
+    <% if(showCorners) { %>
+<td data-key="corner_b1" data-value="<%= data.corner_b1 %>"><%= data.corner_b2 %></td>
+<td data-key="corner_b2" data-value="<%= data.corner_b2 %>"><%= data.corner_b1 %></td>
+    <% } %>
+</tr>

@@ -1,0 +1,97 @@
+<div class="tabs-hor-cont">
+    <ul class="tabs-hor">
+        <li class="active">
+
+            <div class="tab-toggle-container">
+                <a data-code="info" class="tab-toggle" href="#tabs-br-1">
+                    <i class="svg-icon svg-icon-circle-info"></i>
+                    <%= i18n.object.ucFirst() %>
+                </a>
+            </div>
+            <div class="tab-hor-content selectable obj-info-cont" id="tabs-br-1"></div><!--/tab-hor-content-->
+
+        </li><li>
+
+            <div class="tab-toggle-container">
+                <a data-code="state" class="tab-toggle" href="#tabs-br-2">
+                    <i class="svg-icon svg-icon-lamp"></i>
+                    <%= i18n.currentState %>
+                </a>
+            </div>
+            <div class="tab-hor-content selectable obj-state-cont" id="tabs-br-2"></div><!--/tab-hor-content-->
+
+        </li><li>
+
+            <div class="tab-toggle-container">
+                <a data-code="pictures" class="tab-toggle" href="#tabs-br-3">
+                    <i class="svg-icon svg-icon-photo"></i>
+                    <%= i18n.objPhoto %>
+                </a>
+            </div>
+            <div class="tab-hor-content obj-pictures-cont" id="tabs-br-3"></div><!--/tab-hor-content-->
+
+        </li><li<% if(!hasVideo) {%> class="hidden"<% } %>>
+
+            <div class="tab-toggle-container">
+                <a data-code="video" class="tab-toggle" href="#tabs-br-video">
+                    <i class="svg-icon svg-icon-camera"></i>
+                    <%= i18n.video %>
+                </a>
+            </div>
+            <div class="tab-hor-content device-video-cont" id="tabs-br-video">
+
+            </div><!--/tab-hor-content-->
+
+        </li><li>
+
+            <div class="tab-toggle-container">
+                <a data-code="map" class="tab-toggle" href="#tabs-br-4">
+                    <!--<i class="svg-icon svg-icon-location"></i>-->
+                    <svg class="svg-icon svg-icon-location">
+                        <use xlink:href="#smb-location"></use>
+                    </svg>
+                    <%= i18n.map.ucFirst() %>
+                </a>
+            </div>
+            <div class="tab-hor-content map-and-route" id="tabs-br-4">
+                <% if(App.get('grGuardsAvailable')) { %>
+                <div class="pane-left closed">
+
+                    <a href="javascript:;" class="toggle-pane hidden">
+                        <i class="svg-icon svg-icon-chevron-left"></i>
+                        <i class="svg-icon svg-icon-chevron-right"></i>
+                    </a>
+                </div><!--/pane-left-->
+                <% } %>
+                <div class="pane-right">
+                    <div class="map">
+                    </div><!--/map container-->
+                    <% if(App.get('grGuardsAvailable')) { %>
+                    <div class="find-nearest form-horizontal">
+                        <div class="field">
+                            <span class="help-inline">
+                                <a class="find-nearest-btn" href="#"><%= i18n.show.ucFirst() + ' ' + i18n.rrTeamShort %></a>
+                                <%= i18n.inRadius %>
+                            </span>
+                            <input class="input-mini positive" type="text" value="<%= maxRRTDist || 10 %>" name="maxDist">
+                            <span class="help-inline"><%= i18n.km %></span>
+                        </div>
+                    </div>
+                    <% } %>
+                    <div class="no-coords"><%= i18n.objectHasNoCoords %></div>
+                </div><!--/pane-right-->
+            </div><!--/tab-hor-content-->
+
+        </li><li>
+
+            <div class="tab-toggle-container">
+                <a data-code="resp" class="tab-toggle" href="#tabs-br-5">
+                    <i class="svg-icon svg-icon-users"></i>
+                    <%= i18n.responsible.header %>
+                </a>
+            </div>
+            <div class="tab-hor-content selectable obj-responsible-cont" id="tabs-br-5"></div><!--/tab-hor-content-->
+
+        </li>
+    </ul>
+</div><!--/tabs-hor-cont info tabs-->

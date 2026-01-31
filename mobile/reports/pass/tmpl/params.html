@@ -1,0 +1,15 @@
+<fieldset>
+    <legend><%= i18n.splitData %></legend>
+    <label class="radio">
+        <input name="split" type="radio" value="none"<% if(split == 'none') { %> checked="checked"<% } %>>
+        <%= i18n.splitDataNone %>
+    </label>
+    <label class="radio">
+        <input name="split" type="radio" value="days"<% if(split == 'days') { %> checked="checked"<% } %>>
+        <%= i18n.splitDataDays %>
+    </label>
+    <label class="radio">
+        <input name="split" type="radio" value="hours"<% if(split == 'hours') { %> checked="checked"<% } %>>
+        <%= i18n.splitDataHours %>
+    </label>
+</fieldset>

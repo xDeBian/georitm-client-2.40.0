@@ -1,0 +1,6 @@
+<div class="drive-summary-legend">
+    <span class="drive-summary-legend-item"><%= i18n.drivesafety.thresholdsSet %>:</span>
+    <% _.each(legendItems, function(item){ %>
+    <span class="drive-summary-legend-item" data-grade="<%= item.grade %>"><%= item.label %></span>
+    <% }) %>
+</div>

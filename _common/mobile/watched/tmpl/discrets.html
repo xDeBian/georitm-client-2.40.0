@@ -1,0 +1,11 @@
+<% _.each(discrets, function(d){ %>
+<li class="list-group-item indicator discret-state" data-state="<%= d.state == 1 ? 1 : 0 %>">
+    <svg class="svg-icon list-group-item-icon">
+        <use xlink:href="#smb-arrow-circle-right"></use>
+    </svg>
+    <div class="info">
+        <h4><%- d.name %></h4>
+        <p class="extra"><%= i18n[d.state == 1 ? 'switchedOnShort' : 'switchedOffShort'] %></p>
+    </div>
+</li>
+<% }); %>

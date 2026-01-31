@@ -1,0 +1,59 @@
+<% if(editable){%>
+<input type="hidden" name="objectId" value="<%= params.id %>" />
+<input type="hidden" name="sensor" value="<%= params.sensor %>" />
+<% } %>
+<% if(!editable && !table.length){%>
+<p style="margin:10px"><%= i18n.calibrationTableIsEmpty %></p>
+<% } else { %>
+<table class="table table-striped table-condensed<% if(!editable){%> table-hover selectable<% } %>">
+    <thead>
+    <tr>
+        <th class="value"><%= i18n.sensorValue %></th>
+        <th class="value"><%= i18n.volume %>, <%= i18n.l %></th>
+        <% if(editable){%>
+        <th class="row-act">&nbsp;</th>
+        <% } %>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr class="example<% if(!table.length) {%> hidden<% } %>">
+        <td class="value"><input type="number" min="0" class="itext" name="sensorValue" value="" autocomplete="off" disabled="disabled" /></td>
+        <td class="value"><input type="text" class="itext" name="realValue" value="" autocomplete="off" disabled="disabled" /></td>
+        <td class="row-act"><i class="icon-minus del-link" title="<%= i18n.delete %>"></i></td>
+    </tr>
+
+    <% _.each(table, function(rec, j){%>
+    <tr>
+        <td class="value">
+            <% if(editable){ %>
+            <input type="number" min="0" tabindex="<% print(j*2) %>" class="itext" name="sensorValue" value="<%= rec.sensorValue %>" autocomplete="off" />
+            <% } else { %>
+            <span><%= rec.sensorValue %></span>
+            <% } %>
+        </td>
+        <td class="value">
+            <% if(editable){ %>
+            <input type="text" tabindex="<% print(j*2+1) %>" class="itext" name="realValue" value="<%= rec.realValue %>" autocomplete="off" />
+            <% } else { %>
+            <span><%= rec.realValue %></span>
+            <% } %>
+        </td>
+        <% if(editable){%>
+        <td class="row-act"><i class="icon-minus del-link" title="<%= i18n.delete %>"></i></td>
+        <% } %>
+    </tr>
+    <% }) %>
+
+    </tbody>
+
+</table>
+<div class="chart-cont">
+    <div class="chart hidden"></div>
+    <span class="axis-units y">
+        <%= i18n.l %>
+    </span><span class="axis-units x">
+        <%= i18n.acp %>
+    </span>
+</div>
+<% } %>

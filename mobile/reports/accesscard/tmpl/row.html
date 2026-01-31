@@ -1,0 +1,28 @@
+<tr class="">
+
+    <% _.each(fields, function(key) {%>
+    <% if(key == 'address') { %>
+    <td class="address text-left" data-key="address" data-geoid="<%= data.geoId %>" data-lat="<%= data.lat %>"
+        data-lon="<%= data.lon %>">
+        <a href="javascript:;" class="put-marker" data-id="<%= data.geoId %>">
+            <% if(data.address) {%>
+            <span class="address" data-geoid="<%= data.geoId %>"><%= data.address %></span>
+            <% } else { %>
+            <span class="loading-address" data-geoid="<%= data.geoId %>">
+                        <%= i18n.addressNotFound %> [<%= data.lat %>,<%= data.lon %>]
+                    </span>
+            <% } %>
+        </a>
+    </td>
+
+    <% } else { %>
+    <td
+            data-key="<%= key %>"
+            data-value="<%= data[key] %>"
+    >
+        <%= data[key] %>
+    </td>
+
+    <% } %>
+    <% }) %>
+</tr>

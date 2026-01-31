@@ -1,0 +1,26 @@
+<% if(isgroup) {%>
+    <% if(App.allowed('zones.create') || App.allowed('zones.edit')) {%>
+    <li>
+        <a href="#" data-action="group_edit"><%= i18n.renameGroup %></a>
+    </li>
+    <li>
+        <a href="#" data-action="configure_access"><%= i18n.configureAccess %></a>
+    </li>
+    <% } %>
+    <% if(( !items || !items.length ) && App.allowed('zones.delete')) {%>
+    <li>
+        <a href="#" data-action="group_delete"><%= i18n.removeZonesGroup %></a>
+    </li>
+    <% } %>
+<% } else {%>
+    <% if(App.allowed('zones.create') || App.allowed('zones.edit')) {%>
+    <li>
+        <a href="#" data-action="item_edit"><%= i18n.editZone.contextItem %></a>
+    </li>
+    <% } %>
+    <% if(App.allowed('zones.delete')) {%>
+    <li>
+        <a href="#" data-action="item_delete"><%= i18n.removeZone %></a>
+    </li>
+    <% } %>
+<% } %>

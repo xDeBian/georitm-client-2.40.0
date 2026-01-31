@@ -1,0 +1,32 @@
+<h4 class="hdr nobr"></h4>
+
+<div class="module-header no-padding">
+    <form class="form-search ui-front">
+        <div class="input-append input-prepend">
+            <span class="add-on">
+                <input class="filter" name="q" type="text" autocomplete="off"
+                       placeholder="<%= i18n.searchObjects %>" value=""<% if(!totalAlarms && !'gr-2917') {%> disabled<% } %>>
+                <input class="autocomplete" name="q" type="text" value="" autocomplete="off"<% if(totalAlarms || 'gr-2917') {%> disabled<% } %>>
+                <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+            </span>
+            <button class="btn add-on"><i class="svg-icon svg-icon-search"></i></button>
+        </div>
+    </form>
+</div>
+
+<p class="no-data"><%= i18n.noAlarmObjectsUseSearch %></p>
+
+<div class="grid-container alarm-objs selectable">
+    <div class="grid-header">
+        <table>
+            <thead></thead>
+        </table>
+    </div>
+    <div class="grid-viewport">
+        <div class="grid-content">
+            <table>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

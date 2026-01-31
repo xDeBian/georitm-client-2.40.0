@@ -1,0 +1,23 @@
+<div class="field field-period">
+    <label><%= i18n.setServiceStatusForPeriod %></label>
+    <select name="servicePeriod">
+        <option value="-1"><%= i18n.setServiceStatusNoLimit %></option>
+        <% _.each(periods, function(p){%>
+        <option value="<%= p.value %>"><%= p.label %></option>
+        <% }) %>
+        <option value="0"><%= i18n.setServiceStatusTillDate %></option>
+    </select>
+</div>
+<div class="field field-date row-fluid hidden">
+    <input type="text" name="serviceDate" class="input-date">
+    <input type="text" name="serviceTime" class="input-time">
+</div>
+<div class="field field-tech hidden">
+    <label><%= i18n.technician %></label>
+    <select name="techId">
+        <option value="0"><%= i18n.technicianNotSelected %></option>
+        <% _.each(technicians, function(p){%>
+        <option value="<%= p.id %>"><%= p.fullname %></option>
+        <% }) %>
+    </select>
+</div>

@@ -1,0 +1,11 @@
+<h3 class="rep-table-header"><%= i18n.distanceReport.noDataHeader %>:</h3>
+<table class="selectable rep-table">
+    <tbody>
+        <tr data-head="2">
+            <% _.each(properties, function(p){ %>
+            <th><%= propNames[p] %></th>
+            <% }) %>
+        </tr>
+        <%= tbodyHtml %>
+    </tbody>
+</table>

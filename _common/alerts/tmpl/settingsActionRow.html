@@ -1,0 +1,19 @@
+<tr>
+    <td>
+        <input class="input-block-level comments-input" type="text" name="name" value="<%-data.name%>" maxlength="64">
+    </td>
+    <td>
+        <select name="actionType" class="action-type-select input-block-level">
+            <% _.each(actionTypes, function(type) { %>
+            <option value="<%= type.actionType %>" <% if(data.actionType === type.actionType) {%>selected<% } %>>
+                <%= type.name %>
+            </option>
+            <% }) %>
+        </select>
+    </td>
+    <td class="controls text-center">
+        <i class="icon-up svg-icon svg-icon-chevron-up"></i>
+        <i class="icon-down svg-icon svg-icon-chevron-down"></i>
+        <i class="icon-remove svg-icon svg-icon-remove"></i>
+    </td>
+</tr>

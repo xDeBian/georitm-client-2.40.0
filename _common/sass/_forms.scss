@@ -1,0 +1,37 @@
+@import url(../../_libs/jquery/chosen/chosen.css);
+@import url(../../_libs/jquery/chosen/chosen.theme.css);
+
+// gr-4078, remove gradients
+.chosen-container-single .chosen-single {
+  border-color: $input-border-color;
+  border-radius: $border-radius;
+  background-color: theme-color("default");
+  background-image: none;
+  box-shadow: none;
+  color: $body-color;
+
+  @include hover {
+    background-color: darken(theme-color("default"), 5%);
+  }
+}
+
+// gr-4078, remove gradients
+.chosen-container-multi .chosen-choices li.search-choice {
+  border-color: $input-border-color;
+  border-radius: $border-radius-sm;
+  background-color: $gray-200;
+  background-image: none;
+}
+
+// gr-4078, remove gradients
+.processor .timezone select,
+.processor .time-range-filters .dropdown-toggle {
+  background-color: $white;
+  background-image: none;
+  border-color: $input-border-color;
+  @include border-radius($border-radius);
+
+  @include hover {
+    background-color: $gray-200;
+  }
+}

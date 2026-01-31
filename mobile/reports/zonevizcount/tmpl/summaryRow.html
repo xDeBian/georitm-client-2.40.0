@@ -1,0 +1,11 @@
+<tr class="summary-row" data-row="last">
+    <th class="zone text-right"><%= txt %>:</th>
+    <% _.each(data, function(nb) {%>
+    <td<% if(nb <= 0) {%> class="negative"<% } else if(nb < total) {%> class="medium"<% } %>>
+        <strong>
+            <%= nb %>
+        </strong>
+    </td>
+    <% }) %>
+    <!--<td class="ph">&nbsp;</td>-->
+</tr>

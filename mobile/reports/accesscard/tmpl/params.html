@@ -1,0 +1,16 @@
+<div class="rep-accesscard-params">
+    <fieldset>
+        <legend><%= i18n.detailReport %></legend>
+        <label class="checkbox">
+            <input
+                    type="checkbox"
+                    name="showAddress"
+                    value="1"
+            <% if (showAddress) {%> checked<%} %>
+            />
+            <%= i18n.showAddress %>
+        </label>
+    </fieldset>
+
+    <%= propertiesHtml %>
+</div>

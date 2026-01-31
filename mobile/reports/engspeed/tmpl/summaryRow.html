@@ -1,0 +1,24 @@
+<tr<% if(isLast) {%> data-row="last"<% } %> data-index=<%= rowIndex %> class="<%= rowClass %>">
+<% for(var field in properties) { %>
+<td data-key="<%= field %>">
+    <%- properties[field] %>
+</td>
+<% } %>
+<% for(var i = 0; i < 4; ++i) { %>
+<td>
+    <% if(hasData) {%>
+        <% if(i == 3) {%>
+        <a href="#" class="build-another" data-type="engspeed"
+            title="<%= i18n.build.ucFirst()+' '+i18n.reportsNames.engspeed %>"
+            data-id="<%= id %>"
+            data-from="<%= anotherStart %>"
+            data-to="<%= anotherEnd %>"
+            data-ranges="[3]">
+            <%= durations[i] %></a>
+        <% } else { print(durations[i]) } %>
+    <% } else {%>
+        <%= noData %>
+    <% } %>
+</td>
+<% } %>
+</tr>

@@ -1,0 +1,38 @@
+<tr <% if(hasData) { %> data-index="<%= index %>"<% } %>
+class="rep-row <%= rowClass %>">
+<% _.each(properties, function(key){ %>
+<td>
+    <% if(hasData) { %>
+    <a href="javascript:;">
+        <%= key in summary ? summary[key] : '--' %>
+    </a>
+    <% } else { %>
+    <%= key in summary ? summary[key] : '--' %>
+    <% } %>
+</td>
+<% }) %>
+
+<% if(hasData) { %>
+<td><%= summary.totalDistance %></td>
+<% _.each(summary.speeding, function(v) {%>
+<td><%= v %></td>
+<% }) %>
+<td><%= summary.accViolations %></td>
+<td><%= summary.brkViolations %></td>
+<td class="cell-grade" data-grade="<%= summary.speedGrade %>"><%= summary.objectSpeedScore %></td>
+<td class="cell-grade" data-grade="<%= summary.styleGrade %>"><%= summary.objectStyleScore %></td>
+<td class="cell-grade" data-grade="<%= summary.grade %>"><%= summary.objectScore %></td>
+<% } else { %>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<% } %>
+
+</tr>

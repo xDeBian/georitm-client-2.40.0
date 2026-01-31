@@ -1,0 +1,10 @@
+<div class="rep-meta selectable">
+    <% if(!_.isUndefined(objectsList)) {%>
+    <%= objectsList %>
+    <% } %>
+
+    <p class="dates"><%= i18n.dataForDate.ucFirst() %>: <%= Date.format(i18n.DateTime.longFormat, time) %></p>
+    <%if(tzName) {%><p class="dates"><%= tzName %></p><% } %>
+    <p><%= i18n.nObjectsSelected[i18n.whichLabels(nbObjects)].replace('#n#', nbObjects) %></p>
+
+</div>

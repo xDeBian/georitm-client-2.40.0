@@ -1,0 +1,24 @@
+<% _.each( areas, function(area) { if(area.num == 0 && !area.hasAlarm && !area.hasFault) return;%>
+
+    <li class="list-group-item indicator areas-state <%= area.num == 0 ? ' area-system' : ''  %>"
+        data-state="<%= area.mainState %>" <% if( area.operatable ) {%>data-page="guard" data-index="<%= area.num %>"<% } %>>
+
+        <svg class="svg-icon list-group-item-icon">
+            <use xlink:href="#smb-<%= area.icon %>"></use>
+        </svg>
+        <i class="svg-icon list-group-item-icon svg-icon-spinner icon-spin"></i>
+
+        <div class="info">
+            <h4><%= area.name %></h4>
+            <p class="extra"><%= area.stateLabel %></p>
+            <p class="extra state-loading-extra"><%= stateLoadingTxt %>...</p>
+        </div>
+
+        <% if(area.operatable) {%>
+        <svg class="svg-icon more-action">
+            <use xlink:href="#smb-chevron-right"></use>
+        </svg>
+        <% } %>
+    </li>
+
+<% }) %>

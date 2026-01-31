@@ -1,0 +1,26 @@
+<div class="subheader">
+    <a data-target="<%= prevPage %>" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%- area.name || i18n.objArea + ' ' + area.num %>. <%= i18n.faultsList %></h5>
+</div>
+<div class="faults-content">
+    <table class="faults-table selectable">
+        <% _.each( faults, function(fault){%>
+        <tr class="fault">
+            <td class="fault-text">
+                <% if(area.num > 0) {%>
+                    <%- fault.areaZoneName  || (i18n.objZone + ' ' + fault.areaZoneNum) %>
+                    (#<%= fault.areaZoneNum %>)<br />
+                <% } %>
+                <%- fault.messageText %>
+            </td>
+            <td class="fault-action">
+                <a href="#" data-code="<%= fault.faultCode %>"
+                    data-zone="<%= fault.areaZoneId %>"
+                    class="resolve-fault" title=""><%= i18n.resolveFault %></a>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</div>

@@ -1,0 +1,19 @@
+<tr data-id="<%= id %>">
+    <!--<td class="col-num">
+        <%- id %>
+    </td>-->
+    <td class="col-name">
+        <%- name %>
+    </td>
+    <td class="col-state<%= isActive ? '' : ' off' %>">
+        <%= isActiveS %>
+    </td>
+    <td>
+        <%- _.pluck(addresses, 'address').join(', ') %>
+    </td>
+    <td class="col-icon">
+        <i class="svg-icon svg-icon-cog row-edit" data-id="<%= id %>"></i>
+    </td><td class="col-icon">
+        <i class="svg-icon svg-icon-remove row-remove" data-id="<%= id %>"></i>
+    </td>
+</tr>

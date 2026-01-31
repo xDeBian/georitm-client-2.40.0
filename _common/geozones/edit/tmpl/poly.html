@@ -1,0 +1,20 @@
+<input name="name" type="text" class="input-block-level" placeholder="<%= i18n.editZone.enterName %>" value="<%= name %>" maxlength="100">
+<select class="input-block-level" name="groupId">
+    <option value="0"><%= i18n.editZone.chooseGroup %></option>
+    <% _.each(groups, function(group){%>
+    <option value="<%= group.id %>"<% if(groupId == group.id) {%> selected<% } %>><%= group.name %></option>
+    <% }) %>
+</select>
+<% if(buildByPolyline) {%>
+<div class="polyline-block">
+    <a class="build-by-polyline<% if('undefined' != typeof width) {%> hidden<% } %>" href="javascript:;"><%= i18n.addZone.byTrack %></a>
+    <div class="field field-width<% if('undefined' == typeof width) {%> hidden<% } %>">
+        <label><%= i18n.editZone.enterWidth %>, <%= i18n.m %></label>
+        <!--<input id="zone-width" type="number" class="input-mini integer no-margin" maxlength="3" max="500" min="10" value="50" name="zoneWidth" autocomplete="off" />-->
+        <input id="zone-width" type="text" class="input-mini integer no-margin" maxlength="3" value="50" name="zoneWidth" autocomplete="off" />
+        <a href="javascript:;" class="redraw-by-polyline help-inline"><%= i18n.rebuild.ucFirst() %></a>
+        <div class="clear"></div>
+    </div>
+</div>
+<% } %>
+

@@ -1,0 +1,11 @@
+<tr<% if(isLast) {%> data-row="last"<% } %>>
+    <% _.each(props, function(prop) {%>
+    <td class="text-center"><%= prop in data ? data[prop] : '' %></td>
+    <% }) %>
+    <% if('undefined' != typeof data.exceed_b1 && 'undefined' != typeof data.exceed_b2) {%>
+    <td class="text-center"><%= data.exceed_b1 %></td>
+    <td class="text-center"><%= data.exceed_b2 %></td>
+    <% } else { %>
+    <td colspan="2" class="no-data text-center"><%= i18n.noDataForObject %></td>
+    <% } %>
+</tr>

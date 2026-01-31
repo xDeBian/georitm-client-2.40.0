@@ -1,0 +1,31 @@
+<form class="auth-form login-form" method="post" action="">
+    <div class="box-header">
+        <h2><%= i18n.authorization.ucFirst() %></h2>
+    </div>
+    <div class="box-content">
+        <div class="control-group">
+            <label class="control-label"><%= i18n.username.ucFirst() %></label>
+            <input type="text" class="input-block-level" name="login" value="">
+        </div>
+        <div class="control-group">
+            <label class="control-label"><%= i18n.password.ucFirst() %></label>
+            <input type="password" class="input-block-level" name="password" value="">
+        </div>
+        <% if(isRememberMeAllowed) {%>
+        <label class="checkbox"><input type="checkbox" name="remember" value="1"> <%= i18n.rememberMe.ucFirst()
+            %></label>
+        <% } %>
+    </div>
+    <div class="box-footer">
+        <% if(demo) {%>
+        <div class="row-fluid">
+            <button class="btn btn-primary span9" type="submit"><%= i18n.signIn %></button>
+            <a href="javascript:;" id="btn-demo-login" class="btn span3"><%= i18n.demo %></a>
+        </div>
+        <% } else {%>
+        <button class="btn btn-block btn-primary" type="submit"><%= i18n.signIn %></button>
+        <% } %>
+    </div>
+    <a class="extra-action reset-link hidden" href="#"><%= i18n.resetPassword %></a>
+    <a class="extra-action reg-link hidden" href="#"><%= i18n.registration %></a>
+</form>

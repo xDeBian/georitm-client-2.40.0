@@ -1,0 +1,15 @@
+<div class="connections-row <%= channel.isActive ? ' connections-row-active' : '' %>">
+    <div class="connections-row-icon">
+        <svg class="svg-smb">
+            <use xlink:href="#smb-<%= channel.icon %>"></use>
+        </svg>
+    </div>
+
+    <p class="connections-row-item connections-row-item_name">
+        <%- channel.name %>
+    </p>
+
+    <p class="connections-row-item">
+        <%- channel.text %>
+    </p>
+</div>

@@ -1,0 +1,6 @@
+<tr data-index=<%= rowIndex %> class="<%= rowClass %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+    <td data-key="name" class="text-left">
+        <%- name %> (#<%- extId %>)
+    </td>
+    <td colspan="8" class="no-data text-left"><%= i18n.noDataForObject %></td>
+</tr>

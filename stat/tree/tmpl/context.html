@@ -1,0 +1,26 @@
+<% if(isgroup) {%>
+    <% if(nbItems && App.reportsAllowed('stat')) { %>
+        <li><a href="#" data-action="group_report"><%= i18n.buildReportByGroup %></a></li>
+    <% } %>
+    <% if(App.allowed('objectgroups.edit')) { %>
+        <li><a href="#" data-action="group_edit"><%= i18n.renameGroup %></a></li>
+    <% } %>
+    <% if(App.allowed('objects.create')) { %>
+        <li><a href="#" data-action="group_add_object"><%= i18n.addObject %></a></li>
+    <% } %>
+    <% if(App.allowed('objectgroups.create')) { %>
+        <li><a href="#" data-action="group_add_group"><%= i18n.addChildGroup %></a></li>
+    <% } %>
+<% } else {%>
+    <% if(App.reportsAllowed('stat')) { %>
+        <li><a href="#" data-action="obj_report"><%= i18n.buildReport %></a></li>
+    <% } %>
+
+    <li><a href="#" data-action="obj_card"><%= i18n.openObjectCard %></a></li>
+
+    <% if( App.allowed('objects.edit') || App.allowed('objects.create') ) { %>
+        <li><a href="#" data-action="obj_editpos"><%= i18n[lat && lon ? 'changeObjPosition' : 'setObjPosition'] %></a></li>
+    <% } %>
+
+    <li><a href="#" data-action="obj_history"><%= i18n.objectAlertsAndLog %></a></li>
+<% } %>

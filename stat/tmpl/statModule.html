@@ -1,0 +1,48 @@
+<div id="stat" class="tab-hor-content loading">
+    <div class="box-header module-header append">
+
+        <form class="form-search"<% if(hasSettings || allowCreate){ %> style="right:<%= hasSettings && allowCreate ? '80' : '40' %>px"<% } %>>
+            <div class="input-append input-prepend">
+                <span class="add-on">
+                    <input name="q" type="text" placeholder="<%= i18n.searchObjects %>" value="" autocomplete="off" />
+                    <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+                </span>
+                <button class="btn add-on btn-search"><i class="svg-icon svg-icon-search"></i></button>
+            </div>
+        </form>
+
+        <% if(hasSettings){ %>
+        <div class="dropdown module-settings add-on">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="svg-icon svg-icon-cog"></i>
+            </a>
+            <ul class="dropdown-menu nav nav-list" role="menu">
+
+            </ul>
+        </div>
+        <% } %>
+
+        <% if(allowCreate) { %>
+        <div class="dropdown module-adding add-on">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="svg-icon svg-icon-plus"></i>
+            </a>
+            <ul class="dropdown-menu nav nav-list" role="menu">
+                <% if(App.allowed('objects.create')) {%>
+                <li><a class="add-item" href="javascript:;"><%= i18n.addObject %></a></li>
+                <% } %><% if(App.allowed('objectgroups.create')) { %>
+                <li><a class="add-group" href="javascript:;"><%= i18n.addGroup %></a></li>
+                <% } %>
+            </ul>
+        </div>
+        <% } %>
+
+    </div>
+
+    <div class="module-content">
+        <div id="stat-tree" class="tree tree-grid slick-tree"></div>
+    </div>
+
+</div>
+
+

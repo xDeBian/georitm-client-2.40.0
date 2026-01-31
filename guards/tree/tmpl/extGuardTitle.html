@@ -1,0 +1,21 @@
+<div class="cell-row" style="left: <%= (20 * indent) %>px;" data-action="check">
+    <% if(isgroup) { %>
+        <% if(guards.length) { %>
+            <i class="icon icon-exp toggle <%= closed ? 'collapse': 'expand' %>"></i>
+        <% } else { %>
+            <i class="icon icon-exp toggle"></i>
+        <% } %>
+    <% } %>
+
+    <% if(isgroup && nbItems == 0) { %>
+        <i class="item-check-false"></i>
+    <% } else { %>
+        <i data-action="check" class="icon icon-check item-check<%= checked === 1 ? ' checked': (checked === 2 ? ' indeterminate': '') %>" ></i>
+    <% } %>
+
+    <% if(isgroup) { %>
+        <strong class="row-title" data-action="check"><%- name %></strong>
+    <% } else { %>
+        <span class="row-title item-title" data-grid-itemid="<%= id %>"><%- name %></span>
+    <% } %>
+</div>

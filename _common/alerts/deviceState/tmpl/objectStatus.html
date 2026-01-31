@@ -1,0 +1,28 @@
+<div class="subheader">
+    <a data-target="summary" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%= i18n.objStatus %></h5>
+</div>
+
+<div class="operate-content clearfix">
+    <div class="fluid-wrapper">
+        <div class="fluid-container status-settings"></div>
+    </div>
+    <div class="fluid-left">
+        <div class="form-inline control-group status-list">
+            <% _.each(i18n.objStatuses, function(name, id){%>
+            <label class="radio">
+                <input name="objStatus" type="radio" value="<%= id %>" <% if(id == status) {%> checked<% } %>>
+                <%= name %>
+            </label><br>
+            <% }) %>
+        </div>
+
+        <button class="btn btn-primary btn-save-status">
+            <%= i18n.save %>
+        </button>
+    </div>
+</div>
+
+

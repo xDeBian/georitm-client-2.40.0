@@ -1,0 +1,9 @@
+<% if(!guardCall) {%>
+<span class="no-call"><%= i18n.rrtNoCall %></span>
+<% } else if(targetTitle) { %>
+<strong><%= guardCall.acceptTs > 0 ? i18n.rrtCallAccepted : i18n.rrtCallNotAccepted %></strong>
+<a href="#" class="target-info">#<%= guardCall.target.extId %> <%- targetTitle %></a>
+<% } else { %>
+<strong>Occupied</strong>
+<% } %>
+

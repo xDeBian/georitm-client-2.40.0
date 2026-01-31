@@ -1,0 +1,48 @@
+<table class="l cols-3">
+    <tr>
+
+        <td class="col sensor-settings">
+            <%= html1 %>
+        </td><!--/sensor-settings 1st sensor-->
+
+        <td class="col sensor-settings">
+            <%= html2 %>
+        </td><!--/sensor-settings 2nd sensor-->
+
+        <td class="col fuel-filters">
+            <table class="features">
+                <tr>
+                    <td class="label"><%= i18n.tankVolume %></td>
+                    <td class="value nobr">
+                        <%= 'undefined' != typeof settings.TankVolume ? settings.TankVolume + ' ' + i18n.l : emptyString %>
+                    </td>
+                </tr><tr>
+                    <td class="label"><%= i18n.minFilling %></td>
+                    <td class="value nobr">
+                        <%= 'undefined' != typeof settings.MinFill ? settings.MinFill + ' ' + i18n.l : emptyString %>
+                    </td>
+                </tr><tr>
+                    <td class="label"><%= i18n.minDischarge %></td>
+                    <td class="value nobr">
+                        <%= 'undefined' != typeof settings.MinPlum ? settings.MinPlum + ' ' + i18n.l : emptyString %>
+                    </td>
+                </tr><tr>
+                    <td class="label"><%= i18n.stepOfMedianFilter %></td>
+                    <td class="value nobr">
+                        <%= 'undefined' != typeof settings.SmoothMedianStep ? settings.SmoothMedianStep : emptyString %>
+                    </td>
+                </tr><tr>
+                    <td class="label"><%= i18n.maxUsedSensorValues %></td>
+                    <td class="value nobr">
+                        <%= 'undefined' != typeof settings.RemoveAcpOverflowMax ? settings.RemoveAcpOverflowMax : emptyString %>
+                    </td>
+                </tr><tr>
+                    <td class="label"><%= i18n.minUsedSensorValues %></td>
+                    <td class="value nobr">
+                        <%= 'undefined' != typeof settings.RemoveAcpOverflowMin ? settings.RemoveAcpOverflowMin : emptyString %>
+                    </td>
+                </tr>
+            </table>
+        </td><!--/fuel-filters-->
+    </tr>
+</table><!--/cols-3-->

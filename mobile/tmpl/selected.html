@@ -1,0 +1,8 @@
+<div class="selected-groups hidden"></div>
+<div class="selected-items<%if(_.isUndefined(items) || !items.length) {%> hidden<% } %>">
+    <% if(items && items.length && tmplItem) {
+        items.each(function(item){
+            print(_.template(tmplItem, item.attributes));
+        })%>
+    <% } %>
+</div>

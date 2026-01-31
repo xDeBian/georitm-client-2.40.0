@@ -1,0 +1,20 @@
+<% _.each(controls, function(c){ %>
+<li class="list-group-item indicator control-state"
+    data-state="<%= c.state == 1 ? 1 : 0 %>"
+    <% if(controlAllowed && c.canControl) {%> data-page="control" data-index="<%= c.num %>"<% } %>>
+    <svg class="svg-icon list-group-item-icon">
+        <use xlink:href="#smb-sun"></use>
+    </svg>
+    <i class="svg-icon list-group-item-icon svg-icon-spinner icon-spin"></i>
+    <% if(controlAllowed && c.canControl) {%>
+    <svg class="svg-icon more-action">
+        <use xlink:href="#smb-chevron-right"></use>
+    </svg>
+    <% } %>
+    <div class="info">
+        <h4><%- c.name %></h4>
+        <p class="extra"><%= i18n[c.state === null ? 'noData' : ( c.state == 1 ? 'switchedOnShort' : 'switchedOffShort' )].ucFirst() %></p>
+        <p class="extra state-loading-extra"><%= i18n.objectStateScan %>...</p>
+    </div>
+</li>
+<% }) %>

@@ -1,0 +1,17 @@
+<div class="alert-groups control-group control-group-above">
+    <label class="control-label"><%= i18n.alertsGroups %></label>
+    <select name="<%= names[0] %>"
+            data-placeholder="<%= i18n.allAlertsGroups %>"
+            class="input-block-level"
+            multiple>
+    </select>
+</div>
+
+<div class="alerts control-group">
+    <label class="control-label"><%= i18n.alerts.ucFirst() %></label>
+    <select name="<%= names[1] %>"
+            data-placeholder="<%= i18n.allAlertsOffSelectedGroups %>"
+            class="input-block-level"
+            multiple>
+    </select>
+</div>

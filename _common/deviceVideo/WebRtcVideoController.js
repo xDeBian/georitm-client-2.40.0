@@ -1,0 +1,1 @@
+define(["jquery","underscore","./views/WebRtcVideoView","./RitmVideoController"],function(i,e,t,n){var o=n.prototype,r=n.extend({constructor:function(){n.apply(this,arguments)},initialize:function(){o.initialize.call(this,t)}});return r});

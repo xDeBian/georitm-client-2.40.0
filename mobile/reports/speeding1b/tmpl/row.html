@@ -1,0 +1,16 @@
+<tr class="<%= rowClass %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+    <td data-value="<%= date %>"><%= dateS %></td>
+    <td data-value="<%= begin %>"><%= beginS %></td>
+    <td data-value="<%= speed %>"><%= speedS %></td>
+    <td data-value="<%= speedLimit %>"><%= speedLimit %></td>
+    <td data-value="<%= exceedValue %>"><%= exceedValue %></td>
+    <td data-key="duration" data-value="<%= duration %>"><%= durationS %></td>
+    <td data-key="distance" data-value="<%= distance %>"><%= distanceS %></td>
+    <td class="address text-left" data-key="address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>">
+        <a href="javascript:;" class="build-track-segment" data-id="<%= objectId %>" data-from="<%= begin*1000 %>" data-to="<%= end*1000 %>">
+            <% if(typeof address != 'undefined' && address) {print(address)} else { %>
+            <span class="loading-address" data-geoid="<%= geoId %>"><%= loadingAddress %></span>
+            <% } %>
+        </a>
+    </td>
+</tr>

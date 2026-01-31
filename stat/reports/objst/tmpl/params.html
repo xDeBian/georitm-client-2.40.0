@@ -1,0 +1,44 @@
+<fieldset data-key="prop">
+    <legend><label class="checkbox"><input type="checkbox" class="select-all no-validation"
+        <% if(checkedProps.length >= totalProps) {%> checked<% } %>>
+        <%= i18n.objProps %>
+    </label></legend>
+
+    <% _.each(allProps, function(name, key){%>
+    <label class="checkbox">
+        <input type="checkbox" value="<%= key %>"
+        <% if(_.indexOf(checkedProps, key) != -1) { %> checked<% } %> name="prop">
+        <%= name %>
+    </label>
+    <% }) %>
+
+</fieldset>
+
+<% if(0) {// commented in 2.21 for GR-4405%>
+<fieldset data-key="sf">
+    <legend><%= i18n.objState %></legend>
+
+    <% _.each(allSf, function(name, key){%>
+    <label class="checkbox">
+        <input type="checkbox" value="<%= key %>"
+        <% if(_.indexOf(checkedSf, key) != -1) { %> checked<% } %> name="sf">
+        <%= name %>
+    </label>
+    <% }) %>
+
+</fieldset>
+<% } %>
+
+<fieldset>
+    <legend><%= i18n.objectFault %></legend>
+
+    <label class="checkbox">
+        <input type="checkbox" value="noAlertsMinutes" name="noAlertsMinutes"<% if(typeof noAlertsMinutes != 'undefined' && noAlertsMinutes) { %> checked="checked"<% } %>> <%= i18n.noAlertsLastTime %>:
+    </label>
+    <div class="objst-damage">
+        <label class="objst-damage-field"><input type="text" name="alerts_days" value="<%= alerts_days %>" maxlength="2" /> <%= i18n.DateTime.labels2[7] %></label>
+        <label class="objst-damage-field"><input type="text" name="alerts_hours" value="<%= alerts_hours %>" maxlength="2" /> <%= i18n.DateTime.labels2[4] %></label>
+        <label class="objst-damage-field"><input type="text" name="alerts_minutes" value="<%= alerts_minutes %>" maxlength="2" /> <%= i18n.DateTime.labels2[5] %></label>
+    </div>
+
+</fieldset>

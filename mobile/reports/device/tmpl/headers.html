@@ -1,0 +1,31 @@
+<tr class="<%= rowClass %>"<% if(type == 'overallData') { %> data-row="last"<% } %>>
+
+    <% if(type == 'state1') { %>
+    <td colspan="6" class="text-left"><%= i18n.deviceReport.deviceStatus %> <%= i18n.deviceReport.beforePeriod %></td>
+    <% } %>
+
+    <% if(type == 'state2') { %>
+    <td colspan="6" class="text-left"><%= i18n.deviceReport.deviceStatus %> <%= i18n.deviceReport.atthePeriod %></td>
+    <% } %>
+
+    <% if(type == 'state3') { %>
+    <td colspan="6" class="text-left"><%= i18n.deviceReport.deviceStatus %> <%= i18n.deviceReport.endPeriod %></td>
+    <% } %>
+
+    <% if(type == 'nodata') { %>
+    <td colspan="6" class="text-left"><%= i18n.deviceReport.noData %></td>
+    <% } %>
+
+    <% if(type == 'overallData') { %>
+    <td colspan="6" class="text-left"><%= i18n.summaryData %></td>
+    <% } %>
+
+    <% if(type == 'summaryNoData') { %>
+    <td colspan="7" class="text-left"><%= i18n.deviceReport.noData %></td>
+    <% } %>
+
+    <% if(type == 'minDelay') { %>
+    <td colspan="6" class="text-left"><%= i18n.deviceReport.minDelay %> <%= time %></td>
+    <% } %>
+
+</tr>

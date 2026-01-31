@@ -1,0 +1,13 @@
+[
+    {"messageText": "Неисправность сети 220", "areaNum": 0, "areaName": null, "areaZoneName": null, "faultCode": 301, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 1, "areaName": "Some area", "areaZoneName": null, "faultCode": 302, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 1, "areaName": "Some area", "areaZoneName": null, "faultCode": 305, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 1, "areaName": "Some area", "areaZoneName": null, "faultCode": 308, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 2, "areaName": "Some area", "areaZoneName": null, "faultCode": 302, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 2, "areaName": "Some area", "areaZoneName": null, "faultCode": 302, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 2, "areaName": "Some area", "areaZoneName": null, "faultCode": 302, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 2, "areaName": "Some area", "areaZoneName": null, "faultCode": 302, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность 2", "areaNum": 2, "areaName": "Some area", "areaZoneName": null, "faultCode": 302, "areaZoneNum": 0, "areaZoneId": 3356 },
+    {"messageText": "Неисправность last", "areaNum": 3, "areaName": "Some area 1111", "areaZoneName": "Some zone", "faultCode": 303, "areaZoneNum": 2, "areaZoneId": 3355 },
+    {"messageText": "Неисправность 4", "areaNum": 3, "areaName": "Some area 1111", "areaZoneName": "Some zonevdfv", "faultCode": 308, "areaZoneNum": 1, "areaZoneId": 3355 }
+]

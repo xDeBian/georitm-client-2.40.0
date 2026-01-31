@@ -1,0 +1,7 @@
+<tr<% if(isLast) {%> data-row="last"<% } %> data-index=<%= rowIndex %> class="<%= rowClass %>">
+<% for(var field in data) { %>
+<td data-key="<%= field %>">
+    <%= data[field] %>
+</td>
+<% } %>
+</tr>

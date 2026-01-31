@@ -1,0 +1,42 @@
+<div data-key="summary" class="content active">
+   <!-- <div class="row-fluid">
+        <div class="features span12">-->
+            <ul class="features">
+                <li>
+                    <%= i18n.rrtPerson %>:
+                    <strong>
+                        <span class="person"><%= person || '--'%></span>
+                    </strong>
+                </li><li>
+                    <%= i18n.phone.ucFirst() %>:
+                    <strong>
+                        <span class="phone"><%= phone || '--'%></span>
+                    </strong>
+                </li><li>
+                    <%= i18n.comments.ucFirst() %>:
+                    <strong>
+                        <span class="comment"><%= comment || '--'%></span>
+                    </strong>
+                </li><li>
+                    <%= i18n.rrtLocation %>:
+                    <strong data-geoid="<%= geoId %>" class="address">
+                        <i class="svg-icon svg-icon-spinner icon-spin"></i><% if(addressStr != null) { %><%- addressStr %><% } else { %><%= i18n.addressNotFound %> [0,0]<% } %>
+                    </strong>
+                </li><li>
+                    <%= i18n.coordinatesTime %>:
+                    <strong class="coordsTime"><%= coordsTimeStr %></strong>
+                </li><li>
+                    <%= i18n.speed.ucFirst() %>:
+                    <strong>
+                        <span class="speed"><%= speed < minSpeed ? 0 : Math._round(speed, 2) %></span> <%= i18n.kmh %>
+                    </strong>
+                </li>
+            </ul>
+
+    <!--</div>/features-->
+
+    <!--</div>/row-fluid-->
+
+    <div class="call-info"></div>
+
+</div><!--/content summary-->

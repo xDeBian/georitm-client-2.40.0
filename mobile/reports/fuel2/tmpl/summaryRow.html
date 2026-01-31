@@ -1,0 +1,8 @@
+<tr>
+    <td><%= name %></td>
+    <td data-value="<% if(typeof ignOnMoveTimeInSec != 'undefined') { %><%= ignOnMoveTimeInSec %><% } %>"><% if(typeof ignOnMoveTimeInSec != 'undefined') { %><%= Date.formatSeconds( ignOnMoveTimeInSec ) %><% } %></td>
+    <td data-value="<% if(typeof realConsumption != 'undefined') { %><%= realConsumption %><% } %>"><% if(typeof realConsumption != 'undefined') { %><%= Math._round(realConsumption, 1) %><% } %></td>
+    <td data-value="<% if(typeof fillVolume != 'undefined') { %><%= fillVolume %><% } %>"><% if(typeof fillVolume != 'undefined') { %><%= Math._round(fillVolume, 1) %><% } %></td>
+    <td data-value="<% if(typeof plumVolume != 'undefined') { %><%= plumVolume %><% } %>"><% if(typeof plumVolume != 'undefined') { %><%= Math._round(plumVolume, 1) %><% } %></td>
+    <td data-value="<% if(typeof distInKm != 'undefined') { %><%= distInKm %><% } %>"><% if(typeof distInKm != 'undefined') { %><%= Math._round(distInKm, 2) %><% } %></td>
+</tr>

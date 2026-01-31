@@ -1,0 +1,97 @@
+<div style="position: relative" class="loading">
+    <fieldset data-group="alertGroupId" class="opened">
+        <legend>
+            <!--<label class="checkbox">
+                <input type="checkbox" name="allAlertGroupId" class="select-all no-validation">
+                <span><%= i18n.allAlertsGroups %></span>
+            </label>-->
+            <%= i18n.alertsGroups %>
+        </legend>
+        <!--<span class="group-toggle"><i class="caret"></i></span>-->
+        <div class="group-params alert-groups-list">
+            <select name="alertGroupId"
+                    data-placeholder="<%= i18n.allAlertsGroups %>"
+                    class="input-block-level"
+                    multiple
+                    style="width: 240px; height: 30px; overflow: hidden">
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset data-group="alertMessageCode" class="opened">
+        <legend>
+            <!--<label class="checkbox">
+                <input type="checkbox" name="allAlertMessageCode" class="select-all no-validation">
+                <span><%= i18n.allAlertsOffSelectedGroups %></span>
+            </label>-->
+            <%= i18n.alerts.ucFirst() %>
+        </legend>
+        <!--<span class="group-toggle"><i class="caret"></i></span>-->
+        <div class="group-params alerts-list">
+            <select name="alertMessageCode"
+                    data-placeholder="<%= i18n.allAlertsOffSelectedGroups %>"
+                    class="input-block-level"
+                    multiple
+                    style="width: 240px; height: 30px; overflow: hidden">
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset data-group="channelName" class="hidden">
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" name="allChannelName" class="select-all no-validation">
+                <span><%= i18n.allInputStreams %></span>
+            </label>
+        </legend>
+        <span class="group-toggle"><i class="caret"></i></span>
+        <div class="group-params channels-list"></div>
+    </fieldset>
+
+    <fieldset data-group="logComment">
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" name="allLogComment" class="select-all no-validation">
+                <span><%= i18n.actionsAndComments %></span>
+            </label>
+        </legend>
+        <span class="group-toggle"><i class="caret"></i></span>
+        <div class="group-params comments-group-params">
+            <div class="comments-list"></div>
+            <div class="custom-comment-group hidden">
+                <input
+                    type="text"
+                    name="customLogComment" class="input-block-level" value="" disabled pattern=".{5,}" />
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" name="allParams" class="select-all no-validation">
+                <span><%= i18n.alertsParameters %></span>
+            </label>
+        </legend>
+        <% _.each(params, function(p) {%>
+            <% if(!isStationary && 'undefined' !== typeof p.isStationary) {%>
+                <% if(p.checked) {// keep earlier checked values as invisible %>
+                    <input type="hidden" name="params" value="<%= p.key %>">
+                <% } %>
+            <% } else { %>
+                <label class="checkbox">
+                    <% if('undefined' !== typeof p.readonly && p.readonly) {%>
+                        <input disabled name="params" type="checkbox" <% if(p.checked) {%>checked<% } %>>
+                        <% if(p.checked) {%>
+                            <input type="hidden" name="params" value="<%= p.key %>">
+                        <% } %>
+                    <% } else { %>
+                        <input type="checkbox" name="params" value="<%= p.key %>"
+                        <% if(p.checked) {%>checked<% } %>>
+                    <% } %>
+                    <%= p.name %>
+                </label>
+            <% } %>
+        <% }) %>
+    </fieldset>
+</div>

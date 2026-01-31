@@ -1,0 +1,61 @@
+<h4><%= 'undefined' != typeof subTitle ? subTitle : '' %></h4>
+
+<p class="empty-msg"><%= i18n.noObjects %></p>
+
+<div class="metric total"></div>
+
+<div class="rag-cont">
+    <div class="d-chart rag-chart">
+        <div class="rag-bars">
+            <ul>
+                <% if(App.hasModule('mobile')) { %>
+                <li>
+                    <div class="d-bars-bar" data-type="<%= App.TYPE_MOBILE %>">
+                        <p><svg class="svg-icon">
+                            <use xlink:href="#smb-car"></use>
+                        </svg></p>
+                    </div>
+                </li>
+                <% } if(App.hasModule('stat')) { %>
+                <li>
+                    <div class="rag-bars-bar" data-type="<%= App.TYPE_STAT %>">
+                        <p><svg class="svg-icon">
+                            <use xlink:href="#smb-home"></use>
+                        </svg></p>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="rag-figs">
+            <ul>
+                <% if(App.hasModule('mobile')) { %>
+                <li>
+                    <div class="rag-figs-fig" data-type="<%= App.TYPE_MOBILE %>">
+                        <p><span class="mobile-percent">0</span>%</p>
+                    </div>
+                </li>
+                <% } if(App.hasModule('stat')) { %>
+                <li>
+                    <div class="rag-figs-fig" data-type="<%= App.TYPE_STAT %>">
+                        <p><span class="stat-percent">0</span>%</p>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="rag-txts ">
+            <ul>
+                <% if(App.hasModule('mobile')) { %>
+                <li>
+                    <div class="d-txts-txt" data-type="<%= App.TYPE_MOBILE %>"><p>(<span class="mobile-nb">0</span>) <span class="mobile-text"></span></p></div>
+                </li>
+                <% } if(App.hasModule('stat')) { %>
+                <li>
+                    <div class="d-txts-txt" data-type="<%= App.TYPE_STAT %>"><p>(<span class="stat-nb">0</span>) <span class="stat-text"></span></p></div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div><!--/rag-chart-->
+</div><!--/rag-cont-->

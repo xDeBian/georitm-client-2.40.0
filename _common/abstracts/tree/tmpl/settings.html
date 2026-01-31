@@ -1,0 +1,40 @@
+<li>
+    <h5 class="nav-header"><%= i18n.listType %></h5>
+    <ul class="options-list">
+        <li>
+            <label>
+                <input type="radio"<% if(titleType == 'title') {%> checked<% } %>
+                       name="objectTitle<%= objType.ucFirst() %>Tree" value="title">
+                <%= i18n.name %> 
+            </label>
+        </li><li>
+            <label>
+                <input type="radio"<% if(titleType == 'extId') {%> checked<% } %>
+                       name="objectTitle<%= objType.ucFirst() %>Tree" value="extId">
+                <%= i18n.objIdNumberShort %> 
+            </label>
+        </li><li>
+            <label>
+                <input type="radio"<% if(titleType == 'both') {%> checked<% } %>
+                       name="objectTitle<%= objType.ucFirst() %>Tree" value="both"> 
+                <%= i18n.name %>  + <%= i18n.objIdNumberShort %> 
+            </label>
+        </li>
+    </ul>
+    <h5 class="nav-header"><%= i18n.sort %></h5>
+    <ul class="options-list">
+        <li>
+            <label<% if(titleType == 'extId') {%> class="disabled"<% } %>>
+                <input type="radio" name="sortBy<%= objType.ucFirst() %>" value="name"
+                <% if(titleType != 'extId') {%><% if(sortType == 'name') {%> checked<% } %><% } else { %> disabled<% } %>>
+                <%= i18n.sortByName %>
+            </label>
+        </li><li>
+            <label<% if(titleType == 'title') {%> class="disabled"<% } %>>
+                <input type="radio" name="sortBy<%= objType.ucFirst() %>" value="extId"
+                       <% if(titleType != 'title') {%><% if(sortType == 'extId') {%> checked<% } %><% } else { %> disabled<% } %>>
+                <%= i18n.sortByObjectExtId %>
+            </label>
+        </li>
+    </ul>
+</li>

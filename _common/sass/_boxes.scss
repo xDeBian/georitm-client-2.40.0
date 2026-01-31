@@ -1,0 +1,156 @@
+.box {
+  margin: 20px 0;
+}
+
+.box-header {
+  position: relative;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid $gray-400;
+  margin-bottom: -1px;
+  padding: 10px;
+  overflow: hidden;
+  background-color: $gray-200;
+  box-shadow: none;
+  @include border-radius($border-radius-sm $border-radius-sm 0 0);
+
+  h2{
+    font-size: 16px;
+    line-height: 16px;
+    float:left;
+    margin-top: 2px;
+    color: $body-color;
+    font-weight: normal;
+    text-shadow: 0 1px 0 $white;
+
+    i{
+      margin: 1px 3px 0 5px;
+      opacity: .4;
+    }
+  }
+
+  /*.break{
+    border-left: 1px solid $gray-100;
+    border-right: 1px solid $gray-300;
+    margin: -12px 10px -10px 10px;
+    padding: 12px 0 10px 0;
+  }*/
+
+  /*.box-icon {
+    float:right;
+    margin-top: 1px;
+
+    i {
+      @include transition(all 0.1s ease-in-out);
+      transition: all 0.1s ease-in-out;
+      opacity: .4;
+
+      @include hover {
+        opacity: .8;
+      }
+    }
+
+    a {
+      margin: 0 5px;
+    }
+  }*/
+
+  &.module-header {
+    z-index: 2;
+    padding: 4px 10px 4px 10px;
+    overflow: visible;
+
+    h2 {
+      margin: 0;
+      line-height: 32px;
+    }
+
+    form {
+      margin: 0;
+    }
+
+    .form-search {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      max-width: 500px;
+    }
+
+    a.add-on,
+    > .add-on > a {
+      display: block;
+      padding: 10px;
+    }
+
+    > .add-on {
+      float: right;
+      border-left: 1px $border-color-base solid;
+      margin: -5px 0 0 0;
+
+      @include hover {
+        background: rgba($black, 0.1);
+        .svg-icon {
+          opacity: 1;
+        }
+      }
+
+      a {
+        .svg-icon {
+          width: 14px;
+          height: 14px;
+          opacity: 0.7;
+        }
+      }
+
+      &.pull-left {
+        float: left;
+        border-left: 0;
+        border-right: 1px $border-color-base solid;
+      }
+
+      &.open > a .svg-icon {
+        opacity: 1;
+      }
+    }
+
+
+    &.append {
+      padding-right: 0;
+    }
+
+    &.prepend {
+      padding-left: 0;
+    }
+  }// .box-header.module-header
+}// .box-header
+
+.box-footer {
+  padding: 10px;
+  text-align: right;
+  background-color: $gray-200;
+  @include border-radius(0 0 $border-radius-sm $border-radius-sm);
+}
+
+.box-content {
+  margin-top: -1px;
+  padding: 10px;
+  border: 1px solid $gray-400;
+  background: $white;
+  @include border-radius(0 0 $border-radius-sm $border-radius-sm);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+.module.loading .box-content:after {
+  content:""; position:absolute; z-index:1000; left:0; top:0; right:0; bottom:0; background:#333; opacity:0.5;
+}
+
+.module-content {
+  position: absolute;
+  z-index: 1;
+  top: 39px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  border-top: 0;
+}

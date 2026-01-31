@@ -1,0 +1,8 @@
+<tr class="summary" data-row="last">
+    <th><%= runDistance %></th>
+    <% var total = 0.00, rounded = 0.00;
+    _.each(data, function(objData) { rounded = Math._round(objData.distance, 2); total+= rounded %>
+    <th scope="col" data-value="<%= objData.distance %>"><%= rounded %></th>
+    <% }) %>
+    <th data-value="<%= total %>"><%= Math._round(total, 2) %></th>
+</tr>

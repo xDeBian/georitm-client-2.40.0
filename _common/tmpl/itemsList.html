@@ -1,0 +1,10 @@
+<div class="items-list">
+<% var limit = Math.min(limit, items.length); for(var i = 0; i < limit; i++) {%>
+<span data-id="<%= items[i].id %>" class="item"><%= items[i].name %></span><% if(i < limit-1) {%>, <% } %>
+<% } %>
+<% if(i < items.length) {%>
+    <span class="other nobr">
+        <%= i18n.andMore.replace('#q#', (items.length - i)).replace("#l#", i18n.objectsLabels[i18n.whichLabels(items.length - i)]) %>
+    </span>
+<% } %>
+</div>

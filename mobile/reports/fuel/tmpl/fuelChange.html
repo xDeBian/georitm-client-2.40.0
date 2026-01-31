@@ -1,0 +1,15 @@
+<tr class="fuel-change <% if(delta < 0) {%> negative<% } %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+    <td><%= rowIndex %></td>
+    <td class="text-left" data-value="<%= begin %>"><%= dateS %></td>
+    <td><%= delta > 0 ? i18n.filling.ucFirst() : i18n.discharge.ucFirst() %></td>
+    <td data-value="<%= delta %>"><%= Math.abs(Math._round(delta,1)) %></td>
+    <td data-value="<%= startf %>"><%= startf.toFixed(1) %></td>
+    <td data-value="<%= endf %>"><%= endf.toFixed(1) %></td>
+    <td class="address text-left" data-key="address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>">
+        <a href="javascript:;" class="put-fuel-marker" data-id="<%= objectId %>" data-index="<%= rowIndex-1 %>">
+            <% if(address) {print(address)} else { %>
+            <span class="loading-address" data-geoid="<%= geoId %>"><%= i18n.loadingAddress %></span>
+            <% } %>
+        </a>
+    </td>
+</tr>

@@ -1,0 +1,21 @@
+<tr<% if(last) {%> data-row="last"<% } %>>
+    <td data-key="extId"><%= extId %></td>
+    <td data-key="name" class="text-left"><%= name %></td>
+
+    <% if(!sensorsTime && !powerTime) {%>
+        <td class="no-data" colspan="<%= totalSensors %>"><%= i18n.noData %></td>
+    <% } else {%>
+        <% _.each(sensorsTime, function(time) {%>
+            <td data-value="<%= time %>"><%= Date.formatSeconds(time) %></td>
+        <% }) %>
+        <% if(powerTime !== null) {%>
+            <td data-value="<%= powerTime %>"><%= Date.formatSeconds(powerTime) %></td>
+        <% } %>
+    <% } %>
+
+    <td data-key="distance" data-value="<%= distance %>"><%= Math._round(distance,2) %></td>
+    <td data-key="moveStart" data-value="<%= moveStart %>"><%= moveStartS %></td>
+    <td data-key="moveEnd" data-value="<%= moveEnd %>"><%= moveEndS %></td>
+    <td data-key="moveTime" data-value="<%= moveTime %>"><%= Date.formatSeconds(moveTime) %></td>
+    <td data-key="parkTime" data-value="<%= parkTime %>"><%= Date.formatSeconds(parkTime) %></td>
+</tr>

@@ -1,0 +1,49 @@
+<div class="rep-device-params">
+
+    <div class="control-group">
+        <label title="<%= i18n.minTimeOfStateHelp %>"><%= i18n.minTimeOfState %></label>
+        <input type="number" min="1" max="9999" class="input-mini" name="dur" value="<%= dur %>" autocomplete="off" maxlength="4">
+        <span class="help-inline no-padding"><%= i18n.sec %></span>
+    </div>
+
+    <% _.each(ranges, function(r){ %>
+    <fieldset class="parameters">
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" class="select-all no-validation"<% if(r.checked) {%> checked<% } %>> <%= r.name %>
+            </label>
+        </legend>
+        <% _.each(r.nums, function(num) { %>
+        <label class="checkbox">
+            <input class="sensor-check" name="parameterNums"
+                   type="checkbox" value="<%= num %>"<% if(num in checked) {%> checked<% } %>>
+            <%= i18nCan.names[num] %>
+        </label>
+        <% }) %>
+    </fieldset>
+    <% }) %>
+
+    <fieldset class="metrics">
+        <legend><%= i18n.discretes.metrics %></legend>
+        <label class="checkbox">
+            <input name="metrics" type="checkbox"
+                   value="switch"<% if('switch' in checkedMetrics) {%> checked<% } %>>
+            <%= i18n.discretes.countSwitch %>
+        </label><label class="checkbox">
+            <input name="metrics" type="checkbox"
+                   value="on"<% if('on' in checkedMetrics) {%> checked<% } %>>
+            <%= i18n.discretes.dataOn %>
+        </label><label class="checkbox">
+            <input name="metrics" type="checkbox"
+                   value="off"<% if('off' in checkedMetrics) {%> checked<% } %>>
+            <%= i18n.discretes.dataOff %>
+        </label><label class="checkbox checkbox-history">
+            <input name="metrics" type="checkbox"
+                   value="history"<% if('history' in checkedMetrics) {%> checked<% } %>>
+            <%= i18n.discretes.historyHeader %>
+        </label>
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

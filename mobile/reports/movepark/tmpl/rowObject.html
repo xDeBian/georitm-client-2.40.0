@@ -1,0 +1,52 @@
+<tr class="obj">
+    <td colspan="<%= colspan %>" class="summary">
+        <div class="sum-header">
+            <strong><%= title %></strong>
+            <% if(hasData) {%>
+            <a class="build-track nobr" href="javascript:;"
+               data-id="<%= objectId %>" data-from="<%= periodStart %>" data-to="<%= periodEnd %>" >
+                <%= i18n.showFullTrack %>
+            </a>
+            <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+            <% } %>
+        </div>
+        <div class="sum-content">
+            <% if(hasData) {%>
+            <table>
+                <tbody>
+                    <% _.each(objProps, function(key) {%>
+                    <tr>
+                        <td><%= objPropsNames[key] %></td>
+                        <td class="value"><%- objSummaryData[key] %></td>
+                    </tr>
+                    <% }) %>
+                    <tr>
+                        <td><%= i18n.totalTime %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= totalTime %>"><%= totalTimeS %></span></td>
+                    </tr><tr>
+                        <td><%= i18n.totalParkTime %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= objSummaryData.totalParkTime %>"><%= totalParkTimeS %></span> (<%= totalParkTimePercent %>%)</td></tr><tr>
+                    </tr><tr>
+                        <td><%= i18n.totalMoveTime %></td>
+                        <td class="value"><span class="rep-time-data" data-value="<%= objSummaryData.totalMoveTime %>"><%= totalMoveTimeS %></span> (<%= totalMoveTimePercent %>%)</td>
+                    </tr><tr>
+                        <td><%= i18n.totalDistance %>, <%= i18n.km %></td>
+                        <td class="value"><%= totalDistanceS %></td>
+                    </tr><tr>
+                        <td><%= i18n.avgSpeed %>, <%= i18n.kmh %></td>
+                        <td class="value"><%= avgSpeedS %></td>
+                    </tr><tr>
+                        <td><%= i18n.calcConsumBy100kmNorm %>, <%= i18n.l %></td>
+                        <td class="value"><%= calcConsumBy100kmNorm %> (<%= objSummaryData.consum100km %> <%= i18n.l100km %>)</td>
+                    </tr><tr>
+                        <td><%= i18n.calcConsumBy1hNorm %>, <%= i18n.l %></td>
+                        <td class="value"><%= calcConsumBy1hNorm %> (<%= objSummaryData.consum1h %> <%= i18n.l1h %>)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <% } else {%>
+            <p class="no-data"><%= i18n.noDataForObject %></p>
+            <% } %>
+        </div>
+    </td>
+</tr>

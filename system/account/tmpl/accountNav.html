@@ -1,0 +1,35 @@
+<ul id="account-nav" class="nav pull-right">
+	<%= langDropdown %>
+	<li>
+		<a href="javascript:;" class="settings-link">
+			<svg class="svg-icon">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#smb-wrench"></use>
+			</svg>
+            <span class="hidden-xs"><%= i18n.settings.ucFirst() %></span>
+		</a>
+	</li>
+	<!-- start: User Dropdown -->
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<i class="svg-icon svg-icon-user-w"></i>
+            <span class="hidden-xs"><%- account.username %></span>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu nav nav-list">
+            <% if(hasAdminAccess) {%>
+            <li><a class='admin-login-link' href="<%= adminUrl %>"><i class="svg-icon svg-icon-user"></i> <%=
+                i18n.adminConsole %></a></li>
+            <% } %>
+            <% if(changePass) {%>
+			<li><a href="javascript:;" class="change-pass-link">
+				<svg class="svg-icon">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#smb-lock"></use>
+				</svg> <%= i18n.changePassword %></a>
+			</li>
+            <% } %>
+            <li><a href="javascript:;" class="system-about"><i class="svg-icon svg-icon-circle-info"></i> <%= i18n.about %></a></li>
+			<li><a href="javascript:;" onclick="App.trigger('logout')"><i class="svg-icon svg-icon-power"></i> <%= i18n.logout.ucFirst() %></a></li>
+		</ul>
+	</li><!-- end: User Dropdown -->
+
+</ul>

@@ -1,0 +1,8 @@
+<tr data-head="1">
+    <% _.each(properties, function(p){ %>
+    <th><%= propNames[p] %></th>
+    <% }) %>
+    <% _.each(params, function(p){ %>
+    <th class="param-name"><%= paramNames[p] %></th>
+    <% }) %>
+</tr>

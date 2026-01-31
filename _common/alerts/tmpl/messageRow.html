@@ -1,0 +1,21 @@
+<tr data-code="<%= code %>" style="background:<%= bgColor || '#fff' %>">
+    <td class="col-code"><%- code %></td>
+    <td style="color:<%= fgColor || '#000' %>">
+        <%- message %>
+    </td>
+    <td>
+        TODO Group
+    </td>
+    <td class="col-checkbox">
+        <input data-id="<%= id %>" value="1" type="checkbox"<% if(isAlarm) {%> checked<% } %>>
+    </td>
+    <td class="col-checkbox">
+        <input data-id="<%= id %>" value="1" type="checkbox"<% if(isVisible) {%> checked<% } %>>
+    </td>
+    <td class="col-checkbox">
+        <input data-id="<%= id %>" value="1" type="checkbox"<% if(isRelayed) {%> checked<% } %>>
+    </td>
+    <td class="col-icon">
+        <i class="icon-edit svg-icon svg-icon-cog"></i>
+    </td>
+</tr>

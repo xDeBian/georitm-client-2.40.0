@@ -1,0 +1,12 @@
+<tr class="<%= rowClass %>">
+    <td><%= dateS %></td>
+    <td><%= totalDistance %></td>
+    <% _.each(speeding, function(v) {%>
+    <td><%= v %></td>
+    <% }) %>
+    <td><%= accViolations %></td>
+    <td><%= brkViolations %></td>
+    <td class="cell-grade" data-grade="<%= speedGrade %>"><%= speedScore %></td>
+    <td class="cell-grade" data-grade="<%= styleGrade %>"><%= styleScore %></td>
+    <td class="cell-grade" data-grade="<%= grade %>"><%= score %></td>
+</tr>

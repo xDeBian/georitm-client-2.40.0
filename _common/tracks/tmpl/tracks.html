@@ -1,0 +1,38 @@
+<li id="tracks" class="<% if(loading) {%>loading<% } %><% if(active) {%> active<% } %>">
+    <div class="tab-toggle-container hint hint-right" data-hint="<%= name %>">
+        <a class="tab-toggle" href="#<%= key %>">
+            <i class="svg-icon svg-icon-track"></i>
+            <span><%- name %></span>
+        </a>
+    </div>
+    <div id="tracks-content" class="tab-hor-content">
+        <div class="box-header module-header append">
+            <h2>
+                <%= i18n.tracksCountText.replace('#n#', '<span class="nb-items">0</span>') %>
+            </h2>
+            <div class="dropdown module-settings add-on">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="svg-icon svg-icon-cog"></i>
+                </a>
+                <ul class="dropdown-menu nav nav-list" role="menu">
+                    <li><a href="javascript:;" class="hide-all"><%= i18n.hideAll %></a></li>
+                    <li><a href="javascript:;" class="remove-all-empty"><%= i18n.removeEmptyTracks %></a></li>
+                    <li><a href="javascript:;" class="remove-all"><%= i18n.clearTracksList %></a></li>
+                </ul>
+            </div>
+            <% if(adding) {%>
+            <div class="add-on">
+                <a class="btn-add" href="javascript:;" title="<%= i18n.add.ucFirst() %>">
+                    <i class="svg-icon svg-icon-plus"></i>
+                </a>
+            </div>
+            <% } %>
+        </div>
+        <div class="module-content tracks-list">
+            <ul class="items-briefs">
+
+            </ul>
+        </div>
+    </div>
+</li>
+

@@ -1,0 +1,23 @@
+<div class="timeseries-params">
+    <% _.each(groups, function(group){ %>
+    <fieldset data-group="<%= group.key %>" class="<% if(openedGroups.indexOf(group.key) > -1) {%>opened<% } %>">
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" value="<%= group.key %>"
+                       class="select-all no-validation"<% if(checkedGroups.indexOf(group.key) > -1) {%> checked<% } %>>
+                <%= group.name %>
+            </label>
+        </legend>
+        <span class="group-toggle"><i class="caret"></i></span>
+        <div class="group-params">
+            <% _.each(params[group.key], function(p){ %>
+            <label class="checkbox">
+                <input data-group="<%= group.key %>" class="sensor-check" name="keys" type="checkbox"
+                       value="<%= p.key %>"<% if(checkedParams.indexOf(p.key) > -1) {%> checked<% } %>>
+                <%= p.name %>
+            </label>
+            <% }) %>
+        </div>
+    </fieldset>
+    <% }) %>
+</div>

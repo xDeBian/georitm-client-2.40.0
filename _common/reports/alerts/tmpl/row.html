@@ -1,0 +1,12 @@
+<tr<% if(isLast) {%> data-row="last"<% } %>>
+    <td data-key="alertTs" data-value="<%= alertTs %>"><%= alertTsS %></td>
+    <td data-key="receivedAt" data-value="<%= receivedAt %>"><%= receivedAtS %></td>
+    <td data-key="code"><%= code %></td>
+    <td data-key="message" class="text-left"><%- message %></td>
+    <td data-key="group"><%= 'undefined' != typeof group && group ? group : '-' %></td>
+    <td data-key="areaZone"><%= 'undefined' != typeof areaZone ? areaZone : '-' %></td>
+    <td data-key="areaZoneName"><%= 'undefined' != typeof areaZoneName && areaZoneName ? areaZoneName : '-' %></td>
+    <td data-key="area"><%= 'undefined' != typeof area ? area : '-' %></td>
+    <td data-key="areaName"><%= 'undefined' != typeof areaName && areaName ? areaName : '-' %></td>
+    <td data-key="channelName"><%= 'undefined' != typeof channelName && channelName ? channelName : '-' %></td>
+</tr>

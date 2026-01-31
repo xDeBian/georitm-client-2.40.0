@@ -1,0 +1,11 @@
+<tr data-head="<%= headPosition %>">
+    <% for(var i = 0, l = properties.length; i < l; i++) { %>
+    <th data-key="<%= properties[i] %>"><%= names[properties[i]] %></th>
+    <% } %>
+    <th class="count"><%= i18n.below %> <%= thresholds[0] + '&nbsp;' + i18n.volt %></th>
+    <th class="count"><%= i18n.above %> <%= thresholds[1] + '&nbsp;' + i18n.volt%></th>
+    <th><%= i18n.duration %></th>
+    <th><%= i18n.runDistance %>, <%= i18n.km %></th>
+    <th><%= i18n.minimum + ', ' + i18n.volt %></th>
+    <th><%= i18n.maximum + ', ' +i18n.volt %></th>
+</tr>

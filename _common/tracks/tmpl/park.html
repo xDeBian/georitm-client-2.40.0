@@ -1,0 +1,14 @@
+<div class="track-info park-info">
+<h5><%= title %></h5>
+<ul class="features">
+    <li><%= i18n.parkBegin %>: <strong data-value="<%= data.start.getTime() %>"><%= startStr %></strong></li>
+    <li><%= i18n.parkEnd %>: <strong data-value="<%= data.end.getTime() %>"><%= endStr %></strong></li>
+    <li><%= i18n.parkTime %>: <strong data-value="<%= data.end.getTime() - data.start.getTime() %>"><%= timeStr %></strong></li>
+    <li><%= i18n.address %>: <strong data-geoid="<%= data.geoId || 0 %>" class="address"><i class="svg-icon svg-icon-spinner icon-spin"></i>
+        <%- addressStr %>
+    </strong></li>
+    <% if('alt' in data) {%>
+    <li><%= i18n.altitude %>: <strong data-value="<%= data.alt %>"><%= data.alt %> <%= i18n.m %></strong></li>
+    <% } %>
+</ul>
+</div>

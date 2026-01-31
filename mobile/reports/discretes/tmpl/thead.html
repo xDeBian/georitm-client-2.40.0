@@ -1,0 +1,15 @@
+<tr data-head="1">
+    <% _.each(properties, function(p){ %>
+    <th rowspan="2"><%= propNames[p] %></th>
+    <% }) %>
+    <% _.each(params, function(p){ %>
+    <th class="param-name" colspan="<%= metrics.length %>"><%= paramNames[p] %></th>
+    <% }) %>
+</tr>
+<tr data-head="1">
+    <% _.each(params, function(p){ %>
+        <% _.each(metrics, function(m){ %>
+        <th><%= m %></th>
+        <% }) %>
+    <% }) %>
+</tr>

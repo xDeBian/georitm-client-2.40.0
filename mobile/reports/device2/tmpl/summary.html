@@ -1,0 +1,39 @@
+<% if(showSensorsSummary && ( sensors.length || power )) {%>
+<div class="summary">
+    <h3><%= i18n.sumOfObjectsWork %></h3>
+    <div class="sum-content">
+        <table>
+            <% _.each(sensors, function(d) {%>
+            <tr>
+                <td><%- d.name %></td>
+                <td class="value" data-value="<%= d.time %>"><%= Date.formatSeconds(d.time) %></td>
+            </tr>
+            <% }) %>
+            <% if(power) {%>
+            <tr>
+                <td><%= power.name %></td>
+                <td class="value" data-value="<%= power.time %>"><%= Date.formatSeconds(power.time) %></td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+<% } %>
+
+<div class="summary">
+    <h3><%= i18n.sumOfObjectsMovesParks %></h3>
+        <div class="sum-content">
+        <table>
+            <tr>
+                <td><%= i18n.moveTime %></td>
+                <td data-key="totalMoveTime" data-value="<%= totalMoveTime %>" class="value"><%= totalMoveTimeS %></td>
+            </tr><tr>
+                <td><%= i18n.parkTime %></td>
+                <td data-key="totalParkTime" data-value="<%= totalParkTime %>" class="value"><%= totalParkTimeS %></td>
+            </tr><tr>
+                <td><%= i18n.totalDistance %>, <%= i18n.km %></td>
+                <td data-key="totalDist" data-value="<%= totalDist %>" class="value"><%= Math._round(totalDist,2) %></td>
+            </tr>
+        </table>
+    </div>
+</div>

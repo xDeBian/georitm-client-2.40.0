@@ -1,0 +1,16 @@
+<% _.each(controls, function(c, index){ %>
+<li class="indicator control<% if(loading) {%> loading<% } %>" data-state="<%= c.state == 1 ? 1 : 0 %>">
+    <% if(loading) {%>
+    <i class="svg-icon svg-icon-spinner icon-spin"></i>
+    <% } else { %>
+    <svg class="svg-icon">
+        <use xlink:href="#smb-arrow-circle-left"></use>
+    </svg>
+    <% } %>
+    <% if(!loading && 'undefined' != typeof c.possibleStates && c.possibleStates.length) {%>
+        <a href="#" data-page="operate" data-index="<%= index %>"><%- c.name %></a>
+    <% } else {%>
+        <%- c.name %>
+    <% } %>
+</li>
+<% }); %>

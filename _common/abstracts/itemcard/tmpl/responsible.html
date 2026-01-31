@@ -1,0 +1,29 @@
+<p><%= i18n.responsible.pass1 %>: <strong><%= responsible.pass1 || i18n.notEntered %></strong>
+<p><%= i18n.responsible.pass2 %>: <strong><%= responsible.pass2 || i18n.notEntered %></strong>
+
+<% if (responsible.persons && responsible.persons.length) {%>
+<table class="table table-striped table-condensed no-margin">
+    <thead>
+    <tr>
+        <th><%= i18n.responsible.persons.key %></th>
+        <th><%= i18n.responsible.persons.name %></th>
+        <th><%= i18n.responsible.persons.phone1 %></th>
+        <th><%= i18n.responsible.persons.phone2 %></th>
+        <th><%= i18n.responsible.persons.comment %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(responsible.persons, function(person){ %>
+    <tr>
+        <td class="col-num"><%- person.key || emptyString %></td>
+        <td><%- person.name || emptyString %></td>
+        <td><%- person.phone1 || emptyString %></td>
+        <td><%- person.phone2 || emptyString %></td>
+        <td><%- person.comment || emptyString %></td>
+    </tr>
+    <% }) %>
+    </tbody>
+</table>
+<% } else { %>
+<p><%= i18n.responsible.persons.noData %></p>
+<% } %>

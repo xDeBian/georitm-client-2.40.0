@@ -1,0 +1,20 @@
+<br />
+<table class="selectable rep-table">
+    <tbody>
+        <tr data-head="<%= headPosition %>">
+            <th><%= i18n.date.ucFirst() %></th>
+            <!--<th><%= i18n.object.ucFirst() %></th>-->
+            <th><%= i18n.runDistance.ucFirst() %>, <%= i18n.km %></th>
+            <th><%= i18n.moveStart %></th>
+            <th><%= i18n.moveEnd %></th>
+            <th><%= i18n.moveTime %></th>
+            <th><%= i18n.startVolume %>, <%= i18n.l %></th>
+            <th><%= i18n.endVolume %>, <%= i18n.l %></th>
+            <th><%= i18n.fillingsVolume %>, <%= i18n.l %></th>
+            <th><%= i18n.dischargesVolume %>, <%= i18n.l %></th>
+            <th><%= i18n.consumption100km %>, <%= i18n.l100km %></th>
+            <th><%= i18n.consumption1h %></th>
+        </tr>
+        <%= rows %>
+    </tbody>
+</table>

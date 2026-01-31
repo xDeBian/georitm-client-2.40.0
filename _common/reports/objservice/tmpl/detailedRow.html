@@ -1,0 +1,15 @@
+<tr<% if(isLast) {%> data-row="last"<% } %> data-id="<%= id %>" data-date="<%= date %>" class="rep-row <%= rowClass %>">
+
+    <td>
+        <a href="javascript:;">
+            <%= dateS %>
+        </a>
+    </td>
+
+    <% _.each(durations, function(s){ %>
+    <td>
+        <%= s %>
+    </td>
+    <% }) %>
+
+</tr>

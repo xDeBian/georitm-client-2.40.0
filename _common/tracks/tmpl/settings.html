@@ -1,0 +1,49 @@
+<h4><%= i18n.tracks.ucFirst() %></h4>
+
+<div class="control-group">
+    <div class="field">
+        <label data-setting="tracks.showPoints" class="checkbox stp"><input type="checkbox" <% if(showPoints) {%> checked<% } %> value="1">
+            <%= i18n.showTrackPoints %></label>
+    </div>
+    <div class="field">
+        <label data-setting="tracks.colorTracks" class="checkbox tct"><input type="checkbox" <% if(colorTracks) {%> checked<% } %> value="1">
+            <%= i18n.colorTracks %></label>
+        <ul class="mtsc">
+            <li><a title="<%= i18n.clickToChange %>" class="i-left">
+                <i class="color-picker" data-setting="tracks.speedColors" data-index="0"
+                   style="background-color:<%= speedColors[0] %>"></i></a>
+                <%= i18n.speedLessThan %> <input type="text" class="tsl input-mini positive no-margin"
+                                                 value="<%= speedLimits[0] %>" name="speedLimit1" data-index="0" /> <%= i18n.kmh %>
+            </li>
+            <li> <a title="<%= i18n.clickToChange %>" class="i-left">
+                <i class="color-picker" data-setting="tracks.speedColors" data-index="1"
+                   style="background-color:<%= speedColors[1] %>"></i></a>
+                <%= i18n.speedFrom %> <span class="speed-limit1"><%= speedLimits[0] %></span> <%= i18n.to %> <span class="speed-limit2"><%= speedLimits[1] %></span> <%= i18n.kmh %>
+            </li>
+            <li><a title="<%= i18n.clickToChange %>" class="i-left">
+                <i class="color-picker" data-setting="tracks.speedColors" data-index="2"
+                   style="background-color:<%= speedColors[2] %>"></i></a>
+                <%= i18n.speedGreaterThan %> <input type="text" class="tsl input-mini positive no-margin"
+                                                    value="<%= speedLimits[1] %>" name="speedLimit2" data-index="1" /> <%= i18n.kmh %>
+            </li>
+        </ul>
+
+        <div class="context-menu" id="speedColorsMenu">
+            <i style="background:#0000FF;"></i>
+            <i style="background:#0086E5;"></i>
+            <i style="background:#0033A8;"></i>
+            <i style="background:#2D15B1;"></i>
+            <i style="background:#580DAD;"></i>
+            <i style="background:#00FF00;"></i>
+            <i style="background:#009947;"></i>
+            <i style="background:#00FFB2;"></i>
+            <i style="background:#59FF00;"></i>
+            <i style="background:#447F00;"></i>
+            <i style="background:#FF0000;"></i>
+            <i style="background:#FF6400;"></i>
+            <i style="background:#FF9700;"></i>
+            <i style="background:#FFBB00;"></i>
+            <i style="background:#FFDB00;"></i>
+        </div>
+    </div>
+</div>

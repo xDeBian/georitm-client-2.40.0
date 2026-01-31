@@ -1,0 +1,46 @@
+<div class="auth-container reg-container hidden">
+    <form class="auth-form reg-form" method="post" action="">
+        <div class="box-header">
+            <h2><%= i18n.registration %></h2>
+        </div>
+        <div class="box-content">
+            <div class="control-group">
+                <label class="control-label"><%= i18n.firstName %></label>
+                <input type="text" class="input-block-level" name="fname" value="" maxlength="50">
+            </div>
+            <div class="control-group">
+                <label class="control-label"><%= i18n.surname %></label>
+                <input type="text" class="input-block-level" name="sname" value="" maxlength="50">
+            </div><div class="control-group">
+                <label class="control-label">E-Mail (<%= i18n.login %>)</label>
+                <input type="text" class="input-block-level" name="email" value="" maxlength="50">
+            </div><div class="control-group">
+                <label class="control-label"><%= i18n.phoneNumber %></label>
+                <input type="text" class="input-block-level" name="phone" value="" maxlength="20">
+            </div><div class="control-group">
+                <label class="control-label"><%= i18n.company %></label>
+                <input type="text" class="input-block-level" name="company" value="" maxlength="255">
+            </div><div class="control-group">
+                <label class="control-label"><%= i18n.passForEnter %></label>
+                <input type="password" class="input-block-level" name="password" value="" maxlength="50">
+            </div><div class="control-group">
+                <label class="control-label"><%= i18n.repeatPassForEnter %></label>
+                <input type="password" class="input-block-level" name="passwordRepeat" value="" maxlength="50">
+            </div><div class="control-group">
+                <label class="control-label"><%= i18n.secretWord %></label>
+                <input type="text" class="input-block-level" name="secret" value="" autocomplete="off" maxlength="100">
+            </div>
+            <div class="control-group captcha"></div>
+            <div class="control-group ua">
+                <label class="checkbox control-label">
+                    <input type="checkbox" name="acceptUA" value="1">
+                    <%= i18n.iAcceptUserAgreement.replace('#t#', '<a target="_blank" href="http://www.ritm.ru/agreement/">'+i18n.ofUsersAgreement+'</a>') %>
+                </label>
+            </div>
+        </div>
+        <div class="box-footer">
+            <button class="btn btn-block btn-primary" type="submit" disabled><%= i18n.registerMe %></button>
+        </div>
+        <a class="extra-action login-link" href="#"><%= i18n.enterWithPass %></a>
+    </form>
+</div>

@@ -1,0 +1,8 @@
+<% _.each(discrets, function(d){ %>
+<li class="indicator discret <%= d.state == 1 ? 'on' : 'off' %>" data-state="<%= d.state == 1 ? 1 : 0 %>">
+    <svg class="svg-icon">
+        <use xlink:href="#smb-arrow-circle-right"></use>
+    </svg>
+    <%- d.name %>
+</li>
+<% }); %>

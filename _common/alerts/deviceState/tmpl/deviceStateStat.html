@@ -1,0 +1,41 @@
+<div class="contents">
+    <div data-key="summary" class="content active">
+
+        <ul class="indicators">
+            <li class="indicator indicator-obj-status" data-state="<%= objStatus !== null ? objStatus : 0 %>">
+                <svg class="svg-icon">
+                    <use xlink:href="#smb-power"></use>
+                </svg>
+                <%= i18n.objStatus %>:
+                <% if(App.allowed('objects.status.edit')) {%>
+                <a href="#" class="obj-status" data-page="status">
+                    <%= objStatus !== null ? i18n.objStatuses[objStatus] : '' %>
+                </a>
+                <% } else { %>
+                <strong class="obj-status"><%= objStatus !== null ? i18n.objStatuses[objStatus] : '' %></strong>
+                <% } %>
+                <span class="technician"></span>
+            </li>
+            <li class="indicator nobr isOnline" data-state="<%= isOnline ? 1 : 0 %>">
+                <svg class="svg-icon">
+                    <use xlink:href="#smb-connection"></use>
+                </svg>
+                <%= i18n.GSMConnection %>:
+                <strong class="lastGSMConnectionTime nobr"><%= lastGSMConnectionTimeS %></strong>
+                <a href="#" class="call-device<% if(!allowStateScan) {%> hidden<% } %>"><%= i18n.objectStateScan %></a>
+                <span class="calling-device hidden"><%= i18n.stateScanProcessing %> <i class="svg-icon svg-icon-spinner icon-spin"></i></span>
+            </li>
+        </ul>
+
+        <div class="grid-container areas selectable">AREAS CONT</div>
+        <p class="no-areas hidden"><%= i18n.noObjAreas %></p>
+        <p class="state-loading hidden"><i class="svg-icon svg-icon-spinner icon-spin"></i> <%= i18n.objAreasStateLoading %></p>
+
+    </div>
+
+    <div data-key="status" class="content"></div>
+    <div data-key="guard" class="content"></div>
+    <div data-key="faults" class="content"></div>
+
+</div>
+

@@ -1,0 +1,77 @@
+[
+  {
+    "contractDate": null,
+    "policeTranslation": 0,
+    "controls": {
+      "1": {
+        "state": 0,
+        "name": "Some Control name",
+        "possibleStates": [1]
+      },"2": {
+        "state": 1,
+        "name": "Second Control name",
+        "possibleStates": [1]
+      }
+    },
+    "color": "серый",
+    "year": "1900",
+    "lat":59.912108,
+    "lon": 30.500104999999997,
+    "ownersPhone1": null,
+    "ownersPhone2": null,
+    "speed": 25.37,
+    "discrets": {"1":{
+      "state": 1
+      ,"name": "Some longer discret name"
+    }, "2": {
+      "state": 0
+      ,"name": "Second longer discret name"
+    }, "3": {
+      "state": 0
+      ,"name": "Second longer discret name"
+    }, "4": {
+      "state": 0
+      ,"name": "Second longer discret name"
+    }, "5": {
+      "state": 0
+      ,"name": "Second longer discret nameSecond longer discret name"
+    }, "6": {
+      "state": 0
+      ,"name": "Second longer discret name"
+    }},
+    "lastGPSConnectionTime": 1459422028,
+    "ownerPassword": null,
+    "isGpsOnline": false,
+    "lastGSMConnectionTime": 1459422031,
+    "course": 72,
+    "licenseNumber": "М888ОО",
+    "model": "VolksWagen",
+    "vin": null,
+    "id": 34411,
+    "extId": 10950,
+    "state": "1",
+    "power": {
+      "name": "",
+      "state": 0
+    },
+    "minSpeed": 1.001,
+    "objType": "0",
+
+    "owner": null,
+    "rev": "V-2.107.031 02550.004:CAN",
+    "driversInfo": [],
+    "isFromIDP": false,
+    "pass": null,
+    "alt": 0.0,
+    "isGsmOnline": false,
+    "contractNumber": null,
+    "localRID": 48980,
+    "hasAlarm": false,
+    "isFollowed": "0",
+    "objStatus":1,
+    "remoteRID": 48980,
+    "SIM": "79117307717",
+    "responsive": "{\"pass1\":\"\",\"pass2\":\"\",\"persons\":[{\"key\":\"0\",\"name\":\"Сергей\",\"phone1\":\"+792145877777\",\"phone2\":\"\",\"comment\":\"Примечание ответственного\"}]}",
+    "name": "VW Transporter ust"
+  }
+]

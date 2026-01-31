@@ -1,0 +1,54 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Icons Preview!</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <style>
+        body {
+            width: 100%; background: #eee;
+        }
+        ul {
+            list-style: none; margin: 0; padding: 0;
+        }
+        ul:after {
+            float:none; clear: both;
+        }
+        li {
+            float: left; width: 260px; margin: 10px 0 0 10px; padding: 10px; border: 1px #ccc solid;
+        }
+        pre {
+            margin: 0 0 10px; padding: 0;
+        }
+		.svg-icon {
+			position: relative;
+		}
+		.svg-icon:before {
+		    content: '';
+			position: absolute;
+			left: -1px; 
+			top: -1px;
+			z-index: 1;
+			width: 32px;
+			height: 32px;
+			border: 1px #FFB2B2 solid;
+		}
+    </style>
+    <script>
+        {{{loaderText}}}
+        grunticon(["icons.css", "icons.data.png.css", "icons.fallback.css"]);
+    </script>
+    <noscript><link href="icons.fallback.css" rel="stylesheet"></noscript>
+</head>
+<body class="selectable">
+<ul>
+{{#each icons}}
+    <li>
+    {{#with this}}
+        <pre><code>{{prefix}}{{name}}</code></pre>
+        <i class="svg-icon svg-icon-{{name}}" style="width: {{width}}px; height: {{height}}px;" ></i> Some text
+    {{/with}}
+    </li>
+{{/each}}
+</ul>
+</body>
+</html>

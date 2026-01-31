@@ -1,0 +1,68 @@
+<div class="maps-module">
+    <div class="box-header module-header clearfix">
+        <% if(search) {%>
+        <form class="form-search">
+            <% if(!_.isUndefined(searchTypes) && searchTypes && _.keys(searchTypes).length > 1) {%>
+            <input type="hidden" name="type" value="<%= _.isUndefined(defSearchType) ? searchTypes[0].key : defSearchType.key %>" />
+            <div class="input-prepend">
+
+                <a class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span><%- _.isUndefined(defSearchType) ? searchTypes[0].name : defSearchType.name %></span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <% _.each(searchTypes, function(type){%>
+                    <li><a data-type="<%= type.key %>" href="javascript:;"><%- type.name %></a></li>
+                    <% }); %>
+                </ul>
+
+                <div class="input-append">
+                    <span class="add-on">
+                        <input type="text" name="q" />
+                        <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+                    </span>
+                    <button class="add-on btn"><i class="svg-icon svg-icon-search"></i></button>
+                </div>
+            </div>
+            <% } else { %>
+            <div class="input-prepend">
+                <% if(!_.isUndefined(searchTypes) && searchTypes) {%>
+                <input type="hidden" name="type" value="<%- searchTypes[0].key %>" />
+                <% } %>
+                <div class="input-append">
+                    <span class="add-on">
+                        <input type="text" name="q" />
+                        <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+                    </span>
+                    <button class="add-on btn"><i class="svg-icon svg-icon-search"></i></button>
+                </div>
+            </div>
+            <% } %>
+        </form>
+        <% } %>
+        <div class="pull-right">
+            <% if(typeSelect) {%>
+            <div class="map-type-select">
+                <select data-placeholder="<%= i18n.mapName.replace('#name#', 'Yandex')%>">
+                    <option value="YandexMap"><%= i18n.mapName.replace('#name#', 'Yandex')%></option>
+                    <option value="YandexMapSat"><%= i18n.satMapName.replace('#name#', 'Yandex')%></option>
+                    <option value="YandexMapHybrid"><%= i18n.hybridMapName.replace('#name#', 'Yandex')%></option>
+                    <option value="GoogleMap"><%= i18n.mapName.replace('#name#', 'Google')%></option>
+                    <option value="GoogleMapSat"><%= i18n.satMapName.replace('#name#', 'Google')%></option>
+                    <option value="GoogleMapHybrid"><%= i18n.hybridMapName.replace('#name#', 'Google')%></option>
+                    <option value="GoogleMapTerrain"><%= i18n.landMapName.replace('#name#', 'Google')%></option>
+                    <option value="OpenStreetMap"><%= i18n.mapName.replace('#name#', 'OpenStreetMap')%></option>
+                    <option value="OpenStreetMapTransport"><%= i18n.transMapName.replace('#name#', 'OpenStreetMap')%></option>
+                    <!--<option value="CloudMadeMap"><%= i18n.mapName.replace('#name#', 'CloudMade')%></option>-->
+                    <%var map; if(map = App.getServerSettings().specialMap) {%>
+                    <option value="SpecialMap"><%= map.name || i18n.specialMapName %></option>
+                    <% } %>
+                </select>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="module-content">
+
+    </div>
+</div>

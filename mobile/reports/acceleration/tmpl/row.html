@@ -1,0 +1,13 @@
+<tr class="<%= rowClass %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+    <td data-key="date" data-value="<%= date %>"><%= dateS %></td>
+    <td data-key="begin" data-value="<%= begin %>"><%= beginS %></td>
+    <td class="text-left"><%= description %></td>
+    <td data-key="duration" data-value="<%= duration %>"><%= durationS %></td>
+    <td class="address text-left" data-key="address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>">
+        <a href="javascript:;" class="build-track-segment" data-id="<%= objectId %>" data-from="<%= begin * 1000 %>" data-to="<%= end * 1000 %>">
+            <% if(address) {print(address)} else { %>
+            <span class="loading-address" data-geoid="<%= geoId %>"><%= loadingAddress %></span>
+            <% } %>
+        </a>
+    </td>
+</tr>

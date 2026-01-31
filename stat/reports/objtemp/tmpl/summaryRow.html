@@ -1,0 +1,36 @@
+<tr<% if(isLast) {%> data-row="last"<% } %> data-index=<%= rowIndex %> class="<%= rowClass %>">
+<% for(var field in properties) { %>
+<td data-key="<%= field %>">
+    <%- properties[field] %>
+</td>
+<% } %>
+<td class="count">
+    <% if(hasData) {%>
+    <a href="#" class="build-another" data-type="objtemp"
+       title="<%= i18n.build.ucFirst()+' '+i18n.reportsNames.objtemp %>"
+       data-id="<%= id %>"
+       data-from="<%= anotherStart %>"
+       data-to="<%= anotherEnd %>"
+       data-ranges="[0]">
+        <%= violation.count.below %></a>
+    <% } else {%>
+    <%= noData %>
+    <% } %>
+</td>
+<td class="count">
+    <% if(hasData) {%>
+    <a href="#" class="build-another" data-type="objtemp"
+       title="<%= i18n.build.ucFirst()+' '+i18n.reportsNames.objtemp %>"
+       data-id="<%= id %>"
+       data-from="<%= anotherStart %>"
+       data-to="<%= anotherEnd %>"
+       data-ranges="[2]">
+        <%= violation.count.above %></a>
+    <% } else {%>
+    <%= noData %>
+    <% } %>
+</td>
+<td><%= hasData ? violationTime : noData %></td>
+<td class="<% if(hasData && min < thresholds[0]) {%> low<% } %>"><%= hasData ? min : noData %></td>
+<td class="<% if(hasData && max > thresholds[1]) {%> high<% } %>"><%= hasData ? max : noData %></td>
+</tr>

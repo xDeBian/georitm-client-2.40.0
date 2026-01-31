@@ -1,0 +1,21 @@
+<colgroup>
+    <col style="width:17%" />
+    <col style="width:17%" />
+    <col style="width:17%" />
+    <col style="width:17%" />
+    <col style="width:17%" />
+    <col style="width:15%" />
+</colgroup>
+<tr class="summary">
+    <td class="sum-header" colspan="6">
+        <h3><%= i18n.temperature %> <%= aboveOrBelow %> <%= threshold %>&nbsp;&deg;C</h3>
+    </td>
+</tr>
+<tr data-head="1">
+    <th><%= i18n.date.ucFirst() %></th>
+    <th><%= i18n.actionStart %></th>
+    <th><%= i18n.actionEnd %></th>
+    <th><%= valueHdr %>, &deg;C</th>
+    <th><%= i18n.avgValue %>, &deg;C</th>
+    <th><%= i18n.duration %></th>
+</tr>

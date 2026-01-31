@@ -1,0 +1,58 @@
+<tr data-index="<%= index %>">
+    <td class="col-camera-name">
+        <div class="itext">
+            <input type="text" name="cameraName" value="<%- camera.name %>"  autocomplete="off" maxlength="40" />
+        </div>
+    </td>
+    <td class="col-camera-source">
+        <select name="cameraSource" >
+            <% _.each(optionsSource, function(option, i) {%>
+            <option value="<%= option.value %>"<% if(option.value === camera.source) {%> selected<% } %>><%= option.title %></option>
+            <% }) %>
+        </select>
+    </td>
+    <% if(videoType === 'ritmrtp') {%>
+        <td class="col-camera-uuid">
+            <div class="itext">
+                <input type="text" name="cameraUuid" value="<%= camera.uuid %>"  maxlength="36"/>
+            </div>
+        </td>
+        <td class="col-camera-url">
+            <div class="itext">
+                <% if(camera.showUrl) { %>
+                    <input type="text" name="cameraUrl" value="<%- camera.url %>"  autocomplete="off" maxlength="255"/>
+                <% } else { %>
+                    <input type="text" name="cameraUrl" value="-"  readonly/>
+                <% } %>
+            </div>
+        </td>
+    <% } %>
+
+    <td class="col-camera-events">
+        <select 
+            name="cameraRequestAlerts"
+            data-placeholder="<%= i18n.chooseAlerts %>" 
+            multiple
+        ></select>
+    </td>
+
+    <td>
+        <div class="itext">
+            <input type="text" name="cameraNote" value="<%- camera.note %>"  autocomplete="off" maxlength="255" />
+        </div>
+    </td>
+
+    <td class="col-icon">
+        <svg  class="svg-icon more-action-up">
+            <use xlink:href="#smb-chevron-right"></use>
+        </svg>
+    </td>
+    <td class="col-icon">
+        <svg  class="svg-icon more-action-down">
+            <use xlink:href="#smb-chevron-right"></use>
+        </svg>
+    </td>
+    <td class="col-icon">
+        <i  class="svg-icon svg-icon-remove icon-remove"></i>
+    </td>
+</tr>

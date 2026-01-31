@@ -1,0 +1,11 @@
+<tr data-head="<%= headPosition %>">
+    <th data-key="extId"><%= i18n.objIdNumberShort %></th>
+    <th data-key="name"><%= i18n.objName %></th>
+    <% if(reportSubtype === 'general') { %>
+    <th data-key="alarms"><%= i18n.alarms.ucFirst() %></th>
+    <th data-key="alerts"><%= i18n.alerts.ucFirst() %></th>
+    <th data-key="total"><%= i18n.totalLabel %></th>
+    <% } else { %>
+    <th data-key="total"><%= i18n.quantityAsNumber %></th>
+    <% } %>
+</tr>

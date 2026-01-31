@@ -1,0 +1,25 @@
+<p class="alert no-traffic-alert hidden"><%= i18n.routeNoTrafficAlert %></p>
+<div class="route-summary">
+    <h4><%= start.text %> - <%= finish.text %></h4>
+    <div class="params">
+        <strong data-value="<%= meta.length %>" data-roundvalue="<%= meta.roundLength %>"><%= meta.roundLengthS %></strong> ,
+        <span data-value="<%= meta.time %>" data-roundvalue="<%= meta.roundTime %>"><%= meta.roundTimeS %></span>
+    </div>
+</div>
+<ol class="selectable">
+<% _.each(steps, function(step, i){%>
+<li class="route-step <%= step.action %>" data-index="<%= i %>">
+    <div class="wrap">
+        <div class="explain"><%= step.actionHtml || step.actionText %></div>
+        <div class="params">
+            <strong class="length" data-value="<%= step.length %>"><%= step.roundLengthS %></strong>,
+            <span class="time" data-value="<%= step.time %>"><%= step.roundTimeS %></span>
+        </div>
+    </div>
+    <!--<div class="params">
+        <span class="length" data-value="<%= step.length %>">length: <%= step.length %></span><br />
+        <span class="time" data-value="<%= step.time %>">time: <%= step.time %></span>
+    </div>-->
+</li>
+<% }) %>
+</ol>

@@ -1,0 +1,140 @@
+[
+  {
+    "deviceTypeId": 17,
+    "contractDate": null,
+    "city": null,
+    "lon": 30.410542,
+    "areas": [
+      {
+        "hasFault": 1,
+        "num": 0,
+        "name": null,
+        "comment": null,
+        "id": 1262,
+        "isGuarded": false,
+        "zones": [
+          {
+            "hasFault": true,
+            "num": 0,
+            "name": null,
+            "comment": null,
+            "id": 3379,
+            "hasAlarm": true
+          }
+        ],
+        "hasAlarm": 1
+      },
+      {
+        "hasFault": 0,
+        "num": 3,
+        "name": "",
+        "comment": "",
+        "id": 1263,
+        "isGuarded": false,
+        "zones": [
+          {
+            "hasFault": false,
+            "num": 3,
+            "name": "",
+            "comment": "",
+            "id": 3380,
+            "hasAlarm": true
+          }
+        ],
+        "hasAlarm": 1
+      },
+      {
+        "hasFault": 0,
+        "num": 4,
+        "name": "",
+        "comment": "",
+        "id": 1266,
+        "isGuarded": false,
+        "zones": [],
+        "hasAlarm": 0
+      },
+      {
+        "hasFault": 0,
+        "num": 5,
+        "name": "",
+        "comment": "",
+        "id": 1265,
+        "isGuarded": true,
+        "zones": [
+          {
+            "hasFault": false,
+            "num": 5,
+            "name": "",
+            "comment": "",
+            "id": 3382,
+            "hasAlarm": true
+          }
+        ],
+        "hasAlarm": 1
+      },
+      {
+        "hasFault": 0,
+        "num": 6,
+        "name": "",
+        "comment": "",
+        "id": 1267,
+        "isGuarded": false,
+        "zones": [],
+        "hasAlarm": 0
+      },
+      {
+        "hasFault": 0,
+        "num": 7,
+        "name": "",
+        "comment": "",
+        "id": 1264,
+        "isGuarded": false,
+        "zones": [
+          {
+            "hasFault": false,
+            "num": 7,
+            "name": "",
+            "comment": "",
+            "id": 3381,
+            "hasAlarm": true
+          }
+        ],
+        "hasAlarm": 1
+      }
+    ],
+    "ownersPhone1": null,
+    "ownersPhone2": null,
+    "house": null,
+    "building": null,
+    "coutry": null,
+    "deviceTypeCode": "K5",
+    "ownerPassword": null,
+    "street": null,
+    "lastGSMConnectionTime": 1470733140,
+    "id": 39239,
+    "extId": 39239,
+    "state": null,
+    "objType": "1",
+    "lat": 59.959718,
+    "owner": null,
+    "rev": "VER 01.003.052",
+    "appNumber": null,
+    "objectState": {
+      "hasFault": 0,
+      "isOnline": 0,
+      "isGuarded": 2,
+      "hasAlarm": 1
+    },
+    "isFromIDP": true,
+    "deviceTypeName": "Контакт GSM-5",
+    "contractNumber": null,
+    "objStatus": 1,
+    "gateCode": null,
+    "intercomCode": null,
+    "responsive": "{\"pass1\":\"\",\"pass2\":\"\",\"persons\":[]}",
+    "name": "Test K5",
+    "imei": "1000000001300048",
+    "addressShort": null,
+    "region": null
+  }
+]

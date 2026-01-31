@@ -1,0 +1,20 @@
+<div id="d-adding">
+    <div class="row-fluid">
+        <% var i = 0; _.each(widgets, function(data, key){ %>
+        <% if(i > 0 && i % 4 == 0){ %>
+        </div><div class="row-fluid">
+        <% } %>
+        <div class="d-example span3" data-key="<%= key %>">
+            <div class="content clearfix">
+                <h3><%= data.title %></h3>
+                <p><%= data.description %></p>
+            </div>
+            <img src="<%= data.img %>" alt="">
+            <div class="actions">
+                <a class="btn-add"><!--<%= i18n.add.ucFirst() %>--><i class="svg-icon svg-icon-circle-plus"></i></a>
+            </div>
+        </div>
+        <% i++; }) %>
+    </div>
+    <a class="close"><i class="svg-icon svg-icon-circle-remove"></i></a>
+</div>

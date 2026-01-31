@@ -1,0 +1,46 @@
+<div class="module-header box-header append">
+    <h2><%= i18n.alertsLog %></h2>
+
+    <div class="module-settings add-on">
+        <a class="btn-settings hint hint-left" href="#"
+           data-hint="<%= i18n.alertsLogFilters %>">
+            <i class="svg-icon svg-icon-cog"></i>
+        </a>
+    </div><div class="add-on">
+        <!--<a class="btn btn-small btn-play-pause" href="#">-->
+        <a class="btn-play-pause hint hint-left" href="#"
+           data-hintstop="<%= i18n.stopAlertsLog %>"
+           data-hintresume="<%= i18n.resumeAlertsLog %>">
+            <i class="svg-icon svg-icon-stop icon-stop"></i>
+            <i class="svg-icon svg-icon-play icon-play"></i>
+        </a>
+    </div><div class="add-on filters form-search">
+        <!--<div class="filters">-->
+            <input type="text" name="q" value="" class="filter" placeholder="<%= i18n.objIdNumber %>">
+            <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+        <!--</div>-->
+    </div>
+    <!--<a class="btn btn-small btn-play-pause" href="#">
+        <i class="svg-icon svg-icon-stop icon-stop"></i>
+        <i class="svg-icon svg-icon-play icon-play"></i>
+    </a>-->
+</div>
+<div class="module-content history">
+    <div class="grid-content selectable">
+        <table>
+            <thead>
+                <th><div class="th"><%= i18n.timeOfCreation %></div></th>
+                <th><div class="th"><%= i18n.timeOfReceive %></div></th>
+                <th><div class="th"><%= i18n.objIdNumber %></div></th>
+                <th><div class="th"><%= i18n.objTitle %></div></th>
+                <th><div class="th"><%= i18n.alertCode %></div></th>
+                <th><div class="th"><%= i18n.alert.ucFirst() %></div></th>
+                <th><div class="th"><%= i18n.alertsGroup %></div></th>
+                <th><div class="th"><%= i18n.objArea %></div></th>
+                <th><div class="th"><%= i18n.objZoneKey %></div></th>
+                <th><div class="th"><%= i18n.inputStream %></div></th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div><!--/grid-content-->
+</div>

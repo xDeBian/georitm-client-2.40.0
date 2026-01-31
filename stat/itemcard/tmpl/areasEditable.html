@@ -1,0 +1,52 @@
+<table class="table table-condensed areas <% if (!areas.length) { %> hidden<% } %>">
+    <thead>
+    <tr>
+        <th><%= i18n.objAreaNum %></th>
+        <th><%= i18n.objAreaName %></th>
+        <th class="col-arm-schedule"><%= i18n.armSchedule %></th>
+        <% if(allowRoles){ %>
+        <th class="col-roles"><%= i18n.rolesForAreas %></th>
+        <% } %>
+        <th><%= i18n.objAreaComment %></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(areas, function(area, index){ %>
+    <tr>
+        <td class="col-num">
+            <input name="aId[]" type="hidden" value="<%- area.id %>">
+            <div class="itext">
+                <input name="aNum[]" type="text" value="<%- area.num %>" maxlength="2" autocomplete="off">
+            </div>
+        </td>
+        <td>
+            <div class="itext"><input name="aName[]" type="text" value="<%- area.name %>" maxlength="100"></div>
+        </td>
+        <td class="col-arm-schedule">
+            <select name="aScheduleUuid[]"></select>
+        </td>
+        <% if(allowRoles){ %>
+        <td class="col-roles">
+            <select name="aRoles"
+                    class="input-block-level"
+                    data-id="<%= area.id %>"
+                    data-placeholder="<%= i18n.rolesForAreasAll %>"
+                    multiple>
+            </select>
+        </td>
+        <% } %>
+        <td>
+            <div class="itext"><input name="aComment[]" type="text" value="<%- area.comment %>" maxlength="100"></div>
+        </td>
+        <td class="col-icon">
+            <i class="svg-icon svg-icon-remove row-remove"></i>
+        </td>
+    </tr>
+    <% }) %>
+    </tbody>
+</table>
+
+<p class="no-data<% if (areas.length) { %> hidden<% } %>">
+    <%= i18n.noObjAreas %>
+</p>

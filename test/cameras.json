@@ -1,0 +1,13 @@
+{
+  "sessionId": "100-U06167460-052e-45b8-a3ae-334bf060b8ec",
+  "cameras": [
+    {
+      "id": 327680
+      ,"name": "Some camera name"
+      ,"server": {
+        "id": "100-644a22afe712e449b3b189a4ff3f8548",
+        "name": "Server name"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<h4><%= i18n.fuelsAndDischarges %> <%= i18n.byObject %> #<%= objData.extId %> [<%= objData.name %>]</h4>
+<% if('undefined' != typeof objData.fuels && objData.fuels.length) { %>
+<a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+<% } %>

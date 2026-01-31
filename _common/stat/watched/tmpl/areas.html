@@ -1,0 +1,25 @@
+<% var index = 0; _.each( areas, function(area) {
+if(area.num == 0 && !area.hasAlarm && !area.hasFault) return;%>
+
+    <tr class="areas-state row-<%= ++index %><%= area.num == 0 ? ' area-system' : ''  %>"
+        data-state="<%= area.mainState %>" data-index="<%= area.num %>"
+        <% if( area.operatable ) {%>data-page="operate"<% } %>>
+
+        <td class="extra">
+            <svg class="svg-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#smb-<%= area.icon %>"></use>
+            </svg>
+        </td><td class="info">
+            <h6><%= area.name %></h6>
+            <p><%= area.stateLabel %></p>
+        </td>
+
+        <% if(area.operatable) {%>
+        <td class="extra1">
+            <i class="svg-icon svg-icon-chevron-right"></i>
+        </td>
+        <% } %>
+
+    </tr>
+
+<% }) %>

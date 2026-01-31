@@ -1,0 +1,18 @@
+<table class="selectable rep-table zoneviz-rep-table">
+    <thead>
+        <tr>
+            <th colspan="6" class="text-left"><%= i18n.summaryData %></th>
+        </tr>
+        <tr>
+            <th data-key="zone"><%= i18n.geozone.ucFirst() %></th>
+            <th data-key="object"><%= i18n.object.ucFirst() %></th>
+            <th data-key="visitCount"><%= i18n.zoneReport.visitsCount %></th>
+            <th data-key="timeinzone"><%= i18n.zoneReport.timeInZone %></th>
+            <th data-key="runinzone"><%= i18n.zoneReport.runInZone %></th>
+            <th data-key="lastexit"><%= i18n.zoneReport.lastExit %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= body %>
+    </tbody>
+</table>

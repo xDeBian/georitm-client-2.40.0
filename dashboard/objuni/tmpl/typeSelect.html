@@ -1,0 +1,7 @@
+<label><%= i18n.objects.ucFirst() %></label>
+<select name="show">
+    <% _.each(types, function(name, key){ %>
+    <option value="<%= key %>"<% if(key == selected){ %> selected<% } %>><%= name %></option>
+    <% }) %>
+</select>
+

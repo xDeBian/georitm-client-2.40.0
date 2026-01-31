@@ -1,0 +1,9 @@
+<% if(routeMeta) {%>
+    <% if('undefined' == typeof routeMeta.trafficTime) {%>
+        <p class="msg alert"><%= i18n.routeNoTrafficAlert %></p>
+    <% } %>
+    <p class="data no-margin"><%= i18n.rrtRouteTime %>: <strong class="time" data-value="<%= routeMeta.time || '' %>"><%= routeMeta.roundTimeS || '' %></strong></p>
+    <p class="data no-margin"><%= i18n.distance %>: <strong class="length" data-value="<%= routeMeta.length || '' %>"><%= routeMeta.roundLengthS || '' %></strong></p>
+<% } else { %>
+    <p class="msg error no-margin"><%= i18n.errCanNotBuildRoute %></p>
+<% } %>

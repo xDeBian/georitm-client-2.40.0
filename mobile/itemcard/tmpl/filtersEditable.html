@@ -1,0 +1,188 @@
+<table class="l">
+    <tr>
+        <td class="col track-filters">
+            <input type="text" style="width:100%" class="track-filters-input filterMask hidden" name="FILTER_MASK" value="<%= settings.FILTER_MASK %>" />
+
+            <div class="track-block" style="margin-bottom: 10px">
+                <label class="radio">
+                    <input type="radio" name="USE_MANUAL_FILTERS" value="0" <% if(!useManualFilters) {%>checked<% } %>/>
+                    <%= i18n.useAutoTrackFilters %> (<%= i18n.recommended %>)
+                </label>
+                <label class="radio">
+                    <input type="radio" name="USE_MANUAL_FILTERS" value="1" <% if(useManualFilters) {%>checked<% } %>/>
+                    <%= i18n.useManualTrackFilters %>
+                </label>
+            </div>
+
+            <% if( App.isMapMatchingAllowed()) {%>
+            <div class="alert alert-danger map-matching-warning hidden">
+                <strong><%= i18n.attentionExclaim %></strong> <%= i18n.gpsTrackMapMatchingFiltersWarning %>
+            </div>
+            <% } %>
+
+            <div class="track-block">
+                <h5><%= i18n.coordinatesFiltersBySpeed %>
+                    <a href="javascript:;" class="set-default-filters nobr"><%= i18n.setDefaults %></a></h5>
+                <table class="l table-fields">
+                    <tr class="field">
+                        <td>
+                            <label><%= i18n.minObjectSpeed %>, <%= i18n.kmh %></label>
+                        </td>
+                        <td>
+                            <div class="itext">
+                                <input type="text" class="track-filters-input object-min-speed positive"
+                                       name="OBJECT_MIN_SPEED" value="<%= settings.OBJECT_MIN_SPEED || 1.001 %>" />
+                            </div>
+                        </td>
+                    </tr><tr class="field">
+                    <td>
+                        <label><%= i18n.maxObjectSpeed %>, <%= i18n.kmh %></label>
+                    </td>
+                    <td>
+                        <div class="itext">
+                            <input type="text" class="track-filters-input object-max-speed positive"
+                                   name="OBJECT_MAX_SPEED" value="<%= settings.OBJECT_MAX_SPEED || 180 %>" />
+                        </div>
+                    </td>
+                </tr>
+                </table>
+            </div><!--/track-block by speed-->
+
+            <div class="track-block track-block-parkings">
+                <h5><%= i18n.parkPlacesFilters %> <a href="javascript:;" class="set-default-filters nobr"><%= i18n.setDefaults %></a></h5>
+
+                <table class="l table-fields">
+                    <tr class="field">
+                        <td>
+                            <label><%= i18n.detectParksIfContinueMoreThan %> (10-180 <%= i18n.DateTime.labels2[6] %>)</label>
+                        </td>
+                        <td>
+                            <div class="itext">
+                                <input type="text" class="track-filters-input object-min-time-park integer" min="10" max="180"
+                                       name="OBJECT_MIN_PARK_TIME" value="<%= settings.OBJECT_MIN_PARK_TIME || 120 %>" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="field track-fields-manual<% if(!useManualFilters) {%> hidden<% } %>">
+                        <td>
+                            <label><%= i18n.detectMovementBetweenParksIfContinuesMoreThan %> (10-180 <%= i18n.DateTime.labels2[6] %>)</label>
+                        </td>
+                        <td>
+                            <div class="itext">
+                                <input type="text" class="track-filters-input object-min-park-merge-time integer" min="10" max="180"
+                                       name="OBJECT_MIN_PARK_MERGE_TIME" value="<%= settings.OBJECT_MIN_PARK_MERGE_TIME || 120 %>" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div><!--/track-block-parkings-->
+
+            <div class="track-block track-fields-manual<% if(!useManualFilters) {%> hidden<% } %>">
+
+                <h5><%= i18n.coordinatesFiltersByParameters %>
+                    <a href="javascript:;" class="set-default-filters nobr"><%= i18n.setDefaults %></a><a href="#" class="switch-off-all-filters nobr"><%= i18n.switchOffAll %> (<%= i18n.notRecommended %>)</a></h5>
+
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore filter-default" value="FilterPDOP" name="filter_mask_part"
+                    <% if( filterOn('FilterPDOP')) {%> checked="checked"<% } %> />
+                    <%= i18n.useOnlyAccurateCoordinates %>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore" value="FilterMOVEMENT" name="filter_mask_part"
+                    <% if( filterOn('FilterMOVEMENT')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesByMovementSensor %>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore" value="FilterUselessType" name="filter_mask_part"
+                    <% if( filterOn('FilterUselessType')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesOnlyWhenMovingOrEventHappens %>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore" value="FilterIgnitionMissing" name="filter_mask_part"
+                    <% if( filterOn('FilterIgnitionMissing')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesOnlyIfIgnitionIsOn %>
+                </label>
+
+            </div><!--/track-block by parameters-->
+
+            <div class="track-block track-fields-manual<% if(!useManualFilters) {%> hidden<% } %>">
+                <h5><%= i18n.filtersOfFalseCoordinates %>
+                    <a href="javascript:;" class="set-default-filters nobr"><%= i18n.setDefaults %></a><a href="#" class="switch-off-all-filters nobr"><%= i18n.switchOffAll %></a></h5>
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore filter-default" value="FilterSharpCorners" name="filter_mask_part"
+                    <% if( filterOn('FilterSharpCorners')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesWithoutLargeDeviationFromParkingPlace %>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore" value="FilterHyperJumps" name="filter_mask_part"
+                    <% if( filterOn('FilterHyperJumps')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesWithoutLargeDeviationFromTrack %>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore" value="FilterMissing3Dfix" name="filter_mask_part"
+                    <% if( filterOn('FilterMissing3Dfix')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesOnlyWithAltitude %> (3Dfix)
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore" value="FilterUnreliableNoiseValue" name="filter_mask_part"
+                    <% if( filterOn('FilterUnreliableNoiseValue')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesOnlyWithGoodSignal %>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" class="ignore" value="FilterUnrealCarPower" name="filter_mask_part"
+                    <% if( filterOn('FilterUnrealCarPower')) {%> checked="checked"<% } %> />
+                    <%= i18n.useCoordinatesOnlyWithGoodVoltage %>
+                </label>
+
+            </div><!--/track-block-->
+
+            <% if( App.isMapMatchingAllowed()) {%>
+            <div class="track-block track-block-map-matching">
+                <h5><%= i18n.gpsTrackMapMatching %></h5>
+                <table class="l table-fields">
+                    <tr class="field">
+                        <td>
+                            <label><%= i18n.gpsTrackMapMatchingLabel %></label>
+                        </td>
+                        <td>
+                            <div class="select">
+                                <select name="MAP_MATCHING_VEHICLE">
+                                    <% _.each(mapMatchingValues, function(name, key){%>
+                                    <option value="<%= key %>"
+                                    <% if( settings.MAP_MATCHING_VEHICLE === key ) {%> selected<% } %>>
+                                    <%= name %>
+                                    </option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <% } %>
+        </td>
+
+        <td class="col" style="width:202px;padding-right:0;border-left:1px #e4e4e4 solid;">
+            <div class="field clear-history">
+                <!--<div class="btn" id="btn-clear-history"><div class="btn-extra"><a href="javascript:;" title="">Пересчет данных c</a></div></div>-->
+                <!--<input readonly type="text" class="itext ignore date datepicker" name="from_date" />-->
+                <div class="datepicker clear-history"></div>
+                <a class="btn-clear-history<% if('undefined' != typeof item.clearingFrom) {%> hidden<% } %>" href="javascript:;"><%= i18n.clearAndRecalculateDataFromSelectedDate %>
+                    <strong class="clear-history selected-date"></strong>
+                </a>
+                <p class="history-processing-msg<% if('undefined' == typeof item.clearingFrom) {%> hidden<% } %>"></p>
+                <div class="clear-history-indicator loading<% if('undefined' == typeof item.clearingFrom) {%> hidden<% } %>"></div>
+                <p class="history-clear-help"><%= 'undefined' == typeof item.clearingFrom ? i18n.clearHistoryHelp : i18n.clearHistoryHelp1 %></p>
+                <p class="history-processing-info<% if( 'undefined' == typeof importTs || importTs == '' || 'undefined' != typeof item.clearingFrom){%> hidden<% } %>">
+                    <%= i18n.dataHasBeenRecalculated %> <%= i18n.till %> <strong class="nobr importTs"><%= importTs %></strong>
+                    <!--<i class="icon-reload"></i>-->
+                </p>
+
+            </div>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,24 @@
+[{
+  "phone": "",
+  "person": "",
+  "name": "Бойцы 45454 asdf",
+  "course": 0,
+  "lon": 30.2858,
+  "isOnline": true,
+  "id": 6,
+  "lat": 59.9197,
+  "speed": 0,
+  "coordinatesTime": 1478609382484
+},
+  {
+    "phone": "",
+    "person": "",
+    "name": "Орлы",
+    "course": 0,
+    "lon": 30.431565,
+    "isOnline": true,
+    "id": 4,
+    "lat": 59.956303,
+    "speed": 0,
+    "coordinatesTime": 1478609382484
+  }]

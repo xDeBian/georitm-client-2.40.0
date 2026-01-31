@@ -1,0 +1,117 @@
+<!--<div id="jqChart"></div>-->
+<table class="fuel-summary">
+    <tbody>
+    <tr>
+        <td colspan="2"><strong><%= i18n.fuelVolumeInTank %></strong></td>
+        <td colspan="2"><strong><%= i18n.runDistance %> <%= i18n.and %> <%= i18n.speed %></strong></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.startVolume %>, <%= i18n.l %></td>
+        <% if('undefined' != typeof startF ) {%>
+        <td class="value nobr" data-value="<%= startF %>"><%= Math._round(startF,1) %></td>
+        <% } else { %>
+        <td class="value no-data"><%= i18n.noData %></td>
+        <% } %>
+        <td><%= i18n.runDistance %>, <%= i18n.km %></td>
+        <td class="value nobr" data-value="<%= distInKm %>"><%= distInKm %></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.endVolume %>, <%= i18n.l %></td>
+        <% if('undefined' != typeof endF ) {%>
+        <td class="value nobr" data-value="<%= endF %>"><%= Math._round(endF,1) %></td>
+        <% } else { %>
+        <td class="value no-data"><%= i18n.noData %></td>
+        <% } %>
+        <td><%= i18n.avgSpeed %>, <%= i18n.kmh %></td>
+        <td class="value nobr" data-value="<%= avgSpeedInKmh %>"><%= avgSpeedInKmh %></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.minVolume %>, <%= i18n.l %></td>
+        <td class="value nobr" data-value="<%= minVolume %>"><%= Math._round(minVolume,1) %></td>
+        <td colspan="2"><strong><%= i18n.wayTime %></strong></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.maxVolume %>, <%= i18n.l %></td>
+        <td class="value nobr" data-value="<%= maxVolume %>"><%= Math._round(maxVolume,1) %></td>
+        <td><%= i18n.totalMoveTime %></td>
+        <td class="value" data-value="<%= moveTimeInSec %>"><%= moveTimeS %></td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><strong><%= i18n.fuelsAndDischarges %></strong></td>
+        <td><%= i18n.totalParkTime %></td>
+        <td class="value" data-value="<%= parkTimeInSec %>"><%= parkTimeS %></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.fillingsVolume %>, <%= i18n.l %></td>
+        <td class="value nobr" data-value="<%= fillVolume %>"><%= Math._round(fillVolume,1) %></td>
+        <td colspan="2"><strong><%= i18n.engineWorkTime %></strong></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.dischargesVolume %>, <%= i18n.l %></td>
+        <td class="value nobr" data-value="<%= plumVolume %>"><%= Math._round(plumVolume,1) %></td>
+        <td><%= i18n.ignOnTime %></td>
+        <td class="value" data-value="<%= ignOnTimeInSec %>"><%= ignOnTimeInSecS %></td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><strong><%= i18n.totalFuelConsumption %></strong></td>
+        <td><%= i18n.firstIgnTime %></td>
+        <td class="value" data-value="<%= firstIgnTime %>"><%= firstIgnTimeS %></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.totalRealConsumption %>, <%= i18n.l %></td>
+        <td class="value nobr" data-value="<%= realConsumption %>"><%= Math._round(realConsumption,1) %></td>
+        <td><%= i18n.lastIgnTime %></td>
+        <td class="value" data-value="<%= lastIgnTime %>"><%= lastIgnTimeS %></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.consumption100km %>, <%= i18n.l100km %></td>
+        <td class="value nobr" data-value="<%= consumption100km %>"><%= Math._round(consumption100km, 1) %>
+        <td colspan="2"><strong><%= i18n.engineWorkTimeWhileMoving %></strong></td>
+    </tr>
+
+    <tr>
+        <td><%= i18n.consumption1hIgn %>, <%= i18n.l1h %></td>
+        <td class="value nobr" data-value="<%= consumption1hIgn %>"><%= Math._round(consumption1hIgn, 1) %></td>
+        <td><%= i18n.ignOnMoveTime %></td>
+        <td class="value" data-value="<%= ignOnMoveTimeInSec %>"><%= ignOnMoveTimeInSecS %></td>
+    </tr>
+
+    <tr>
+        <!-- Consumption while moving is temporary removed due to GR-1343-->
+        <!--<td colspan="2"><strong><%= i18n.consumWhileMoving %></strong></td>-->
+        <td colspan="2" rowspan="3"></td>
+        <td colspan="2"><strong><%= i18n.engineWorkTimeOnParks %></strong></td>
+    </tr>
+
+    <tr>
+        <!--<td><%= i18n.consumWhileMovingShort %>, <%= i18n.l %></td>
+        <td class="value nobr" data-value="<%= consumWhileMoving %>"><%= Math._round(consumWhileMoving, 1) %></td>-->
+        <td><%= i18n.ignOnParkTime %></td>
+        <td class="value" data-value="<%= ignOnParkTimeInSec %>"><%= ignOnParkTimeInSecS %></td>
+    </tr>
+
+    <tr>
+        <!--<td><%= i18n.consumWhileMovingShort %>, <%= i18n.l100km %></td>
+        <td class="value nobr" data-value="<%= consumWhileMoving100km %>"><%= Math._round(consumWhileMoving100km, 1) %></td>-->
+        <td><%= i18n.ignOffParkTime %></td>
+        <td class="value" data-value="<%= ignOffParkTimeInSec %>"><%= ignOffParkTimeInSecS %></td>
+    </tr>
+
+    <!--<tr>
+        <td><%= i18n.consumption1h %>, <%= i18n.l1h %></td>
+        <td class="value nobr" data-value="<%= consumption1hMove %>"><%=  Math._round(consumption1hMove, 1) %></td>
+        <td colspan="2"></td>
+    </tr>-->
+
+    </tbody>
+</table>

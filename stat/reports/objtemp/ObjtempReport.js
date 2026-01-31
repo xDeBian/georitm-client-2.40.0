@@ -1,0 +1,1 @@
+define(["_common/reports/temperature/TemperatureReport","./views/ObjtempReportView"],function(t,e){var r=t.prototype,n=t.extend({constructor:function(){t.apply(this,arguments)},url:function(){return App.getBaseUrl()+"reports/OBJTEMP/"},initialize:function(){r.initialize.call(this,e)},getPostParams:function(){var t=r.getPostParams.call(this);return t.stationary=!0,t}});return n});

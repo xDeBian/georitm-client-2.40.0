@@ -1,0 +1,9 @@
+<tr data-head="<%= headPosition %>">
+    <% for(var i = 0, l = properties.length; i < l; i++) { %>
+    <th data-key="<%= properties[i] %>"><%= names[properties[i]] %></th>
+    <% } %>
+    <th><%= i18n.engineOffState %></th>
+    <th><%= i18n.engineIdleState %><!--, <%= i18n.upto %> <%= thresholds[1] + '&nbsp;' + i18n.rpm%>--></th>
+    <th><%= i18n.engineLoadState %></th>
+    <th><%= i18n.violationOfCriticalRpm %><!--, <%= i18n.above.toLowerCase() %> <%= thresholds[2] + '&nbsp;' + i18n.rpm%>--></th>
+</tr>

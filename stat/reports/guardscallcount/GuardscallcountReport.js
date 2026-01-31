@@ -1,0 +1,1 @@
+define(["underscore","_common/reports/guardscallcount/GuardscallcountReport","./views/GuardscallcountReportView"],function(t,n,r){var e=n.prototype,o=n.extend({constructor:function(){n.apply(this,arguments)},initialize:function(){e.initialize.call(this,r)},getPostParams:function(){var t=e.getPostParams.call(this);return t.objType=App.TYPE_STAT,t}});return o});

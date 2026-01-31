@@ -1,0 +1,7 @@
+<div id="print-hdr" class="clearfix">
+    <button class="btn btn-cancel" onclick="$(body).removeClass('print-preview');App.trigger('layoutchange')"><i class="icon-arrow-left"></i> <%= i18n.cancel.ucFirst() %></button>
+    <h1 class="brand"></h1>
+    <div class="actions">
+        <button class="btn btn-print" onclick="window.print()"><i class="icon-print"></i> <%= i18n.print %></button>
+    </div>
+</div>

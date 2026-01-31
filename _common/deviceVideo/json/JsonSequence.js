@@ -1,0 +1,1 @@
+define([],function(){function m(m){this.command=m.command,this.seqNum=m.seqNum||0,this.params=m.params||{}}return m});

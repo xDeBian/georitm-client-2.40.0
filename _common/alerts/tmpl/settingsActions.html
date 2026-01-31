@@ -1,0 +1,23 @@
+<h3><%= i18n.actionsList %></h3>
+<button class="btn btn-default btn-save"><%= i18n.saveChanges %></button>
+<div class="grid comments-grid">
+    <table class="dataTable display comments-table">
+        <colgroup>
+            <col />
+            <col />
+            <col style="width: 100px" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th><%= i18n.actionTitle %></th>
+                <th><%= i18n.actionExecuted %></th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody class="comments-tbody"></tbody>
+    </table>
+</div>
+<div class="footer">
+    <a href="javascript:;" class="add-row-link"><%= i18n.addAction %></a>
+    <a href="javascript:;" class="restore-defaults-link"><%= i18n.setDefaultActions %></a>
+</div>

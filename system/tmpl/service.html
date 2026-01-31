@@ -1,0 +1,24 @@
+<% if(allowSimNumbersRequest) {%>
+
+<div class="nav">
+    <h3><%= i18n.service %></h3>
+    <ul>
+        <li>
+            <a data-section="sim" class="active" href="#"><%= i18n.simCardNumbersDetection %></a>
+            <a data-section="ui" href="#"><%= i18n.userSettingsCleaning %></a>
+        </li>
+    </ul>
+</div>
+<form data-section="sim" class="section active" action="">
+    <!-- placeholder -->
+</form>
+<div data-section="ui" class="section">
+    <h3><%= i18n.userSettingsCleaning %></h3>
+    <a href="javascript:" class="cls" style="text-decoration:underline"><%= i18n.clearUserSettings %></a>
+</div>
+
+<% } else { %>
+<h3><%= i18n.userSettingsCleaning %></h3>
+<a href="javascript:" class="cls" style="text-decoration:underline"><%= i18n.clearUserSettings %></a>
+<% } %>
+

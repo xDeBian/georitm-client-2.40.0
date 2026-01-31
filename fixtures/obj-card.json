@@ -1,0 +1,127 @@
+{
+  "settings": {
+    "Installer": "Джигит",
+    "RESPONSIVE_PERSONS": "{\"pass1\":\"огурец\",\"pass2\":\"под нуждой\",\"persons\":[]}",
+    "InstallPlace": "под полом у кота под лотком",
+    "IS_FOLLOWED": "0",
+    "IS_ACTIVE": "1",
+    "objControl": "{\"activityControl\":{\"timeout\":180,\"alerts\":[],\"groups\":[]},\"repair220Control\":{\"timeout\":60},\"enteringDelayControl\":{\"timeout\":25,\"controlledZones\":[6],\"receivedAlerts\":[1301,1341,1381,9991],\"expectedAlerts\":[4001,4011,4021,4031,4041,4051,4071,4091,4581]}}",
+    "ExtraHardware": "Бензопила пила пила и не допила",
+    "DESCRIPTION": "Здесь гонят пыво",
+    "pass1": "огурец",
+    "pass2": "под нуждой",
+    "Street": "Невский проспект",
+    "IntercomCode": "код домофона",
+    "VRC_OWNER": "Армянин",
+    "armScheduleTemplate": "[{\"name\":\"Расписание 1020304050607080900 1020304050607080900\",\"comment\":\"1020304050607080900 1020304050607080900 1020304050607080900 1020304050607080900 10203040506070809009\",\"notArmedAlert\":true,\"earlyDisarmedAlert\":true,\"allowDisarm\":\"00:05\",\"daysOfWeek\":{\"MONDAY\":[[0,48]],\"TUESDAY\":[[0,48]],\"WEDNESDAY\":[[0,48]],\"THURSDAY\":[[0,34],[36,48]],\"FRIDAY\":[[0,48]],\"SATURDAY\":[[0,48]],\"SUNDAY\":[[0,48]]},\"uuid\":\"71ce279f-e236-4bca-b9fc-caf480fe5b15\"},{\"name\":\"Расписание 2\",\"comment\":\"\",\"notArmedAlert\":true,\"earlyDisarmedAlert\":true,\"allowDisarm\":\"00:02\",\"daysOfWeek\":{\"MONDAY\":[[0,48]],\"TUESDAY\":[[0,48]],\"WEDNESDAY\":[[0,48]],\"THURSDAY\":[[0,35],[37,48]],\"FRIDAY\":[[0,48]],\"SATURDAY\":[[0,48]],\"SUNDAY\":[[0,48]]},\"uuid\":\"2caf80e7-4b1f-41a5-b288-75ae8a6586a9\"},{\"name\":\"ув\",\"comment\":\"\",\"notArmedAlert\":true,\"earlyDisarmedAlert\":true,\"allowDisarm\":\"\",\"daysOfWeek\":{\"MONDAY\":[[9,48]],\"TUESDAY\":[[9,48]],\"WEDNESDAY\":[[9,48]],\"THURSDAY\":[[19,21],[29,34],[40,42],[46,47],[44,45],[46,47]]},\"uuid\":\"ed908d60-b1d1-4942-8708-20d06537fa15\"}]",
+    "GateCode": "код ворот",
+    "House": "70",
+    "Lon": "30.430412",
+    "City": "Санкт-Петербург",
+    "InstallDate": "03.05.2016",
+    "ivlogin": "folz@ritm.ru",
+    "AppNumber": "333",
+    "PASS": "7777777",
+    "ObjType": "1",
+    "SIM": "9999999й",
+    "ivcamid": "100-c0d33f2d38e3d58fba5ca2835fd22bb5/0",
+    "Country": "Россия",
+    "imei": "863591029928102",
+    "PHONE2": "987654321",
+    "ivpassword": "123654",
+    "PHONE1": "123456789",
+    "SIM2": "8888888",
+    "Lat": "59.952207"
+  },
+  "item": {
+    "deviceTypeCode": "K14",
+    "firmwareUpdateStatus": 3,
+    "rev": "K-14.004.015 00504.002",
+    "deviceTypeId": 29,
+    "name": "Пивоварна у Слона на спине",
+    "deviceTypeName": "Контакт GSM-14",
+    "imei": "863591029928102",
+    "id": 28,
+    "extId": 10008,
+    "firmwareUpdateProgress": 45
+  },
+  "hasFault": false,
+  "objsGroups": [
+    {
+      "name": "группа одного домика",
+      "id": 102
+    }
+  ],
+  "areas": [
+    {
+      "num": 1,
+      "name": "Наименование раздела адын",
+      "comment": "",
+      "id": 6,
+      "isGuarded": true,
+      "zones": [
+        {
+          "areaId": 6,
+          "num": 1,
+          "name": "Наименование зоны адын раздела адын",
+          "comment": "",
+          "id": 6,
+          "hasAlarm": 1,
+          "version": 215
+        },
+        {
+          "areaId": 6,
+          "num": 2,
+          "name": "Наименование зоны дадва раздела адын",
+          "comment": "",
+          "id": 7,
+          "hasAlarm": 0,
+          "version": 215
+        }
+      ],
+      "version": 6,
+      "objectId": 28
+    },
+    {
+      "num": 2,
+      "name": "Наименование раздела дадва",
+      "comment": "",
+      "id": 5,
+      "isGuarded": true,
+      "zones": [
+        {
+          "areaId": 5,
+          "num": 3,
+          "name": "Наименование зоны тры раздела дадва",
+          "comment": "",
+          "id": 5,
+          "hasAlarm": 0,
+          "version": 168
+        }
+      ],
+      "version": 6,
+      "objectId": 28
+    },
+    {
+      "num": 3,
+      "name": "123",
+      "comment": "",
+      "id": 78,
+      "isGuarded": false,
+      "zones": [
+        {
+          "areaId": 78,
+          "num": 4,
+          "name": "",
+          "comment": "",
+          "id": 236,
+          "hasAlarm": 0,
+          "version": 0
+        }
+      ],
+      "version": 0,
+      "objectId": 28
+    }
+  ],
+  "canSetup": 1
+}

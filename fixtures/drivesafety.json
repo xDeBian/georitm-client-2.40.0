@@ -1,0 +1,106 @@
+{
+  "footer": {
+    "15": {
+      "id": 15,
+      "extId": 300,
+      "name": "Oct #300",
+      "carId": "a001aa78",
+      "model": "Skoda Octavia",
+      "type": "тип",
+      "year": "2014",
+      "vin": "вин",
+      "groups": "Real, real 2",
+      "rev": "REV 07.503.093",
+      "totalSpd1": 69,
+      "totalSpd2": 23,
+      "totalSpd3": 6,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 348,
+      "speedScore": 4.945402298850575,
+      "speedGrade": 1,
+      "accScore": 7.5665656,
+      "accGrade": 2,
+      "totalScore": 1.4727011494252875,
+      "totalGrade": 0
+    }
+  },
+  "header": {
+    "sd": 1.493586E9,
+    "ed": 1.494018E9,
+    "tzMin": 180,
+    "tzId": "Europe/Moscow",
+    "keyOrder": [
+      15
+    ],
+    "speedLimits": [
+      "60",
+      "90",
+      "110",
+      "130"
+    ],
+    "speedWeights": [
+      "0",
+      "1",
+      "3",
+      "5"
+    ],
+    "gradeThresholds": [
+      "4",
+      "7"
+    ],
+    "speedingMintime": 20,
+    "accelerationLimit": 2,
+    "accelerationWeight": 1,
+    "brakingLimit": -2,
+    "brakingWeight": 1,
+    "accelerationMintime": 3
+  },
+  "body": {
+    "15": {
+      "1493586000000": {
+        "run": {
+          "distance": 348.36,
+          "fullTime": 432000,
+          "moveTime": 34163,
+          "parkTime": 397837,
+          "moveStart": 1.493632599E9,
+          "moveEnd": 1.494015335E9
+        },
+        "acc": {
+          "carId": "a001aa78",
+          "model": "Skoda Octavia",
+          "type": "тип",
+          "year": "2014",
+          "vin": "вин",
+          "groups": "Real, real 2",
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "carId": "a001aa78",
+          "model": "Skoda Octavia",
+          "type": "тип",
+          "year": "2014",
+          "vin": "вин",
+          "groups": "Real, real 2",
+          "exceed_b1": 69,
+          "exceed_b2": 23
+        },
+        "spd2": {
+          "carId": "a001aa78",
+          "model": "Skoda Octavia",
+          "type": "тип",
+          "year": "2014",
+          "vin": "вин",
+          "groups": "Real, real 2",
+          "exceed_b1": 6,
+          "exceed_b2": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<li class="list-group-item indicator isOnline" 
+    data-state="<%= isOnline ? 1 : 0 %>"
+    <% if(isShellAllowed) {%> data-page="connections"<% } %>
+    >
+    <svg class="svg-icon list-group-item-icon">
+        <use xlink:href="#smb-connection"></use>
+    </svg>
+    <div class="info">
+        <h4><%= i18n.GSMConnection %></h4>
+        <div class="extra-online">
+            <span class="extra lastGSMConnectionTime nobr extra-online-label"><%= lastGSMConnectionTimeS %></span>
+            <% if(hasLbsData) {%>
+                <div class="lbs-control lbs-control-stat <%= lbsLoading ? 'loading' : '' %> ">
+                    <i class="svg-icon svg-icon-spinner icon-spin"></i> 
+                    <span class="lbs-control-label">
+                        <% if(lbsShown) {
+                            print(i18n.hideLbs)
+                        } else { 
+                            print(i18n.showLbs)
+                        } %>
+                    </span>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <% if(isShellAllowed) {%>
+        <svg class="svg-icon more-action">
+            <use xlink:href="#smb-chevron-right"></use>
+        </svg>
+    <% } %>
+</li>

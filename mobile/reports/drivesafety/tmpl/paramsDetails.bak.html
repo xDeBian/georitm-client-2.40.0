@@ -1,0 +1,23 @@
+<% if(isSummary) {%>
+    <label class="checkbox">
+        <input name="showSummary" type="checkbox" value="1"<% if(showSummary) { %> checked<% } %>>
+        <%= i18n.drivesafety.showSummary %>
+    </label>
+    <label class="checkbox">
+        <input name="showTop" type="checkbox" value="1"<% if(showTop) { %> checked<% } %>>
+        <%= i18n.drivesafety.showTop %>
+    </label>
+    <label class="checkbox">
+        <input name="showList" type="checkbox" value="1"<% if(showList) { %> checked<% } %>>
+        <%= i18n.drivesafety.showList %>
+    </label>
+<% } else {%>
+    <label class="checkbox">
+        <input name="showStatistics" type="checkbox" value="1"<% if(showStatistics) { %> checked<% } %>>
+        <%= i18n.drivesafety.showStatistics %>
+    </label>
+    <label class="checkbox">
+        <input name="showCalculation" type="checkbox" value="1"<% if(showCalculation) { %> checked<% } %>>
+        <%= i18n.drivesafety.showCalculation %>
+    </label>
+<% } %>

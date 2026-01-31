@@ -1,0 +1,178 @@
+[
+    {
+        "id": 5988,
+        "objs": [
+            {
+                "rev": "-",
+                "lon": 30.716666,
+                "img": "37",
+                "extId": 9,
+                "id": 86006,
+                "isGsmOnline": false,
+                "name": "Mary Goodnight",
+                "isGpsOnline": false,
+                "lat": 60.591666
+            }
+        ],
+        "name": "Stat group 1",
+        "nbItems": 2,
+        "objsGroups": [
+            {
+                "id": 89958,
+                "objs": [
+                    {
+                        "rev": "07.503.084",
+                        "lon": 30.410929999999997,
+                        "img": "1",
+                        "extId": 8909,
+                        "isActive": "0",
+                        "id": 98639,
+                        "isGsmOnline": false,
+                        "name": "Новый домик №8909",
+                        "isGpsOnline": false,
+                        "lat": 59.965467999999994
+                    }
+                ],
+                "name": "Stat group 1 1",
+                "nbItems": 1,
+                "objsGroups": [
+                    {
+                        "id": 10888,
+                        "objs": [],
+                        "name": "Stat group 1 1 1",
+                        "nbItems": 0,
+                        "objsGroups": [],
+                        "extId": 13
+                    }
+                ],
+                "extId": 184
+            }
+        ],
+        "extId": 2
+    },
+    {
+        "id": 12892,
+        "objs": [
+            {
+                "rev": "07.505.020",
+                "lon": 30.4212,
+                "img": "199",
+                "extId": 6985,
+                "isActive": "0",
+                "id": 97909,
+                "isGsmOnline": false,
+                "name": "Дом 1",
+                "isGpsOnline": false,
+                "lat": 59.963460999999995
+            },
+            {
+                "rev": "07.505.007",
+                "lon": 30.42125,
+                "img": "19",
+                "extId": 6987,
+                "isActive": "0",
+                "id": 98081,
+                "isGsmOnline": false,
+                "name": "Дом 546556",
+                "isGpsOnline": false,
+                "lat": 59.96347
+            },
+            {
+                "rev": "07.503.093",
+                "lon": 30.431082999999997,
+                "img": "1",
+                "extId": 6988,
+                "lastPointDate": null,
+                "isActive": "0",
+                "id": 97802,
+                "isGsmOnline": false,
+                "name": "Дом 000000000",
+                "isGpsOnline": false,
+                "lat": 59.956557999999994
+            },
+            {
+                "rev": "07.640.485",
+                "lon": 30.430925,
+                "img": "103",
+                "extId": 317,
+                "id": 89164,
+                "isGsmOnline": false,
+                "name": "Дом 11111111",
+                "isGpsOnline": false,
+                "lat": 59.956798
+            }
+        ],
+        "name": "Группа домиков",
+        "nbItems": 4,
+        "objsGroups": [],
+        "extId": 24
+    },
+    {
+        "id": 978782,
+        "objs": [
+            {
+                "rev": "07.503.090",
+                "lon": 37.765056,
+                "img": "19",
+                "extId": 9940,
+                "isActive": "0",
+                "id": 98872,
+                "isGsmOnline": false,
+                "name": "DVNS-J",
+                "isGpsOnline": false,
+                "lat": 55.422337999999996
+            }
+        ],
+        "name": "DVNS",
+        "nbItems": 6,
+        "objsGroups": [
+            {
+                "id": 93,
+                "objs": [
+                    {
+                        "rev": "",
+                        "lon": 0,
+                        "img": "19",
+                        "extId": 667,
+                        "isActive": "0",
+                        "id": 92526,
+                        "isGsmOnline": false,
+                        "name": " №667-Glonass\\GPS",
+                        "isGpsOnline": false,
+                        "lat": 0
+                    },
+                    {
+                        "rev": "07.502.132",
+                        "lon": 30.430871,
+                        "img": "19",
+                        "extId": 660,
+                        "isActive": "0",
+                        "id": 92249,
+                        "isGsmOnline": false,
+                        "name": "660-МНП-М7",
+                        "isGpsOnline": false,
+                        "lat": 59.956810999999995
+                    },
+                    {
+                        "rev": "07.502.132",
+                        "lon": 30.43116,
+                        "state": "1",
+                        "img": "19",
+                        "extId": 661,
+                        "isActive": "0",
+                        "id": 93250,
+                        "isGsmOnline": false,
+                        "name": "661-Leadtek_V9",
+                        "isGpsOnline": false,
+                        "lat": 59.956758
+                    }
+                ],
+                "name": "ГГГГГГГГГ",
+                "nbItems": 5,
+                "objsGroups": [],
+                "extId": 370
+            }
+        ],
+        "extId": 330
+    }
+]

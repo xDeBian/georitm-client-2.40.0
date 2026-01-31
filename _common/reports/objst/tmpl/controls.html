@@ -1,0 +1,27 @@
+<div class="rep-table-controls form-horizontal">
+    <% if(sortFields) { %>
+    <div class="control-group">
+        <label class="control-label"><%= i18n.sort %></label>
+        <select class="form-control" name="sort">
+            <% _.each(sortFields, function(key) {%>
+            <option value="<%= key %>"<% if(key == curSortField) {%> selected<% } %>><%= names[key] %></option>
+            <% }) %>
+        </select>
+        <select class="form-control" name="sortType">
+            <option value="asc"<% if('asc' == curSortType) {%> selected<% } %>><%= i18n.sortTypeAsc %></option>
+            <option value="desc"<% if('desc' == curSortType) {%> selected<% } %>><%= i18n.sortTypeDesc %></option>
+        </select>
+    </div>
+    <% } %>
+    <% if(groupFields) { %>
+    <div class="control-group">
+        <label class="control-label"><%= i18n.groupBy %></label>
+        <select class="form-control" name="group">
+            <option value=""><%= i18n.no.ucFirst() %></option>
+            <% _.each(groupFields, function(key) {%>
+            <option value="<%= key %>"<% if(key == curGroupField) {%> selected<% } %>><%= names[key] %></option>
+            <% }) %>
+        </select>
+    </div>
+    <% } %>
+</div>

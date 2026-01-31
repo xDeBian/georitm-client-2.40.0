@@ -1,0 +1,12 @@
+<div class="pane-left<% if(leftClosed) {%> closed<% } %>" style="width:<%= leftWidth %>px">
+    <div class="tabs-hor-cont" id="nav-main-modules">
+        <ul class="tabs-hor"></ul>
+    </div>
+    <a href="javascript:;" class="toggle-pane">
+        <i class="icon-chevron"></i>
+    </a>
+</div>
+<div class="pane-right" style="left:<%= leftClosed ? 0 : leftWidth %>px">
+    <div class="pane-right-top"></div>
+    <div class="pane-right-bottom"></div>
+</div>

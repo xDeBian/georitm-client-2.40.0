@@ -1,0 +1,40 @@
+<ul class="list-group indicators connections">
+    <li class="list-group-item indicator isGsmOnline" data-state="<%= isGsmOnline ? 1 : 0 %>">
+        <svg class="svg-icon list-group-item-icon">
+            <use xlink:href="#smb-connection"></use>
+        </svg>
+        <div class="info">
+            <h4><%= i18n.GSMConnection %></h4>
+            <span class="extra nobr">
+                <span class="lastGSMConnectionTime">
+                <%= lastGSMConnectionTimeS %>
+                </span>
+                <% if(hasLbsData) {%>
+                <a class="lbs-control" href="#">
+                    <i class="svg-icon svg-icon-spinner icon-spin"></i> <span class="lbs-control-label"><%= i18n.showLbs %></span>
+                </a>
+                <% } %>
+            </span>
+        </div>
+    </li>
+    <li class="list-group-item indicator isGpsOnline<% if(isGpsOnline) {%> on<% } %>" data-state="<%= isGpsOnline ? 1 : 0 %>">
+        <svg class="svg-icon list-group-item-icon">
+            <use xlink:href="#smb-satellite"></use>
+        </svg>
+        <div class="info">
+            <h4><%= i18n.coords.ucFirst() %></h4>
+            <span class="lastGPSConnectionTime nobr">
+                <%= lastGPSConnectionTimeS %>
+            </span>
+        </div>
+    </li>
+    <!--<li class="list-group-item indicator power" data-state="<%= power == 0 ? 1 : 0 %>">
+        <svg class="svg-icon list-group-item-icon">
+            <use xlink:href="#smb-plug"></use>
+        </svg>
+        <div class="info">
+            <h4><%= i18n.power.ucFirst() %></h4>
+            <span class="nobr"><%= i18n[power == 0 ? 'powerOn' : 'powerOff'] %></span>
+        </div>
+    </li>-->
+</ul>

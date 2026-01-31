@@ -1,0 +1,47 @@
+<div class="drive-summary">
+
+    <div class="drive-summary-content">
+        <div class="grade" data-grade="<%= grade %>">
+            <h4 class="grade-header">
+                <%= i18n.drivesafety.grade %>
+            </h4>
+            <div class="grade-value">
+                <%= score %>
+            </div>
+            <div class="grade-label">
+                <%= gradeLabel %>
+            </div>
+        </div>
+
+        <div class="grade-details">
+
+            <div class="grade-details-row">
+                <svg class="svg-icon grade-icon">
+                    <use xlink:href="#smb-speed"></use>
+                </svg>
+                <span class="grade-bar">
+                    <span class="grade-bar-indicator" data-grade="<%= gradeBySpeeding %>"
+                          style="width: <%= speedingBarWidth %>%"></span>
+                </span>
+                <span class="grade-value"><%= scoreBySpeedings %></span>
+                <span class="grade-label"><%= gradeBySpeedingLabel %></span>
+            </div>
+
+            <div class="grade-details-row">
+                <svg class="svg-icon grade-icon">
+                    <use xlink:href="#smb-brake"></use>
+                </svg>
+                <span class="grade-bar">
+                    <span class="grade-bar-indicator" data-grade="<%= gradeByStyle %>"
+                          style="width: <%= styleBarWidth %>%"></span>
+                </span>
+                <span class="grade-value"><%= scoreByStyle %></span>
+                <span class="grade-label"><%= gradeByStyleLabel %></span>
+            </div>
+
+        </div>
+    </div><!--/.drive-summary-content-->
+
+    <%= legendHtml %>
+
+</div><!--/.drive-summary-->

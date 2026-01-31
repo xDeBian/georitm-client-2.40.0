@@ -1,0 +1,12 @@
+<div class="rep-progress">
+    <p><%= i18n.reportBuildingInProgress %></p>
+    <div class="progress-bar">
+        <div class="progress-bar-line">
+            <div class="progress-bar-indicator" style="width: <%= percent %>%"></div>
+        </div>
+        <div class="progress-bar-value"><%= percent %>%</div>
+    </div>
+    <div class="text-left">
+        <button class="btn btn-cancel" data-id="<%= id %>"><%= i18n.cancel %></button>
+    </div>
+</div>

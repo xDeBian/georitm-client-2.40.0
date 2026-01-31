@@ -1,0 +1,16 @@
+<fieldset>
+    <legend>
+        <label class="checkbox">
+            <input type="checkbox" class="select-all no-validation"<% if(alertGroupId.length >= groups.length) {%> checked<% } %>>
+            <%= i18n.alertsGroups %>
+        </label>
+    </legend>
+
+    <% _.each(groups, function(g) {%>
+    <label class="checkbox">
+        <input name="alertGroupId" type="checkbox" value="<%= g.id %>"<% if(_.indexOf(alertGroupId, g.id) != -1) {%> checked<% } %>>
+        <%= g.name %>
+    </label>
+    <% }) %>
+
+</fieldset>

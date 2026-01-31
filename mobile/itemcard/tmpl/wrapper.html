@@ -1,0 +1,127 @@
+<ul class="nav nav-tabs">
+    <li class="tab-obj active">
+        <a href="#tabs-1" data-key="main" data-toggle="tab">
+            <i class="svg-icon svg-icon-circle-info"></i>
+            <%= i18n.object.ucFirst() %>
+        </a>
+    </li>
+    <% if(htmlHardware) { %>
+    <li class="tab-hardware">
+        <a href="#tabs-2" data-key="hardware" data-toggle="tab">
+            <i class="svg-icon svg-icon-hardware"></i>
+            <%= i18n.hardware %>
+        </a>
+    </li>
+    <% } %>
+    <li class="tab-connections">
+        <a href="#tabs-3" data-key="connections" data-toggle="tab">
+            <i class="svg-icon svg-icon-connections"></i>
+            <%= i18n.sensorsAndDevices %>
+        </a>
+    </li>
+    <% if(editable) {%>
+    <li class="tab-alerts-control">
+        <a href="#tabs-12" data-key="alerts-control" data-toggle="tab">
+            <i class="svg-icon svg-icon-checkmark"></i>
+            <%= i18n.alertsControl %>
+        </a>
+    </li>
+    <% } %>
+    <li class="tab-fuel">
+        <a href="#tabs-4" data-key="fuel" data-toggle="tab">
+            <i class="svg-icon svg-icon-fuel"></i>
+            <%= i18n.fuel.ucFirst() %>
+        </a>
+    </li>
+    <li class="tab-filters">
+        <a href="#tabs-5" data-key="filters" data-toggle="tab">
+            <i class="svg-icon svg-icon-filter">
+            </i><%= i18n.filters %>
+        </a>
+    </li>
+    <li class="tab-pictures">
+        <a href="#tabs-6" data-key="pictures" data-toggle="tab">
+            <i class="svg-icon svg-icon-photo"></i>
+            <%= i18n.objPhoto %>
+        </a>
+    </li>
+    <% if(editable && App.allowed('video.edit')) {%>
+    <li class="tab-cameras">
+        <a href="#tabs-9" data-key="cameras" data-toggle="tab">
+            <i class="svg-icon svg-icon-camera"></i>
+            <%= i18n.video %>
+        </a>
+    </li>
+    <% } %>
+    <li class="tab-responsible">
+        <a href="#tabs-7" data-key="people" data-toggle="tab">
+            <i class="svg-icon svg-icon-users"></i>
+            <%= i18n.responsible.header %>
+        </a>
+    </li>
+    <% if(editable) {%>
+    <li class="tab-notifications">
+        <a href="#tabs-8" data-key="notifications" data-toggle="tab">
+            <i class="svg-icon svg-icon-send"></i>
+            <%= i18n.notifications %>
+        </a>
+    </li>
+    <li class="tab-history">
+        <a href="#tabs-10" data-key="history" data-toggle="tab">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-edit"></use>
+            </svg>
+            <%= i18n.editHistory %>
+        </a>
+    </li>
+    <% } %>
+</ul>
+<div class="tab-content">
+
+    <div class="tab-pane card-section active" id="tabs-1">
+        <%= htmlInfo %>
+    </div><!--/tab-pane tabs-1-->
+
+    <% if(htmlHardware) { %>
+    <div class="tab-pane card-section" id="tabs-2">
+        <%= htmlHardware %>
+    </div><!--/tab-2 hardware-->
+    <% } %>
+
+    <div class="tab-pane card-section" id="tabs-3">
+        <%= htmlConnections %>
+    </div><!--/tab-3 connections-->
+
+    <% if(editable) {%>
+    <div class="tab-pane card-section alert-control-section" id="tabs-12">
+    </div><!--/tab-12 alerts-control-->
+    <% } %>
+
+    <div class="tab-pane card-section fuel-section" id="tabs-4">
+        <%= htmlFuel %>
+    </div><!--/tab-4 fuel-->
+
+    <div class="tab-pane card-section" id="tabs-5">
+        <%= htmlFilters %>
+    </div><!--/tab-5 filters-->
+
+    <div class="tab-pane card-section pictures-section" id="tabs-6">
+        <%= htmlPictures %>
+    </div><!--/tab-6 pictures-->
+
+    <div class="tab-pane card-section responsible-section" id="tabs-7">
+        <%= htmlResponsible %>
+    </div><!--/tab-7 responsible-->
+
+    <% if(editable) {%>
+    <div class="tab-pane card-section notifications-section" id="tabs-8">
+    </div><!--/tab-8 notifications-->
+    <% if(App.allowed('video.edit')) { %>
+    <!--/tab-9 cameras ivideon, ritmrtp -->
+        <div class="tab-pane card-section cameras-section" id="tabs-9"></div>
+    <% } %>
+    <div class="tab-pane card-section history-section" id="tabs-10">
+    </div><!--/tab-10 edit history-->
+    <% } %>
+
+</div><!--/tab-content-->

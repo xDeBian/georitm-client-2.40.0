@@ -1,0 +1,15 @@
+<tr data-head="1">
+    <th><%= i18n.objIdNumber %></th>
+    <th><%= i18n.objName %></th>
+    <% _.each(sensors, function(d){ %>
+        <th><%= d.name %></th>
+    <% }) %>
+    <% if(power){ %>
+        <th><%= power.name %></th>
+    <% } %>
+    <th><%= i18n.runDistance %>, <%= i18n.km %></th>
+    <th><%= i18n.moveStart %></th>
+    <th><%= i18n.moveEnd %></th>
+    <th><%= i18n.moveTime %></th>
+    <th><%= i18n.parkTime %></th>
+</tr>

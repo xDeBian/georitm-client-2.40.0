@@ -1,0 +1,12 @@
+<% if (isgroup) { %>
+    <span data-action="check" class="nb-items">(<%= 'undefined' != typeof items ? items.length : '0' %>)</span>
+<% } else { %>
+    <% if(type == 1) { %>
+    <i data-action="check" class="icon-radial" title="<%= i18n.radial %> <%= i18n.geozone %>"></i>
+    <% } else { %>
+    <i data-action="check" class="icon-poly" title="<%= i18n.polygonal %> <%= i18n.geozone %>"></i>
+    <% } %>
+<% } %>
+<% if (hasContext) { %>
+    <i class="icon icon-edit svg-icon svg-icon-caret-down"></i>
+<% } %>

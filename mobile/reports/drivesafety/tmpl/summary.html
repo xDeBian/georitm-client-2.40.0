@@ -1,0 +1,42 @@
+<div class="drive-summary">
+
+    <div class="drive-summary-headers">
+        <h4 class="drive-summary-header grade-header">
+            <%= i18n.drivesafety.gradeByGroup %>
+        </h4>
+        <h4 class="drive-summary-header grade-details-header">
+            <%= i18n.drivesafety.gradeDistributionbyObjects %>
+        </h4>
+    </div>
+
+    <div class="drive-summary-content">
+
+        <div class="grade" data-grade="<%= grade %>">
+            <div class="grade-value">
+                <%= score %>
+            </div>
+        </div>
+
+        <div class="grade-details drive-summary-details">
+            <div class="grade-details-content">
+                <div class="grade-labels">
+                    <% _.each(rows, function(row){%>
+                    <div class="grade-label" data-grade="<%= row.grade %>"><%= row.label %></div>
+                    <% }) %>
+                </div>
+                <div class="grade-bars">
+                    <% _.each(rows, function(row){%>
+                    <div class="grade-bar">
+                        <div class="grade-bar-indicator" data-grade="<%= row.grade %>" style="width: <%= row.barWidth %>%"></div>
+                    </div>
+                    <% }) %>
+                </div>
+                <div class="grade-percents">
+                    <% _.each(rows, function(row){%>
+                    <div data-grade="<%= row.grade %>" class="grade-percent"><%= row.nb %> (<%= row.percent %>%)</div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

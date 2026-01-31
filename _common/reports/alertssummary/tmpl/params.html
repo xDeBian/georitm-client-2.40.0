@@ -1,0 +1,33 @@
+<fieldset class="radio-group">
+    <legend><%= i18n.typeOfReport %></legend>
+    <% _.each(i18n.alertsSummaryReport, function(name, key) {%>
+    <label class="radio">
+        <input name="reportSubtype" type="radio" value="<%= key %>"<% if(reportSubtype === key) { %> checked<% } %>>
+        <%= name %>
+    </label>
+    <% }) %>
+    <!--<label class="radio">
+        <input name="reportSubtype" type="radio" value="general"<% if(reportSubtype === 'general') { %> checked<% } %>>
+        <%= i18n.alertsSummaryReport['general'] %>
+    </label><label class="radio">
+        <input name="reportSubtype" type="radio" value="connect"<% if(reportSubtype === 'connect') { %> checked<% } %>>
+        <%= i18n.alertsSummaryReport['connect'] %>
+    </label><label class="radio">
+        <input name="reportSubtype" type="radio" value="loss"<% if(reportSubtype === 'loss') { %> checked<% } %>>
+        <%= i18n.alertsSummaryReport['loss'] %>
+    </label><label class="radio">
+        <input name="reportSubtype" type="radio" value="220v"<% if(reportSubtype === '220v') { %> checked<% } %>>
+        <%= i18n.alertsSummaryReport['220v'] %>
+    </label><label class="radio">
+        <input name="reportSubtype" type="radio" value="power"<% if(reportSubtype === 'power') { %> checked<% } %>>
+        <%= i18n.alertsSummaryReport['power'] %>
+    </label>-->
+</fieldset>
+<fieldset>
+    <legend><%= i18n.detailReport %></legend>
+    <label class="checkbox">
+        <input data-invert="1" data-invertname="hideDetails" data-invertempty="true"
+            name="showDetails" type="checkbox" value="1"<% if(showDetails) { %> checked="checked"<% } %>>
+        <%= i18n.showReportDataOnEveryDay %>
+    </label>
+</fieldset>

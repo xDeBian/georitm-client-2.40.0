@@ -1,0 +1,21 @@
+<span class="name">
+    <i class="spacer" style="width: <%= (20 * indent) %>px;"></i>
+
+    <% if(isgroup) { %>
+        <% if(id == 0) { %><% } else if(items.length || groups.length) { %>
+            <i class="toggle <%= closed ? 'collapse': 'expand' %>"></i>
+        <% } else { %>
+            <i class="toggle"></i>
+        <% } %>
+    <% } else { %>
+        <!--<i class="toggle"></i>-->
+    <% } %>
+
+    <% if(isgroup && nbItems == 0) { %>
+        <i class="item-check-false"></i>
+    <% } else { %>
+        <i class="item-check<%= checked === 1 ? ' checked': (checked === 2 ? ' indeterminate': '') %>" ></i>
+    <% } %>
+
+    <% if(isgroup) { %><b><%- name %></b><% } else { %><span data-grid-itemid="<%= id %>"><%- name %></span><% } %>
+</span>

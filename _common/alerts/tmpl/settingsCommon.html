@@ -1,0 +1,56 @@
+<h3><%= App.allowed('alerts') ? i18n.alarmsWindow : i18n.historyWindow %></h3>
+<div class="params-group pull-left">
+
+    <% if(!App.isAlarmOperator()) {%>
+    <h4><%= i18n.alarmsAndAlertsSettings[App.allowed('alerts') ? 'windowMode' : 'historyWindowMode'] %></h4>
+    <div class="control-group">
+        <label class="radio">
+            <input type="radio" name="extended" value="false"<% if(!extended) {%> checked<% } %>>
+            <%= i18n.alarmsAndAlertsSettings.windowModeCompact %>
+        </label><label class="radio">
+            <input type="radio" name="extended" value="true"<% if(extended) {%> checked<% } %>>
+            <%= i18n.alarmsAndAlertsSettings.windowModeExtended %>
+        </label>
+    </div>
+    <% } %>
+
+    <% if (isAdmin) {%>
+    <h4><%= i18n.alarmsAndAlertsSettings.windowOpenMode %></h4>
+    <div class="control-group">
+        <label class="radio">
+            <input type="radio" name="windowAutoOpen" value="false"<% if(!windowAutoOpen) {%> checked<% } %>>
+            <%= i18n.alarmsAndAlertsSettings.windowOpenManually %>
+        </label><label class="radio">
+            <input type="radio" name="windowAutoOpen" value="true"<% if(windowAutoOpen) {%> checked<% } %>>
+            <%= i18n.alarmsAndAlertsSettings.windowAutoOpen %>
+        </label>
+    </div>
+    <% } %>
+
+    <h4><%= i18n.alarmsAndAlertsSettings.alarmSoundHeader %></h4>
+    <div class="control-group form-horizontal sound">
+        <div class="field">
+            <select name="alarmSound">
+                <option <% if (alarmSound == 'alarm') { %>selected <% } %>value="alarm"><%= i18n.sound %> 1</option>
+                <option <% if (alarmSound == 'music-one') { %>selected <% } %>value="music-one"><%= i18n.sound %> 2</option>
+                <option <% if (alarmSound == 'music-two') { %>selected <% } %>value="music-two"><%= i18n.sound %> 3</option>
+            </select>
+            <div class="btn-play icon-play"></div>
+
+            <audio repeat="false" preload="true">
+                <source src="<%= soundPath %>">
+            </audio>
+        </div>
+    </div>
+
+    <h4><%= i18n.alarmsAndAlertsSettings.soundInterval %></h4>
+    <div class="control-group">
+        <div class="slider" style="width:235px"></div>
+        <span class="value"><%= soundInt/1000 %></span> <%= i18n.sec %>
+    </div>
+
+    <h4><%= i18n.alarmsAndAlertsSettings.trackLength %> (100 <%= i18n.m %> - 2000 <%= i18n.m %>)</h4>
+    <div class="control-group">
+        <input name="trackLength" type="text" class="input-mini integer" value="<%= trackLength %>" maxlength="4">
+    </div>
+</div>

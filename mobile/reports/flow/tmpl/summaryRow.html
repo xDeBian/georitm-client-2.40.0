@@ -1,0 +1,11 @@
+<tr class="<%= rowClass %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+    <td data-key="name" class="text-left"><%- name %> <% if(typeof extId != 'undefined') { %>(#<%- extId %>)<% } %></td>
+    <td data-key="distance" data-value="<%= distance %>"><%= distance.toFixed(2) %></td>
+    <td data-key="moveStart" data-value="<%= moveStart %>"><%= moveStartS %></td>
+    <td data-key="moveEnd" data-value="<%= moveEnd %>"><%= moveEndS %></td>
+    <td data-key="moveTime" data-value="<%= moveTime %>" class="text-left"><%= Date.formatSeconds(moveTime) %></td>
+    <td data-key="parkTime" data-value="<%= parkTime %>" class="text-left"><%= Date.formatSeconds(parkTime) %></td>
+    <td data-key="avgSpeed" data-value="<%= avgSpeed %>"><%= avgSpeed.toFixed(2) %></td>
+    <td data-key="consum100km" data-value="<%= consum100km %>"><%= consum100kmS %></td>
+    <td data-key="realConsum" data-value="<%= fuelConsum %>"><%= fuelConsumS %></td>
+</tr>

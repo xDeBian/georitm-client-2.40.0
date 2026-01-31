@@ -1,0 +1,1 @@
+define(["util","./JsonSequence"],function(e,t){function n(){t.apply(this,arguments),this.code=n.CODE_SUCCESS}return e.extend(n,t),Object.defineProperty(n,"data",{get:function(){return this.params}}),n.CODE_SUCCESS=0,n});

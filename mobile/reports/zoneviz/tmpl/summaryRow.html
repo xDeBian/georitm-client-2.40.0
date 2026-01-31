@@ -1,0 +1,15 @@
+<tr>
+    <% if(index == 0) { %>
+    <td rowspan="<%= count %>" class="text-left no-select">
+        <a data-geozoneid="<%= zoneId %>" href="#"><%- zone %></a>
+    </td>
+    <% } %>
+    <td data-key="object" data-value="<%= object %>"><%= object %></td>
+    <td data-key="visitCount" data-value="<%= visitcount %>"><%= visitcount %></td>
+    <td data-key="timeinzone" data-value="<%= timeinzone %>"><%= timeinzone %></td>
+    <td data-key="timeoutzone" data-value="<%= timeoutzone %>"><%= timeoutzone %></td>
+    <td data-key="runinzone" data-value="<%= runinzone %>"><%= runinzone %></td>
+    <td data-key="runoutzone" data-value="<%= runoutzone %>"><%= runoutzone %></td>
+    <td data-key="firstenter" data-value="<%= firstenter %>"><%= firstenter %></td>
+    <td data-key="lastexit" data-value="<%= lastexit %>"><%= lastexit %></td>
+</tr>

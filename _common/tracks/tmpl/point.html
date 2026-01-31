@@ -1,0 +1,13 @@
+<div class="track-info">
+    <h5><%= title %></h5>
+    <ul class="features">
+        <li><%= i18n.time.ucFirst() %>: <strong data-value="<%= data.date %>"><%= dateStr %></strong></li>
+        <li><%= i18n.speed.ucFirst() %>: <strong data-value="<%= data.speed %>"><%= Math._round(data.speed,2) %> <%= i18n.kmh %></strong></li>
+        <% if('alt' in data) {%>
+        <li><%= i18n.altitude %>: <strong data-value="<%= data.alt %>"><%= data.alt %> <%= i18n.m %></strong></li>
+        <% } %>
+        <% if('rid' in data) {%>
+        <li>RID: <strong><%= data.rid %></strong></li>
+        <% } %>
+    </ul>
+</div>

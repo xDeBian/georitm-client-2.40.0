@@ -1,0 +1,61 @@
+<div class="subheader">
+    <a data-target="summary" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%= title %></h5>
+</div>
+
+<div class="areas-state-cont">
+    <table>
+        <%= areasHtml %>
+    </table>
+</div>
+<% if(0) {%>
+
+<div class="areas-list">
+    <table>
+        <colgroup>
+            <!--<col style="width:5%">
+            <col style="width:27%">
+            <col style="width:25%">
+            <col style="width:16%">
+            <col style="width:27%">-->
+
+            <col style="width:20px">
+            <col style="width:18px">
+            <col style="width:18px">
+            <col style="width:18px">
+        </colgroup>
+        <% _.each(areas, function(area){%>
+        <tr class="area" data-id="<%= area.id %>"
+            data-index="<%= area.num %>"
+        <% if(area.num > 0 && operatable) {%> data-page="operate"<% } %>>
+
+        <td class="text-center" title="<%= i18n.objAreaNum %>"><%- area.num %></td>
+        <td class="state-guard<% if(area.isGuarded) {%> on<% } %>"<% if(area.num > 0) {%> title="<%= area.isGuarded ? i18n.guarded : i18n.notGuarded %>"<% } %>>
+        <% if(area.num > 0) {%>
+        <i class="icon-state icon-state-guard"></i>
+        <!--<%= area.isGuarded ? i18n.guarded : i18n.notGuarded %>-->
+        <% } %>
+        </td>
+        <td class="state-alarm<% if(area.hasAlarm) {%> on<% } %>" title="<%= area.hasAlarm ? i18n.withAlarms : i18n.noAlarms %>">
+            <i class="icon-state icon-state-alarm"></i>
+            <!--<% if(area.hasAlarm) { print(i18n.alarm.ucFirst()) } %>-->
+        </td>
+
+        <td class="state-fault<% if(area.hasFault) {%> on<% } %>" title="<%= area.hasFault ? i18n.hasFault : i18n.noFault %>">
+            <i class="icon-state icon-state-fault"></i>
+            <!--<% if(area.hasFault) { print(i18n.hasFault) } %>-->
+        </td>
+        <td class="area-name text-left">
+            <%- area.num == 0 ? i18n.zeroAreaName : ( area.name || i18n.objArea + ' ' + area.num ) %>
+            <% if(area.num > 0 && operatable) {%>
+            <i class="svg-icon svg-icon-chevron-right"></i>
+            <% } %>
+        </td>
+        </tr>
+        <% }) %>
+    </table>
+</div>
+
+<% } %>

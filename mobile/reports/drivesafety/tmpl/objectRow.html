@@ -1,0 +1,45 @@
+<tr<% if(isLast) {%> data-row="last"<% } %>
+    <% if(hasData) { %> data-index="<%= index %>"<% } %>
+    class="rep-row <%= rowClass %>">
+<% _.each(properties, function(key){ %>
+<td>
+    <% if(hasData) { %>
+    <a href="javascript:;">
+        <%= key in summary ? summary[key] : '--' %>
+    </a>
+    <% } else { %>
+    <%= key in summary ? summary[key] : '--' %>
+    <% } %>
+</td>
+<% }) %>
+
+<% if(hasData) { %>
+    <% if(showListWithViolations) { %>
+    <td><%= summary.totalDistance %></td>
+    <td><%= summary.totalSpeedings[0] %></td>
+    <td><%= summary.totalSpeedings[1] %></td>
+    <td><%= summary.totalSpeedings[2] %></td>
+    <td><%= summary.totalSpeedings[3] %></td>
+    <td><%= summary.totalAccelerations %></td>
+    <td><%= summary.totalBrakings %></td>
+    <% } %>
+
+    <% if(showListWithSumScore) { %>
+    <td class="cell-score" data-grade="<%= summary.accGrade %>">
+        <%= summary.accScore %>
+    </td><td class="cell-score" data-grade="<%= summary.speedGrade %>">
+        <%= summary.speedScore %>
+    </td><td class="cell-score" data-grade="<%= summary.totalGrade %>">
+        <%= summary.totalScore %>
+    </td>
+    <% } %>
+<% } else { %>
+    <% if(showListWithViolations) { %>
+        <td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td>
+    <% } %>
+    <% if(showListWithSumScore) { %>
+        <td>--</td><td>--</td><td>--</td>
+    <% } %>
+<% } %>
+
+</tr>

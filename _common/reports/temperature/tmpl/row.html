@@ -1,0 +1,16 @@
+<tr class="<%= rowClass %>"<% if(isLast) { %> data-row="last"<% } %>>
+    <td><%= dateS %></td>
+    <td><%= startS %></td>
+    <td><%= endS %></td>
+    <td><%= value %></td>
+    <td><%= avgValue %></td>
+    <td><%= timeS %></td>
+    <td><%= distS %></td>
+    <td class="address text-left" data-key="address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>">
+        <a href="#" class="build-track-segment" data-id="<%= id %>" data-from="<%= start %>" data-to="<%= end %>">
+            <% if(typeof address != 'undefined' && address) {print(address)} else { %>
+            <span class="loading-address" data-geoid="<%= geoId %>"><%= loadingAddress %></span>
+            <% } %>
+        </a>
+    </td>
+</tr>

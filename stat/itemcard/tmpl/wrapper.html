@@ -1,0 +1,163 @@
+<ul class="nav nav-tabs">
+    <li class="tab-obj active">
+        <a href="#tabs-1" data-key="main" data-toggle="tab">
+            <i class="svg-icon svg-icon-circle-info"></i>
+            <%= i18n.object.ucFirst() %>
+        </a>
+    </li>
+    <% if(htmlHardware) { %>
+    <li class="tab-hardware">
+        <a href="#tabs-2" data-key="hardware" data-toggle="tab">
+            <i class="svg-icon svg-icon-hardware"></i>
+            <%= i18n.hardware %>
+        </a>
+    </li>
+    <% } %>
+    <li class="tab-areas">
+        <a href="#tabs-3" data-key="areas" data-toggle="tab">
+            <i class="svg-icon svg-icon-areas"></i>
+            <%= i18n.objAreas %>
+        </a>
+    </li>
+    <li class="tab-zones">
+        <a href="#tabs-4" data-key="zones" data-toggle="tab">
+            <i class="svg-icon svg-icon-zones"></i>
+            <%= i18n.objZones %>
+        </a>
+    </li>
+    <% if(editable) {%>
+    <li class="tab-controls">
+        <a href="#tabs-13" data-key="controls" data-toggle="tab">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-bulb-off"></use>
+            </svg>
+            <%= i18n.deviceOuts %>
+        </a>
+    </li>
+    <li class="tab-schedules">
+        <a href="#tabs-11" data-key="schedules" data-toggle="tab">
+            <i class="svg-icon svg-icon-time"></i>
+            <%= i18n.armSchedulesShort %>
+        </a>
+    </li>
+    <li class="tab-alerts-control">
+        <a href="#tabs-12" data-key="alerts-control" data-toggle="tab">
+            <i class="svg-icon svg-icon-checkmark"></i>
+            <%= i18n.alertsControl %>
+        </a>
+    </li>
+    <% } %>
+    <li class="tab-pictures">
+        <a href="#tabs-5" data-key="pictures" data-toggle="tab">
+            <i class="svg-icon svg-icon-photo"></i>
+            <%= i18n.objPhoto %>
+        </a>
+    </li>
+    <li class="tab-responsible">
+        <a href="#tabs-6" data-key="people" data-toggle="tab">
+            <i class="svg-icon svg-icon-users"></i>
+            <%= i18n.responsible.header %>
+        </a>
+    </li>
+
+    <% if(editable) {%>
+    <li class="tab-notifications">
+        <a href="#tabs-7" data-key="notifications" data-toggle="tab">
+            <i class="svg-icon svg-icon-send"></i>
+            <%= i18n.notifications %>
+        </a>
+    </li>
+    <li class="tab-history">
+        <a href="#tabs-9" data-key="history" data-toggle="tab">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-edit"></use>
+            </svg>
+            <%= i18n.editHistory %>
+        </a>
+    </li>
+    <% } %>
+
+    <% if(editable && (App.allowed('video.edit') || App.get('grGuardsAvailable'))) {%>
+    <li class="dropdown dropdown-more pull-right">
+        <svg class="svg-icon dropdown-toggle" data-toggle="dropdown">
+            <use xlink:href="#smb-more-vert"></use>
+        </svg>
+        <ul class="dropdown-menu nav">
+            <% if(App.allowed('video.edit')) { %>
+            <li>
+                <a href="#tabs-8" data-key="cameras" data-toggle="tab">
+                    <i class="svg-icon svg-icon-camera"></i>
+                    <%= i18n.video %>
+                </a>
+            </li>
+            <% } %>
+            <% if(App.get('grGuardsAvailable')) {%>
+            <li>
+                <a href="#tabs-10" data-key="guards" data-toggle="tab">
+                    <svg class="svg-icon">
+                        <use xlink:href="#smb-shield"></use>
+                    </svg>
+                    <%= i18n.rrTeamShort %>
+                </a>
+            </li>
+            <% } %>
+            <li>
+                <a href="#tabs-14" data-key="temperature" data-toggle="tab">
+                    <svg class="svg-icon">
+                        <use xlink:href="#smb-temperature"></use>
+                    </svg>
+                    <%= i18n.temperature %>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <% } %>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane card-section active" id="tabs-1">
+        <%= htmlInfo %>
+    </div>
+
+    <% if(htmlHardware) { %>
+    <div class="tab-pane card-section" id="tabs-2">
+        <%= htmlHardware %>
+    </div>
+    <% } %>
+
+    <div class="tab-pane card-section areas-section" id="tabs-3">
+        <%= htmlAreas %>
+    </div>
+
+    <div class="tab-pane card-section zones-section" id="tabs-4">
+        <%= htmlZones %>
+    </div>
+
+    <% if(editable) {%>
+    <div class="tab-pane card-section schedules-section" id="tabs-11"></div>
+    <div class="tab-pane card-section alert-control-section" id="tabs-12"></div>
+    <% } %>
+
+    <div class="tab-pane card-section pictures-section" id="tabs-5">
+        <%= htmlPictures %>
+    </div>
+
+    <div class="tab-pane card-section responsible-section" id="tabs-6">
+        <%= htmlResponsible %>
+    </div>
+
+    <% if(editable) {%>
+        <% if(App.get('grGuardsAvailable')) {%>
+            <div class="tab-pane card-section guards-section" id="tabs-10"></div>
+        <% } %>
+        <div class="tab-pane card-section notifications-section" id="tabs-7"></div>
+        <% if(App.allowed('video.edit')) { %>
+            <!--/tab-8 cameras ivideon, webrtc-->
+            <div class="tab-pane card-section cameras-section" id="tabs-8"></div>
+        <% } %>
+        <div class="tab-pane card-section history-section" id="tabs-9"></div>
+        <div class="tab-pane card-section controls-section" id="tabs-13"></div>
+    <% } %>
+
+    <div class="tab-pane card-section temperature-section" id="tabs-14"></div>
+
+</div><!--/tab-content-->

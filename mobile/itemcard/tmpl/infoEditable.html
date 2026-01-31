@@ -1,0 +1,87 @@
+<input type="hidden" value="<%= App.TYPE_MOBILE %>" name="objType">
+<table class="l">
+    <tr>
+        <td class="col">
+            <div class="field">
+                <label><%= i18n.objName %></label>
+                <div class="itext"><input type="text" name="name" value="<%- item.name %>" maxlength="255" /></div>
+            </div>
+            <div class="field" style="height: 4.2em">
+                <label><%= i18n.description %></label>
+                <div class="itext">
+                    <textarea name="shortDescription" maxlength="140" style="height: 3.8em"><%- settings.shortDescription %></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label><%= i18n.licenseNumber %></label>
+                <div class="itext"><input type="text" name="CAR_ID" value="<%- settings.CAR_ID %>" maxlength="255" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.objModel.ucFirst() %></label>
+                <div class="itext"><input type="text" name="MODEL" value="<%- settings.MODEL %>" maxlength="255" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.vehicleType %></label>
+                <div class="itext"><input type="text" name="VRC_TYPE" value="<%- settings.VRC_TYPE %>" maxlength="255" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.objYear %></label>
+                <div class="itext"><input type="text" name="YEAR" value="<%- settings.YEAR %>" maxlength="4" /></div>
+            </div>
+            <div class="field">
+                <label>VIN</label>
+                <div class="itext"><input type="text" name="VIN" value="<%- settings.VIN %>" maxlength="255" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.color.ucFirst() %></label>
+                <div class="itext"><input type="text" name="COLOR" value="<%- settings.COLOR %>" maxlength="255" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.objRouteNumber %></label>
+                <div class="itext"><input type="text" name="RouteNumber" value="<%- settings.RouteNumber %>" maxlength="10" /></div>
+            </div>
+
+        </td>
+
+        <td class="col">
+            <%= col2Html %>
+        </td>
+
+        <td rowspan="2" class="col" style="width:150px">
+            <div class="img-block">
+                <img<% if(!imgPath) {%> style="display:none"<% } %> src="<% if(imgPath) {%><%= imgPath %><% } %>" alt="" />
+                <a class="change-img" href="javascript:;"><% if(imgPath) { print(i18n.changeImage) } else { print(i18n.chooseImage) } %></a>
+            </div>
+
+            <%= htmlStatus %>
+
+            <% if(0) {%>
+            <div class="field state">
+                <label class="width-auto"><%= i18n.objState %></label>
+                <div class="select" style="left:0">
+                    <select name="STATE">
+                        <% _.each(possibleStates, function(name, id){%>
+                        <option value="<%= id %>"<% if(settings.STATE == id) {%> selected="selected"<% } %>><%= name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <% } %>
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="field textarea text-large no-margin">
+                <label><%= i18n.comments.ucFirst() %></label>
+                <textarea class="hidden" maxlength="2048" rows="" cols="" name="DESCRIPTION"><%- settings.DESCRIPTION %></textarea>
+                <div class="editable">
+                    <div class="value"><%= description %></div>
+                    <div class="edit">
+                        <i class="svg-icon svg-icon-pencil"></i>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

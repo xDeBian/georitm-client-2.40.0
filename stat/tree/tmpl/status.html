@@ -1,0 +1,13 @@
+<% if(isgroup) { %>
+
+    <span class="nb-items" data-action="check">(<%= nbItems %>)</span>
+    <% if(id != '0') { %>
+    <i class="icon icon-edit svg-icon svg-icon-caret-down"></i>
+    <% } %>
+
+<% } else { %>
+
+    <i class="status-icon" data-action="check"></i>
+    <i class="icon icon-edit svg-icon svg-icon-caret-down"></i>
+
+<% } %>

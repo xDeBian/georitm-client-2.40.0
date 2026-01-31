@@ -1,0 +1,22 @@
+<table data-rows="<% if(areasStat) { print(_.keys(areasStat).length) } else { print(totalAreas) }%>">
+
+<% if(areasStat) { var index = 0; _.each( ['hasAlarm', 'hasFault', 'isGuarded', 'notGuarded'], function(key) {%>
+
+    <% if('undefined' != typeof areasStat[key]) {%>
+    <tr data-state="<%= key %>" class="areas-state multi row-<%= ++index %>">
+        <td class="extra">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-<%= areasStat[key].icon %>"></use>
+            </svg>
+        </td><td class="info">
+            <h6><%= areasStat[key].title %></h6>
+            <p><%= areasStat[key].text %></p>
+        </td><td class="extra1">
+            <i class="svg-icon svg-icon-chevron-right"></i>
+        </td>
+    </tr>
+    <% } %>
+
+<% })} else { print( areasHtml ) } %>
+
+</table>

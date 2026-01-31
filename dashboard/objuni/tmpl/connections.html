@@ -1,0 +1,31 @@
+<div class="connections">
+    <label class="checkbox"><input type="checkbox" name="gsmChecked" value="1"
+        <% if(gsmChecked) {%> checked<% } %>>
+        <%= ( show == 'notinorder' ? i18n.noGsmSignalTime : i18n.gsmInOrderTime ) %>
+        (<small><%= i18n.vehicles %></small>)
+    </label>
+
+    <div class="objst-damage" style="margin-bottom:3px">
+        <label class="objst-damage-field"><input type="text" name="gsm_days"
+            value="<%= gsm_days %>" maxlength="2" autocomplete="off" /> <%= i18n.DateTime.labelsCompact1[7] %></label>
+        <label class="objst-damage-field"><input type="text" name="gsm_hours"
+            value="<%= gsm_hours %>" maxlength="2" autocomplete="off" /> <%= i18n.DateTime.labelsCompact1[4] %></label>
+        <label class="objst-damage-field"><input type="text" name="gsm_minutes"
+            value="<%= gsm_minutes %>" maxlength="2" autocomplete="off" /> <%= i18n.DateTime.labelsCompact1[5] %></label>
+    </div>
+
+    <label class="checkbox"><input type="checkbox" name="gpsChecked" value="1"
+        <% if(gpsChecked) {%> checked<% } %>>
+        <%= ( show == 'notinorder' ? i18n.noGpsSignalTime : i18n.gpsInOrderTime ) %>
+        (<small><%= i18n.vehicles %></small>)
+    </label>
+
+    <div class="objst-damage">
+        <label class="objst-damage-field"><input type="text" name="gps_days"
+            value="<%= gps_days %>" maxlength="2" autocomplete="off" /> <%= i18n.DateTime.labelsCompact1[7] %></label>
+        <label class="objst-damage-field"><input type="text" name="gps_hours"
+            value="<%= gps_hours %>" maxlength="2" autocomplete="off" /> <%= i18n.DateTime.labelsCompact1[4] %></label>
+        <label class="objst-damage-field"><input type="text" name="gps_minutes"
+            value="<%= gps_minutes %>" maxlength="2" autocomplete="off" /> <%= i18n.DateTime.labelsCompact1[5] %></label>
+    </div>
+</div>

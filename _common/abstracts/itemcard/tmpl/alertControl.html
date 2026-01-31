@@ -1,0 +1,250 @@
+<% var keyIndex = 0; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlConnection %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlConnectionTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<% if(isStationary) {%>
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlAutotest %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlAutotestTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlActivity %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlActivityTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlVoltage %>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlVoltageTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlEnterDelay %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlEnterDelayTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout-sec" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="3" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlEnterDelayZonesLabel %>
+            </td>
+            <td class="field-controls">
+                <div class="chosen-wrapper">
+                    <select data-name="controlledZones"
+                            data-placeholder="<%= i18n.chooseObjZones %>"
+                            class="input-block-level"
+                            multiple>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlPanicButton %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlPanicButtonTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout-sec" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="3" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<% if(showChannelsControl) {%>
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.streamChannelsControl %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlChannelsTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<% } %>
+<% } %>
+
+<% if(showAlertsListControl) {%>
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertsListControl %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertsListControlTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<% } %>
+
+<% if(!isStationary) {%>
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlMovement %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlMovementTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<% keyIndex++; %>
+<div class="control-group">
+    <h5 class="control-group-header">
+        <%= i18n.alertControlLostCoord %>
+        <a class="advanced-settings" href="#" data-key="<%= keys[keyIndex] %>"><%= i18n.alertControlExtraSettings %></a>
+    </h5>
+    <table class="l table-fields">
+        <tr class="field">
+            <td class="field-label">
+                <%= i18n.alertControlLostCoordTip %>
+            </td>
+            <td class="field-controls">
+                <div class="itext">
+                    <input type="text"
+                           class="timeout" name="<%= keys[keyIndex] %>"
+                           value="<%= timeouts[keyIndex] > 0 ? timeoutStrings[keyIndex] : '' %>"
+                           placeholder="<%= i18n.no.ucFirst() %>" maxlength="5" autocomplete="off">
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<% } %>

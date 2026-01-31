@@ -1,0 +1,24 @@
+<div class="pictures">
+    <div class="content carousel slide">
+        <div class="carousel-inner"></div>
+
+        <a class="carousel-control svg-icon svg-icon-chevron-circle-left left hidden" href="#"></a>
+        <a class="carousel-control svg-icon svg-icon-chevron-circle-right right hidden" href="#"></a>
+    </div>
+    <div class="controls">
+        <p class="caption"><span></span></p>
+        <% if(editCaption) {%>
+        <div class="caption-form">
+            <input type="text" name="pictureCaption" value="" maxlength="255" class="ignore">
+            <a href="#" class="btn btn-primary save-caption">
+                <i class="svg-icon svg-icon-checkmark-w"></i>
+            </a>
+            <a href="#" class="btn btn-default cancel-caption">
+                <i class="svg-icon svg-icon-remove"></i>
+            </a>
+        </div>
+        <% } %>
+        <ol class="carousel-bullets"></ol>
+    </div>
+</div>
+<div class="no-data hidden"><%= emptyMsg %></div>

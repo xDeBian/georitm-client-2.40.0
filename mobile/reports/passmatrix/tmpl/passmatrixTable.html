@@ -1,0 +1,20 @@
+<h3 class="rep-table-header"><%= header %> <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a></h3>
+<table class="rep-table rep-table-passmatrix selectable">
+    <thead class="rep-table-head header-copy"></thead>
+    <tbody>
+
+    <tr data-head="<%= headIndex %>">
+        <th class="col-date"><%= i18n.date.ucFirst() %></th>
+        <% _.each(nums, function(num) {%>
+        <th class="col-door"><%= i18n.pass.door %> <%= num %>, <%= i18n.pass.enteredShort %></th>
+        <th class="col-door"><%= i18n.pass.door %> <%= num %>, <%= i18n.pass.exitedShort %></th>
+        <% }) %>
+        <th class="col-door"><%= i18n.pass.enteredTotalShort %></th>
+        <th class="col-door"><%= i18n.pass.exitedTotalShort %></th>
+        <th class="col-address"><%= i18n.address.ucFirst() %></th>
+    </tr>
+
+    <%= rowsHtml %>
+
+    </tbody>
+</table><!-- /rep-table -->

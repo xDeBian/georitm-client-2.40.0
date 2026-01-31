@@ -1,0 +1,19 @@
+<a class="close">&times;</a>
+<% if(actions.length) {%>
+<div class="actions-list clearfix">
+    <div class="row-fluid">
+        <% var rowNum = 0, nbCells = 0; _.each(actions, function(action, i){%>
+        <% if(nbCells >= 12) { rowNum++; nbCells = 0;%>
+        </div><div class="row-fluid">
+        <% } %>
+        <button
+            <% if('option' in action) { %>data-option="<%= action.option %>"<% } %>
+            data-action="<%= action.actionType %>"
+            class="btn btn-action span3 comment"
+        >
+            <%= action.name %>
+        </button>
+        <% nbCells += 3; }) %>
+    </div>
+</div>
+<% } %>

@@ -1,0 +1,25 @@
+<div class="subheader">
+    <a data-target="summary" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%- area.name || i18n.objArea + ' ' + area.num %></h5>
+</div>
+<div class="operate-content guard-operate-content">
+    <div class="operate-state <%= area.hasAlarm ? 'alarm' : ( area.hasFault ? 'fault' : ( 'guard ' + ( area.isGuarded ? 'on' : 'off' ) ) ) %>">
+        <div class="state-wrap">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-<%= icon %>"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="operate-actions guard-actions">
+        <% if(area.num > 0 && canArm) {%>
+        <button class="btn btn-block <%= area.isGuarded ? ' btn-success' : ' btn-primary' %>"
+                data-area="<%= area.num %>"
+                data-guard="<%= area.isGuarded ? '0' : '1' %>">
+            <%= i18n[area.isGuarded ? 'makeNotGuarded' : 'makeGuarded'] %>
+        </button>
+        <% } %>
+    </div>
+    <div class="command-result"></div>
+</div>

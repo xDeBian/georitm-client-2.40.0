@@ -1,0 +1,13 @@
+<li class="leaf<% if(checked) {%> checked <% } %>" data-type="true" data-id="<%= id %>">
+    <i class="icon icon-check" data-action="check" data-id="<%= id %>"></i>
+    <div class="row" data-action="check" data-id="<%= id %>">
+        <table>
+            <tr>
+                <td class="col0">
+                    <a class="row-title type-title" href="javascript:;"><%- name %></a>
+                </td>
+                <td class="col1 nb-items">(<%= nbItems %>)</td>
+            </tr>
+        </table>
+    </div>
+</li>

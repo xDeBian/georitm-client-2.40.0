@@ -1,0 +1,29 @@
+<tr class="<%= rowClass %>"<% if(isLast) {%> data-row="last"<% } %>>
+    <td class="text-left"><%= start %></td>
+    <td class="text-left"><%= end %></td>
+    <td class="text-left"><%= duration %></td>
+    <td class="text-left"><%= name %></td>
+    <td><%= state %></td>
+    <td><%= distance %></td>
+    <% if(typeof geoId != 'undefined') { %>
+    <td class="address text-left" data-geoid="<%= geoId %>">
+        <% if(showTrack) { %>
+        <a href="#" class="build-track-segment" data-id="<%= objectId %>" data-from="<%= startTs %>" data-to="<%= endTs %>">
+            <% if(typeof address != 'undefined' && address) {print(address)} else { %>
+            <span class="load-address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>"><%= loadAddress %></span>
+            <% } %>
+        </a>
+        <% } else { %>
+        <a href="#" class="put-marker" data-id="<%= markerId %>">
+            <% if(typeof address != 'undefined' && address) {print(address)} else { %>
+            <span class="load-address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>"><%= loadAddress %></span>
+            <% } %>
+        </a>
+        <% } %>
+    </td>
+    <% } else { %>
+    <td class="text-left">
+        <%= noAddress %>
+    </td>
+    <% } %>
+</tr>

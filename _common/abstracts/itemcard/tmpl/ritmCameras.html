@@ -1,0 +1,17 @@
+<p class="no-data"><%= i18n.noCamerasAdded %></p>
+<table class="table table-condensed hidden">
+    <thead>
+        <th><%= i18n.cameraName %></th>
+        <th><%= i18n.source %></th>
+        <th>UUID</th>
+        <% if(videoType === 'ritmrtp') {%>
+            <th><%= i18n.rtspStreamUrl %></th>
+        <% } %>
+        <th><%= i18n.eventsForDeviceVideoArchiveRequesting %></th>
+        <th><%= i18n.note %></th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </thead>
+    <tbody></tbody>
+</table>

@@ -1,0 +1,22 @@
+<tr>
+    <td class="col-num">
+        <div class="itext"><input name="zNum[]" type="text" value="" maxlength="3" autocomplete="off"></div>
+    </td>
+    <td>
+        <input type="hidden" name="zId[]" value="0">
+        <select name="zAreaId[]">
+            <% _.each(areas, function(area){ %>
+            <option value="<%- area.id %>"><%- area.name %></option>
+            <% }) %>
+        </select>
+    </td>
+    <td>
+        <div class="itext"><input name="zName[]" type="text" value="" maxlength="100"></div>
+    </td>
+    <td>
+        <div class="itext"><input name="zComment[]" type="text" value="" maxlength="100"></div>
+    </td>
+    <td class="col-icon">
+        <i class="svg-icon svg-icon-remove row-remove"></i>
+    </td>
+</tr>

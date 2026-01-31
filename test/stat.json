@@ -1,0 +1,33 @@
+[{
+    "rev": "07.505.020",
+    "lon": 30.420,
+    "img": "19",
+    "extId": 6985,
+    "isActive": "0",
+    "id": 97909,
+    "isGsmOnline": true,
+    "lastGSMConnectionTime":1373281615,
+    "name": "Дом 1 888",
+    "isGpsOnline": true,
+    "lastGPSConnectionTime":1373281609,
+    "lat": 59.9630,
+    "power":{
+        "name":"",
+        "state":0
+    }
+},{
+    "rev": "07.505.020",
+    "lon": 30.422,
+    "img": "1",
+    "extId": 6987,
+    "isActive": "0",
+    "id": 98081,
+    "isGsmOnline": false,
+    "name": "Дом 2",
+    "isGpsOnline": false,
+    "lat": 59.964,
+    "power":{
+        "name":"",
+        "state":0
+    }
+}]

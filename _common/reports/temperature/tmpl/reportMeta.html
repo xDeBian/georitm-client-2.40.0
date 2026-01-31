@@ -1,0 +1,17 @@
+<p>
+    <%= i18n.dataSource %>:
+    <%= dataSource %>
+</p>
+<p>
+    <%= i18n.allowedTemperature %>:
+    <%= i18n.rangeFrom + '&nbsp;' +  thresholds[0] + ' ' +  i18n.to + '&nbsp;' + thresholds[1] %>&nbsp;&deg;C
+</p>
+<p>
+    <%= i18n.minViolationTime %>:
+    <% if(minutes > 0) {%>
+    <%= minutes %> <%= i18n.minutesLabels[i18n.whichLabels(minutes)] %>
+    <% } %>
+    <% if(seconds > 0 || !minutes) {%>
+    <%= seconds %> <%= i18n.secondsLabels[i18n.whichLabels(seconds)] %>
+    <% } %>
+</p>

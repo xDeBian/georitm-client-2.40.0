@@ -1,0 +1,16 @@
+<tr<% if(isLast) {%> data-row="last"<% } %>>
+    <% _.each(properties, function(v) {%>
+    <td>
+        <% if(hasHistory) {%>
+        <a href="#" class="build-another" data-type="discretes" data-id="<%= id %>"  data-from="<%= start %>" data-to="<%= end %>">
+            <%= v %>
+        </a>
+        <% } else { %>
+            <%= v %>
+        <% } %>
+    </td>
+    <% }) %>
+    <% _.each(values, function(v) {%>
+    <td><%= v %></td>
+    <% }) %>
+</tr>

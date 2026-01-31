@@ -1,0 +1,15 @@
+<tr class="obj">
+    <td colspan="<%= colspan %>" class="summary">
+        <div class="sum-content">
+            <% if(groups.length) {%>
+                <%= i18n['selectedAlertGroup' + ( groups.length == 1 ? '' : 's' )] %>:
+                <strong><%= groups.join(', ').toLowerCase().ucFirst() %></strong>
+
+                <br /><%= i18n[alarms ? ( alerts ? 'totalAlertsAndAlarms' : 'totalAlarms' ) : 'totalAlerts'] %>:
+                <strong><%= total %></strong>
+            <% } else { %>
+                <%= i18n.noSelectedAlertGroups %>
+            <% } %>
+        </div>
+    </td>
+</tr>

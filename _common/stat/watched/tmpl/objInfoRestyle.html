@@ -1,0 +1,73 @@
+<div data-key="summary" class="content active">
+    <div class="features">
+        <ul>
+            <li data-prop="deviceTypeName"
+                class="<% if(prerender) {%>loading<% } %><% if('deviceTypeName' in hiddenProps) {%> hidden<% } %>">
+                <%= i18n.objHardwareType %>:
+                <strong class="deviceTypeName">
+                    <% if(prerender) {%><i class="svg-icon svg-icon-spinner icon-spin"></i><% } %>
+                    <%= deviceTypeName || '--' %>
+                    <% if(rev) {%>(<%= rev %>)<% } %>
+                </strong>
+            </li>
+            <li data-prop="address"<% if('address' in hiddenProps) {%> class="hidden"<% } %>>
+                <%= i18n.address.ucFirst() %>:
+                <strong class="address"><%- addressStr %></strong>
+            </li>
+        </ul>
+    </div><!--/features-->
+
+    <div class="features-col-group clearfix">
+        <div class="features-col">
+            <div class="widgets-group object-state-wrapper">
+                <div class="widget widget-guard <%= activeWidget == 'guard' ? 'active' : '' %>" data-value="guard"></div>
+
+                <% if(showTemperature) {%>
+                <div class="widget-temperature widget <%= activeWidget == 'temperature' ? 'active' : '' %>"
+                     data-state="<%= temperature > 0 ? 1 : 0%>" 
+                     data-value="temperature"
+                >
+                    <div class="temperature-panel loading" />
+                </div>
+
+                <ul class="widgets-nav">
+                    <li class="widgets-nav-item widgets-nav-item-guard <%= activeWidget == 'guard' ? 'active' : '' %>"
+                        data-value="guard" data-state="" data-guarded="">
+                    </li>
+                    <li class="widgets-nav-item widgets-nav-item-temperature <%= activeWidget == 'temperature' ? 'active' : '' %>"
+                        data-value="temperature"
+                        >
+                        <svg class="svg-icon">
+                            <use xlink:href="#smb-temperature"></use>
+                        </svg>
+                    </li>
+                </ul>
+                <% } %>
+            </div>
+        </div><!--/.features-col-->
+
+        <div class="features-col">
+            <ul class="list-group indicators connections"></ul>
+            <ul class="list-group indicators areas-state-wrapper state-loading"></ul>
+            <% if(prerender) {%>
+            <div class="indicators">
+                <i class="svg-icon svg-icon-spinner icon-spin"></i>
+            </div>
+            <% } else if(hasControls) { %>
+            <ul class="list-group indicators controls state-loading"></ul>
+            <% } %>
+        </div><!--/.features-col-->
+    </div><!--/.features-col-group-->
+
+
+    <div class="row-fluid object-state-summary hidden">
+        <div class="state-wrapper areas-state-wrapper loading"></div>
+    </div>
+
+</div><!--/content summary-->
+
+<div data-key="connections" class="content"></div>
+<div data-key="guard" class="content"></div>
+<div data-key="control" class="content"></div>
+<div data-key="faults" class="content"></div>
+

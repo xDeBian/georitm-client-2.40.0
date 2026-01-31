@@ -1,0 +1,8 @@
+<div class="cameras-list">
+    <% _.each(ports, function(port, index){ %>
+    <a data-port="<%= port %>" class="btn btn-default camera-link"><%= i18n.camera %> <%= (index+1) %></a>
+    <% }) %>
+</div>
+<div class="player">
+    <video class="player-video"></video>
+</div>

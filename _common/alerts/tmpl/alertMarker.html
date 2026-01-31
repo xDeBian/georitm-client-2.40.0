@@ -1,0 +1,86 @@
+<div class="ti-icon-alert-marker">
+    <% if(type== 'alert') {%>
+    <div class="tl-icon tl-icon__alert">
+        <div class="tl-icon-circle">
+            <svg class="tl-icon-svg">
+                <use xlink:href="#smb-bell"></use>
+            </svg>
+        </div>
+        <svg class="tl-icon-pointer">
+            <use xlink:href="#smb-pointer"></use>
+        </svg>
+    </div>
+
+    <% } else if(type== 'comment') { %>
+    <div class="tl-icon tl-icon__comment">
+        <div class="tl-icon-circle">
+            <svg class="tl-icon-svg">
+                <use xlink:href="#smb-user"></use>
+            </svg>
+        </div>
+        <svg class="tl-icon-pointer">
+            <use xlink:href="#smb-pointer"></use>
+        </svg>
+    </div>
+
+    <% } else if(type== 'alarm') { %>
+    <div class="tl-icon tl-icon__alarm">
+        <div class="tl-icon-circle">
+            <svg class="tl-icon-svg">
+                <use xlink:href="#smb-warning"></use>
+            </svg>
+        </div>
+        <svg class="tl-icon-pointer">
+            <use xlink:href="#smb-pointer"></use>
+        </svg>
+    </div>
+
+    <% } else if(type== 'restore') { %>
+    <div class="tl-icon tl-icon__restore">
+        <div class="tl-icon-circle">
+            <svg class="tl-icon-svg">
+                <use xlink:href="#smb-done"></use>
+            </svg>
+        </div>
+        <svg class="tl-icon-pointer">
+            <use xlink:href="#smb-pointer"></use>
+        </svg>
+    </div>
+
+    <% } else if(type== 'fault') { %>
+    <div class="tl-icon tl-icon__fault">
+        <div class="tl-icon-circle">
+            <svg class="tl-icon-svg">
+                <use xlink:href="#smb-wrench"></use>
+            </svg>
+        </div>
+        <svg class="tl-icon-pointer">
+            <use xlink:href="#smb-pointer"></use>
+        </svg>
+    </div>
+
+    <% } else if(type== 'guard') { %>
+    <div class="tl-icon tl-icon__guard">
+        <div class="tl-icon-circle">
+            <svg class="tl-icon-svg">
+                <use xlink:href="#smb-key"></use>
+            </svg>
+        </div>
+        <svg class="tl-icon-pointer">
+            <use xlink:href="#smb-pointer"></use>
+        </svg>
+    </div>
+
+    <% } else if(type== 'system') { %>
+    <div class="tl-icon tl-icon__system">
+        <div class="tl-icon-circle">
+            <svg class="tl-icon-svg">
+                <use xlink:href="#smb-cog"></use>
+            </svg>
+        </div>
+        <svg class="tl-icon-pointer">
+            <use xlink:href="#smb-pointer"></use>
+        </svg>
+    </div>
+    <% } %>
+</div>

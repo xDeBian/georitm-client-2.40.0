@@ -1,0 +1,86 @@
+[{
+  "company": "Гольфстрим",
+  "timestamp": 1556181942305,
+  "guards": [
+    {
+      "id": 11,
+      "name": "ГБР Гольфстрим 1",
+      "isOnline": true,
+      "isVacant": false,
+      "geoRitmObjectId": 284,
+      "geoRitmObjectName189": "Банкомат 645",
+      "geoRitmObjectName284": "Oct 300",
+      "position": {
+        "coords": {
+          "latitude": 59.9596,
+          "longitude": 30.4492,
+          "speed": 30,
+          "heading": 45
+        },
+        "timestamp": 1556181942400
+      }
+    }, {
+      "id": 12,
+      "name": "ГБР Гольфстрим 2 45",
+      "isOnline": true,
+      "isVacant": false,
+      "position": {
+        "coords": {
+          "latitude": 59.9686,
+          "longitude": 30.2639,
+          "speed": 10,
+          "heading": 15
+        },
+        "timestamp": 1556113736939
+      }
+    }, {
+      "id": 13,
+      "name": "",
+      "isOnline": true,
+      "isVacant": false,
+      "position": {
+        "coords": {
+          "latitude": 59.9686,
+          "longitude": 30.3580,
+          "speed": 10,
+          "heading": 15
+        },
+        "timestamp": 1556113736939
+      }
+    }
+  ]
+}, {
+  "company": "Дельта",
+  "timestamp": 1555943675000,
+  "guards": [
+    {
+      "id": 11,
+      "name": "ГБР Дельта 1",
+      "isOnline": true,
+      "isVacant": true,
+      "position": {
+        "coords": {
+          "latitude": 60.0046,
+          "longitude": 30.1811,
+          "speed": 30,
+          "heading": 45
+        },
+        "timestamp": 1555943674000
+      }
+    }, {
+      "id": 12,
+      "name": "ГБР Дельта 2",
+      "isOnline": false,
+      "isVacant": false,
+      "position": {
+        "coords": {
+          "latitude": 60.0035,
+          "longitude": 30.2954,
+          "speed": 10,
+          "heading": 15
+        },
+        "timestamp": 1555943674000
+      }
+    }
+  ]
+}]

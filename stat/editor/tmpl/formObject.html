@@ -1,0 +1,11 @@
+<p class="help"><%= lat && lon ? i18n.moveObjectToSetPos : i18n.clickOnMapToSetPos %></p>
+<div class="row-fluid">
+    <div class="span6">
+        <label><%= i18n.lat %></label>
+        <input class="span12 no-margin" type="text" name="Lat" value="<%= lat || '' %>">
+    </div>
+    <div class="span6">
+        <label><%= i18n.lon %></label>
+        <input class="span12 no-margin" type="text" name="Lon" value="<%= lon || '' %>">
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="speeding-params">
+
+    <fieldset>
+        <legend><%= i18n.speedLimitsSettings %></legend>
+        <% if(b2 === false) { %>
+        <div class="control-group">
+            <label><%= i18n.speedLimitThreshold %></label>
+            <input class="input-mini positive" name="b1" type="text" value="<%= b1 %>">
+            <span class="help-inline"><%= i18n.kmh %></span>
+        </div>
+        <% } else { %>
+        <div class="form-horizontal control-group">
+            <label class="label-inline"><%= i18n.speedLimit %><% if(b2 !== false) { %> 1<% } %></label>
+            <input class="input-mini positive" name="b1" type="text" value="<%= b1 %>"> <%= i18n.kmh %>
+        </div>
+        <div class="form-horizontal control-group">
+            <label class="label-inline"><%= i18n.speedLimit %> 2</label>
+            <input class="input-mini positive" name="b2" type="text" value="<%= b2 %>"> <%= i18n.kmh %>
+        </div>
+        <% } %>
+        <div class="control-group">
+            <label><%= i18n.minExceedTime %></label>
+            <input type="number" min="1" max="10000" class="input-mini integer" name="mintime" value="<%= mintime %>" />
+            <span class="help-inline"><%= i18n.sec %></span>
+        </div>
+    </fieldset>
+
+    <% if(showSelectorZone) { %>
+    <fieldset class="opened">
+        <legend>
+            <%= i18n.geozones.ucFirst() %>
+        </legend>
+        <div class="group-params zones-list">
+            <select name="zoneId"
+                    data-placeholder="<%= i18n.chooseZones %>"
+                    class="input-block-level"
+                    multiple
+                    style="width: 240px; height: 30px; overflow: hidden">
+            </select>
+        </div>
+    </fieldset>
+    <% } %>
+
+    <fieldset>
+        <legend><%= i18n.detailReport %></legend>
+        <label class="checkbox">
+            <input name="showDetails" data-invert="1" data-invertname="hideDetails" data-invertempty="true"
+                   type="checkbox" value="1"<% if(showDetails) { %> checked="checked"<% } %>>
+            <%= i18n.showTimeAndPlaceOfViolation %>
+        </label>
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

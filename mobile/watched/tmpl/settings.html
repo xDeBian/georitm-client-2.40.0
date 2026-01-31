@@ -1,0 +1,67 @@
+<h4><%= i18n.objects.ucFirst() %></h4>
+
+<div class="control-group" data-setting="mobile.watched.objViewType">
+    <h5><%= i18n.objectsViewType %></h5>
+    <a class="i-left" href="javascript:;" title="<%= i18n.clickToChange %>">
+        <i class="objViewType mobile"></i> <%= i18n.vehicles %>
+    </a>
+    <!--<a class="i-left" href="javascript:;" title="<%= i18n.clickToChange %>">
+        <i id="objViewType stat"></i> <%= i18n.stationary %>
+    </a>-->
+
+    <div class="context-menu view-type-menu" id="mobileViewTypeMenu">
+        <i class="mobile-icons"></i>
+        <i class="mobile-arrows"></i>
+    </div>
+    <!--<div class="context-menu view-type-menu" id="statViewTypeMenu">
+        <i class="mobile-icons"></i>
+        <i class="mobile-simple"></i>
+    </div>-->
+</div>
+
+<div class="control-group mwhoip">
+    <h5><%= i18n.infoInBaloon %></h5>
+    <ul>
+        <li>
+            <label class="checkbox">
+                <input type="checkbox" data-prop="extId" checked /> <%= i18n.objIdNumber %>
+            </label>
+        </li>
+        <li>
+            <label class="checkbox">
+                <input type="checkbox" data-prop="name" checked /><%= i18n.objName %>
+            </label>
+        </li>
+        <li>
+            <label class="checkbox">
+                <input type="checkbox" data-prop="licenseNumber" checked /> <%= i18n.licenseNumber %>
+            </label>
+        </li>
+        <li>
+            <label class="checkbox">
+                <input type="checkbox" data-prop="speed" checked /> <%= i18n.speed.ucFirst() %>
+            </label>
+        </li>
+        <li>
+            <label class="checkbox">
+                <input type="checkbox" data-prop="address" checked /> <%= i18n.nearest.ucFirst() + ' ' + i18n.address %>
+            </label>
+        </li>
+    </ul>
+</div>
+
+
+<% if(false) {%>
+<div>
+    <a id="user-reg-used" class="checkbox-menu selected" href="javascript:;" onclick="old stuff Project.UI.toggleUseUserRegion()">
+        Масштабировать только по объектам в заданной области
+    </a>
+    <div id="user-reg-settings">
+        <span id="user-reg-is-set">Область не задана</span>
+        <a id="edit-user-reg-link" href="javascript:;" onclick="old stuff Project.UI.editUserRegion()">настроить</a>
+    </div>
+    <!--<div id="user-reg-edit" class="hidden">
+        <span>Cмасштабируйте карту и нажмите сохранить</span>
+                            </div>-->
+</div>
+<% } %>

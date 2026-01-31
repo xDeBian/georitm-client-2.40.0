@@ -1,0 +1,47 @@
+[{
+  "uuid": "49b0d02c-7e1c-4202-b603-135ec5be4f1d",
+  "name": "Fixture schedule 1",
+  "comment": "Fixture schedule comment 1",
+  "allowDisarm": "",
+  "notArmedAlert": true,
+  "earlyDisarmedAlert": false,
+  "daysOfWeek": {
+    "MONDAY": [
+      [16, 20],
+      [47, 48]
+    ],
+    "TUESDAY": [
+      [0, 1]
+    ]
+  }
+},{
+  "uuid":"4f2f8f94-6ff6-4f41-8514-14e003271e6b",
+  "name": "Fixture schedule 2 empty",
+  "comment": "Empty fixture schedule comment 2",
+  "allowDisarm": "",
+  "notArmedAlert": true,
+  "earlyDisarmedAlert": false,
+  "daysOfWeek": {}
+},{
+  "uuid":"9421ecfc-ed2d-45f9-9c10-a218a222c82b",
+  "name": "Fixture schedule 3 Full monday",
+  "comment": "Full monday fixture",
+  "allowDisarm": "",
+  "notArmedAlert": true,
+  "earlyDisarmedAlert": false,
+  "daysOfWeek": {
+    "MONDAY": [
+      [0, 48]
+    ],
+    "TUESDAY": [
+      [1, 3],
+      [4, 8],
+      [16, 20]
+    ],
+    "WEDNESDAY": [
+      [1, 3],
+      [4, 8],
+      [16, 20]
+    ]
+  }
+}]

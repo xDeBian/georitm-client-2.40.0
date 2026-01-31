@@ -1,0 +1,20 @@
+<tr>
+    <td data-key="extId"><%= extId %></td>
+    <td data-key="name" class="text-left">
+    <% if(total && App.reportAllowedByType('ALERTS')) {%>
+        <a href="javascript:;" class="build-another" data-type="alerts" title="<%= allAlertsOnObject %>"
+            data-id="<%= id %>" data-from="<%= periodStart %>" data-to="<%= periodEnd %>">
+            <%= name %>
+        </a>
+    <% } else { %>
+        <%= name %>
+    <% } %>
+    </td>
+    <% if(reportSubtype === 'general') { %>
+    <td data-key="alarms"><%= alarms %></td>
+    <td data-key="alerts"><%= alerts %></td>
+    <td data-key="total"><%= total %></td>
+    <% } else { %>
+    <td data-key="total"><%= total %></td>
+    <% } %>
+</tr>

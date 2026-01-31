@@ -1,0 +1,46 @@
+<table class="l">
+    <tr>
+        <td class="col">
+            <div class="field">
+                <label><%= i18n.login.ucFirst() %> Ivideon</label>
+                <div class="itext">
+                    <input class="auth-input login-input" type="text" name="ivlogin" value="<%- settings.ivlogin %>" autocomplete="off">
+                </div>
+            </div><div class="field">
+                <label><%= i18n.password.ucFirst() %> Ivideon</label>
+                <div class="itext">
+                    <input class="auth-input password-input" type="password" name="ivpassword" value="<%- settings.ivpassword %>">
+                </div>
+            </div><div class="field add-camera<% if(!settings.ivlogin || !settings.ivpassword) {%> hidden<% } %>">
+                <label><%= i18n.camera %></label>
+                <div class="select">
+                    <select name="ivcamid"></select>
+                </div>
+                <% if(0) {%>
+                <div class="itext">
+                    <input type="hidden" name="ivcamid"
+                           value="<%- settings.ivcamid %>"<% if(!('ivcamid' in settings) || !settings.ivlogin || !settings.ivpassword) {%> disabled<% } %>>
+                    <input class="ignore" type="text" name="cameraName" value="" placeholder="<%= i18n.cameraNameIvideon %>"
+                        <% if(!settings.ivlogin || !settings.ivpassword) {%>disabled<% } %> >
+                </div>
+                <% } %>
+            </div>
+
+            <a class="btn btn-small btn-primary
+                btn-connect<% if(!settings.ivlogin || !settings.ivpassword || ( settings.ivlogin && settings.ivpassword )) {%> hidden<% } %>" href="#">
+                <%= i18n.connect %>
+            </a>
+
+            <div class="cameras-list"></div>
+
+            <p class="no-data<% if(!settings.ivlogin || !settings.ivpassword || ('ivcamid' in settings)) {%> hidden<% } %>">
+                <%= i18n.noCamerasAdded %>
+            </p>
+        </td>
+        <td class="col col-info">
+            <div class="ivideon-text">
+                <%= i18n.ivideonInfo %>
+            </div>
+        </td>
+    </tr>
+</table>

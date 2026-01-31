@@ -1,0 +1,11 @@
+<tr class="<%= rowClass %>"<% if(isLast) { %> data-row="last"<% } %>>
+<% for(var field in obj) { %>
+<td class="colObjst" data-key="<%= field %>" data-value="<%= obj[field] %>">
+    <% if(field == 'address') { %>
+    <% if(obj.address) {print(obj.address)} else { %>
+    <span class="loading-address" data-geoid="<%= geoId %>"><%= loadingAddress %></span>
+    <% } %>
+    <% } else { print(obj[field]); } %>
+</td>
+<% } %>
+</tr>

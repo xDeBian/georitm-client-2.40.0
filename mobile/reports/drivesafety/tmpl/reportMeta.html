@@ -1,0 +1,44 @@
+<div class="rep-meta selectable">
+    <div class="items-list">
+        <span class="item"><%= title %></span>
+    </div>
+
+    <% if(properties.length) {%>
+    <div class="summary">
+        <div class="sum-content">
+            <table class="object-properties">
+                <tbody>
+                <% for(var i = 0, l = properties.length; i < l; i++) { %>
+                <tr>
+                    <td><%= names[properties[i]] %>:</td>
+                    <td class="value"><%= values[properties[i]] || '--' %></td>
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <% } %>
+
+    <p class="dates"><%= i18n.reportPeriod %>:
+        <span class="nobr"><%= Date.format(i18n.DateTime.longFormat, startTime) %></span> -
+        <span class="nobr"><%= Date.format(i18n.DateTime.longFormat, endTime) %></span>
+    </p>
+
+    <% if(!_.isUndefined(zonesStr)) {%>
+    <p class="dates">
+        <%= zonesStr %>
+    </p>
+    <% } %>
+
+    <p>
+        <%= i18n.drivesafety.mintimeSpeed %>: <%= speedingMintime %>&nbsp;<%= i18n.sec %>
+    </p>
+
+    <p>
+        <%= i18n.drivesafety.mintimeAcceleration %>: <%= accelerationMintime %>&nbsp;<%= i18n.sec %>
+    </p>
+</div>
+
+
+

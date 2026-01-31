@@ -1,0 +1,1 @@
+define(["jquery","underscore","_common/reports/guardscallcount/views/GuardscallcountReportView","text!../tmpl/thead.html","text!../tmpl/row.html"],function(t,e,r,l,n){var o=r.extend({constructor:function(){this._tmplHead=e.template(l),this._tmplRow=e.template(n),r.apply(this,arguments)}});return o});

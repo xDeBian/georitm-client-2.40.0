@@ -1,0 +1,98 @@
+    <% if( 'undefined' == typeof importTs || importTs == '' || 'undefined' != typeof item.clearingFrom){%>
+    <p class="history-clear-help" style="margin:0 0 10px">
+        <% if( 'undefined' != typeof item.clearingFrom){%>
+        <%= i18n.clearHistoryInfo.replace('#date#', Date.format('d.m.Y', item.clearingFrom * App.MS)) %>
+        <% } else { %>
+        <%= i18n.clearHistoryInfoShort %>
+        <% } %>
+    </p>
+    <% } %>
+
+    <p class="history-processing-info<% if( 'undefined' == typeof importTs || importTs == '' || 'undefined' != typeof item.clearingFrom){%> hidden<% } %>">
+        <%= i18n.dataHasBeenPrepared %> <%= i18n.till %>: <strong class="nobr importTs"><%= importTs %></strong>
+    </p>
+
+    <% if(0) {%>
+
+    <a class="btn-clear-history<% if('undefined' != typeof item.clearingFrom) {%> hidden<% } %>" href="javascript:;"><%= i18n.clearAndRecalculateDataFromSelectedDate %>
+        <strong class="clear-history selected-date"></strong>
+    </a>
+    <div class="clear-history-indicator loading<% if('undefined' == typeof item.clearingFrom) {%> hidden<% } %>"></div>
+
+    <% } %>
+
+<div class="track-filters">
+    <div class="track-block">
+        <p>
+        <% if(useManualFilters) {%>
+            <%= i18n.useManualTrackFilters %>
+        <% } else { %>
+            <%= i18n.useAutoTrackFilters %>
+        <% } %>
+        </p>
+    </div>
+
+    <div class="track-block">
+        <h5><%= i18n.coordinatesFiltersBySpeed %></h5>
+        <p>
+            <%= i18n.minObjectSpeed %>: <strong><%= settings.OBJECT_MIN_SPEED || 1.001 %> <%= i18n.kmh %></strong>
+        </p><p class="no-margin">
+            <%= i18n.maxObjectSpeed %>: <strong><%= settings.OBJECT_MAX_SPEED || 180 %> <%= i18n.kmh %></strong>
+        </p>
+    </div>
+
+    <div class="track-block">
+        <h5><%= i18n.parkPlacesFilters %></h5>
+        <p>
+            <%= i18n.detectParksIfContinueMoreThan %>:
+            <strong><%= settings.OBJECT_MIN_PARK_TIME || 120 %> <%= i18n.sec %></strong>
+        </p>
+        <% if(useManualFilters) {%>
+        <p class="no-margin">
+            <%= i18n.detectMovementBetweenParksIfContinuesMoreThan %>:
+            <strong><%= settings.OBJECT_MIN_PARK_MERGE_TIME || 120 %> <%= i18n.sec %></strong>
+        </p>
+        <% } %>
+    </div><!--/track-block-parkings-->
+
+    <% if(useManualFilters) {%>
+
+        <div class="track-block">
+            <h5><%= i18n.coordinatesFiltersByParameters %></h5>
+            <p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterPDOP')) {%>-empty<% } %>"></i>
+                <%= i18n.useOnlyAccurateCoordinates %>
+            </p><p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterMOVEMENT')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesByMovementSensor %>
+            </p><p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterUselessType')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesOnlyWhenMovingOrEventHappens %>
+            </p><p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterIgnitionMissing')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesOnlyIfIgnitionIsOn %>
+            </p>
+        </div><!--/track-block-->
+
+        <div class="track-block">
+            <h5><%= i18n.filtersOfFalseCoordinates %></h5>
+            <p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterSharpCorners')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesWithoutLargeDeviationFromParkingPlace %>
+            </p><p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterHyperJumps')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesWithoutLargeDeviationFromTrack %>
+            </p><p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterMissing3Dfix')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesOnlyWithAltitude %>
+            </p><p>
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterUnreliableNoiseValue')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesOnlyWithGoodSignal %>
+            </p><p class="no-margin">
+                <i class="svg-icon svg-icon-check<% if( !filterOn('FilterUnrealCarPower')) {%>-empty<% } %>"></i>
+                <%= i18n.useCoordinatesOnlyWithGoodVoltage %>
+            </p>
+        </div><!--/track-block-->
+
+    <% } %>
+</div>

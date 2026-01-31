@@ -1,0 +1,35 @@
+<!--<input class="input-block-level" name="address" type="text" placeholder="<%= i18n.enterPoiAddress %>" value="<%- address || '' %>">-->
+<div class="form-search">
+    <div class="input-append input-prepend">
+        <span class="add-on">
+            <input name="address" type="text" placeholder="<%= i18n.enterPoiAddress %>" value="<%- address || '' %>">
+            <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+        </span>
+        <span class="btn add-on btn-search"><i class="svg-icon svg-icon-search"></i></span>
+    </div>
+</div>
+
+<input type="hidden" name="lat" value="<%= lat %>">
+<input type="hidden" name="lon" value="<%= lon %>">
+
+<input class="input-block-level" name="name" type="text"
+       placeholder="<%= i18n.enterPoiName %>" value="<%- name && name == address ? '' : name %>">
+
+<select class="input-block-level placeholder group-select" name="poiGroupId">
+    <% if(groups.length > 1) { %>
+    <option value="0"><%= i18n.selectPoiGroup %></option>
+    <% } %>
+    <% _.each(groups, function(group){%>
+    <option value="<%= group.id %>"<% if(groupId && groupId == group.id) {%> selected<% } %>><%- group.name %></option>
+    <% }) %>
+</select>
+<select class="input-block-level placeholder no-margin" name="poiTypeId">
+    <% if(types.length > 1) { %>
+    <option value="0"><%= i18n.selectPoiType %></option>
+    <% } %>
+    <% _.each(types, function(t){%>
+    <option value="<%= t.id %>"<% if(type && type.id == t.id) {%> selected<% } %>><%- t.name %></option>
+    <% }) %>
+</select>
+
+

@@ -1,0 +1,10 @@
+<tr<% if(last) {%> data-row="last"<% } %> class="summary-row">
+    <th colspan="<%= colspan %>" class="text-left"><%= totalText %></th>
+    <% if(isGeneral) { %>
+    <th><%= data.total.alarms %></th>
+    <th><%= data.total.alerts %></th>
+    <th><%= data.total.alarms + data.total.alerts %></th>
+    <% } else { %>
+    <th><%= 'undefined' === typeof data.totalCount ? data.total.alerts : data.totalCount %></th>
+    <% } %>
+</tr>

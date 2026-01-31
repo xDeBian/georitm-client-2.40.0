@@ -1,0 +1,62 @@
+{
+  "partitions": [
+    {
+      "num": 1,
+      "name": "",
+      "zones": [],
+      "arm": 1,
+      "states": []
+    },
+    {
+      "num": 2,
+      "name": "",
+      "zones": [],
+      "arm": 0,
+      "states": []
+    },
+    {
+      "num": 3,
+      "name": "",
+      "zones": [],
+      "arm": 0,
+      "states": []
+    },
+    {
+      "num": 4,
+      "name": "",
+      "zones": [],
+      "arm": 0,
+      "states": []
+    },
+    {
+      "num": 5,
+      "name": "",
+      "zones": [],
+      "arm": 0,
+      "states": []
+    },
+    {
+      "num": 6,
+      "name": "",
+      "zones": [],
+      "arm": 0,
+      "states": []
+    },
+    {
+      "num": 7,
+      "name": "",
+      "zones": [],
+      "arm": 0,
+      "states": []
+    },
+    {
+      "num": 8,
+      "name": "",
+      "zones": [],
+      "arm": 0,
+      "states": []
+    }
+  ],
+  "scanId": 1,
+  "scanState": 3
+}

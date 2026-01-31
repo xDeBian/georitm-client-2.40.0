@@ -1,0 +1,15 @@
+<form action="" method="post" class="no-margin">
+    <div class="box-header"><h2><%= i18n.routeBuilding %></h2><a class="close">&times;</a></div>
+    <div class="box-content points-cont">
+        <ol class="points">
+            <%= pointsHtml %>
+        </ol>
+        <!--<div class="tools clearfix">
+            <a class="pull-right" href="javascript:;">Options</a>
+        </div>-->
+    </div>
+    <div class="box-footer">
+        <!--<button type="submit" class="btn btn-primary btn-build"><%= i18n.build.ucFirst() %></button>-->
+        <a href="#" class="btn btn-reset"><%= i18n.clear.ucFirst() %></a>
+    </div>
+</form>

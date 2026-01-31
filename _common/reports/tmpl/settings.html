@@ -1,0 +1,71 @@
+<h3><%= i18n.reportsSettings %></h3>
+
+<!--<div class="params-group">
+    <h4><%= i18n.speedLimitsSettings %></h4>
+    <div class="control-group msl form-horizontal">
+        <ul>
+            <li class="field"><label><%= i18n.speedLimit %> 1</label>
+                <input type="text" class="input-mini positive" value="<%= speedLimits[0] %>" name="speedLimit1" data-index="0" /> <%= i18n.kmh %>
+            </li>
+            <li class="field"><label><%= i18n.speedLimit %> 2</label>
+                <input type="text" class="input-mini positive" value="<%= speedLimits[1] %>" name="speedLimit2" data-index="1" /> <%= i18n.kmh %>
+            </li>
+        </ul>
+    </div>-->
+<!--</div>/params-group-->
+
+<div class="params-group">
+    <h4><%= i18n.reportsObjectsSort %></h4>
+    <div class="control-group">
+        <ul>
+            <li>
+                <label class="radio"><input type="radio" name="objectsSortType" value="name"
+                    <% if(objectsSort == 'name'){ %> checked<% } %>> <%= i18n.byName %></label>
+                <label class="radio"><input type="radio" name="objectsSortType" value="extId"
+                    <% if(objectsSort == 'extId'){ %> checked<% } %>> <%= i18n.byId %></label>
+            </li>
+        </ul>
+    </div>
+</div><!--/params-group-->
+
+<div class="params-group">
+    <h4><%= i18n.showingOfTracksSegments %></h4>
+    <div class="control-group mrtsm">
+        <ul>
+            <li>
+                <label class="radio">
+                    <input type="radio" name="tracksSegmentsMode"
+                    value="all"<% if(tracksSegmentsMode == 'all'){ %> checked<% } %>><%= i18n.showAllSelectedSegments %>
+                </label><label class="radio">
+                <input type="radio" name="tracksSegmentsMode"
+                       value="last"<% if(tracksSegmentsMode == 'last'){ %> checked<% } %>><%= i18n.showLastSelectedSegment %>
+                </label>
+            </li>
+        </ul>
+    </div>
+</div><!--/params-group-->
+
+<div class="params-group">
+    <h4><%= i18n.reportsList %></h4>
+    <div class="mrhr" data-setting="mobile.reports.hiddenReports">
+        <ul class="report-groups">
+            <% _.each(reportsGroups, function(items, key){
+            if( !items.length ) return;
+            %>
+            <li>
+                <h5 class="report-group-name"><%= i18n.reportGroupNames[key] %></h5>
+                <ul class="report-group-items">
+                    <% _.each(items, function(reportType){
+                    if( ( !App.hasModule('mobile') && reportType.objType == 'mobile' )
+                    || ( !App.hasModule('stat') && reportType.objType == 'stat') ) return;
+                    %>
+                    <li data-objectstype="<%= reportType.objType %>"><label class="checkbox"><input type="checkbox" value="<%=reportType.key%>"
+                        <% if(_.indexOf(hiddenReports, reportType.key) == -1){ %> checked<% } %> /> <%= reportType.name %></label></li>
+                    <% }) %>
+                </ul>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</div><!--/params-group-->
+

@@ -1,0 +1,59 @@
+<!-- this is example, js taken from ilya's code -->
+        <script>
+
+            window.tokenRequests = {};
+            window.tokenRequestId = 0;
+
+            //these are all work via socket
+            window.makeTokenRequest = function(uid) {
+                window.tokenRequestId++;
+                var tr = {type: "TOKEN_REQUEST", data: uid, seq: window.tokenRequestId + ""};
+                window.tokenRequests[tr.seq] = tr;
+                return tr;
+            }
+
+            window.makeLogRequest = function(uid, enable) {
+                var lr = {type: "ENABLE_LOG", data: uid, enable: enable};
+                return lr;
+            }
+
+            window.makeDropRequest = function(uid, enable) {
+                var lr = {type: "FORCE_DISCONNECT", data: uid};
+                return lr;
+            }
+
+            window.gearClick = function(e, uid) {
+                e.stopPropagation();
+                $('html, .objbox, table').bind('click', outsideClick);
+                var ctx = $('#ctx-menu');
+                console.log(e);
+                ctx.css('left', e.clientX - ctx.width() - 10).css('top', e.clientY);
+                ctx.show();
+
+                $('#ctx-setup').unbind().click(function() {
+                    var tr = window.makeTokenRequest(uid);
+                    window.ws.send(JSON.stringify(tr));
+                    tr.win = window.open("loading.html");
+                    tr.callback = function(token) {
+                        var host = window.location.host + window.window.location.pathname;
+                        var s = window.sessions[uid];
+                        //this is main what we need, params for flash
+                        var url = 'http://' + host + 'shell.jsp?firmware=' + s.firmware + '&token=' + token + '&port=6668&host=' + window.location.hostname;
+                        tr.win.href = url;
+                    }
+                });
+
+                $('#ctx-drop').unbind().click(function() {
+                    window.list.setRowColor(uid, "red");
+                    var tr = window.makeDropRequest(uid);
+                    window.ws.send(JSON.stringify(tr));
+                });
+            }
+
+
+        </script>
+<object type='application/x-shockwave-flash' data='shell?firmware=V-2.007.018 1100.001' width='100%' height='100%'>
+    <param name='wmode' value='transparent' />
+    <param name='FlashVars' value="HOST=10.78.15.46&PORT=6668&TOKEN=e0345a2d-50b5-40ef-a6c6-99ab37b7d7bd" />
+    <param name='movie' value='shell?firmware=V-2.007.018 1100.001' />
+</object>

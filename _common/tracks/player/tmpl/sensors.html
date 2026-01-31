@@ -1,0 +1,10 @@
+<ul class="player-sensors-list">
+    <% _.each(discrets, function(sensorData) { %>
+    <li class="player-sensors-list-item discret <% if(sensorData.state) {%>on<% } else {%>off<% } %>">
+        <%- sensorData.name %>
+    </li>
+    <% }); %>
+    <li class="player-sensors-list-item power <% if(power.state === 0) {%>on<% } else {%>off<% } %>">
+        <%- power.name %>
+    </li>
+</ul>

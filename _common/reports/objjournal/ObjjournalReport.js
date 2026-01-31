@@ -1,0 +1,1 @@
+define(["underscore","_common/reports/Report","_common/reports/objjournal/views/ObjjournalReportView"],function(r,e,o){var t=e.extend({constructor:function(){e.apply(this,arguments)},url:App.getBaseUrl()+"reports/OBJJOURNAL/",initialize:function(r){e.prototype.initialize.call(this,o),"source"in r&&r.source.registerChild(this)},readyForExport:function(){return!1}});return t});

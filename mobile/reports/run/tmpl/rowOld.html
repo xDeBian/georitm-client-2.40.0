@@ -1,0 +1,20 @@
+<tr data-index=<%= rowIndex %> class="<%= rowClass %>">
+    <td data-key="name" class="text-left">
+        <% if('undefined' != typeof periodStart && App.reportAllowedByType('MOVEPARK')) {%>
+        <a href="#" title="<%= buildMovePark %>" class="build-another" data-type="movepark"
+           data-id="<%= id %>" data-from="<%= periodStart %>" data-to="<%= periodEnd %>">
+            <%- name %> (#<%- extId %>)
+        </a>
+        <% } else {%>
+        <%- name %> (#<%- extId %>)
+        <% } %>
+    </td>
+    <td data-key="distance"><%= distanceS %></td>
+    <td data-key="moveStart" data-value="<%= moveStart %>"><%= moveStartS %></td>
+    <td data-key="moveEnd" data-value="<%= moveEnd %>"><%= moveEndS %></td>
+    <td data-key="moveTime" data-value="<%= moveTime %>" class="text-left"><%= moveTimeS %></td>
+    <td data-key="parkTime" data-value="<%= parkTime %>" class="text-left"><%= parkTimeS %></td>
+    <td data-key="avgSpeed" data-value="<%= avgSpeed %>"><%= avgSpeedS %></td>
+    <td data-key="consum100km" data-value="<%= consum100km %>"><%= consum100km %></td>
+    <td data-key="consum1h" data-value="<%= consum1h %>"><%= consum1h %></td>
+</tr>

@@ -1,0 +1,28 @@
+<label><%= i18n.objects.ucFirst() %></label>
+<div class="control-group devices">
+    <div class="controls">
+        <select name="devices"
+                data-placeholder="<%= i18n.allObjects %>"
+                class="input-block-level"
+                multiple>
+        </select>
+    </div>
+</div>
+
+<label><%= i18n.alerts.ucFirst() %></label>
+<div class="row-fluid row-alerts">
+    <div class="alert-groups control-group span6">
+        <select name="alertGroups"
+                data-placeholder="<%= i18n.allAlertsGroups %>"
+                class="input-block-level"
+                multiple>
+        </select>
+    </div><div class="alerts control-group span6">
+        <select name="alerts"
+                data-placeholder="<%= i18n.allAlertsOffSelectedGroups %>"
+                class="input-block-level"
+                multiple>
+        </select>
+    </div>
+</div>
+

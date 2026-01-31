@@ -1,0 +1,55 @@
+<table class="l">
+    <tr>
+        <td class="col">
+            <table class="l features">
+                <tr>
+                    <td class="label"><%= i18n.objName %></td>
+                    <td class="value"><%- item.name %></td>
+                </tr><tr>
+                <tr>
+                    <td class="label"><%= i18n.description %></td>
+                    <td class="value">
+                        <p class="no-margin text-large"><strong><%= shortDescription || emptyString %></strong></p>
+                    </td>
+                </tr><tr>
+                    <td class="label"><%= i18n.licenseNumber %></td>
+                    <td class="value"><%- settings.CAR_ID || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.objModel.ucFirst() %></td>
+                    <td class="value"><%- settings.MODEL || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.vehicleType %></td>
+                    <td class="value"><%- settings.VRC_TYPE || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.objYear %></td>
+                    <td class="value"><%- settings.YEAR || emptyString %></td>
+                </tr><tr>
+                    <td class="label">VIN</td>
+                    <td class="value"><%- settings.VIN || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.color.ucFirst() %></td>
+                    <td class="value"><%- settings.COLOR || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.objRouteNumber %></td>
+                    <td class="value"><%- settings.RouteNumber || emptyString %></td>
+                </tr>
+            </table>
+        </td><td class="col">
+            <table class="l features">
+                <%= col2Html %>
+                <!--<tr>
+                    <td class="label"><%= i18n.objState %></td>
+                    <td class="value"><%= stateName %></td>
+                </tr>-->
+            </table>
+        </td>
+        <td class="col" style="width:90px">
+            <div class="img-block">
+                <img<% if(!imgPath) {%> style="display:none"<% } %> src="<% if(imgPath) {%><%= imgPath %><% } %>" alt="" />
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="no-margin"><%= i18n.comments.ucFirst() %>:</p>
+<p class="no-margin text-large"><strong><%= description || emptyString %></strong></p>
+

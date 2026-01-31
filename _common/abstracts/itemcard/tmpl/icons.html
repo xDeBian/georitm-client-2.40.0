@@ -1,0 +1,7 @@
+<ul>
+<% _.each(totalBySprites, function(num, key){ %>
+<% for(var i = 0; i < num; ++i){ %>
+    <li data-index="<%= i %>" data-key="<%= key %>"
+    <% if(isActive(i, key)) {%> class="active" <% } %> style="background:<%= getBgr(i, key) %>"></li>
+<% }}) %>
+</ul>

@@ -1,0 +1,39 @@
+<div class="obj-responsible">
+    <ul class="resp-pass">
+        <li>
+            <%= i18n.responsible.pass1 %>: <b data-key="pass1"><%- 'undefined' != typeof pass1 && pass1 ? pass1 : '-' %></b>
+        </li>
+        <li>
+            <%= i18n.responsible.pass2 %>: <b data-key="pass2"><%- 'undefined' != typeof pass2 && pass2 ? pass2 : '-' %></b>
+        </li>
+    </ul>
+
+    <div data-key="persons">
+        <% if('undefined' != typeof persons && persons.length) { %>
+        <table class="table table-condensed resp-persons">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="text-center"><%= i18n.responsible.persons.key %></th>
+                    <th><%= i18n.responsible.persons.name %></th>
+                    <th><%= i18n.responsible.persons.phone1 %></th>
+                    <th><%= i18n.responsible.persons.phone2 %></th>
+                    <th><%= i18n.responsible.persons.comment %></th>
+                </tr>
+            </thead>
+            <% _.each(persons, function(person, i){ %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td class="text-center"><%- person.key %></td>
+                <td><%- person.name %></td>
+                <td><a href="tel:<%- person.phone1 %>"><%- person.phone1 %></a></td>
+                <td><a href="tel:<%- person.phone2 %>"><%- person.phone2 %></a></td>
+                <td><%- person.comment %></td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } else { %>
+        <p><%= i18n.responsible.persons.noData %></p>
+        <% } %>
+    </div>
+</div>

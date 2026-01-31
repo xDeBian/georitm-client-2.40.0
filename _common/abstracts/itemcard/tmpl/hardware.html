@@ -1,0 +1,45 @@
+<table class="l">
+    <tr>
+        <td class="col">
+            <table class="features">
+                <% if(imei) {%>
+                <tr>
+                    <td class="label">IMEI</td>
+                    <td class="value"><%- imei %></td>
+                </tr>
+                <% } %>
+                <tr>
+                    <td class="label"><%= i18n.objHardwareType %></td>
+                    <td class="value"><%= deviceTypeName %></td>
+                </tr>
+                <tr>
+                    <td class="label"><%= i18n.simCard %> 1</td>
+                    <td class="value"><%- settings.SIM || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.simCard %> 2</td>
+                    <td class="value"><%- settings.SIM2 || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.password.ucFirst() %></td>
+                    <td class="value"><%- settings.PASS || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.placeInstall %></td>
+                    <td class="value"><%- settings.InstallPlace || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.dateInstall %></td>
+                    <td class="value"><%- settings.InstallDate || emptyString %></td>
+                </tr><tr>
+                    <td class="label"><%= i18n.installer %></td>
+                    <td class="value"><%- settings.Installer || emptyString %></td>
+                </tr>
+            </table>
+        </td>
+        <td class="col">
+            <div class="device-img">
+                <img src="<%= deviceImg %>" alt="">
+                <p class="no-margin"><%= deviceTypeName %></p>
+            </div>
+        </td>
+    </tr>
+</table>
+<p class="no-margin"><%= i18n.objExtraHardware %>:</p>
+<p class="no-margin"><strong><%- settings.ExtraHardware || emptyString %></strong></p>

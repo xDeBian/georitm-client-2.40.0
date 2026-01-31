@@ -1,0 +1,16 @@
+<h3 class="report-objst-summary"><%= i18n.summary %></h3>
+<table class="selectable rep-table">
+    <thead>
+        <tr>
+            <th><%= i18n.object.ucFirst() %></th>
+            <th><%= i18n.moveTime %></th>
+            <th><%= i18n.totalRealConsumption %>, <%= i18n.l %></th>
+            <th><%= i18n.fillingsVolume %>, <%= i18n.l %></th>
+            <th><%= i18n.dischargesVolume %>, <%= i18n.l %></th>
+            <th><%= i18n.runDistance %>, <%= i18n.km %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= rows %>
+    </tbody>
+</table>

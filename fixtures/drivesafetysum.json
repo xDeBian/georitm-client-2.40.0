@@ -1,0 +1,1579 @@
+{
+  "footer": {
+    "182": {
+      "id": 182,
+      "extId": 10064,
+      "name": "СВ 5446",
+      "rev": "V-2.007.047 03986.207",
+      "totalSpd1": 205,
+      "totalSpd2": 157,
+      "totalSpd3": 4,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 1,
+      "totalRun": 1535.99,
+      "spd1Per100km": 13.35,
+      "spd2Per100km": 10.22,
+      "spd3Per100km": 0.26,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 10.22,
+      "spd3Score": 0.78,
+      "spd4Score": 0,
+      "speedScore": 2.75,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.07,
+      "aScore": 0,
+      "bScore": 0.07,
+      "accScore": 0.03,
+      "accGrade": 0,
+      "totalScore": 1.39,
+      "totalGrade": 0
+    },
+    "190": {
+      "id": 190,
+      "extId": 10065,
+      "name": "СВ 6727",
+      "rev": "V-2.007.047 03986.207",
+      "totalSpd1": 41,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 150.09,
+      "spd1Per100km": 27.32,
+      "spd2Per100km": 0,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 0,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 0,
+      "totalGrade": 0
+    },
+    "163": {
+      "id": 163,
+      "extId": 10052,
+      "name": "св5300",
+      "rev": "V-2.007.037 03212.205",
+      "totalSpd1": 16,
+      "totalSpd2": 11,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 99.56,
+      "spd1Per100km": 16.07,
+      "spd2Per100km": 11.05,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 11.05,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 2.76,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 1.38,
+      "totalGrade": 0
+    },
+    "145": {
+      "id": 145,
+      "extId": 799,
+      "name": "св5301",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "179": {
+      "id": 179,
+      "extId": 10062,
+      "name": "СВ5317",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "136": {
+      "id": 136,
+      "extId": 793,
+      "name": "св5319",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 157,
+      "totalSpd2": 131,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 1,
+      "totalRun": 1326.9,
+      "spd1Per100km": 11.83,
+      "spd2Per100km": 9.87,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 9.87,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 2.47,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.08,
+      "aScore": 0,
+      "bScore": 0.08,
+      "accScore": 0.04,
+      "accGrade": 0,
+      "totalScore": 1.25,
+      "totalGrade": 0
+    },
+    "122": {
+      "id": 122,
+      "extId": 781,
+      "name": "св5321",
+      "rev": "V-2.007.047 03986.207",
+      "totalSpd1": 87,
+      "totalSpd2": 79,
+      "totalSpd3": 1,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 6,
+      "totalRun": 625.25,
+      "spd1Per100km": 13.91,
+      "spd2Per100km": 12.63,
+      "spd3Per100km": 0.16,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 12.63,
+      "spd3Score": 0.48,
+      "spd4Score": 0,
+      "speedScore": 3.28,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.96,
+      "aScore": 0,
+      "bScore": 0.96,
+      "accScore": 0.48,
+      "accGrade": 0,
+      "totalScore": 1.88,
+      "totalGrade": 0
+    },
+    "160": {
+      "id": 160,
+      "extId": 10049,
+      "name": "св5322",
+      "rev": "V-2.007.035 02777.004",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "123": {
+      "id": 123,
+      "extId": 782,
+      "name": "св5323",
+      "rev": "V-2.007.047 03986.207",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "124": {
+      "id": 124,
+      "extId": 783,
+      "name": "св5324",
+      "rev": "V-2.007.047 03986.207",
+      "totalSpd1": 9,
+      "totalSpd2": 20,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 2,
+      "totalRun": 94.9,
+      "spd1Per100km": 9.48,
+      "spd2Per100km": 21.07,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 21.07,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 5.27,
+      "speedGrade": 1,
+      "aPer100km": 0,
+      "bPer100km": 2.11,
+      "aScore": 0,
+      "bScore": 2.11,
+      "accScore": 1.05,
+      "accGrade": 0,
+      "totalScore": 3.16,
+      "totalGrade": 0
+    },
+    "153": {
+      "id": 153,
+      "extId": 802,
+      "name": "св5330",
+      "rev": "",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "129": {
+      "id": 129,
+      "extId": 788,
+      "name": "св5386",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 92,
+      "totalSpd2": 23,
+      "totalSpd3": 1,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 750.34,
+      "spd1Per100km": 12.26,
+      "spd2Per100km": 3.07,
+      "spd3Per100km": 0.13,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 3.07,
+      "spd3Score": 0.4,
+      "spd4Score": 0,
+      "speedScore": 0.87,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 0.43,
+      "totalGrade": 0
+    },
+    "161": {
+      "id": 161,
+      "extId": 10050,
+      "name": "св5449",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 47,
+      "totalSpd2": 43,
+      "totalSpd3": 5,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 803.62,
+      "spd1Per100km": 5.85,
+      "spd2Per100km": 5.35,
+      "spd3Per100km": 0.62,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 5.35,
+      "spd3Score": 1.87,
+      "spd4Score": 0,
+      "speedScore": 1.8,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 0.9,
+      "totalGrade": 0
+    },
+    "121": {
+      "id": 121,
+      "extId": 780,
+      "name": "св5713",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 47,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 478.48,
+      "spd1Per100km": 9.82,
+      "spd2Per100km": 0,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 0,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 0,
+      "totalGrade": 0
+    },
+    "142": {
+      "id": 142,
+      "extId": 795,
+      "name": "св5718",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 135,
+      "totalSpd2": 13,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 3,
+      "totalRun": 828.5,
+      "spd1Per100km": 16.29,
+      "spd2Per100km": 1.57,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 1.57,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0.39,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.36,
+      "aScore": 0,
+      "bScore": 0.36,
+      "accScore": 0.18,
+      "accGrade": 0,
+      "totalScore": 0.29,
+      "totalGrade": 0
+    },
+    "120": {
+      "id": 120,
+      "extId": 779,
+      "name": "св5726",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "125": {
+      "id": 125,
+      "extId": 784,
+      "name": "св6055",
+      "rev": "",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "162": {
+      "id": 162,
+      "extId": 10051,
+      "name": "св6056",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 165,
+      "totalSpd2": 50,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 4,
+      "totalRun": 1293.47,
+      "spd1Per100km": 12.76,
+      "spd2Per100km": 3.87,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 3.87,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0.97,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.31,
+      "aScore": 0,
+      "bScore": 0.31,
+      "accScore": 0.15,
+      "accGrade": 0,
+      "totalScore": 0.56,
+      "totalGrade": 0
+    },
+    "119": {
+      "id": 119,
+      "extId": 778,
+      "name": "св6058",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 68,
+      "totalSpd2": 17,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 2,
+      "totalRun": 681.32,
+      "spd1Per100km": 9.98,
+      "spd2Per100km": 2.5,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 2.5,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0.62,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.29,
+      "aScore": 0,
+      "bScore": 0.29,
+      "accScore": 0.15,
+      "accGrade": 0,
+      "totalScore": 0.39,
+      "totalGrade": 0
+    },
+    "133": {
+      "id": 133,
+      "extId": 792,
+      "name": "св6086",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 110,
+      "totalSpd2": 131,
+      "totalSpd3": 3,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 4,
+      "totalRun": 1082.68,
+      "spd1Per100km": 10.16,
+      "spd2Per100km": 12.1,
+      "spd3Per100km": 0.28,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 12.1,
+      "spd3Score": 0.83,
+      "spd4Score": 0,
+      "speedScore": 3.23,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.37,
+      "aScore": 0,
+      "bScore": 0.37,
+      "accScore": 0.18,
+      "accGrade": 0,
+      "totalScore": 1.71,
+      "totalGrade": 0
+    },
+    "132": {
+      "id": 132,
+      "extId": 791,
+      "name": "св6088",
+      "rev": "V-2.007.047 03986.207",
+      "totalSpd1": 98,
+      "totalSpd2": 117,
+      "totalSpd3": 2,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 1191.22,
+      "spd1Per100km": 8.23,
+      "spd2Per100km": 9.82,
+      "spd3Per100km": 0.17,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 9.82,
+      "spd3Score": 0.5,
+      "spd4Score": 0,
+      "speedScore": 2.58,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 1.29,
+      "totalGrade": 0
+    },
+    "127": {
+      "id": 127,
+      "extId": 786,
+      "name": "св6726",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 43,
+      "totalSpd2": 97,
+      "totalSpd3": 6,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 483.89,
+      "spd1Per100km": 8.89,
+      "spd2Per100km": 20.05,
+      "spd3Per100km": 1.24,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 20.05,
+      "spd3Score": 3.72,
+      "spd4Score": 0,
+      "speedScore": 5.94,
+      "speedGrade": 1,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 2.97,
+      "totalGrade": 0
+    },
+    "126": {
+      "id": 126,
+      "extId": 785,
+      "name": "св6728",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 154,
+      "totalSpd2": 7,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 3,
+      "totalRun": 869.6,
+      "spd1Per100km": 17.71,
+      "spd2Per100km": 0.8,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 0.8,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0.2,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.34,
+      "aScore": 0,
+      "bScore": 0.34,
+      "accScore": 0.17,
+      "accGrade": 0,
+      "totalScore": 0.19,
+      "totalGrade": 0
+    },
+    "152": {
+      "id": 152,
+      "extId": 801,
+      "name": "св6729",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "155": {
+      "id": 155,
+      "extId": 10046,
+      "name": "св6730",
+      "rev": "V-2.007.035 02777.004",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "143": {
+      "id": 143,
+      "extId": 796,
+      "name": "св6735",
+      "rev": "V-2.007.036 02856.004",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "131": {
+      "id": 131,
+      "extId": 790,
+      "name": "св6751",
+      "rev": "V-2.007.047 03986.207",
+      "totalSpd1": 120,
+      "totalSpd2": 34,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 3,
+      "totalRun": 1178.64,
+      "spd1Per100km": 10.18,
+      "spd2Per100km": 2.88,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 2.88,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0.72,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.25,
+      "aScore": 0,
+      "bScore": 0.25,
+      "accScore": 0.13,
+      "accGrade": 0,
+      "totalScore": 0.42,
+      "totalGrade": 0
+    },
+    "137": {
+      "id": 137,
+      "extId": 794,
+      "name": "св6752",
+      "rev": "V-2.007.036 02856.004",
+      "totalSpd1": 0,
+      "totalSpd2": 0,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 0
+    },
+    "128": {
+      "id": 128,
+      "extId": 787,
+      "name": "св6753",
+      "rev": "V-2.007.046 03689.207",
+      "totalSpd1": 54,
+      "totalSpd2": 39,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 2,
+      "totalRun": 731.34,
+      "spd1Per100km": 7.38,
+      "spd2Per100km": 5.33,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 5.33,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 1.33,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0.27,
+      "aScore": 0,
+      "bScore": 0.27,
+      "accScore": 0.14,
+      "accGrade": 0,
+      "totalScore": 0.73,
+      "totalGrade": 0
+    },
+    "130": {
+      "id": 130,
+      "extId": 789,
+      "name": "св6755",
+      "rev": "V-2.007.045 03441.207",
+      "totalSpd1": 77,
+      "totalSpd2": 3,
+      "totalSpd3": 0,
+      "totalSpd4": 0,
+      "totalAcc": 0,
+      "totalBrk": 0,
+      "totalRun": 761.38,
+      "spd1Per100km": 10.11,
+      "spd2Per100km": 0.39,
+      "spd3Per100km": 0,
+      "spd4Per100km": 0,
+      "spd1Score": 0,
+      "spd2Score": 0.39,
+      "spd3Score": 0,
+      "spd4Score": 0,
+      "speedScore": 0.1,
+      "speedGrade": 0,
+      "aPer100km": 0,
+      "bPer100km": 0,
+      "aScore": 0,
+      "bScore": 0,
+      "accScore": 0,
+      "accGrade": 0,
+      "totalScore": 0.05,
+      "totalGrade": 0
+    }
+  },
+  "header": {
+    "sd": 1.5015348E9,
+    "ed": 1.5017076E9,
+    "tzMin": 180,
+    "tzId": "Europe/Moscow",
+    "keyOrder": [
+      182,
+      190,
+      163,
+      145,
+      179,
+      136,
+      122,
+      160,
+      123,
+      124,
+      153,
+      129,
+      161,
+      121,
+      142,
+      120,
+      125,
+      162,
+      119,
+      133,
+      132,
+      127,
+      126,
+      152,
+      155,
+      143,
+      131,
+      137,
+      128,
+      130
+    ],
+    "speedLimits": [
+      "60",
+      "90",
+      "110",
+      "130"
+    ],
+    "speedWeights": [
+      "0",
+      "1",
+      "3",
+      "5"
+    ],
+    "gradeThresholds": [
+      "4",
+      "7"
+    ],
+    "speedingMintime": 20,
+    "accelerationLimit": 3,
+    "accelerationWeight": 1,
+    "brakingLimit": -2,
+    "brakingWeight": 1,
+    "accelerationMintime": 3,
+    "speedingMethod": "b1"
+  },
+  "body": {
+    "182": {
+      "1501534800000": {
+        "run": {
+          "distance": 1535.99,
+          "fullTime": 172800,
+          "moveTime": 79498,
+          "parkTime": 93302,
+          "moveStart": 1.501562629E9,
+          "moveEnd": 1.501652812E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 1,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 205,
+          "exceed_b2": 157
+        },
+        "spd2": {
+          "exceed_b1": 4,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "190": {
+      "1501534800000": {
+        "run": {
+          "distance": 150.09,
+          "fullTime": 172800,
+          "moveTime": 11824,
+          "parkTime": 160976,
+          "moveStart": 1.501597877E9,
+          "moveEnd": 1.501706472E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 41,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "163": {
+      "1501534800000": {
+        "run": {
+          "distance": 99.56,
+          "fullTime": 172800,
+          "moveTime": 6239,
+          "parkTime": 166561,
+          "moveStart": 1.501692121E9,
+          "moveEnd": 1.5017076E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 16,
+          "exceed_b2": 11
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "145": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "179": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "136": {
+      "1501534800000": {
+        "run": {
+          "distance": 1326.9,
+          "fullTime": 172800,
+          "moveTime": 75914,
+          "parkTime": 96886,
+          "moveStart": 1.5015644E9,
+          "moveEnd": 1.5017076E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 1,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 157,
+          "exceed_b2": 131
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "122": {
+      "1501534800000": {
+        "run": {
+          "distance": 625.25,
+          "fullTime": 172800,
+          "moveTime": 45777,
+          "parkTime": 127023,
+          "moveStart": 1.501584094E9,
+          "moveEnd": 1.501683225E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 6,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 87,
+          "exceed_b2": 79
+        },
+        "spd2": {
+          "exceed_b1": 1,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "160": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "123": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "124": {
+      "1501534800000": {
+        "run": {
+          "distance": 94.9,
+          "fullTime": 172800,
+          "moveTime": 4467,
+          "parkTime": 168333,
+          "moveStart": 1.50158179E9,
+          "moveEnd": 1.50160095E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 2,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 9,
+          "exceed_b2": 20
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "153": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "129": {
+      "1501534800000": {
+        "run": {
+          "distance": 750.34,
+          "fullTime": 172800,
+          "moveTime": 41735,
+          "parkTime": 131065,
+          "moveStart": 1.50159883E9,
+          "moveEnd": 1.5017076E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 92,
+          "exceed_b2": 23
+        },
+        "spd2": {
+          "exceed_b1": 1,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "161": {
+      "1501534800000": {
+        "run": {
+          "distance": 803.62,
+          "fullTime": 172800,
+          "moveTime": 39985,
+          "parkTime": 132815,
+          "moveStart": 1.501587374E9,
+          "moveEnd": 1.501704838E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 47,
+          "exceed_b2": 43
+        },
+        "spd2": {
+          "exceed_b1": 5,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "121": {
+      "1501534800000": {
+        "run": {
+          "distance": 478.48,
+          "fullTime": 172800,
+          "moveTime": 30735,
+          "parkTime": 142065,
+          "moveStart": 1.501558598E9,
+          "moveEnd": 1.5017076E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 47,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "142": {
+      "1501534800000": {
+        "run": {
+          "distance": 828.5,
+          "fullTime": 172800,
+          "moveTime": 55391,
+          "parkTime": 117409,
+          "moveStart": 1.5015348E9,
+          "moveEnd": 1.501704163E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 3,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 135,
+          "exceed_b2": 13
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "120": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "125": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "162": {
+      "1501534800000": {
+        "run": {
+          "distance": 1293.47,
+          "fullTime": 172800,
+          "moveTime": 69394,
+          "parkTime": 103406,
+          "moveStart": 1.501582675E9,
+          "moveEnd": 1.5017076E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 4,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 165,
+          "exceed_b2": 50
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "119": {
+      "1501534800000": {
+        "run": {
+          "distance": 681.32,
+          "fullTime": 172800,
+          "moveTime": 34970,
+          "parkTime": 137830,
+          "moveStart": 1.50154792E9,
+          "moveEnd": 1.501707423E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 2,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 68,
+          "exceed_b2": 17
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "133": {
+      "1501534800000": {
+        "run": {
+          "distance": 1082.68,
+          "fullTime": 172800,
+          "moveTime": 53988,
+          "parkTime": 118812,
+          "moveStart": 1.5015348E9,
+          "moveEnd": 1.501659349E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 4,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 110,
+          "exceed_b2": 131
+        },
+        "spd2": {
+          "exceed_b1": 3,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "132": {
+      "1501534800000": {
+        "run": {
+          "distance": 1191.22,
+          "fullTime": 172800,
+          "moveTime": 59414,
+          "parkTime": 113386,
+          "moveStart": 1.501560784E9,
+          "moveEnd": 1.501693988E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 98,
+          "exceed_b2": 117
+        },
+        "spd2": {
+          "exceed_b1": 2,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "127": {
+      "1501534800000": {
+        "run": {
+          "distance": 483.89,
+          "fullTime": 172800,
+          "moveTime": 25201,
+          "parkTime": 147599,
+          "moveStart": 1.5015348E9,
+          "moveEnd": 1.5017076E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 43,
+          "exceed_b2": 97
+        },
+        "spd2": {
+          "exceed_b1": 6,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "126": {
+      "1501534800000": {
+        "run": {
+          "distance": 869.6,
+          "fullTime": 172800,
+          "moveTime": 55156,
+          "parkTime": 117644,
+          "moveStart": 1.501568606E9,
+          "moveEnd": 1.501702686E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 3,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 154,
+          "exceed_b2": 7
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "152": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "155": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "143": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "131": {
+      "1501534800000": {
+        "run": {
+          "distance": 1178.64,
+          "fullTime": 172800,
+          "moveTime": 73137,
+          "parkTime": 99663,
+          "moveStart": 1.501542685E9,
+          "moveEnd": 1.501699381E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 3,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 120,
+          "exceed_b2": 34
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "137": {
+      "1501534800000": {
+        "run": {
+          "distance": 0,
+          "fullTime": 172800,
+          "moveTime": 0,
+          "parkTime": 172800,
+          "moveStart": 0,
+          "moveEnd": 0
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "128": {
+      "1501534800000": {
+        "run": {
+          "distance": 731.34,
+          "fullTime": 172800,
+          "moveTime": 40299,
+          "parkTime": 132501,
+          "moveStart": 1.501575343E9,
+          "moveEnd": 1.501688484E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 2,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 54,
+          "exceed_b2": 39
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    },
+    "130": {
+      "1501534800000": {
+        "run": {
+          "distance": 761.38,
+          "fullTime": 172800,
+          "moveTime": 45788,
+          "parkTime": 127012,
+          "moveStart": 1.501535571E9,
+          "moveEnd": 1.501699512E9
+        },
+        "acc": {
+          "exceed_b1": 0,
+          "exceed_b2": 0,
+          "corner_b1": 0,
+          "corner_b2": 0
+        },
+        "spd1": {
+          "exceed_b1": 77,
+          "exceed_b2": 3
+        },
+        "spd2": {
+          "exceed_b1": 0,
+          "exceed_b2": 0
+        }
+      }
+    }
+  }
+}

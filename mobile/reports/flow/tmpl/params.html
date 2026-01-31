@@ -1,0 +1,32 @@
+<fieldset>
+    <legend><%= i18n.dataSource %></legend>
+    <label class="radio">
+        <input type="radio" value="fuelrate" <% if(dataSource == 'fuelrate') {%> checked<% } %> name="dataSource"> <%= i18n.dataSourceCan %>
+    </label>
+    <label class="radio">
+        <input type="radio" value="flow" <% if(dataSource == 'flow') {%> checked<% } %> name="dataSource"> <%= i18n.dataSourceFlowSensor %>
+    </label>
+    <label class="radio">
+        <input type="radio" value="tank" <% if(dataSource == 'tank') {%> checked<% } %> name="dataSource"> <%= i18n.dataSourceCisternsFlowSensor %>
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend><%= i18n.fuelConsumptionNorm %></legend>
+    <label class="radio">
+        <input type="radio" value="auto" <% if(season == 'auto') {%> checked<% } %> name="season"> <%= i18n.fuelNormAuto %>
+    </label>
+    <label class="radio">
+        <input type="radio" value="summer" <% if(season == 'summer') {%> checked<% } %> name="season"> <%= i18n.fuelNormSummer %>
+    </label>
+    <label class="radio">
+        <input type="radio" value="winter" <% if(season == 'winter') {%> checked<% } %> name="season"> <%= i18n.fuelNormWinter %>
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend><%= i18n.calculatedValue %></legend>
+    <label class="checkbox">
+        <input type="checkbox" value="1" name="useCalcValues" <% if(useCalcValues) {%> checked<% } %>> <%= i18n.useFlowCalculatedValues %>
+    </label>
+</fieldset>

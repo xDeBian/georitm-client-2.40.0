@@ -1,0 +1,13 @@
+<input type="hidden" name="objectId" value="<%= 'undefined' != typeof obj && obj ? obj.id : '' %>" >
+<label><%= i18n.object.ucFirst() %></label>
+<div class="form-search">
+    <input type="text" name="objectName" value="<%= 'undefined' != typeof obj && obj ? obj.name : '' %>">
+    <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+    <i class="icon-spin svg-icon svg-icon-spinner"></i>
+</div>
+
+<label><%= i18n.trackLength %> (<%= minTrackLength + ' - ' + maxTrackLength %>)</label>
+<input type="text" name="trackLength" value="<%= trackLength %>" class="input-mini integer" autocomplete="off"> <%= i18n.m %>
+
+<label><%= i18n.updateDist %> (<%= minUpdateDist + ' - ' + maxUpdateDist %>)</label>
+<input type="text" name="updateDist" value="<%= updateDist %>" class="input-mini integer" autocomplete="off"> <%= i18n.m %>

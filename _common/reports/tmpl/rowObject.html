@@ -1,0 +1,12 @@
+<tr class="obj">
+    <td class="text-left" colspan="<%= colspan %>">
+        <% if(App.reportAllowedByType('MOVEPARK')) {%>
+        <a href="javascript:;" title="<%= i18n.build.ucFirst() + ' ' + i18n.reportsNames.movepark %>" class="build-another" data-type="movepark"
+           data-id="<%= id %>" data-from="<%= dayStart %>" data-to="<%= dayEnd %>">
+            <strong><%- name %> (#<%- extId %>)</strong>
+        </a>
+        <% } else { %>
+        <strong><%- name %> (#<%- extId %>)</strong>
+        <% } %>
+    </td>
+</tr>

@@ -1,0 +1,20 @@
+<div class="subheader">
+    <a data-target="summary" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%= i18n.followedMode %></h5>
+</div>
+<div class="operate-content">
+    <div class="operate-state" data-state="<%= isFollowed == 1 ? 1 : 0 %>">
+        <div class="state-wrap">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-eye"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="operate-actions">
+        <button class="btn btn-block <%= isFollowed == 1 ? '' : ' btn-success' %> btn-save-follow-mode">
+            <%= i18n[isFollowed == 1 ? 'turnOff' : 'turnOn'] %>
+        </button>
+    </div>
+</div>

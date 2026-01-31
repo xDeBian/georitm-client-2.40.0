@@ -1,0 +1,25 @@
+<% if('undefined' == typeof id || !id) {%>
+<div id="zone-search" class="control-group form-address-search form-search">
+    <div class="input-append input-prepend">
+        <span class="add-on">
+            <input name="address" type="text" placeholder="<%= i18n.editZone.enterAddress %>">
+            <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+        </span>
+        <a href="javascript:;" class="btn add-on btn-search"><i class="svg-icon svg-icon-search"></i></a>
+    </div>
+</div>
+<% } %>
+
+<input name="name" type="text" class="input-block-level" placeholder="<%= i18n.editZone.enterName %>" value="<%= name %>" maxlength="100">
+
+<div class="form-inline control-group">
+    <span class="help-inline"><%= i18n.radius.ucFirst() %>, <%= i18n.m %></span>
+    <input name="radius" type="number" data-min="10" data-max="100000" class="input-mini expanded" value="100">
+</div>
+
+<select class="input-block-level no-margin" name="groupId">
+    <option value="0"><%= i18n.editZone.chooseGroup %></option>
+    <% _.each(groups, function(group){%>
+    <option value="<%= group.id %>"<% if(groupId == group.id) {%> selected<% } %>><%= group.name %></option>
+    <% }) %>
+</select>

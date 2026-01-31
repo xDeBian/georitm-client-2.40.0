@@ -1,0 +1,1 @@
+define(["underscore","_common/reports/objservice/ObjserviceReport"],function(e,r){var n=r.extend({});return n});

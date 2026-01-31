@@ -1,0 +1,52 @@
+<li id="<%= moduleId %>" class="geozones-module items-tree loading<% if(active) {%> active<% } %>">
+    <div class="tab-toggle-container hint hint-right" data-hint="<%= name %>">
+        <a class="tab-toggle" href="#<%= key %>">
+            <i class="svg-icon svg-icon-geozones"></i>
+            <span><%- name %></span>
+        </a>
+    </div>
+    <div class="tab-hor-content">
+        <div class="box-header module-header append">
+
+            <form class="form-search">
+                <div class="input-append input-prepend">
+                    <span class="add-on">
+                        <input name="q" type="text" placeholder="<%= i18n.searchZones %>" autocomplete="off">
+                        <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+                    </span>
+                    <button class="btn add-on"><i class="svg-icon svg-icon-search"></i></button>
+                </div>
+            </form>
+
+            <div class="dropdown module-settings add-on">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="svg-icon svg-icon-cog"></i>
+                </a>
+                <ul class="dropdown-menu nav nav-list" role="menu">
+
+                </ul>
+            </div>
+
+            <% if(allowCreate){ %>
+            <div class="dropdown add-on">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="svg-icon svg-icon-plus"></i>
+                </a>
+                <ul class="dropdown-menu nav nav-list" role="menu">
+                    <li>
+                        <a class="add-item hidden" data-type="1" href="javascript:;"><%= i18n.addZone.radial %></a>
+                    </li><li>
+                        <a class="add-item hidden" data-type="0" href="javascript:;"><%= i18n.addZone.poly %></a>
+                    </li><li>
+                        <a class="add-group" href="javascript:;"><%= i18n.editGroup.add %></a>
+                    </li>
+                </ul>
+            </div>
+            <% } %>
+
+        </div>
+        <div class="module-content">
+            <div class="tree tree-grid slick-tree"></div>
+        </div>
+    </div>
+</li>

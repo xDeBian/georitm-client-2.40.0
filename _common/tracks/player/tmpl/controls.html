@@ -1,0 +1,48 @@
+<div class="player-main-params">
+    <table>
+        <tbody>
+        <tr>
+            <td class="th" rowspan="2" style="width:60px">
+                <input class="index input-mini no-margin" type="number" min="0" max="<%= totalPoints-1 %>" value="0" />
+            </td>
+            <td class="th"><%= i18n.time %></td>
+            <td class="th"><%= i18n.coords %></td>
+            <td class="th"><%= i18n.runDistance %>, <%= i18n.km %></td>
+            <td class="th"><%= i18n.speed %>, <%= i18n.kmh %></td>
+            <td class="th"><%= i18n.course %></td>
+            <td class="th"><%= i18n.altitude %>, <%= i18n.m %></td>
+        </tr>
+        <tr>
+            <td class="ts"><%= Date.format(i18n.DateTime.longFormat, point.date * App.MS) %></td>
+            <td class="coords">--</td>
+            <td class="distance">0.00</td>
+            <td class="speed"><% print( point.speed <= minMoveSpeed ? 0 : Math.round(point.speed) ) %></td>
+            <td class="course"><%= point.course %></td>
+            <td class="alt"><%= point.alt %></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div><!--/obj-info-->
+
+<div class="player-row-fluid">
+    <div class="player-col player-col-left">
+        <div class="player-buttons">
+            <button class="btn btn-to-start"><i class="icon-step-backward"></i></button>
+            <button class="btn btn-toggle btn-play"><i class="icon-play"></i><i class="icon-pause"></i></button>
+        </div>
+        <div class="slider play-speed" title="<%= i18n.trackPlaySpeed %>"></div>
+        <div class="player-point-info"></div>
+    </div>
+    <div class="player-col player-col-right">
+        <div class="play-progress">
+            <span class="time time-start"><%= startTime %></span>
+            <span class="index-finish"><%= totalPoints-1 %></span>
+            <span class="time time-finish"><%= finishTime %></span>
+            <div class="slider"></div>
+        </div>
+        <div class="chart-cont">
+            <div class="sensors-chart"></div>
+        </div>
+    </div>
+</div>

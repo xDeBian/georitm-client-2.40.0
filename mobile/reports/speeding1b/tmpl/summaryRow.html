@@ -1,0 +1,10 @@
+<tr<% if(isLast) {%> data-row="last"<% } %>>
+    <% _.each(props, function(prop) {%>
+    <td class="text-center"><%= prop in data ? data[prop] : '' %></td>
+    <% }) %>
+<% if('undefined' != typeof data.total) {%>
+<td class="text-center"><%= data.total %></td>
+    <% } else { %>
+    <td colspan="2" class="no-data text-center"><%= i18n.noDataForObject %></td>
+    <% } %>
+</tr>

@@ -1,0 +1,58 @@
+<tr>
+    <td>
+        <input type="hidden" name="controlCanControl"
+               value="<%= control.canControl === null ? '' : control.canControl %>">
+
+        <input type="hidden" name="controlType"
+               value="<%= control.type || ''  %>">
+
+        <input type="hidden" name="controlTypeInner"
+               value="<%= control.typeInner || ''  %>">
+
+        <% if(!control.type) {%>
+
+        <select>
+            <% if(available.length > 1) {%>
+            <option value="0"><%= i18n.notSelected %></option>
+            <% } %>
+            <% _.each(available, function(ac) {%>
+            <option value="<%= ac.num %>">
+                <%= ac.name %>
+            </option>
+            <% }) %>
+        </select>
+
+        <% } else { %>
+
+        <div class="itext">
+            <input type="text" readonly value="<%- control.fullName %>">
+        </div>
+
+        <% } %>
+
+    </td>
+    <td class="col-num">
+        <div class="itext">
+            <input name="controlNum" type="text" value="<%- control.num || '' %>" readonly>
+        </div>
+    </td>
+    <td>
+        <div class="itext">
+            <input name="controlName" type="text" value="<%- control.name %>" maxlength="100">
+        </div>
+    </td>
+    <td>
+        <div class="itext">
+            <input name="controlComment" type="text" value="<%- control.comment %>" maxlength="100">
+        </div>
+    </td>
+    <td class="col-icon">
+        <i class="svg-icon svg-icon-chevron-up" data-sort="up"></i>
+    </td>
+    <td class="col-icon">
+        <i class="svg-icon svg-icon-chevron-down" data-sort="down"></i>
+    </td>
+    <td class="col-icon">
+        <i class="svg-icon svg-icon-remove control-row-remove"></i>
+    </td>
+</tr>

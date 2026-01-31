@@ -1,0 +1,63 @@
+<div class="l">
+    <div class="tl devices-list">
+        <!--container-->
+    </div><!--/topleft tl-->
+
+    <div class="bl alarm-actions">
+        <div class="content">
+        <% if(alertsAllowed) {%>
+            <a class="btn btn-block btn-large btn-sound<% if(!soundBtnOn) {%> disabled<% } %>" href="javascript:;">
+                <span><!--GR-943 <i class="icon-volume-off icon-white"></i>&nbsp;--><%= i18n.turnOffSound %></span>
+            </a>
+        <% } %>
+
+        <% if(alertsEditAllowed || alarmCreationAllowed) {%>
+            <a class="btn btn-block btn-large btn-action disabled" href="javascript:;" data-popover="popover-actions">
+                <span><!--<i class="icon-check icon-white"></i>&nbsp;--><%= i18n.chooseAction %></span>
+            </a>
+
+            <% if(alertsEditAllowed) { %>
+            <a class="btn btn-block btn-large btn-comment disabled" href="javascript:;" data-popover="popover-comments">
+                <span><!--<i class="icon-comment icon-white"></i>&nbsp;--><%= i18n.addComment %></span>
+            </a>
+            <% } %>
+
+            <% if(alertsResolveAllowed) { %>
+            <a class="btn btn-block btn-large btn-resolve disabled" href="javascript:;" data-popover="popover-resolve">
+                <span><!--<i class="icon-remove-sign"></i>&nbsp;--><%= i18n.resolveAlarm %></span>
+            </a>
+            <% } %>
+        <% } %>
+
+    </div></div><!--/bottom left bl-->
+</div><!--/left-->
+
+<div class="r">
+    <div class="content">
+
+        <div class="tr">
+            <!--<div class="obj-history">
+                &lt;!&ndash;container&ndash;&gt;
+            </div>-->
+        </div><!--/top right tr-->
+
+        <div class="br">
+
+            <div class="alarms-popover popover-actions"></div>
+            <div class="alarms-popover popover-comments"></div>
+
+            <%= resolveHtml %>
+
+            <div class="device-state">
+                <!--container-->
+            </div>
+
+        </div><!--/bottom right br-->
+
+    </div>
+</div><!--/right r-->
+
+<div class="popover right status-popover">
+    <div class="popover-content selectable"></div>
+</div>
+

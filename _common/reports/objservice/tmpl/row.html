@@ -1,0 +1,17 @@
+<tr<% if(isLast) {%> data-row="last"<% } %> data-id="<%= id %>" class="rep-row <%= rowClass %>">
+
+    <% _.each(properties, function(key){ %>
+    <td>
+        <a href="javascript:;">
+            <%= data[key] %>
+        </a>
+    </td>
+    <% }) %>
+
+    <% _.each(durations, function(s){ %>
+    <td>
+        <%= s %>
+    </td>
+    <% }) %>
+
+</tr>

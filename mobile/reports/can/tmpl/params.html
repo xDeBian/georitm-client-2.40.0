@@ -1,0 +1,72 @@
+<div class="rep-device-params">
+    <input type="hidden" name="sensorSelected" value="1"><!-- for validation in reports scheduled task -->
+
+    <div class="control-group">
+        <label title="<%= i18n.minTimeOfStateHelp %>"><%= i18n.minTimeOfState %></label>
+        <input type="number" min="1" max="9999" class="input-mini" name="dur" value="<%= dur %>" autocomplete="off">
+        <span class="help-inline no-padding"><%= i18n.sec %></span>
+    </div>
+
+    <%
+    var start = 1,
+        nb = 8
+        end = start + nb,
+        arr = _.range(start, end)
+    ; %>
+
+    <fieldset>
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" class="select-all no-validation"<% if(checkedGroups[0]) {%> checked<% } %>> <%= i18n.carPerimeter %>
+            </label>
+        </legend>
+
+        <% _.each(arr, function(j){ %>
+        <label class="checkbox">
+            <input class="sensor-check" name="dev<%= j %>" type="checkbox" value="1"<% if(checked[j - 1]) {%> checked<% } %>> <%= names[j] %>
+        </label>
+        <% }) %>
+
+    </fieldset>
+
+    <%
+    start = end;
+    end = start + nb;
+    arr = _.range(start, end); %>
+
+    <fieldset>
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" class="select-all no-validation"<% if(checkedGroups[1]) {%> checked<% } %>> <%= i18n.carTransmission %>
+            </label>
+        </legend>
+
+        <% _.each(arr, function(j){ %>
+        <label class="checkbox">
+            <input class="sensor-check" name="dev<%= j %>" type="checkbox" value="1"<% if(checked[j - 1]) {%> checked<% } %>> <%= names[j] %>
+        </label>
+        <% }) %>
+
+    </fieldset>
+
+    <%
+    start = end;
+    end = start + nb;
+    arr = _.range(start, end); %>
+
+    <fieldset>
+        <legend>
+            <label class="checkbox">
+                <input type="checkbox" class="select-all no-validation"<% if(checkedGroups[2]) {%> checked<% } %>> <%= i18n.carExtraDevices %>
+            </label>
+        </legend>
+
+        <% _.each(arr, function(j){ %>
+        <label class="checkbox">
+            <input class="sensor-check" name="dev<%= j %>" type="checkbox" value="1"<% if(checked[j - 1]) {%> checked<% } %>> <%= names[j] %>
+        </label>
+        <% }) %>
+
+    </fieldset>
+
+</div>

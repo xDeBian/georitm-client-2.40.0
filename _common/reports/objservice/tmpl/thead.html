@@ -1,0 +1,9 @@
+<tr data-head="1">
+    <% _.each(properties, function(key) {%>
+    <th data-key="<%= key %>"><%= propNames[key] %></th>
+    <% }) %>
+
+    <% _.each(statuses, function(key) {%>
+    <th><%= statusNames[key] %></th>
+    <% }) %>
+</tr>

@@ -1,0 +1,37 @@
+<div class="drive-summary drive-summary-2020">
+    <div class="grade">
+        <div class="grade-value" data-grade="<%= avgGrade %>">
+            <%= avgScore %>
+        </div>
+        <div class="grade-stars">
+            <% for(var i = 1; i <= 5; ++i ) {
+            var starPercent = Math.max(0, Math.min(1, ( avgScore - i + 1 ))) * 100;
+            %>
+            <div class="grade-star"
+                 style="background-image: linear-gradient(90deg, #888 0%, #888 <%= starPercent %>%, #e1e1e1 <%= starPercent %>%, #e1e1e1 100%);"
+            ></div>
+            <% } %>
+        </div>
+        <div class="grade-label">
+            <%= i18n.drivesafety2020.gradeByGroup%>
+        </div>
+    </div>
+
+    <div class="grade-details">
+        <div class="grade-bars">
+            <% _.each(rows, function(row){%>
+            <div class="grade-bar" data-grade="<%= row.grade %>" data-value="<%= row.nb %>">
+                <div class="grade-bar-prefix">
+                    <%= row.label || row.grade %>
+                </div>
+                <% if(row.barWidth > 0) {%>
+                <div class="grade-bar-indicator" style="width: calc((100% - 32px) * <%= row.barWidth / 100 %>)"></div>
+                <% } %>
+                <div class="grade-bar-postfix">
+                    <%= row.nb %> (<%= row.percent %>%)
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>

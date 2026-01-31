@@ -1,0 +1,36 @@
+<tr class="obj">
+    <td colspan="<%= colspan %>" class="summary">
+        <div class="sum-header">
+            <a href="javascript:;" title="<%= i18n.build.ucFirst() + ' ' + i18n.reportsNames.movepark %>" class="build-another" data-type="movepark"
+               data-id="<%= id %>" data-from="<%= periodStart %>" data-to="<%= periodEnd %>">
+                <strong><%- name %> (#<%- extId %>)</strong>
+            </a>
+            <% if(hasData) { %>
+            <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+            <% } %>
+        </div>
+        <div class="sum-content">
+            <% if(hasData) {%>
+            <table>
+                <tbody>
+                <tr>
+                    <td><%= i18n.fillingsNumber %></td>
+                    <td class="value"><%= fillingsNumber %></td>
+                </tr><tr>
+                    <td><%= i18n.fillingsVolume %></td>
+                    <td class="value"><%= fillingsVolume %></td>
+                </tr><tr>
+                    <td><%= i18n.dischargesNumber %></td>
+                    <td class="value"><%= dischargesNumber %></td>
+                </tr><tr>
+                    <td><%= i18n.dischargesVolume %></td>
+                    <td class="value"><%= dischargesVolume %></td></tr><tr>
+                </tr>
+                </tbody>
+            </table>
+            <% } else {%>
+            <p class="no-data"><%= i18n.noDataForObject %></p>
+            <% } %>
+        </div>
+    </td>
+</tr>

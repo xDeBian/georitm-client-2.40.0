@@ -1,0 +1,17 @@
+<ul class="faults-list selectable">
+    <% _.each( faults, function(fault){%>
+    <li class="fault">
+        <p>
+            <%= i18n.objArea %> <%= fault.areaNum %>
+            <%- fault.areaName && fault.areaName != i18n.objArea + ' ' + fault.areaNum ? ': ' + fault.areaName : '' %>
+        </p>
+        <p>
+            <%= i18n.objZone %> <%= fault.areaZoneNum %>
+            <%- fault.areaZoneName && fault.areaZoneName != i18n.objZone + ' ' + fault.areaZoneNum ? ': ' + fault.areaZoneName : '' %>
+        </p>
+        <p><%- fault.messageText %></p>
+        <a data-code="<%= fault.faultCode %>" data-zone="<%= fault.areaZoneId %>"
+           class="resolve-fault svg-icon svg-icon-remove" title="<%= i18n.resolveFault %>"></a>
+    </li>
+    <% }) %>
+</ul>

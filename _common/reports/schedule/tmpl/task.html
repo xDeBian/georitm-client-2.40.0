@@ -1,0 +1,195 @@
+<div class="header">
+    <h3><% if(uuid) { %><%- name %><% } else { %><%= i18n.newReport %><% } %></h3>
+</div>
+
+<div class="content">
+    <fieldset class="task-params">
+
+        <% if(allowMobile && allowStat) { %>
+        <div class="params-group">
+            <h4><%= i18n.reportObjType %></h4>
+            <div class="field form-horizontal">
+                <label class="radio" style="width:auto; margin-right:10px">
+                    <input name="objType" type="radio" value="<%= App.TYPE_MOBILE %>"
+                    <% if(objType == App.TYPE_MOBILE) { %> checked<% } %>>
+                    <%= i18n.vehicles %>
+                </label>
+                <label class="radio">
+                    <input name="objType" type="radio" value="<%= App.TYPE_STAT %>"
+                    <% if(objType == App.TYPE_STAT) { %> checked<% } %>>
+                    <%= i18n.stationary %>
+                </label>
+            </div>
+        </div>
+        <% } else { %>
+            <input name="objType" type="hidden"
+                   value="<%= ( allowStat ? App.TYPE_STAT : App.TYPE_MOBILE ) %>">
+        <% } %>
+
+        <div class="params-group">
+            <h4><%= i18n.propertiesReport %></h4>
+            <input type="hidden" name="format" value="xls" />
+            <div class="field">
+                <label><%= i18n.title.ucFirst() %></label>
+                <input type="text" class="itext" name="name" value="<%= name %>" />
+            </div><div class="field">
+                <label><%= i18n.typeOfReport %></label>
+                <select name="type">
+                    <% _.each(reportsGroups, function(items, key){ %>
+                    <optgroup<% if(!/tech|history/.test(key)) { %> data-mobile="true"<% } %>
+                        label="<%= i18n.reportGroupNames[key] %>">
+                        <% _.each(items, function(r, key){ %>
+                        <option value="<%= r.type %>"><%= r.name %></option>
+                        <% }) %>
+                    </optgroup>
+                    <% }) %>
+                </select>
+            </div><div class="field">
+                <label><%= i18n.recipientEmails %></label>
+                <textarea name="addresses"><%= addresses %></textarea>
+            </div>
+        </div>
+
+        <div class="params-group">
+            <h4><%= i18n.objectsWhichReport %></h4>
+            <div class="field">
+                <label><%= i18n.searchingObjectsAndGroups %></label>
+                <input type="text" class="itext ignore" name="q" value="" />
+            </div><div class="field">
+                <label class="nb-objs" style="line-height:25px">
+                    <%= i18n.selectedObjects %>:
+                    <input type="text" class="offscreen ignore" name="nbobjs" value="<%= parameters.objectId.length %>">
+                    <i class="nb-objs-value"><%= parameters.objectId.length %>"></i>
+                </label>
+                <div class="selected-objects">
+                    <!--<div class="list"></div>-->
+                </div><!-- /schedule-objs -->
+            </div>
+        </div>
+
+        <div class="params-group report-period">
+            <h4><%= i18n.reportPeriod %></h4>
+            <div class="field select-block">
+                <select name="period"<% if(type=='OBJST') { %> disabled<% } %>>
+                    <option value="day"<% if(period=='day') { %> selected<% } %>><%= i18n.previousDay %></option>
+                    <option value="week"<% if(period=='week') { %> selected<% } %>><%= i18n.previousWeek %></option>
+                    <option value="month"<% if(period=='month') { %> selected<% } %>><%= i18n.previousMonth %></option>
+                    <option value="current-month"<% if(period=='current-month') { %> selected<% } %>><%= i18n.currentMonth %></option>
+                </select>
+            </div>
+            <div class="field form-horizontal report-period-limit<% if(period != 'day') { %> hidden<% } %>">
+                <div class="control-group">
+                    <label><%=i18n.time.ucFirst() + ' ' + i18n.fromDate %>:</label>
+                    <div class="input-append bootstrap-timepicker no-margin">
+                        <input type="text" name="start" value="00:00" class="input-time input-small"
+                            <% if(period != 'day') { %> disabled<% } %>>
+                        <span class="add-on">
+                            <i class="icon-time"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label><%=i18n.time.ucFirst() + ' ' + i18n.to %>:</label>
+                    <div class="input-append bootstrap-timepicker no-margin">
+                        <input type="text" name="end" value="00:00" class="input-time input-small"
+                            <% if(period != 'day') { %> disabled<% } %>>
+                        <span class="add-on">
+                            <i class="icon-time"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="params-group">
+            <h4><%= i18n.timezoneGenerateReport %></h4>
+            <div class="field select-block">
+                <select name="tzId">
+                    <% var sel = false; _.each(App.getTimezonesList(), function(tz){
+                    var selected = !sel
+                        && (
+                            ( 'undefined' != typeof tzId && tzId == tz.id )
+                            || ( 'undefined' != typeof tzMin && tzMin == tz.offset )
+                            || ( 'undefined' != typeof tz && tz * 60 == tz.offset )
+                        )
+                    %>
+                    <option value="<%= tz.id %>"
+                    <% if(selected) { sel = true;%> selected<% } %>>
+                    <%= App.getFullTimezoneName(tz) %>
+                    </option>
+                    <% }) %>
+                </select>
+            </div>
+        </div>
+
+        <div class="params-group">
+            <h4>
+                <%= i18n.scheduleReportGeneration %>
+            </h4>
+            <div class="field">
+                <label><%= i18n.startTime %></label>
+                <input type="number" min="0" max="23" class="itext input-small ignore" name="schedule.hour" value="<%= schedule.hour %>" /> <%= i18n.hour %>&nbsp;
+                <input type="number" min="0" max="59" class="itext input-small ignore" name="schedule.minute" value="<%= schedule.minute %>" /> <%= i18n.minute %>
+            </div>
+            <div class="field radio field-run-daily<% if(period !== null && period !== 'day') { %> hidden<% } %>">
+                <label>
+                    <input type="radio" class="ignore" name="when" value="daily" <% if(period === 'day' || ( 'undefined' === typeof schedule.dayOfWeek && 'undefined' === typeof schedule.dayOfMonth ) ) { %> checked="checked"<% } %> />
+                    <%= i18n.daily.ucFirst() %></label>
+            </div>
+            <div class="field radio field-run-weekdays<% if(period === 'month') { %> hidden<% } %>">
+                <label>
+                    <input type="radio" class="ignore" name="when" value="dayOfWeek"<% if(period === 'week' || 'undefined' !== typeof schedule.dayOfWeek) { %> checked="checked"<% } %> /><%= i18n.selectedDaysOfWeek %>
+                    <input type="hidden" name="dayOfWeekSelected" value="1"><!-- for validation in reports scheduled task -->
+                </label>
+                <table class="checkbox-rows">
+                    <tr>
+                        <% for(var i = 1; i < 8; i++) { %>
+                        <td><label class="date-month"><input type="checkbox" class="ignore" name="schedule.dayOfWeek" value="<%= daysCodes[i%7] %>"
+                            <% if('undefined' != typeof schedule.dayOfWeek && _.indexOf(schedule.dayOfWeek, daysCodes[i%7]) != -1) { %> checked="checked"<% } %>
+                            <% if('undefined' == typeof schedule.dayOfWeek) { %> disabled="disabled"<% } %> />
+                            <%= i18n.DateTime.dayNamesMin[i%7] %></label></td>
+                        <% } %>
+                    </tr>
+                </table>
+            </div>
+            <div class="field radio field-run-monthdays">
+                <label>
+                    <input type="radio" class="ignore" name="when" value="dayOfMonth"<% if(period && period.indexOf('month') != -1 || 'undefined' != typeof schedule.dayOfMonth) { %> checked="checked"<% } %> /><%= i18n.selectedDaysOfMonth %>
+                    <input type="hidden" name="dayOfMonthSelected" value="1"><!-- for validation in reports scheduled task -->
+                </label>
+                <table class="checkbox-rows">
+                    <tr>
+                        <% for(var i = 1; i <= 31; i++) { %>
+                        <td><label class="date-month"><input type="checkbox" class="ignore" name="schedule.dayOfMonth" value="<%= i %>"
+                            <% if('undefined' != typeof schedule.dayOfMonth && _.indexOf(schedule.dayOfMonth, String(i)) != -1) { %> checked="checked"<% } %>
+                            <% if('undefined' == typeof schedule.dayOfMonth) { %> disabled<% } %> />
+                            <%= i %></label></td>
+                        <% if(i%7 == 0) { %>
+                    </tr><tr>
+                    <% } %>
+                    <% } %>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="rep-params">
+        <h4><%= i18n.reportParameters %></h4>
+        <div class="rep-params-content">
+
+        </div><!--/.rep-params-content-->
+    </fieldset><!--/.rep-params-->
+</div>
+<div class="actions">
+    <a class="btn btn-default command-run<% if (!uuid) { %> hidden<% } %>" href="#"><%= i18n.runImmediately %></a>
+    <button type="submit" class="btn btn-primary btn-save"><%= i18n.save.ucFirst() %></button>
+</div>
+<div class="actions params-actions<% if (!uuid) { %> hidden<% } %>">
+    <div class="dropdown">
+        <a class="btn btn-link dropdown-toggle command-copy-params" data-toggle="dropdown" href="#"><%= i18n.copyReportParameters %></a>
+        <div class="dropdown-menu"></div>
+    </div>
+
+</div>

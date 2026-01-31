@@ -1,0 +1,1 @@
+define(["underscore","_common/reports/objjournal/ObjjournalReport"],function(r,e){var n=e.extend({});return n});

@@ -1,0 +1,50 @@
+[
+  {
+    "phone": "",
+    "person": "",
+    "name": "Бойцы 45454 asdf",
+    "course": 0,
+    "lon": 30.2858,
+    "isOnline": true,
+    "id": 6,
+    "lat": 59.9197,
+    "speed": 0,
+    "coordinatesTime": 1478611637315
+  },
+  {
+    "phone": "",
+    "person": "",
+    "name": "Орлы",
+    "course": 0,
+    "lon": 30.431565,
+    "isOnline": true,
+    "id": 4,
+    "lat": 59.956303,
+    "speed": 0,
+    "coordinatesTime": 1478611637315
+  },
+  {
+    "phone": "",
+    "person": "",
+    "name": "Соколы",
+    "course": 0,
+    "lon": 30.431109,
+    "isOnline": true,
+    "id": 3,
+    "lat": 59.957028,
+    "speed": 0,
+    "coordinatesTime": 1478611637315
+  },
+  {
+    "phone": "",
+    "person": "",
+    "name": "Супер группа быстрого реагирования имени Ворошилова",
+    "course": null,
+    "lon": 30.4494,
+    "isOnline": true,
+    "id": 8,
+    "lat": 59.9254,
+    "speed": null,
+    "coordinatesTime": 1478611637315
+  }
+]

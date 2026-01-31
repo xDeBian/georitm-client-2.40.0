@@ -1,0 +1,43 @@
+<div class="obj-info">
+
+    <table class="table-features"><tr>
+        <td class="features">
+            <ul>
+                <% _.each(infoAttrs, function(name, key){%>
+                    <% if(key == 'owner'){//new col%>
+                        </ul></td><td class="features"><ul>
+                    <% } %>
+                    <li>
+                        <%= name %>:
+                        <% if(key in device && device[key] && key.toLowerCase().indexOf('phone') > -1){ %>
+                            <a href="tel:<%- device[key] %>"><strong class="<%= key %>"><%- device[key] %></strong></a>
+                        <% } else { %>
+
+                            <% if(key == 'shortDescription'){%>
+                                <strong class="shortDescription_el"></strong>
+                            <% } else {%>
+                                <strong class="<%= key %>"><%- key in device && device[key] ? device[key] : '-' %></strong>
+                            <% } %>
+
+                        <% } %>
+                    </li>
+                <% }) %>
+
+                <li class="hidden">
+                    <%= i18n.groups %>:
+                    <strong class="groups"></strong>
+                </li>
+                <li class="hidden">
+                    <%= i18n.rrTeamShort %>:
+                    <strong class="guards"></strong>
+                </li>
+                <li>
+                    <%= i18n.comments %>:
+                    <strong class="description"><%= device.description %></strong>
+                </li>
+                <div class="btnLinks"></div>
+            </ul>
+        </td>
+    </tr></table>
+
+</div><!--/obj-info-->

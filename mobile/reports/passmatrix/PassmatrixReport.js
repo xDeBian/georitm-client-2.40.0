@@ -1,0 +1,1 @@
+define(["underscore","_common/tracks/TracksModule","_common/reports/Report","./views/PassmatrixReportView"],function(e,t,r,i){var o=r.prototype,s=r.extend({url:App.getBaseUrl()+"reports/PASSMATRIX/",constructor:function(){this.addressesLoaded=!1,r.apply(this,arguments)},initialize:function(){this.makeTracksModule(t),o.initialize.call(this,i)}});return s});

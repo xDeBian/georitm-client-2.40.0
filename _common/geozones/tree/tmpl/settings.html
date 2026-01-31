@@ -1,0 +1,21 @@
+<li>
+    <h5 class="nav-header"><%= i18n.sort %></h5>
+    <ul class="options-list">
+        <li>
+            <label>
+                <input type="radio" name="sortBy" value="name"<% if(sortType == 'name') {%> checked<% } %>>
+                <%= i18n.sortByZoneName %>
+            </label>
+        </li><li>
+            <label>
+                <input type="radio" name="sortBy" value="id"<% if(sortType == 'id') {%> checked<% } %>>
+                <%= i18n.sortByZoneId %>
+            </label>
+        </li>
+    </ul>
+</li>
+<% if(App.allowed('zones.delete')) {%>
+<li class="nav-delimiter">
+    <a href="#" data-action="item_delete_multi"><%= i18n.removeZones %></a>
+</li>
+<% } %>

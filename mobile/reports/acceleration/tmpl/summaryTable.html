@@ -1,0 +1,27 @@
+<table class="selectable rep-table acceleration-rep-table">
+
+    <tr>
+        <th colspan="<%= colspan %>" class="text-left"><%= i18n.summaryData %></th>
+    </tr>
+
+    <tr data-head="<%= headIndex %>">
+        <% _.each(props, function(prop) {%>
+        <th data-key="<%= prop %>"><%= propNames[prop] %></th>
+        <% }) %>
+        <% if(showAccel) { %>
+        <th data-key="exceed_b1"><%= i18n.timesAgressiveAcceleration %> <span class="nobr">(> <%= limits[0] + ' ' + i18n.ms2 %>)</span>
+        </th>
+        <% } %>
+        <% if(showBraking) { %>
+        <th data-key="exceed_b2"><%= i18n.timesAgressiveInhibition %> <span class="nobr">(> <%= Math.abs(limits[1]) + ' ' + i18n.ms2 %>)</span>
+        </th>
+        <% } %>
+        <% if(showCorners) { %>
+        <th data-key="corner_b1"><%= i18n.timesAgressiveCorners %></th>
+        <th data-key="corner_b2"><%= i18n.timesAverageCorners %></th>
+        <% } %>
+    </tr>
+
+    <%= rowsHtml %>
+
+</table>

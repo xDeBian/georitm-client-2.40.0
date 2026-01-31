@@ -1,0 +1,31 @@
+<% if (rows.length) {%>
+<table class="table table-striped table-condensed no-margin">
+    <colgroup>
+        <col style="width:75">
+    </colgroup>
+    <thead>
+        <tr>
+            <th><%= headers.num %></th>
+            <% if ('undefined' != typeof headers.area) {%>
+            <th><%= headers.area %></th>
+            <% } %>
+            <th><%= headers.name %></th>
+            <th><%= headers.comment %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% _.each(rows, function(row){ %>
+        <tr>
+            <td><%- row.num || emptyString %></td>
+            <% if ('undefined' != typeof row.area) {%>
+            <td><%= row.area %></td>
+            <% } %>
+            <td><%- row.name || emptyString %></td>
+            <td><%- row.comment || emptyString %></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% } else { %>
+<p><%= noData %></p>
+<% } %>

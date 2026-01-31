@@ -1,0 +1,62 @@
+<h3><%= i18n.simCardNumbersDetection %></h3>
+
+<div class="params-group">
+    <h4><%= i18n.objectsToDetectSimCardNumbers %></h4>
+    <div class="control-group">
+        <label class="radio">
+            <input type="radio" value="0" name="useSelectedObjects"<% if(!useSelectedObjects) {%> checked<% } %>>
+            <%= i18n.allObjectsWithNoSimCardNumbers %>
+        </label>
+        <label class="radio">
+            <input type="radio" value="1" name="useSelectedObjects"<% if(useSelectedObjects) {%> checked<% } %>>
+            <%= i18n.selectedObjectsOnly %>
+        </label>
+    </div>
+</div>
+
+<div class="params-group objects-selection">
+    <div class="field">
+        <label><%= i18n.searchingObjectsAndGroups %></label>
+        <input type="text" class="itext ignore" name="q" value="" />
+    </div><div class="field">
+        <label class="nb-objs" style="line-height:25px">
+            <%= i18n.selectedObjects %>:
+            <input type="text" class="offscreen" name="nbobjs" value="0">
+            <span class="nb-objs-value">0</span>
+        </label>
+        <div class="selected-objects">
+            <!--<div class="list"></div>-->
+        </div><!-- /selected-objects -->
+    </div>
+</div>
+
+<div class="params-group">
+    <h4><%= i18n.requestLiveTimeout %></h4>
+    <div class="field">
+        <input type="hidden" name="liveTimeout" value="0"><!-- for validation -->
+        <label><%= i18n.requestLiveTimeoutLabel %></label>
+        <div class="form-horizontal duration-fields-group">
+            <label class="duration-field">
+                <input class="duration-input" type="text" name="days" value="1" maxlength="2" autocomplete="off">
+                <%= i18n.DateTime.labels2[7] %>
+            </label>
+            <label class="duration-field">
+                <input class="duration-input" type="text" name="hours" value="0" maxlength="2" autocomplete="off">
+                <%= i18n.DateTime.labels2[4] %>
+            </label>
+            <label class="duration-field">
+                <input class="duration-input" type="text" name="minutes" value="0" maxlength="2" autocomplete="off">
+                <%= i18n.DateTime.labels2[5] %>
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="params-group">
+    <%= i18n.simCardNumbersDetectionExplain %>
+
+</div>
+
+<div class="params-group actions-group btn-row">
+    <button type="submit" class="btn btn-primary btn-run"><%= i18n.detect %></button>
+</div>

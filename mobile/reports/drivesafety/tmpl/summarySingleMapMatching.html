@@ -1,0 +1,47 @@
+<div class="drive-summary drive-summary-2020">
+    <div class="grade">
+        <div class="grade-value" data-grade="<%= objectGrade %>">
+            <%= objectScore %>
+        </div>
+
+        <div class="grade-stars">
+            <% for(var i = 1; i <= 5; ++i ) {
+            var starPercent = Math.max(0, Math.min(1, ( objectScore - i + 1 ))) * 100;
+            %>
+            <div class="grade-star"
+                 style="background-image: linear-gradient(90deg, #888 0%, #888 <%= starPercent %>%, #e1e1e1 <%= starPercent %>%, #e1e1e1 100%);"
+            ></div>
+            <% } %>
+        </div>
+        <div class="grade-label">
+            <%= i18n.drivesafety.overallGrade %>
+        </div>
+    </div>
+    <div class="grade-details">
+        <div class="grade-details-header">
+            <%= i18n.drivesafety.penaltyPoints %>
+        </div>
+        <div class="grade-details-row">
+            <div class="grade-details-row-prefix">
+                <%= objectSpeedPenalty %>
+            </div>
+            <div class="grade-bar" data-grade="<%= gradeBySpeeding %>">
+                <div class="grade-bar-indicator" style="width: <%= speedingBarWidth %>%"></div>
+            </div>
+            <div class="grade-details-row-postfix">
+                <%= i18n.drivesafety.speedKeeping%> - <strong><%= gradeBySpeedingLabel%></strong>
+            </div>
+        </div>
+        <div class="grade-details-row">
+            <div class="grade-details-row-prefix">
+                <%= objectStylePenalty %>
+            </div>
+            <div class="grade-bar" data-grade="<%= gradeByStyle %>">
+                <div class="grade-bar-indicator" style="width: <%= styleBarWidth %>%"></div>
+            </div>
+            <div class="grade-details-row-postfix">
+                <%= i18n.drivesafety.driveStyle%> - <strong><%= gradeByStyleLabel %></strong>
+            </div>
+        </div>
+    </div>
+</div>

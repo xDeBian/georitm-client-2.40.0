@@ -1,0 +1,31 @@
+<h3 class="rep-table-header"><%= header %></h3>
+<table class="rep-table rep-table-drivesafety selectable">
+    <thead class="rep-table-head header-copy"></thead>
+    <tbody>
+
+        <tr data-head="1">
+            <th><%= i18n.date.ucFirst() %></th>
+            <th><%= i18n.runDistance %></th>
+            <th><%= i18n.drivesafety.speedings %> <%= speedLimits[0]%><%= i18n.kmh %></th>
+            <th><%= i18n.drivesafety.speedings %> <%= speedLimits[1]%><%= i18n.kmh %></th>
+            <th><%= i18n.drivesafety.speedings %> <%= speedLimits[2]%><%= i18n.kmh %></th>
+            <th><%= i18n.drivesafety.speedings %> <%= speedLimits[3]%><%= i18n.kmh %></th>
+            <th><%= i18n.drivesafety.accelerations %> <%= accelerationLimit %><%= i18n.ms2 %></th>
+            <th><%= i18n.drivesafety.brakings %> <%= brakingLimit %><%= i18n.ms2 %></th>
+        </tr>
+
+        <%= rowsHtml %>
+
+        <tr data-row="last">
+            <th><%= i18n.summary %></th>
+            <th><%= totalDistance %></th>
+            <th><%= totalSpeedings[0] %></th>
+            <th><%= totalSpeedings[1] %></th>
+            <th><%= totalSpeedings[2] %></th>
+            <th><%= totalSpeedings[3] %></th>
+            <th><%= totalAccelerations %></th>
+            <th><%= totalBrakings %></th>
+        </tr>
+
+    </tbody>
+</table><!-- /rep-table -->

@@ -1,0 +1,39 @@
+<% if(App.hasModule('mobile') && App.hasModule('stat')) {%>
+<label><%= i18n.objType %></label>
+<div class="switch-toggle switch-objtype<% if(allowAll) {%> switch-3<% } %>" onclick="">
+    <% if(allowAll) {%>
+    <input id="radio-all-objects-<%= id %>" name="objType" type="radio"
+           value=""<% if('undefined' == typeof objType || objType === null) {%> checked<% } %>>
+    <label title="<%= i18n.all.ucFirst() %>" class="all" for="radio-all-objects-<%= id %>" onclick="">
+        <svg class="svg-icon icon-car">
+            <use xlink:href="#smb-car"></use>
+        </svg>
+        <svg class="svg-icon icon-home">
+            <use xlink:href="#smb-home"></use>
+        </svg>
+    </label>
+    <% } %>
+
+    <input id="radio-mobile-objects-<%= id %>" name="objType" type="radio" value="<%= App.TYPE_MOBILE %>"
+           <% if(( !allowAll && ( 'undefined' == typeof objType || objType === null ) ) || objType === App.TYPE_MOBILE) {%> checked<% } %>>
+    <label title="<%= i18n.vehicles %>" for="radio-mobile-objects-<%= id %>" onclick="">
+        <svg class="svg-icon icon-car">
+            <use xlink:href="#smb-car"></use>
+        </svg>
+    </label>
+
+    <input id="radio-stat-objects-<%= id %>" name="objType" type="radio"
+           value="<%= App.TYPE_STAT %>"<% if(objType === App.TYPE_STAT) {%> checked<% } %>>
+    <label title="<%= i18n.stationary %>" for="radio-stat-objects-<%= id %>" onclick="">
+        <svg class="svg-icon icon-home">
+            <use xlink:href="#smb-home"></use>
+        </svg>
+    </label>
+    <a class="btn btn-primary"></a>
+</div>
+
+<% } else if(App.hasModule('mobile')) {%>
+    <input name="objType" type="hidden" value="<%= App.TYPE_MOBILE %>">
+<% } else if(App.hasModule('stat')) {%>
+    <input name="objType" type="hidden" value="<%= App.TYPE_STAT %>">
+<% } %>

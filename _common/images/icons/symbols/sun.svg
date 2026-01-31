@@ -1,0 +1,15 @@
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 36 36">
+<path d="M6,18c0,6.616,5.382,12,11.999,12C24.615,30,30,24.615,30,18c0-6.617-5.385-12-12.001-12C11.382,6,6,11.383,6,18z"/>
+<circle cx="10.062" cy="4.25" r="2"/>
+<circle cx="25.938" cy="31.75" r="2"/>
+<circle cx="4.25" cy="10.062" r="2"/>
+<circle cx="31.75" cy="25.938" r="2"/>
+<circle cx="31.749" cy="10.062" r="2"/>
+<circle cx="4.25" cy="25.938" r="2"/>
+<circle cx="25.938" cy="4.25" r="2"/>
+<circle cx="10.062" cy="31.75" r="2"/>
+<circle cx="18" cy="2" r="2"/>
+<circle cx="18" cy="34" r="2"/>
+<circle cx="34" cy="18" r="2"/>
+<circle cx="2" cy="18" r="2"/>
+</svg>

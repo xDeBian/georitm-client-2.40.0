@@ -1,0 +1,15 @@
+<h3 class="rep-table-header"><%= i18n.drivesafety.objectStatistics %></h3>
+<table class="rep-table rep-table-drivesafety selectable">
+    <thead class="rep-table-head header-copy"></thead>
+    <tbody>
+
+    <tr data-head="1">
+        <% for(var i = 0, l = names.length; i < l; i++) { %>
+        <th><%= names[i] %></th>
+        <% } %>
+    </tr>
+
+    <%= rowsHtml %>
+
+    </tbody>
+</table><!-- /rep-table -->

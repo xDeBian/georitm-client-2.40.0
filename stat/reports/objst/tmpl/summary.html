@@ -1,0 +1,43 @@
+<h3 class="report-objst-summary"><%= i18n.summary %></h3>
+<ul class="summary">
+    <% if(typeof data.gsm != 'undefined'){ %>
+    <li class="summary-item">
+        <table>
+            <tr>
+                <td class="title" colspan="3"><%= i18n.objectReport.connection %></td>
+            </tr>
+            <tr>
+                <td class="summary-cell"><%= i18n.objectReport.set %></td>
+                <td class="summary-cell"><%= data.gsm %></td>
+                <td class="summary-cell"><%= Math.round( 100 * data.gsm / count ) %>%</td>
+            </tr>
+            <tr>
+                <td class="summary-cell"><%= i18n.objectReport.notSet %></td>
+                <td class="summary-cell"><%= count - data.gsm %></td>
+                <td class="summary-cell"><%= Math.round( 100 * (count - data.gsm) / count ) %>%</td>
+            </tr>
+        </table>
+    </li>
+    <% } %>
+
+    <% if(typeof data.power != 'undefined'){ %>
+    <li class="summary-item">
+        <table>
+            <tr>
+                <td class="title" colspan="3"><%= i18n.objectReport.power %></td>
+            </tr>
+            <tr>
+                <td class="summary-cell"><%= i18n.normalValue %></td>
+                <td class="summary-cell"><%= data.power %></td>
+                <td class="summary-cell"><%= Math.round( 100 * data.power / count ) %>%</td>
+            </tr>
+            <tr>
+                <td class="summary-cell"><%= i18n.objectReport.no %></td>
+                <td class="summary-cell"><%= count - data.power %></td>
+                <td class="summary-cell"><%= Math.round( 100 * ( count - data.power ) / count ) %>%</td>
+            </tr>
+        </table>
+    </li>
+    <% } %>
+
+</ul>

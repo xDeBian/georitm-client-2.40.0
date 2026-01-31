@@ -1,0 +1,16 @@
+<tr class="<%= rowClass %>"<% if(hasData) {%> title=<%= rowTitle %> data-id="<%= objectId %>"<% } %>>
+    <% _.each(properties, function(v) {%>
+        <td>
+            <% if(hasData) {%>
+            <a href="javascript:;">
+                <%= v %>
+            </a>
+            <% } else { %>
+                <%= v %>
+            <% } %>
+        </td>
+    <% }) %>
+    <% _.each(values, function(v) {%>
+        <td><%= v %></td>
+    <% }) %>
+</tr>

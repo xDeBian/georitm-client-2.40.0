@@ -1,0 +1,32 @@
+<tr>
+    <td class="label"><%= i18n.objOwner %></td>
+    <td class="value"><%- settings.VRC_OWNER || emptyString %></td>
+</tr><tr>
+    <td class="label"><%= i18n.phone.ucFirst() %> 1</td>
+    <td class="value"><%- settings.PHONE1 || emptyString %></td>
+</tr><tr>
+    <td class="label"><%= i18n.phone.ucFirst() %> 2</td>
+    <td class="value"><%- settings.PHONE2 || emptyString %></td>
+</tr><tr>
+    <td class="label"><%= i18n.objOwnerPass %></td>
+    <td class="value"><%- settings.OwnerPassword || emptyString %></td>
+</tr><tr>
+    <td class="label"><%= i18n.objContract %></td>
+    <td class="value"><%- settings.ContractNumber || emptyString %></td>
+</tr><tr>
+    <td class="label"><%= i18n.objContractDate %></td>
+    <td class="value"><%- settings.СontractDate || emptyString %></td>
+</tr><tr>
+    <td class="label"><%= i18n.groups.ucFirst() %></td>
+    <td class="value">
+        <% if(objsGroups && objsGroups.length) {
+        var i = 0;
+        _.each(objsGroups, function(group){
+        print((i++ > 0 ? ', ' : '') + group.name);
+        })%>
+        <% } %>
+    </td>
+</tr><tr>
+    <td class="label"><%= i18n.objStatus %></td>
+    <td class="value"><%= status %></td>
+</tr>

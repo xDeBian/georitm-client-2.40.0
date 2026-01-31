@@ -1,0 +1,22 @@
+<div class="grid-viewport">
+    <!--<div class="grid-height">-->
+    <div class="grid-content">
+        <table width="100%" data-key="<%= alarms ? 'alarms' : 'alerts' %>">
+            <thead>
+                <th>
+                    <div class="th"><%= i18n.timeOfCreation %></div>
+                </th><th>
+                    <div class="th"><%= i18n.timeOfReceive %></div>
+                </th><th>
+                    <div class="th"><%= i18n.alertCode %></div>
+                </th><th>
+                    <div class="th"><%= i18n[alarms ? 'alarm' : 'alert'].ucFirst() %></div>
+                </th><th>
+                    <div class="th"><%= i18n.inputStream %></div>
+                </th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <!--</div>-->
+</div>

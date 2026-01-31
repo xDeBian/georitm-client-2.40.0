@@ -1,0 +1,31 @@
+<div class="content">
+    <h4><a class="view-report" data-item="<%= id %>" href="javascript:;"><%= name%></a></h4>
+    <p class="no-data"><%= i18n.noDataForPeriod %></p>
+    <%= listHtml %>
+
+    <p class="dates">
+        <% if('undefined' != typeof startTime && 'undefined' != typeof endTime) {%>
+        <span class="nobr"><% print(Date.format(i18n.DateTime.longFormat, startTime))%></span>
+        - <span class="nobr"><% print(Date.format(i18n.DateTime.longFormat, endTime))%></span>
+        <% } else if('undefined' != typeof time) {%>
+        <span class="nobr"><% print(Date.format(i18n.DateTime.longFormat, time))%></span>
+        <% } %>
+    </p>
+    <% if(tzName) {%>
+    <p class="dates"><%= tzName %></p>
+    <% } %>
+</div>
+<div class="controls">
+    <a class="export-link" title="<%= i18n.exportToExcel %>" href="javascript:;" data-id="<%= id %>" data-format="xls">
+        <i class="svg-icon svg-icon-file-excel"></i>
+    </a>
+    <a class="export-link" title="<%= i18n.exportToPdf %>" href="javascript:;" data-id="<%= id %>" data-format="pdf">
+        <i class="svg-icon svg-icon-file-pdf"></i>
+    </a>
+    <a class="remove-link" title="<%= i18n.removeReport %>" href="javascript:;" data-id="<%= id %>">
+        <i class="svg-icon svg-icon-remove"></i>
+    </a>
+</div>
+
+
+<div class="clear"></div>

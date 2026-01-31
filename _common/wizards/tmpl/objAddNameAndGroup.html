@@ -1,0 +1,51 @@
+<p><%= i18n.enterNameAndGroup %></p>
+
+<div class="control-group">
+    <input type="text" name="name" value="<%- name || '' %>" placeholder="<%= i18n.objName %>" maxlength="255">
+</div>
+
+<% if('undefined' != typeof groups) {%>
+
+    <% if( !groups.length && App.allowed('objectgroups.create') ) {%>
+
+        <div class="control-group">
+            <input type="text" name="newGroupName" value="<%- newGroupName || '' %>"
+               placeholder="<%= i18n.enterGroupName %>" autocomplete="off">
+        </div>
+
+    <% } else if(groups.length <= 15) {%>
+
+        <div class="select-group<%if(newGroupName) {%> hidden<% } %>">
+            <select name="groupId"<%if(newGroupName) {%> disabled<% } %>>
+                <% if(groups.length > 1) {%>
+                <option value="0"><%= i18n.selectObjGroup %></option>
+                <% } %>
+                <% _.each(groups, function(group){ %>
+                <option value="<%= group.id %>"<% if(groupId == group.id) {%> selected<% } %>><%= group.name %></option>
+                <% }) %>
+            </select>
+            <% if(App.allowed('objectgroups.create')) {%>
+            <p class="help-block"><%= i18n.or %> <a class="add-group" href="javascript:;"><%= i18n.orAddNewObjGroup %></a></p>
+            <% } %>
+        </div>
+        <% if(App.allowed('objectgroups.create')) {%>
+        <div class="control-group new-group<%= newGroupName ? '' : ' hidden'%>">
+            <input type="text" name="newGroupName" value="<%- newGroupName || '' %>" autocomplete="off"
+                   placeholder="<%= i18n.enterNewGroupName %>"<%if(!newGroupName) {%> disabled<% } %>>
+            <i class="clear-group-name icon-clear svg-icon svg-icon-circle-remove"></i>
+        </div>
+        <% } %>
+
+    <% } else { %>
+
+<input type="hidden" name="groupId" value="<%= groupId %>">
+        <input class="autocomplete" type="text" name="groupName" value="<%- groupName || '' %>"
+               placeholder="<%= i18n.enterGroupName %>">
+        <% if(App.allowed('objectgroups.create')) {%>
+        <p class="help-block"><%= i18n.groupWillBeCreatedIfNotExist %></p>
+        <% } %>
+
+    <% } %>
+
+<% } %>
+

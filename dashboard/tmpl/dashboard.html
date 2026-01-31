@@ -1,0 +1,45 @@
+<!-- parent element moved to app.html to avoid blinking on start -->
+<div class="header clearfix">
+    <h1><%= i18n.dashboard %><!--<small>(beta)</small>--></h1>
+
+    <div class="actions">
+        <!--<div class="close hint hint-left" data-hint="<%= i18n.goToMap %>">&times;</div>-->
+        <div class="close hint hint-left" data-hint="<%= i18n.goToMap %>">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-earth"></use>
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <% for(var i = 0; i < totalPages; ++i) {%>
+    <div data-page="<%= i %>" class="content <% if(curPage == i) {%> active<% } %>">
+        <!--<div data-row="0" class="row row-fluid">
+            <div data-col="0" class="col span3"></div>
+            <div data-col="1" class="col span3"></div>
+            <div data-col="2" class="col span3"></div>
+            <div data-col="3" class="col span3"></div>
+        </div>
+
+        <div data-row="1" class="row row-fluid">
+            <div class="d-widget span6">
+                <div class="header">
+                    <h3>Objects state</h3>
+                </div>
+                <div class="content"></div>
+            </div>
+            <div class="d-widget span6">
+                <div class="header">
+                    <h3>Objects state</h3>
+                </div>
+                <div class="content"></div>
+            </div>
+        </div>-->
+    </div>
+    <% } %>
+    <label class="checkbox no-bottom-margin">
+        <input type="checkbox" name="startWithDashboard" value="1"<% if(startWithDashboard){ %> checked<% } %>>
+        <%= i18n.startWithDashboard %>
+    </label>
+</div>
+

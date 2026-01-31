@@ -1,0 +1,32 @@
+<div class="temperature-panel loading">
+    <div class="temperature-ctrl-top <%= hiddenCtrl ? 'temperature-ctrl-top_hidden' : '' %>"></div>
+
+    <div class="temperature"
+        data-value="temperature"
+    >    
+        <div class="temperature-ctrl-arrow more-action more-action-left <%= hiddenCtrl ? 'temperature-ctrl-arrow_hidden' : '' %>" 
+            data-arrow="left"
+        >
+            <svg class="svg-icon  more-action">
+                <use xlink:href="#smb-chevron-right"></use>
+            </svg>
+        </div>
+
+        <div class="temperature-panel-value"></div>
+
+        <div class="temperature-ctrl-arrow more-action more-action-right <%= hiddenCtrl ? 'temperature-ctrl-arrow_hidden' : '' %>" 
+            data-arrow="right"
+        >
+            <svg class="svg-icon more-action">
+                <use xlink:href="#smb-chevron-right"></use>
+            </svg>
+        </div>
+    </div>
+
+    <div class="temperature-bottom"
+        data-value="temperature"
+    >
+        <p class="temperature-panel-units">&deg;C</p>
+        <p class="temperature-panel-name"><%= i18n.temperature %></p>
+    </div>
+</div>

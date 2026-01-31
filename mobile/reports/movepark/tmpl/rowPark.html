@@ -1,0 +1,16 @@
+<tr class="row-park"<% if(isLast) {%> data-row="last"<% } %>>
+    <td><%= rowIndex %></td>
+    <td>
+        <a href="javascript:;" class="build-track-segment" data-id="<%= objectId %>" data-from="<%= start * App.MS %>" data-to="<%= end * App.MS %>">
+            <%= action %>
+        </a>
+    </td>
+    <td data-key="start" data-value="<%= start %>"><%= startS %></td>
+    <td data-key="end" data-value="<%= end %>"><%= endS %></td>
+    <td data-key="duration" data-value="<%= duration %>" class="rep-time-data"><%= durationS %></td>
+    <td colspan="<%= colspan ? 2 : 1%>" class="address" data-key="address" data-geoid="<%= geoId %>" data-lat="<%= lat %>" data-lon="<%= lon %>">
+        <% if(address) {print(address)} else { %>
+        <span class="loading-address" data-geoid="<%= geoId %>"><%= loadingAddress %></span>
+        <% } %>
+    </td>
+</tr>

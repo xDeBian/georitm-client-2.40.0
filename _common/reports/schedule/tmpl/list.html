@@ -1,0 +1,8 @@
+<h3><%= i18n.reportsList %></h3>
+<ul id="tasks-list"></ul>
+<div class="actions">
+    <% if(creation) {%>
+    <a class="command-add" href="#"><%= i18n.createScheduleTask %></a>
+    <% } %>
+    <a class="command-remove hidden" href="#"><%= i18n.delete.ucFirst() %> <%= i18n.report %></a>
+</div>

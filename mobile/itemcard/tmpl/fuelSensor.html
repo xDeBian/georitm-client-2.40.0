@@ -1,0 +1,44 @@
+<table class="features">
+    <tr>
+        <td class="label nobr"><%= i18n.analogueSensor %> <%= sensorIndex %></td>
+        <td class="value">
+            <% if(AN_TYPE === null) {%>
+            <%= i18n.sensorNotInstalled %>
+            <% } else if(AN_TYPE == '0') {%>
+            <%= i18n.fuelLevelSensor %>
+            <% } else if(AN_TYPE == '1') {%>
+            <%= i18n.flowSensorOnInput %>
+            <% } else if(AN_TYPE == '-1') {%>
+            <%= i18n.flowSensorOnOutput %>
+            <% } %>
+        </td>
+    </tr>
+</table>
+<table class="features">
+    <% if('undefined' != typeof AN_TYPE && AN_TYPE != '0') {%>
+    <tr>
+        <td class="label"><%= i18n.impulsesByLiter %></td>
+        <td class="value"><%= AN_COEFF %></td>
+    </tr>
+    <% } %>
+    <tr>
+        <td class="label"><%= i18n.fuelConsumptionNormForSummer %></td>
+        <td class="value nobr"><%= FCONSUM_SUMMER > 0 ? FCONSUM_SUMMER + ' ' + i18n.l100km : emptyString %></td>
+    </tr><tr>
+        <td class="label"><%= i18n.fuelConsumptionNormForSummer %></td>
+        <td class="value nobr"><%= FCONSUMH_SUMMER > 0 ? FCONSUMH_SUMMER + ' ' + i18n.l1h : emptyString %></td>
+    </tr><tr>
+        <td class="label"><%= i18n.fuelConsumptionNormForWinter %></td>
+        <td class="value nobr"><%= FCONSUM_WINTER > 0 ? FCONSUM_WINTER + ' ' + i18n.l100km : emptyString %></td>
+    </tr><tr>
+        <td class="label"><%= i18n.fuelConsumptionNormForWinter %></td>
+        <td class="value nobr"><%= FCONSUMH_WINTER > 0 ? FCONSUMH_WINTER + ' ' + i18n.l1h : emptyString %></td>
+    </tr>
+    <% if('undefined' != typeof AN_TYPE && AN_TYPE == '0') {%>
+    <tr>
+        <td colspan="2">
+            <a class="open-fuel-calibration-table" data-sensor="<%= sensorIndex %>" href="javascript:"><%= i18n.calibrationTable %></a>
+        </td>
+    </tr>
+    <% } %>
+</table>

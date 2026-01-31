@@ -1,0 +1,23 @@
+<% if(showTable) {%>
+<colgroup>
+    <col style="width:5%"/>
+    <col style="width:15%"/>
+    <col style="width:25%"/>
+    <col style="width:40%"/>
+    <col style="width:15%"/>
+</colgroup>
+<% } %>
+<tr class="summary">
+    <td class="sum-header" colspan="<%= showTable ? 5 : 1 %>">
+        <%= summaryText %>
+    </td>
+</tr>
+<% if(showTable) {%>
+<tr data-head="1">
+    <th>№</th>
+    <th><%= i18n.objIdNumberShort %></th>
+    <th><%= i18n.objName %></th>
+    <th><%= i18n.address.ucFirst() %></th>
+    <th><%= i18n.guardsComplteteCallsCountShort %></th>
+</tr>
+<% } %>

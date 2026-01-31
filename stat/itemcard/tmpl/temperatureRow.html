@@ -1,0 +1,44 @@
+<tr data-index="<%= index %>">
+    <td class="col-sensor-name">
+        <select class="select-sensor-detector" name="cameraSource" >
+            <% _.each(optionsDetectors, function(option, i) {%>
+                <option value="<%= option.code %>"
+                    <% if(option.code === sensor.code) {%> selected<% } %>
+                    <% if(option.disabled) {%> disabled<% } %>
+                    >
+                    <%= option.detector %>
+                </option>
+            <% }) %>
+        </select>
+    </td>
+    <td class="col-sensor-zone">
+        <div class="itext">
+            <input type="text" name="sensorZone" value="<%= sensor.zone %>"  disabled maxlength="255"/>
+        </div>
+    </td>
+    <td class="col-sensor-last-name">
+        <div class="itext">
+            <input type="text" name="sensorName" value="<%= sensor.name %>"  autocomplete="off" maxlength="255"/>
+        </div>
+    </td>
+
+    <td class="col-sensor-note">
+        <div class="itext">
+            <input type="text" name="sensorNote" value="<%- sensor.note %>"  autocomplete="off" maxlength="255" />
+        </div>
+    </td>
+
+    <td class="col-icon">
+        <svg  class="svg-icon more-action-up">
+            <use xlink:href="#smb-chevron-right"></use>
+        </svg>
+    </td>
+    <td class="col-icon">
+        <svg  class="svg-icon more-action-down">
+            <use xlink:href="#smb-chevron-right"></use>
+        </svg>
+    </td>
+    <td class="col-icon">
+        <i  class="svg-icon svg-icon-remove icon-remove"></i>
+    </td>
+</tr>

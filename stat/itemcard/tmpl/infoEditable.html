@@ -1,0 +1,79 @@
+<input type="hidden" value="<%= App.TYPE_STAT %>" name="objType">
+<table class="l">
+    <tr>
+        <td class="col">
+            <div class="field">
+                <label><%= i18n.objName %></label>
+                <div class="itext"><input type="text" name="name" value="<%- item.name %>" maxlength="255" /></div>
+            </div>
+            <div class="field" style="height: 4.2em">
+                <label><%= i18n.description %></label>
+                <div class="itext">
+                    <textarea name="shortDescription" maxlength="140" style="height: 3.8em"><%- settings.shortDescription %></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label><%= i18n.country %></label>
+                <div class="itext"><input type="text" name="Country" value="<%- settings.Country %>" maxlength="100" class="autocomplete" /></div>
+            </div><div class="field">
+                <label><%= i18n.region %></label>
+                <div class="itext"><input type="text" name="Region" value="<%- settings.Region %>" maxlength="100" class="autocomplete" /></div>
+            </div><div class="field">
+                <label><%= i18n.city %></label>
+                <div class="itext"><input type="text" name="City" value="<%- settings.City %>" maxlength="100" class="autocomplete" /></div>
+            </div><div class="field">
+                <label><%= i18n.street %></label>
+                <div class="itext"><input type="text" name="Street" value="<%- settings.Street %>" maxlength="100" class="autocomplete" /></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.house %> / <%= i18n.building %></label>
+                <div class="form-horizontal itext">
+                    <input type="text" name="House" class="input-medium" value="<%- settings.House %>" maxlength="100" autocomplete="off" /><span class="sep">/</span><input type="text" name="Building" class="input-medium" value="<%- settings.Building %>" maxlength="100" autocomplete="off" />
+                </div>
+            </div><div class="field">
+                <label><%= i18n.gateCode %></label>
+                <div class="itext"><input type="text" name="GateCode" value="<%- settings.GateCode %>" maxlength="100" autocomplete="off" /></div>
+            </div><div class="field">
+                <label><%= i18n.intercomCode %></label>
+                <div class="itext"><input type="text" name="IntercomCode" value="<%- settings.IntercomCode %>" maxlength="100" autocomplete="off" /></div>
+            </div><div class="field">
+                <label><%= i18n.appartment %></label>
+                <div class="itext"><input type="text" name="AppNumber" value="<%- settings.AppNumber %>" maxlength="100" autocomplete="off" /></div>
+            </div><div class="field">
+                <label><%= i18n.objEquipmentIds %></label>
+                <div class="itext">
+                    <input type="text" name="equipmentIds"
+                           value="<%- settings.equipmentIds ? JSON.parse(settings.equipmentIds).join(', ') : '' %>"
+                           maxlength="1024" autocomplete="off" />
+                </div>
+            </div>
+        </td>
+
+        <td class="col">
+            <%= col2Html %>
+        </td>
+
+        <td rowspan="2" class="col" style="width:150px">
+            <div class="img-block">
+                <img<% if(!imgPath) {%> style="display:none"<% } %> src="<% if(imgPath) {%><%= imgPath %><% } %>" alt="" />
+                <a class="change-img" href="javascript:;"><% if(imgPath) { print(i18n.changeImage) } else { print(i18n.chooseImage) } %></a>
+            </div>
+
+            <%= htmlStatus %>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="field textarea text-large no-margin">
+                <label><%= i18n.comments.ucFirst() %></label>
+                <textarea class="hidden" maxlength="2048" rows="" cols="" name="DESCRIPTION"><%- settings.DESCRIPTION %></textarea>
+                <div class="editable">
+                    <div class="value"><%= description %></div>
+                    <div class="edit">
+                        <i class="svg-icon svg-icon-pencil"></i>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

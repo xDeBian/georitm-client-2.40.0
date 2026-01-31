@@ -1,0 +1,5 @@
+<div data-id="<%= id %>" class="btn btn-small tag<%= isGroup ? ' group': '' %>" title="<%- title %>">
+    <input type="hidden" name="<%= isGroup ? 'groupId' : 'objectId' %>" value="<%= id %>">
+    <span class="name"><%- title %></span>
+    <i data-id="<%= id %>" class="svg-icon svg-icon-remove del-link"></i>
+</div>

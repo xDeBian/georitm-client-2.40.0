@@ -1,0 +1,1 @@
+define(["_common/reports/objservice/ObjserviceReport"],function(e){var t=e.extend({getUserDataPrefix:function(){return this._module.id.replace(/\//g,".")+".stat."+this.get("key")}});return t});

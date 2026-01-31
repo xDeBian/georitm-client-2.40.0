@@ -1,0 +1,79 @@
+<div class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label"><%= i18n.alertCode %></label>
+        <div class="controls">
+            <input<%if(code){%> readonly<% } %> name="code" type="text" value="<%= codeS || '' %>" class="integer"
+                maxlength="<%= maxCodeLength %>">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label"><%= i18n.alertMessage %></label>
+        <div class="controls">
+            <input name="message" type="text" value="<%- message || '' %>"
+                   style="color: <%= fgColor %>;background-color: <%= bgColor %>">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label"><%= i18n.alertsGroup %></label>
+        <div class="controls">
+            <select name="groupId">
+                <%if (!code){%>
+                <option value="0"><%= i18n.alertChooseGroup %></option>
+                <% } %>
+                <% _.each(groups, function(group, id){%>
+                <option value="<%= id %>"<%if ('undefined' != typeof groupId && groupId == id){%> selected<% } %>><%= group.name %></option>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label for="is-visible-check" class="control-label"><%= i18n.alertsLog %></label>
+        <div class="controls">
+            <input name="isVisible" id="is-visible-check" type="checkbox"
+                   value="1"<% if(isVisible) {%> checked<% } %><% if(isAlarm) {%> readonly<% } %>>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label for="is-alarm-check" class="control-label"><%= i18n.alarmsWindow %></label>
+        <div class="controls">
+            <input name="isAlarm" id="is-alarm-check" type="checkbox" value="1"<% if(isAlarm) {%> checked<% } %>>
+        </div>
+    </div>
+
+    <!--<div class="control-group">
+        <label for="is-relayed-check" class="control-label"><%= i18n.alertRelaying %></label>
+        <div class="controls">
+            <input name="isRelayed" id="is-relayed-check" type="checkbox" value="1"<% if(isRelayed) {%> checked<% } %>>
+        </div>
+    </div>-->
+    <% if(isRelayed) {%>
+    <input name="isRelayed" type="hidden" value="1">
+    <% } %>
+
+    <div class="control-group has-picker fgcolor">
+        <label class="control-label"><%= i18n.alertFgColor %></label>
+        <div class="controls">
+            <div class="example" style="color: <%= fgColor %>">A</div>
+            <input name="fgColor" type="text" value="<%= fgColor %>" maxlength="7">
+        </div>
+    </div>
+
+    <div class="control-group has-picker bgcolor no-margin">
+        <label class="control-label"><%= i18n.alertBgColor %></label>
+        <div class="controls">
+            <div class="example" style="background-color: <%= bgColor %>"></div>
+            <input name="bgColor" type="text" value="<%= bgColor %>" maxlength="7">
+        </div>
+    </div>
+
+    <div class="control-group" style="margin:10px 0 0">
+        <label for="apply-colors-check" class="control-label no-margin no-padding"><%= i18n.alertApplyColorsToGroup %></label>
+        <div class="controls">
+            <input name="applyColors" id="apply-colors-check" type="checkbox" value="1">
+        </div>
+    </div>
+</div>

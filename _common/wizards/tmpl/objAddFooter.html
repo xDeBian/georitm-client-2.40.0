@@ -1,0 +1,11 @@
+<% if (canGoBack) {%>
+<a class="pull-left back" href="#"><%= i18n.goBack %></a>
+<% } %>
+
+<% if (!hideContinue) {%>
+<a class="btn btn-primary<% if(complete) {%> btn-complete<% } else { %> btn-continue<% } %>">
+    <%= complete ? i18n.complete : i18n.goNext %>
+</a>
+<% } %>
+
+<a class="btn btn-default<% if(complete) {%> btn-add-more<% } else { %> btn-cancel<% } %>"><%= complete ? i18n.continueText : i18n.cancel.ucFirst() %></a>

@@ -1,0 +1,35 @@
+<!--<div class="d-widget cf-item col-sm-3">-->
+<div class="header <% if('undefined' != typeof settings) {%> append<% } %>">
+    <h3>
+        <svg class="svg-icon icon-car">
+            <use xlink:href="#smb-car"></use>
+        </svg>
+        <svg class="svg-icon icon-home">
+            <use xlink:href="#smb-home"></use>
+        </svg>
+        <span class="name"><% if('undefined' != typeof title) { print(title) }%></span>
+    </h3>
+    <div class="add-on">
+        <% if('undefined' != typeof settings) {%>
+        <a class="svg-icon svg-icon-cog-w settings-toggle" href="#"></a>
+        <% } %>
+        <a class="svg-icon svg-icon-circle-remove-w remove-link" href="#"></a>
+    </div>
+</div>
+<div class="content"><% if('undefined' != typeof content) { print(content) }%></div>
+
+<% if('undefined' != typeof settings) { %>
+<form class="settings invisible" method="post">
+    <div class="form-content">
+        <%= 'string' == typeof settings ? settings : '' %>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-small btn-primary"><%= i18n.save %></button>
+        <a class="btn btn-small settings-close" href="#"><%= i18n.cancel %></a>
+    </div>
+</form>
+<% } %>
+
+<div class="loader"><i class="svg-icon svg-icon-spinner icon-spin"></i></div>
+<!--
+</div>-->

@@ -1,0 +1,27 @@
+<tr class="obj">
+    <td colspan="<%= colspan %>" class="summary">
+        <% if(!isSingle) {%>
+        <div class="sum-header">
+            <strong><%- name %> (#<%- extId %>)</strong>
+        </div>
+        <% } %>
+        <div class="sum-content">
+            <% if(hasData) {%>
+            <p>
+                <strong><%= i18n.totalAlertsAndLogEntries %>: <%= total %></strong><br/>
+                <%= i18n.totalAlarmsShort %>: <%= totalAlarms %><br/>
+                <%= i18n.totalAlertsShort %>: <%= totalAlerts %><br/>
+                <%= i18n.totalActionsAndComments %>: <%= totalLogs %>
+            </p>
+
+            <strong><%= i18n.totalUsers %>: <%= totalUsers %></strong><br/>
+            <% _.each(users, function(n, username) {%>
+            <p class="no-margin"><%= username %>: <%= n %></p>
+            <% }) %>
+
+            <% } else {%>
+            <p class="no-data"><%= i18n.noDataForObject %></p>
+            <% } %>
+        </div>
+    </td>
+</tr>

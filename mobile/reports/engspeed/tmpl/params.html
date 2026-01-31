@@ -1,0 +1,29 @@
+<div class="p-params v-params">
+
+    <fieldset>
+        <legend><%= i18n.params %></legend>
+
+        <div class="control-group">
+            <input type="hidden" name="dataSource" value="default">
+            <input type="hidden" name="thresholds" value="0">
+            <div class="form-horizontal">
+                <label class="no-bottom-margin"><%= i18n.engineIdleState %>:</label>
+                <div style="margin-bottom: 5px">
+                    <label class="label-inline"><%= i18n.upto %></label>
+                    <input type="text" name="thresholds" value="<%= thresholds[1] %>" data-index="1" data-min="1" data-max="9999" class="input-mini">
+                    <label class="label-inline"><%= i18n.rpm %></label>
+                </div>
+                <label class="no-bottom-margin"><%= i18n.engineCriticalRpm %>:</label>
+
+                    <label class="label-inline"><%= i18n.above.toLowerCase() %></label>
+                    <input type="text" name="thresholds" value="<%= thresholds[2] %>" data-index="2" data-min="2" data-max="10000" class="input-mini">
+                    <label class="label-inline"><%= i18n.rpm %></label>
+
+            </div>
+        </div>
+
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

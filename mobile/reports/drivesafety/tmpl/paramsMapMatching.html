@@ -1,0 +1,135 @@
+<div class="drivesafety-params drivesafety-2020-params">
+    <p style="margin: 0 0 5px" class="text-right">
+        <a class="set-defaults" href="#"><%= i18n.setDefaults %></a>
+    </p>
+    <fieldset>
+        <legend><%= i18n.drivesafety.styleParameters %></legend>
+        <div class="control-group form-horizontal">
+            <label class="label-inline label-mintime"><%= i18n.drivesafety.mintime %></label>
+            <input type="text" class="input-mini integer" autocomplete="off"
+                   name="accelerationMintime" value="<%= accelerationMintime %>" maxlength="5"/>
+            <span class="help-inline"><%= i18n.sec %></span>
+        </div>
+        <div class="control-group">
+            <div class="flex-control-row">
+                <div class="flex-control-group">
+                    <label class="flex-control-label"><%= i18n.drivesafety.accLimit %></label>
+                    <input type="text" class="input-x-mini positive" autocomplete="off"
+                           name="accelerationLimit" value="<%= accelerationLimit %>" maxlength="3">
+                    <span class="flex-unit"><%= i18n.ms2 %></span>
+                </div>
+                <div class="flex-control-group flex-control-group-weight">
+                    <label class="flex-control-label"><%= i18n.drivesafety.weight %></label>
+                    <input type="text" class="input-x-mini integer" autocomplete="off"
+                           name="accelerationWeight" value="<%= accelerationWeight %>" maxlength="2">
+                </div>
+            </div>
+            <div class="flex-control-row">
+                <div class="flex-control-group">
+                    <label class="flex-control-label"><%= i18n.drivesafety.brakingLimit %></label>
+                    <input type="text" class="input-x-mini negative" autocomplete="off"
+                           name="brakingLimit" value="<%= brakingLimit %>" maxlength="4">
+                    <span class="flex-unit"><%= i18n.ms2 %></span>
+                </div>
+                <div class="flex-control-group flex-control-group-weight">
+                    <label class="flex-control-label"><%= i18n.drivesafety.weight %></label>
+                    <input type="text" class="input-x-mini integer" autocomplete="off"
+                           name="brakingWeight" value="<%= brakingWeight %>" maxlength="2">
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.drivesafety.speedParameters %></legend>
+        <div class="control-group form-horizontal">
+            <label class="label-inline label-mintime"><%= i18n.drivesafety.mintime %></label>
+            <input type="text" class="input-mini integer" autocomplete="off"
+                   name="speedingMintime" value="<%= speedingMintime %>" maxlength="5"/>
+            <span class="help-inline"><%= i18n.sec %></span>
+        </div>
+        <label class="radio">
+            <input type="radio" value="kmh"
+                   name="speedExcessUnits"<%= speedExcessUnits === 'kmh' ? ' checked' : '' %>>
+            <%= i18n.exceedValueInUnits.replace('#units#', i18n.kmh) %>
+        </label>
+        <label class="radio">
+            <input type="radio" value="percentage"
+                   name="speedExcessUnits"<%= speedExcessUnits === 'percentage' ? ' checked' : '' %>>
+            <%= i18n.exceedValueInUnits.replace('#units#', '%') %>
+        </label>
+        <% _.each(speedExcessLimits[speedExcessUnits], function(limit, i){%>
+        <div class="flex-control-row">
+            <div class="flex-control-group">
+                <label class="flex-control-label"><%= i18n.drivesafety.exceedingMoreThan %></label>
+                <input type="text" class="input-x-mini positive" autocomplete="off"
+                       data-index="<%= i %>"
+                       name="speedExcessLimits" value="<%= limit %>" maxlength="3">
+                <span class="flex-unit excess-unit"><%= speedExcessUnits === 'kmh' ? i18n.kmh : '%' %></span>
+            </div>
+            <div class="flex-control-group flex-control-group-weight">
+                <label class="flex-control-label"><%= i18n.drivesafety.weight %></label>
+                <input type="text" class="input-x-mini integer" autocomplete="off"
+                       name="speedExcessWeights" value="<%= speedExcessWeights[i] %>" maxlength="3">
+            </div>
+        </div>
+        <% }) %>
+        <label class="radio">
+            <input type="radio" value="mileage"
+                   name="useMileageOrQuantity"<%= useMileageOrQuantity === 'mileage' ? ' checked' : '' %>>
+            <%= i18n.drivesafety.useMileage %>
+        </label>
+        <label class="radio">
+            <input type="radio" value="quantity"
+                   name="useMileageOrQuantity"<%= useMileageOrQuantity === 'quantity' ? ' checked' : '' %>>
+            <%= i18n.drivesafety.useQuantity %>
+        </label>
+    </fieldset>
+
+    <fieldset class="opened">
+        <legend>
+            <%= i18n.geozones.ucFirst() %>
+        </legend>
+        <div class="group-params zones-list">
+            <select name="zoneId"
+                    data-placeholder="<%= i18n.chooseZones %>"
+                    class="input-block-level"
+                    multiple
+                    style="width: 240px; height: 30px; overflow: hidden">
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.detailReport %></legend>
+
+        <label class="checkbox checkbox-summary<% if(!isSummary) {%> hidden<% } %>">
+            <input name="showSummary" type="checkbox" value="1"<% if(showSummary) { %> checked<% } %>>
+            <%= i18n.drivesafety.showSummary %>
+        </label>
+
+        <label class="checkbox checkbox-summary<% if(!isSummary) {%> hidden<% } %>">
+            <input name="showTop" type="checkbox" value="1"<% if(showTop) { %> checked<% } %>>
+            <%= i18n.drivesafety.showTop %>
+        </label>
+
+        <label class="checkbox checkbox-summary<% if(!isSummary) {%> hidden<% } %>">
+            <input name="showObjectsStatistics" type="checkbox" value="1"<% if(showObjectsStatistics) { %> checked<% }
+            %>>
+            <%= i18n.drivesafety.objectsStatistics %>
+        </label>
+
+        <label class="checkbox checkbox-single<% if(isSummary) {%> hidden<% } %>">
+            <input name="showStatistics" type="checkbox" value="1"<% if(showStatistics) { %> checked<% } %>>
+            <%= i18n.drivesafety.objectStatistics %>
+        </label>
+
+        <label class="checkbox checkbox-single<% if(isSummary) {%> hidden<% } %>">
+            <input name="showCalculation" type="checkbox" value="1"<% if(showCalculation) { %> checked<% } %>>
+            <%= i18n.drivesafety.showCalculation %>
+        </label>
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

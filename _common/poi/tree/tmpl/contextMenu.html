@@ -1,0 +1,7 @@
+<ul class="nav nav-list context-menu" style="display:none">
+    <% if(App.allowed('poi.edit')) {%>
+    <li><a href="#" data-action="groupedit"><%= i18n.renameGroup %></a></li>
+    <% } if(App.allowed('poi.delete')) {%>
+    <li><a href="#" data-action="groupremove"><%= i18n.removePoiGroup %></a></li>
+    <% } %>
+</ul>

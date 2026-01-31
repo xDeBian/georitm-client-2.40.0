@@ -1,0 +1,45 @@
+<table class="table table-condensed zones <% if (!zones.length) { %> hidden<% } %>">
+    <thead>
+    <tr>
+        <th><%= i18n.objZoneNum %></th>
+        <th><%= i18n.objArea %></th>
+        <th><%= i18n.objZoneName %></th>
+        <th><%= i18n.objZoneComment %></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(zones, function(zone, index){ %>
+    <tr>
+        <td class="col-num">
+            <div class="itext">
+                <input name="zNum[]" type="text" value="<%- zone.num %>" maxlength="3" autocomplete="off">
+            </div>
+        </td>
+        <td>
+            <input type="hidden" name="zId[]" value="<%= zone.id %>">
+            <select name="zAreaId[]">
+                <% _.each(areas, function(area){ %>
+                <option value="<%- area.id %>"<% if(area.id == zone.areaId) {%> selected<% } %>>
+                    <%- area.name ? area.name : i18n.objArea + ' ' + area.num %>
+                </option>
+                <% }) %>
+            </select>
+        </td>
+        <td>
+            <div class="itext"><input name="zName[]" type="text" value="<%- zone.name %>" maxlength="100"></div>
+        </td>
+        <td>
+            <div class="itext"><input name="zComment[]" type="text" value="<%- zone.comment %>" maxlength="100"></div>
+        </td>
+        <td class="col-icon">
+            <i class="svg-icon svg-icon-remove row-remove"></i>
+        </td>
+    </tr>
+    <% }) %>
+    </tbody>
+</table>
+
+<p class="no-data<% if (zones.length) { %> hidden<% } %>">
+    <%= i18n.noObjZones %>
+</p>

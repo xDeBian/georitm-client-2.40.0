@@ -1,0 +1,14 @@
+<div class="control-row" style="z-index: <%=(100 - index)%>">
+    <select name="alert"
+            data-index="<%= index %>"
+            data-placeholder="<%= i18n.chooseAlert %>"
+            class="input-block-level">
+    </select>
+    <select name="channels"
+            data-index="<%= index %>"
+            data-placeholder="<%= i18n.anyInputStream %>"
+            class="input-block-level"
+            multiple>
+    </select>
+</div>
+

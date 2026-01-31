@@ -1,0 +1,269 @@
+<div id="settings">
+    <div class="nav">
+        <h3><%= i18n.settings.ucFirst() %></h3>
+        <ul>
+            <% if(!alarmsOnly) {%>
+            <li class="active"><a href="javascript:;" data-target="#ui-settings"><%= i18n.uiElements %></a></li>
+            <% } %>
+
+            <% if(reports) {%>
+            <li><a href="javascript:;" data-target="#reports-settings"><%= i18n.reportsSettings %></a></li>
+            <% } %>
+
+            <% if(scheduler) {%>
+            <li><a href="javascript:;" data-target="#reports-schedule"><%= i18n.scheduler %></a></li>
+            <% } %>
+
+            <% if(App.isHistoryAllowed()) {%>
+                <li<% if(alarmsOnly) {%> class="active"<% } %>>
+                    <a href="javascript:;" data-target="#alerts-settings">
+                    <%= i18n[alarms ? 'alarmsAndAlerts' : 'historyWindowSettings'] %>
+                    </a>
+                </li>
+
+                <% if(!alarmsOnly) {%>
+                <li>
+                    <a href="javascript:;" data-target="#alerts-log-settings">
+                    <%= i18n.alertsLog %>
+                    </a>
+                </li>
+                <% } %>
+            <% } %>
+
+            <% if(App.isAdmin()) {%>
+            <li><a href="javascript:;" data-target="#alerts-directory"><%= i18n.alertsDirectory %></a></li>
+            <li><a href="javascript:;" data-target="#staff"><%= i18n.technicians %></a></li>
+            <% } %>
+
+            <% if(App.allowed('geozones.assign')) {%>
+            <li><a href="javascript:;" data-target="#devices-geozones"><%= i18n.devicesGeozonesBindings %></a></li>
+            <% } %>
+
+            <!--<li><a href="javascript:;" data-target="#maps-settings">Карты</a></li>-->
+            <li><a href="javascript:;" data-target="#section-service"><%= i18n.service %></a></li>
+        </ul>
+    </div>
+    <a class="close"><i class="svg-icon svg-icon-circle-remove"></i></a>
+
+    <% if(!alarmsOnly) {%>
+    <div id="ui-settings" class="section">
+        <h3><%= i18n.uiElements %></h3>
+
+        <div class="params-group objects-watched" style="max-width:65em">
+
+            <h4><%= i18n.objectsOnMap %></h4>
+
+            <div class="control-group">
+                <div class="mobile-view-type hidden">
+                    <!--placeholder-->
+                </div>
+                <div class="stat-view-type hidden">
+                    <!--placeholder-->
+                </div>
+            </div>
+
+        </div><!--/objects-watched-->
+
+        <div class="params-group objects-grouping">
+            <h4><%= i18n.mapGroupingSizeObjects %></h4>
+            <div class="control-group">
+                    <li><label class="checkbox"><input
+                        type="checkbox" name="usedGrouping"
+                        <% if(objectsGrouping.usedGrouping) {%>checked<% } %>
+                        /> <%= i18n.mapGroupingSizeObjectsUsedGrouping %>
+                    </label></li>
+                    <li><label class="checkbox"><input
+                        type="checkbox" name="changeSize"
+                        <% if(objectsGrouping.changeSize) {%>checked<% } %>
+                        /> <%= i18n.mapGroupingSizeObjectsChangeSize %>
+                    </label></li>
+            </div>
+        </div>
+
+        <div class="params-group">
+            <h4><%= i18n.mapObjSearchMode %></h4>
+            <div class="wsm">
+                <ul>
+                    <li><label class="radio"><input<% if(searchMode == 0) { %> checked<% } %>
+                        type="radio" name="mapSearchMode" value="0" /> <%= i18n.mapObjSearchMode1 %></label></li>
+                    <li><label class="radio"><input<% if(searchMode == 1) { %> checked<% } %>
+                        type="radio" name="mapSearchMode" value="1" /> <%= i18n.mapObjSearchMode2 %></label></li>
+                </ul>
+            </div>
+        </div>
+
+        <% if(App.hasMobile() || App.hasStationary()) {%>
+            <div class="params-group objects-title">
+
+                <h4><%= i18n.objectTitleComponents %></h4>
+                <div class="control-group">
+                    <!--<li><label class="checkbox">
+                        <input type="checkbox" name="extId"
+                        <% if('extId' in objectsTitle) {%>checked<% } %>><%= i18n.objIdNumber %>
+                    </label></li>-->
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="name"
+                        <% if('name' in objectsTitle) {%>checked<% } %>><%= i18n.objName %>
+                    </label></li>
+
+                    <% if(App.hasMobile()) {%>
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="licenseNumber"
+                        <% if('licenseNumber' in objectsTitle) {%>checked<% } %>>
+                        <%= i18n.licenseNumber %><% if(App.hasModule('stat')) {%> (<%= i18n.forVehicles %>)<% } %>
+                    </label></li>
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="model"
+                        <% if('model' in objectsTitle) {%>checked<% } %>>
+                        <%= i18n.objModel %><% if(App.hasModule('stat')) {%> (<%= i18n.forVehicles %>)<% } %>
+                    </label></li>
+                    <% } %>
+
+                    <% if(App.hasStationary()) {%>
+                    <!--<li><label class="checkbox">
+                        <input type="checkbox" name="city"
+                        <% if('city' in objectsTitle) {%>checked<% } %>>
+                        <%= i18n.city %> (<%= i18n.forStationary %>)
+                    </label></li>-->
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="addressShort"
+                        <% if('addressShort' in objectsTitle) {%>checked<% } %>>
+                        <%= i18n.address.ucFirst() %><% if(App.hasModule('mobile')) {%> (<%= i18n.forStationary %>)<% } %>
+                    </label></li>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="params-group objects-baloon">
+                <h4><%= i18n.infoInBaloon %></h4>
+                <div class="control-group whoip ">
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="extId"
+                        <% if(!('extId' in hiddenObjInfoProps)) {%>checked<% } %>><%= i18n.objIdNumber %>
+                    </label></li>
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="deviceTypeName"
+                        <% if(!('deviceTypeName' in hiddenObjInfoProps)) {%>checked<% } %>><%= i18n.objHardwareType %>
+                    </label></li>
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="address"
+                        <% if(!('address' in hiddenObjInfoProps)) {%>checked<% } %>><%= i18n.address.ucFirst() %>
+                    </label></li>
+
+                    <% if(App.hasModule('mobile')) {%>
+                    <li><label class="checkbox">
+                        <input type="checkbox" name="licenseNumber"
+                        <% if(!('licenseNumber' in hiddenObjInfoProps)) {%>checked<% } %>>
+                        <%= i18n.licenseNumber %><% if(App.hasModule('stat')) {%> (<%= i18n.forVehicles %>)<% } %>
+                    </label></li>
+                    <% } %>
+                </div>
+
+                <div class="control-group">
+                    <div class="span6 mwhoip hidden">
+                        <!--placeholder-->
+                    </div><div class="span6 swhoip hidden">
+                        <!--placeholder-->
+                    </div>
+                </div>
+            </div>
+
+        <% } %>
+
+
+        <div class="params-group tracks hidden">
+            <!--placeholder-->
+        </div><!--/tracks-->
+
+        <div class="params-group geozones-watched hidden">
+            <!--placeholder-->
+        </div><!--/geozones-watched-->
+
+        <div class="params-group poi-watched hidden">
+            <!--placeholder-->
+        </div><!--/poi-watched-->
+
+    </div><!--/ui-settings-->
+    <% } %>
+
+    <% if(reports) {%>
+    <div id="reports-settings" class="section hidden">
+        <!--placeholder-->
+    </div>
+    <% } %>
+
+    <% if(scheduler) {%>
+    <div id="reports-schedule" class="section hidden"></div><!--/schedule-->
+    <% } %>
+
+    <% if(App.isHistoryAllowed()) {%>
+        <div id="alerts-settings" class="section<% if(!alarmsOnly) {%> hidden<% } %>">
+            <!--placeholder-->
+        </div>
+        <div id="alerts-log-settings" class="section hidden">
+            <h3><%= i18n.alertsLog %></h3>
+
+            <!--<a href=="#" class="btn btn-alerts-log" data-state="">Toggle alerts log</a>-->
+            <div class="control-group">
+                <label class="checkbox">
+                    <input type="checkbox" name="alertsLog" <%= App.get('showAlertsLog') ? 'checked' : '' %>>
+                    <%= i18n.turnOnAlertsLog %>
+                </label>
+            </div>
+
+            <h4><%= i18n.alertsLogDepth %></h4>
+            <div class="control-group">
+                <input name="alertsLogDepth" type="number" value="<%= alertsLogDepth || 500 %>"
+                       max="1000" min="10" step="5" maxlength="4">
+            </div>
+        </div>
+    <% } %>
+
+    <% if(App.isAdmin()) {%>
+    <div id="alerts-directory" class="section section-grid hidden">
+        <!--placeholder-->
+    </div><div id="staff" class="section section-grid hidden">
+        <!--placeholder-->
+    </div>
+    <% } %>
+
+    <% if(App.allowed('geozones.assign')) {%>
+    <div id="devices-geozones" class="section hidden">
+        <h3><%= i18n.devicesGeozonesBindings %></h3>
+        <div class="section-content row-fluid"></div>
+    </div>
+    <% } %>
+
+    <div class="section hidden" id="section-service">
+        <!--placeholder-->
+    </div>
+
+</div><!--/settings-->
+<!--
+<ul class="accordion">
+    <li data-module="mobile.watched">
+        <h3 class="accordion-heading">
+            Objects on map
+        </h3>
+        <div class="accordion-body active">
+            <ul class="accordion-inner">
+                <li>
+                    <a href="javascript:;" data-key="objViewType">Objects view type</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li class="reports empty"></li>
+    <li>
+        <h3 class="accordion-heading">
+            For Developers
+        </h3>
+        <div class="accordion-body active">
+            <ul class="accordion-inner">
+                <li>
+                    <a href="javascript:;" class="cls">Clear local storage</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>-->

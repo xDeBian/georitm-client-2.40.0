@@ -1,0 +1,11 @@
+<strong class="widget-value">
+    <% if(value === null) {%>
+        <svg class="svg-icon">
+            <use xlink:href="#smb-plug"></use>
+        </svg>
+    <% } else {%>
+        <%= value %>
+    <% } %>
+</strong>
+<small class="widget-value-units"><%= units %></small>
+<strong class="widget-label"><%= label %></strong>

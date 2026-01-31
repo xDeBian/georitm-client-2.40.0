@@ -1,0 +1,32 @@
+<div class="subheader">
+    <a data-target="<%= prevPage %>" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%- area.name || i18n.objArea + ' ' + area.num %></h5>
+</div>
+<div class="operate-content guard-operate-content">
+    <div class="operate-state <%= area.hasAlarm ? 'alarm' : ( area.hasFault ? 'fault' : ( 'guard ' + ( area.isGuarded ? 'on' : 'off' ) ) ) %>">
+        <div class="state-wrap">
+            <svg class="svg-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#smb-<%= icon %>"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="operate-actions guard-actions">
+        <% if(area.num > 0 && canArm) {%>
+        <button class="btn btn-block <%= area.isGuarded ? ' btn-success' : ' btn-primary' %>"
+                data-area="<%= area.num %>"
+                data-guard="<%= area.isGuarded ? '0' : '1' %>">
+            <%= i18n[area.isGuarded ? 'makeNotGuarded' : 'makeGuarded'] %>
+        </button>
+        <% } %>
+        <% if(faults) {%>
+        <button class="btn btn-block btn-warning"
+                data-area="<%= area.num %>"
+                data-page="faults">
+                <%= i18n.viewFaults %>
+        </button>
+        <% } %>
+    </div>
+    <div class="command-result"></div>
+</div>

@@ -1,0 +1,8 @@
+<div class="legend">
+    <ul>
+        <li><span class="spot bgr-park first"></span> <%= i18n.parks %></li>
+        <li><span class="spot bgr-fuelFilling"></span> <%= i18n.fillings.ucFirst() %></li>
+        <li><span class="spot bgr-fuelSteal"></span> <%= i18n.discharges.ucFirst() %></li>
+        <% if(checkDiscret1) { %><li><span class="spot bgr-parkIgnitionOn"></span> <%= i18n.parksIgnOn %></li><% } %>
+    </ul>
+</div>

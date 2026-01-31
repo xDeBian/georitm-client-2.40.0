@@ -1,0 +1,59 @@
+<li class="guards-list-item <%= className %>" data-id="<%= id %>" data-isbound="<%= isBound %>">
+    <% if(!called && hasCoords && routeMeta) {%>
+        <h5 class="is-nearest"><%= i18n.nearestRRT %></h5>
+    <% } %>
+
+    <h4 class="guard-header"><span data-prop="name"><%- name %></span></h4>
+
+    <p class="guard-feature">
+        <strong><%= i18n.rrtPerson %>:</strong>
+        <span class="person"><%- person || '--' %></span>
+    </p>
+    <p class="guard-feature">
+        <strong><%= i18n.phone.ucFirst() %>:</strong>
+        <span class="phone"><%- phone || '--' %></span>
+    </p>
+
+    <% if(guardCall) {%>
+        <p class="guard-feature">
+            <strong><%= i18n.rrtCallTime %>:</strong>
+            <span class="call-time"><%= callTime %></span>
+        </p>
+        <% if(!accepted) {%>
+            <p class="guard-feature call-not-accepted">
+                <strong><%= i18n.rrtCallNotAccepted %></strong>
+            </p>
+        <% } %>
+        <p class="guard-feature call-accepted">
+            <strong><%= i18n.rrtCallAccepted %>:</strong>
+            <span class="accept-time"><%= acceptTime %></span>
+        </p>
+        <p class="guard-feature guard-arrived">
+            <strong><%= i18n.rrtArriveTime %>:</strong>
+            <span class="arrive-time"><%= arriveTime %></span>
+        </p>
+    <% } else { %>
+    <!--No guard call-->
+    <% } %>
+
+    <% if(!arrived && hasCoords) {%>
+        <div class="guard-route">
+            <% if(routeMeta) {%>
+                <% if('undefined' == typeof routeMeta.trafficTime) {%>
+                <p class="msg alert"><%= i18n.routeNoTrafficAlert %></p>
+                <% } %>
+                <p class="data no-margin"><%= i18n.rrtRouteTime %>: <strong class="time" data-value="<%= routeMeta.time || '' %>"><%= routeMeta.roundTimeS || '' %></strong></p>
+                <p class="data no-margin"><%= i18n.distance %>: <strong class="length" data-value="<%= routeMeta.length || '' %>"><%= routeMeta.roundLengthS || '' %></strong></p>
+            <% } else if(isGpsOnline) { %>
+                <p class="msg error no-margin"><%= i18n.errCanNotBuildRoute %></p>
+            <% } %>
+        </div>
+    <% } %>
+
+    <% if(isBound) {%>
+    <svg class="svg-icon icon-bound">
+        <use xlink:href="#smb-star"></use>
+    </svg>
+    <% } %>
+
+</li>

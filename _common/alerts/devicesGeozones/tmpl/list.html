@@ -1,0 +1,28 @@
+<h4><i class="icon-reload svg-icon svg-icon-reload" title="<%= i18n.reload.ucFirst() %>"></i> <%= title %></h4>
+<div class="list-mode">
+    <div class="switch-toggle" onclick="">
+        <input id="<%= key %>-radio-mode-all" name="<%= key %>-mode" type="radio" value="all"<%= mode == 'all' ? ' checked' : '' %>>
+        <label for="<%= key %>-radio-mode-all" onclick="">
+            <%= i18n.all.ucFirst() %>
+        </label>
+
+        <input id="<%= key %>-radio-mode-filter" name="<%= key %>-mode" type="radio" value="filter"<%= mode == 'filter' ? ' checked' : '' %>>
+        <label for="<%= key %>-radio-mode-filter" onclick="">
+            <%= i18n.filteredOnly %>
+        </label>
+        <a class="btn btn-primary"></a>
+    </div>
+</div>
+<form class="form-search">
+    <div class="input-append input-prepend">
+        <span class="add-on">
+            <input name="q" type="text" placeholder="<%= searchPlaceholder %>" value="" autocomplete="off">
+            <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+        </span>
+        <button class="btn add-on btn-search"><i class="svg-icon svg-icon-search"></i></button>
+    </div>
+</form>
+<form class="list-content">
+    <ul class="hidden"></ul>
+    <p class="no-data"><%= noData %></p>
+</form>

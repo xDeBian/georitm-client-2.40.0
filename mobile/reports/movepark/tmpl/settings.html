@@ -1,0 +1,14 @@
+<div class="dropdown add-on rep-settings">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="svg-icon svg-icon-cog"></i>
+    </a>
+    <ul class="dropdown-menu nav nav-list">
+        <li class="control-group no-margin">
+            <label><%= i18n.timeFormat %></label>
+            <select name="repTimeUnits">
+                <option value="hms"><%= i18n.hours %>, <%= i18n.minutes %>, <%= i18n.sec %></option>
+                <option value="m"<% if(timeFormat == 'm') {%> selected="selected"<% } %>><%= i18n.minutes %></option>
+            </select>
+        </li>
+    </ul>
+</div>

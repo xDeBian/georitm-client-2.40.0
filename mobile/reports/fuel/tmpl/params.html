@@ -1,0 +1,36 @@
+<fieldset>
+    <legend><%= i18n.analogSensorForReport %></legend>
+    <label class="radio">
+        <input type="radio" value="1" <% if(anIndex == 1) {%> checked<% } %> name="anIndex"> <%= i18n.analogueSensor %> #1
+    </label>
+    <label class="radio">
+        <input type="radio" value="2" <% if(anIndex == 2) {%> checked<% } %> name="anIndex"> <%= i18n.analogueSensor %> #2
+    </label>
+    <label class="radio">
+        <input type="radio" value="12" <% if(anIndex == 12) {%> checked<% } %> name="anIndex"> <%= i18n.analogueSensor %> #1 + #2
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend><%= i18n.filtersSettings %></legend>
+    <label class="checkbox">
+        <input type="checkbox" value="1" name="movingIndex"
+        <% if(movingIndex) {%> checked<% } %>> <%= i18n.removePointsOnParks %>
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="1" name="ignition"
+        <% if(ignition) {%> checked<% } %>> <%= i18n.removePointsWithNoIgnition %>
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend><%= i18n.chartsSettings %></legend>
+    <label class="checkbox">
+        <input type="checkbox" value="1" name="buildCharts"
+        <% if(buildCharts) {%> checked<% } %>> <%= i18n.buildChart %>
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="1" name="checkDiscret1"
+        <% if(!buildCharts) {%> disabled<% } %><% if(buildCharts && checkDiscret1) {%> checked<% } %>> <%= i18n.colorChartDependingOnDiscret1 %>
+    </label>
+</fieldset>

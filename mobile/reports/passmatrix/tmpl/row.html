@@ -1,0 +1,23 @@
+<tr class="<%= rowClass %>"<% if(isLast) {%> data-row="last"<% } %>>
+    <td class="col-date"><%= dateS %></td>
+
+    <% _.each(doors, function(d) {%>
+    <td class="col-door"><%= d.in %></td>
+    <td class="col-door"><%= d.out %></td>
+    <% }) %>
+
+    <td class="col-door"><%= totalIn %></td>
+    <td class="col-door"><%= totalOut %></td>
+
+    <td class="col-address text-left">
+        <% if(geoId && lat && lon) {%>
+        <a href="#" class="put-marker" data-id="<%= markerId %>">
+            <% if(typeof address != 'undefined' && address) {print(address)} else { %>
+            <span class="loading-address" data-geoid="<%= geoId %>"><%= loadingAddress %></span>
+            <% } %>
+        </a>
+        <% } else { %>
+        --
+        <% } %>
+    </td>
+</tr>

@@ -1,0 +1,15 @@
+<div class="rep-chart clearfix<% if('undefined' != typeof addClass){ print(' ' + addClass) }%>"
+<% if('undefined' != typeof data) { _.each(data, function(value, key){ print('data-' + key+'="' + value + '"') })}%>>
+    <div class="chart-header clearfix">
+        <% if(title) {%>
+        <h4><%= title %></h4>
+        <% } %>
+        <div class="chart-actions">
+            <a href="javascript:;" class="chart-switcher">
+                <span class="s"><%= showTxt %></span><span class="h"><%= hideTxt %></span>
+            </a>
+        </div>
+    </div>
+    <div<% if('undefined' != typeof id){ print(' id="'+ id + '"') }%> class="chart-content"></div>
+    <% if('undefined' != typeof footer){ print(footer) }%>
+</div>

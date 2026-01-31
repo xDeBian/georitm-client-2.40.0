@@ -1,0 +1,34 @@
+<fieldset>
+    <legend><%= i18n.objservice.serviceStatuses %></legend>
+    <label class="checkbox">
+        <input name="statuses" type="checkbox"
+               value="served"<% if(_.indexOf(statuses, 'served') != -1) { %> checked<% } %>>
+        <%= i18n.objServed %>
+    </label>
+    <label class="checkbox">
+        <input name="statuses" type="checkbox"
+               value="service"<% if(_.indexOf(statuses, 'service') != -1) { %> checked<% } %>>
+        <%= i18n.service %>
+    </label>
+    <label class="checkbox">
+        <input name="statuses" type="checkbox"
+               value="notServed"<% if(_.indexOf(statuses, 'notServed') != -1) { %> checked<% } %>>
+        <%= i18n.objNotServed %>
+    </label>
+    <label class="checkbox">
+        <input name="statuses" type="checkbox"
+               value="control"<% if(_.indexOf(statuses, 'control') != -1) { %> checked<% } %>>
+        <%= i18n.alertsControl %>
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend><%= i18n.detailReport %></legend>
+    <label class="checkbox">
+        <input name="roundToDays" type="checkbox"
+               value="1"<% if(roundToDays) { %> checked<% } %>>
+        <%= i18n.objservice.roundinglabel %>
+    </label>
+</fieldset>
+
+<%= propertiesHtml %>

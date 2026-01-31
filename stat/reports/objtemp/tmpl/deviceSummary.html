@@ -1,0 +1,33 @@
+<table class="rep-table">
+    <colgroup>
+        <col style="width: 35%"/>
+        <col style="width: 15%"/>
+        <col style="width: 35%"/>
+        <col style="width: 15%"/>
+    </colgroup>
+    <% if(hasData) {%>
+    <tr>
+        <th colspan="2" class="low"><%= i18n.belowAllowedLevel %></th>
+        <th colspan="2" class="high"><%= i18n.aboveAllowedLevel %></th>
+    </tr><tr>
+        <td><%= i18n.minTemperature %>, &deg;C</td>
+        <td><%= min %></td>
+        <td><%= i18n.maxTemperature %>, &deg;C</td>
+        <td><%= max %></td>
+    </tr><tr>
+        <td><%= i18n.violationCount %> T&nbsp;<&nbsp;<%= thresholds[0] %>&nbsp;&deg;C</td>
+        <td><a href="#" data-id="<%= id %>" data-range="0" class="show-facts"><%= violation.count.below %></a></td>
+        <td><%= i18n.violationCount %> T&nbsp;>&nbsp;<%= thresholds[1] %>&nbsp;&deg;C</td>
+        <td><a href="#" data-id="<%= id %>" data-range="2" class="show-facts"><%= violation.count.above %></a></td>
+    </tr><tr>
+        <td><%= i18n.duration %> T&nbsp;<&nbsp;<%= thresholds[0] %>&nbsp;&deg;C</td>
+        <td><%= belowTimeS %></td>
+        <td><%= i18n.duration %> T&nbsp;>&nbsp;<%= thresholds[1] %>&nbsp;&deg;C</td>
+        <td><%= aboveTimeS %></td>
+    </tr>
+    <% } %>
+</table>
+
+<% if(!hasData) {%>
+<p class="no-data"><%= i18n.noDataForObject %></p>
+<% } %>

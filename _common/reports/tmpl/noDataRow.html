@@ -1,0 +1,4 @@
+<tr<% if ('undefined' != typeof rowPosition){ %> data-row="<%= rowPosition %>"
+<% } else if('undefined' != typeof isLast && isLast) {%> data-row="last"<% } %>>
+    <td class="text-left no-data"<%if(!_.isUndefined(colspan)) {%> colspan="<%= colspan %>"<% } %>><%- text %></td>
+</tr>

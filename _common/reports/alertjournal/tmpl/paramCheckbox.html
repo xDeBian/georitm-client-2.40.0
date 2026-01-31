@@ -1,0 +1,12 @@
+<label class="checkbox">
+    <% if('undefined' !== typeof readonly && readonly) {%>
+        <input disabled type="checkbox" data-group="<%= name %>" <% if(checked) {%>checked<% } %>>
+        <% if(checked) {%>
+            <input type="hidden" name="<%= name %>" value="<%= value %>">
+        <% } %>
+    <% } else { %>
+        <input type="checkbox" data-group="<%= name %>" name="<%= name %>" value="<%= value %>"
+        <% if(checked) {%>checked<% } %>>
+    <% } %>
+    <%= label %>
+</label>

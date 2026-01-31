@@ -1,0 +1,36 @@
+<div class="header clearfix">
+    <div class="actions">
+        <a class="hint hint-top svg-icon svg-icon-target icon-target" href="javascript:;" data-hint="<%= i18n.zoomToObject %>"></a>
+        <% if(editable) {%>
+        <a class="hint hint-top svg-icon svg-icon-cog icon-card" href="javascript:;" data-hint="<%= i18n.openObjectCard %>"></a>
+        <% } else { %>
+        <a class="hint hint-top svg-icon svg-icon-circle-info icon-card" href="javascript:;" data-hint="<%= i18n.openObjectCard %>"></a>
+        <% } %>
+        <a class="hint hint-top svg-icon svg-icon-camera icon-video hidden" href="javascript:;" data-hint="<%= i18n.showCamera %>"></a>
+        <a class="hint hint-top svg-icon svg-icon-bell icon-alerts" href="javascript:;" data-hint="<%= i18n.objectAlertsAndLog %>"></a>
+        <% if(tracks) {%><a class="hint hint-top svg-icon svg-icon-track icon-track" href="#" data-hint="<%= i18n.build.ucFirst() %> <%= i18n.track %>"></a><% } %>
+        <% if(reports) {%>
+            <a class="hint hint-top cmd-report"
+                href="javascript:;" data-hint="<%= i18n.build.ucFirst() %> <%= i18n.report %>">
+                <svg class="svg-icon">
+                    <use xlink:href="#smb-report"></use>
+                </svg>
+            </a>
+        <% } %>
+        <% if(linkToObject) {%>
+        <a class="hint hint-top cmd-copy-link" href="javascript:;" data-hint="<%= i18n.copyLinkToObject %>">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-link"></use>
+            </svg>
+        </a>
+        <input type="text" name="link" value="<%= linkToObject %>">
+        <% } %>
+        <a class="hint hint-top svg-icon svg-icon-circle-remove icon-close" href="javascript:;" data-hint="<%= i18n.close.ucFirst() %>"></a>
+    </div>
+    <h4>
+        <span data-prop="name" class="name"><%- name %></span>
+        <span data-prop="extId"<% if('extId' in hiddenProps) {%> class="hidden"<% } %>>
+            (#<span class="id"><%= extId %></span>)
+        </span>
+    </h4>
+</div>

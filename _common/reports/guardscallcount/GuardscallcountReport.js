@@ -1,0 +1,1 @@
+define(["underscore","_common/reports/Report","./views/GuardscallcountReportView"],function(r,e){var t=e.extend({constructor:function(){e.apply(this,arguments)},url:App.getBaseUrl()+"reports/GUARDSCALLCOUNT/"});return t});

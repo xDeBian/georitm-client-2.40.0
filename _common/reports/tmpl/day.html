@@ -1,0 +1,3 @@
+<tr<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+    <td class="day<% if(isWeekend) {%> weekend<% } %>" colspan="<%=colspan || 20%>"><%=dateStr%></td>
+</tr>

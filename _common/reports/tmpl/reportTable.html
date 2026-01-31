@@ -1,0 +1,8 @@
+<table class="selectable rep-table<%if(!_.isUndefined(key)) {%> <%- key %>-rep-table<% } %>">
+    <%if('undefined' != typeof theadHtml) {%>
+    <thead class="rep-table-head header-copy">
+    <%= theadHtml %>
+    </thead>
+    <% } %>
+    <tbody><%if('undefined' != typeof tbodyHtml) { print(tbodyHtml) } %></tbody>
+</table><!-- /rep-table -->

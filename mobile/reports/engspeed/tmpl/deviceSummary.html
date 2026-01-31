@@ -1,0 +1,78 @@
+<table class="rep-table">
+    <!--<colgroup>
+        <col style="width: 15%"/>
+        <col style="width: 15%"/>
+        <col style="width: 35%"/>
+        <col style="width: 15%"/>
+        <col style="width: 15%"/>
+    </colgroup>-->
+    <tr class="obj">
+        <td class="summary" colspan="5">
+            <div class="sum-header">
+                <strong><%= i18n.summaryData %></strong>
+                <% if(hasData) {%>
+                <a class="build-track nobr" href="#" data-id="<%= id %>" data-from="<%= start %>" data-to="<%= end %>" >
+                    <%= i18n.showFullTrack %>
+                </a>
+                <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+                <% } %>
+            </div>
+            <div class="sum-content">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><%= i18n.totalMoveTime %></td>
+                            <td class="value"><span class="rep-time-data"><%= fullMoveTimeS %></span></td>
+                        </tr>
+                        <% if(hasData) {%>
+                        <tr>
+                            <td><%= i18n.engineWorkTime %></td>
+                            <td class="value"><span class="rep-time-data"><%= engineWorkTime %></span></td>
+                        </tr>
+                        <% } %>
+                        <tr>
+                            <td><%= i18n.totalDistance %>, <%= i18n.km %></td>
+                            <td class="value">
+                                <% if(App.reportAllowedByType('MOVEPARK')) {%>
+                                <a href="#" class="build-another" data-type="movepark"
+                                     title="<%= i18n.build.ucFirst()+' '+i18n.reportsNames.movepark %>"
+                                     data-id="<%= id %>"
+                                     data-from="<%= start %>"
+                                     data-to="<%= end %>">
+                                <%= fullDistS %></a>
+                                <% } else { %>
+                                <%= fullDistS %>
+                                <% } %>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <% if(hasData) {%>
+    <tr class="thead">
+        <td>&nbsp;</td>
+        <th><%= i18n.engineOffState %></th>
+        <th><%= i18n.engineIdleState %></th>
+        <th><%= i18n.engineLoadState %></th>
+        <th><%= i18n.engineCriticalRpm %></th>
+    </tr>
+    <tr>
+        <th><%= i18n.duration %></th>
+        <% _.each(durations, function(d) {%>
+        <td><%= d %></td>
+        <% }) %>
+    </tr><tr>
+        <th><%= i18n.runDistance %>, <%= i18n.km %></th>
+        <% _.each(distances, function(d) {%>
+        <td><%= d %></td>
+        <% }) %>
+    </tr>
+    <% } %>
+</table>
+
+<% if(!hasData) {%>
+<p class="no-data"><%= i18n.noDataForObject %></p>
+<% } %>

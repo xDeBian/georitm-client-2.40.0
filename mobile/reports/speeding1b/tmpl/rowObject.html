@@ -1,0 +1,37 @@
+<tr class="obj">
+    <td colspan="<%= colspan %>" class="summary">
+        <div class="sum-header">
+            <% if(App.reportAllowedByType('MOVEPARK')) {%>
+            <a href="javascript:;" title="<%= i18n.build.ucFirst() + ' ' + i18n.reportsNames.movepark %>" class="build-another" data-type="movepark"
+               data-id="<%= id %>" data-from="<%= periodStart %>" data-to="<%= periodEnd %>">
+                <strong><%- name %> (#<%- extId %>)</strong>
+            </a>
+            <% } else { %>
+            <strong><%- name %> (#<%- extId %>)</strong>
+            <% } %>
+
+            <a class="clear-map-link hidden nobr" href="javascript:;"><%= i18n.clearMap %></a>
+        </div>
+        <div class="sum-content">
+            <% if(hasData) {%>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <%= totalB2 !== false ? i18n.totalB1Exceeds : i18n.totalSpeedLimitExceeds %>
+                    </td>
+                    <td class="value"><%= totalB1 %></td>
+                </tr>
+                <% if(totalB2 !== false) {%><tr>
+                    <td><%= i18n.totalB2Exceeds %> <span class="nobr">(<%= limits[1] + ' ' + i18n.kmh %>)</span></td>
+                    <td class="value"><%= totalB2 %></td></tr><tr>
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+            <% } else {%>
+            <p class="no-data"><%= i18n.noDataForObject %></p>
+            <% } %>
+        </div>
+    </td>
+</tr>

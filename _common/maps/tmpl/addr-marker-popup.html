@@ -1,0 +1,19 @@
+<h4 class="address selectable"><%- data.title %></h4>
+<% _.each(addressActions, function(action){%>
+<% if(!action.html) {%>
+    <a href="javascript:;" class="<%= action.class %>">
+    <%- action.text %>
+    </a>
+<% } else if('string' == typeof action.html) { %>
+    <%= action.html %>
+<% } else if(_.isFunction(action.html)) {%>
+    <%= action.html() %>
+<% } %>
+<% }); %>
+
+<a href="<%= externalLink %>" target="_blank" class="external-link<% if(isYandex){%> ydx <% } %>"><i class="icon"></i> <%= i18n[isYandex ? 'showOnYandexMap' : 'showOnGoogleMap'] %></a>
+
+<div class="clearfix">
+    <a href="javascript:;" class="delete-it pull-left"><%= i18n.delete.ucFirst() %></a>
+    <% if(routingModule) {%><a href="javascript:;" class="route-to pull-right"><%= i18n.routeHere %></a><% } %><!--mapsViewLeaflet line 1353-->
+</div>

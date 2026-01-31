@@ -1,0 +1,84 @@
+[
+  {
+    "contractDate": null,
+    "controls": {},
+    "color": null,
+    "year": null,
+    "lon": 30.430991,
+    "lastPointTime": 1544526519000,
+    "gsmCellData0": {
+      "mnc": 1,
+      "rxl": 39,
+      "lbsDate": 1543951093000,
+      "mcc": 250,
+      "cellid": 18803,
+      "lac": 234
+    },
+    "gsmCellData1": {
+      "mnc": 20,
+      "rxl": 39,
+      "lbsDate": 1543951193000,
+      "mcc": 250,
+      "cellid": 802,
+      "lac": 19703
+    },
+    "gsmCellData": {
+      "mnc": 2,
+      "rxl": 39,
+      "lbsDate": 1543951293000,
+      "mcc": 250,
+      "cellid": 15208,
+      "lac": 7835
+    },
+    "ownersPhone1": null,
+    "ownersPhone2": null,
+    "speed": 0.0,
+    "discrets": {},
+    "lastGPSConnectionTime": 1544526519,
+    "ownerPassword": null,
+    "isGpsOnline": false,
+    "lastGSMConnectionTime": 1544532309,
+    "course": 175,
+    "vin": null,
+    "id": 877,
+    "extId": 10152,
+    "power": {
+      "name": "",
+      "state": 1,
+      "voltage": 3.9
+    },
+    "state": null,
+    "objType": "0",
+    "lat": 59.956695999999994,
+    "owner": null,
+    "rev": "V-4.016.054 04654.008",
+    "driversInfo": [],
+    "isFromIDP": true,
+    "devices": [
+      {
+        "deviceType": 0,
+        "shell": "http://device.ritm.ru/voyager/voyager-4n/shell/v4.034.288r.swf",
+        "name": "Voyager 4N",
+        "description": "GPS/ГЛОНАСС-трекер Voyager-4N",
+        "imei": "864495038567555",
+        "shortName": "V-4",
+        "firmware": "V-4.016.054.008",
+        "apiURLbase": "http://device.ritm.ru",
+        "picture": "http://device.ritm.ru/voyager/voyager-4n/picture/V4N.png"
+      }
+    ],
+    "pass": null,
+    "alt": 0,
+    "isGsmOnline": false,
+    "localRID": 1875,
+    "contractNumber": null,
+    "hasAlarm": true,
+    "isFollowed": "0",
+    "objStatus": 1,
+    "remoteRID": 1913,
+    "SIM": null,
+    "responsive": null,
+    "name": "Test GPRS - LBS",
+    "imei": "864495038567555"
+  }
+]

@@ -1,0 +1,37 @@
+<div class="content clearfix">
+    <h4>
+        <a data-item="<%= id %>" href="javascript:;" title="<%= i18n.zoomToTrack %>"><%- name%></a>
+        <div class="indicator hidden"></div>
+    </h4>
+    <p class="no-data"><%= i18n.noDataForPeriod %></p>
+    <p class="dates">
+        <span class="nobr"><% print(Date.format(i18n.DateTime.longFormat, startTime))%></span> - <span class="nobr"><% print(Date.format(i18n.DateTime.longFormat, endTime))%></span>
+        <% if(tzName) {%>
+        <br /><%= tzName %>
+        <% } %>
+    </p>
+    <a data-item="<%= id %>" href="javascript:;" class="export nobr hidden"><%= i18n.saveAsPlt %></a>
+</div>
+<div class="controls">
+    <% if(player){ %>
+    <i data-item="<%= id %>"
+       class="svg-icon svg-icon-play play-track hidden hint hint-left"
+       data-hint="<%= i18n.trackPlayer %>"></i>
+    <% } %>
+
+    <i data-item="<%= id %>"
+       class="svg-icon svg-icon-paint color-track hint hint-left"
+       data-hint="<%= i18n.changeColor %>"></i>
+    <i data-item="<%= id %>"
+       class="svg-icon svg-icon-show toggle-track on hint hint-left"
+       data-hint="<%= i18n.showTrack %>"></i>
+    <i data-item="<%= id %>"
+       class="svg-icon svg-icon-hide toggle-track off hint hint-left"
+       data-hint="<%= i18n.hideTrack %>"></i>
+    <!--<i data-item="<%= id %>" class="icon icon-edit"></i>-->
+    <i data-item="<%= id %>"
+       class="svg-icon svg-icon-remove remove-track hint hint-left"
+       data-hint="<%= i18n.removeFromMap %>"></i>
+
+</div>
+<div class="clear"></div>

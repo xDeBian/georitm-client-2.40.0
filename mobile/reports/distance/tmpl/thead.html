@@ -1,0 +1,9 @@
+<tr data-head="1">
+    <% _.each(properties, function(p){ %>
+    <th><%= propNames[p] %></th>
+    <% }) %>
+    <th><%= i18n.time.ucFirst() %></th>
+    <th><%= i18n.distanceToAddress %>, <%= i18n.km %></th>
+    <th><%= i18n.speed.ucFirst() %>, <span class="nobr"><%= i18n.kmh %></span></th>
+    <th class="col-address"><%= i18n.place %></th>
+</tr>

@@ -1,0 +1,57 @@
+<table class="l" style="width:60%">
+    <tr>
+        <td class="col">
+            <div class="field">
+                <label><%= i18n.responsible.pass1 %></label>
+                <div class="itext"><input maxlength="20" class="password" name="pass1" type="text" value="<%= responsible.pass1 %>"></div>
+            </div>
+            <div class="field">
+                <label><%= i18n.responsible.pass2 %></label>
+                <div class="itext"><input maxlength="20" class="password" name="pass2" type="text" value="<%= responsible.pass2 %>"></div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<table class="table table-condensed persons<% if (!responsible.persons || !responsible.persons.length) { %> hidden<% } %>">
+    <thead>
+        <tr>
+            <th><%= i18n.responsible.persons.key %></th>
+            <th><%= i18n.responsible.persons.name %></th>
+            <th><%= i18n.responsible.persons.phone1 %></th>
+            <th><%= i18n.responsible.persons.phone2 %></th>
+            <th><%= i18n.responsible.persons.comment %></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (responsible.persons && responsible.persons.length) { %>
+        <% _.each(responsible.persons, function(person, index){ %>
+        <tr class="AddNewPersonRow" data-index="<%= index %>">
+            <td class="col-num">
+                <div class="itext"><input class="_key text-center" name="_key" type="text" value="<%- person.key %>" maxlength="20"></div>
+            </td>
+            <td><div class="itext"><input class="_name" name="_name" type="text" value="<%- person.name %>" maxlength="70"></div></td>
+            <td class="col-phone"><div class="itext"><input class="_phone1" name="_phone1" type="text" value="<%- person.phone1 %>" maxlength="17"></div></td>
+            <td class="col-phone"><div class="itext"><input class="_phone2" name="_phone2" type="text" value="<%- person.phone2 %>" maxlength="17"></div></td>
+            <td><div class="itext"><input class="_comment" name="_comment" type="text" value="<%- person.comment %>" maxlength="95"></div></td>
+            <td class="col-icon">
+                <i class="svg-icon svg-icon-chevron-up personUp"></i>
+            </td>
+            <td class="col-icon">
+                <i class="svg-icon svg-icon-chevron-down personDown"></i>
+            </td>
+            <td class="col-icon">
+                <i class="svg-icon svg-icon-remove personRemove"></i>
+            </td>
+        </tr>
+        <% }) %>
+        <% } %>
+    </tbody>
+</table>
+
+<p class="no-data<% if (responsible.persons && responsible.persons.length) { %> hidden<% } %>">
+    <%= i18n.responsible.persons.noData %>
+</p>

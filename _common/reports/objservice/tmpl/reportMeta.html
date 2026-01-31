@@ -1,0 +1,30 @@
+<div class="rep-meta selectable">
+    <div class="items-list">
+        <span class="item"><%= title %></span>
+    </div>
+
+    <% if(properties.length) {%>
+    <div class="summary">
+        <div class="sum-content">
+            <table class="object-properties">
+                <tbody>
+                <% _.each(properties, function(key) {%>
+                <tr>
+                    <td><%= names[key] %>:</td>
+                    <td class="value"><%= values[key] || '--' %></td>
+                </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <% } %>
+
+    <p class="dates"><%= i18n.reportPeriod %>:
+        <span class="nobr"><%= Date.format(i18n.DateTime.longFormat, startTime) %></span> -
+        <span class="nobr"><%= Date.format(i18n.DateTime.longFormat, endTime) %></span>
+    </p>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+<tr data-id="<%= id %>" class="row-brief history-brief">
+    <td class="img">
+        <i class="svg-icon svg-icon-<%= icon %>"></i>
+    </td>
+    <td class="info">
+        <div class="info-wrap">
+            <% if(title) {%>
+            <h4 class="title"><%- title %></h4>
+            <% } if(extra) {%>
+            <p><%- extra %></p>
+            <% } %>
+            <strong class="time"><%= time %></strong>
+        </div>
+    </td>
+</tr>

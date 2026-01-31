@@ -1,0 +1,15 @@
+{
+  "address": 249,
+  "webSocketSecuredPort": 8181,
+  "host": "localhost",
+  "xhost": "188.134.88.28",
+  "location": "localhost:8000/shells/dist/index.html",
+  "swfLocation": "device.ritm.ru/contact/contact-14/shell/k14.021.113r.swf",
+  "webSocketPath": "/",
+  "xwebSocketPath": "/socket/shell",
+  "firmwareHost": "device.ritm.ru",
+  "token": "350d3408-4b06-47d9-8bb9-06abd3e805fa",
+  "socketPort": 9269,
+  "webSocketPort": 3000,
+  "xwebSocketPort": 28080
+}

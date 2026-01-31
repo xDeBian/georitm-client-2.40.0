@@ -1,0 +1,92 @@
+<h4 class="pull-left"><span class="device-title"><%= title %></span></h4>
+
+<div class="clearfix"></div>
+
+<div class="tabs-hor-cont">
+    <ul class="tabs-hor">
+        <li class="device-alarms <% if(key == 'alarms') {%>active<% } else if(!hasAlarm) {%>hidden<% } %>">
+
+            <div class="tab-toggle-container">
+                <a class="tab-toggle" href="#tabs-tr-1" data-code="alarms">
+                    <i class="svg-icon svg-icon-warning"></i>
+                    <%= i18n.alarms.ucFirst() %>
+                </a>
+            </div>
+            <div class="tab-hor-content selectable" id="tabs-tr-1">
+
+                <div class="grid-container">
+                    <%= gridTmpl({i18n:i18n, alarms:true}) %>
+                </div>
+
+            </div><!--/tab-hor-content-->
+
+        </li><li class="device-alerts<% if(key == 'alerts') {%> active<% } %>">
+
+            <div class="tab-toggle-container">
+                <a class="tab-toggle" href="#tabs-tr-2" data-code="alerts">
+                    <i class="svg-icon svg-icon-bell"></i>
+                    <%= i18n.all.ucFirst() +' '+  i18n.alerts %>
+                </a>
+            </div>
+            <div class="tab-hor-content selectable" id="tabs-tr-2">
+                <div class="grid-container">
+                    <%= gridTmpl({i18n:i18n, alarms:false}) %>
+                </div>
+            </div><!--/tab-hor-content-->
+
+        </li><li class="device-logs<% if(key == 'logs') {%> active<% } %>">
+
+            <div class="tab-toggle-container">
+                <a class="tab-toggle" href="#tabs-tr-3" data-code="logs">
+                    <i class="svg-icon svg-icon-comment"></i><%= i18n.objectLog %>
+                </a>
+            </div>
+            <div class="tab-hor-content selectable" id="tabs-tr-3">
+                <div class="grid-container">
+                    <div class="grid-viewport">
+                        <div class="grid-content">
+                            <table width="100%" data-key="logs">
+                                <thead>
+                                    <th><div class="th"><%= i18n.time.ucFirst() %></div></th>
+                                    <th>
+                                        <div class="th"><%= i18n.history %></div>
+                                        <!--<i class="svg-icon svg-icon-filter"></i>-->
+                                        <div class="grid-filters">
+                                            <span class="grid-filter hint hint-left grid-filter-date"
+                                                  data-hint="<%= i18n.filterByDate %>">
+                                                <svg class="svg-icon">
+                                                    <use xlink:href="#smb-calendar"></use>
+                                                </svg>
+                                                <input class="grid-filter-date-input" type="text">
+                                            </span>
+                                            <span class="grid-filter-value grid-filter-value-date hidden">
+                                                <span class="grid-filter-value-label"></span>
+                                                <svg class="svg-icon grid-filter-clear">
+                                                    <use xlink:href="#smb-remove"></use>
+                                                </svg>
+                                            </span>
+                                            <span class="grid-filter hint hint-left filter-trigger<% if(logFilter) {%> on<% } %>"
+                                                  data-hint="<% if(logFilter) { print(i18n.showEvents) } else { print(i18n.showOnlyLogEntries) } %>">
+                                                <svg class="svg-icon">
+                                                    <use xlink:href="#smb-filter"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </th>
+                                    <!--<th><div class="th"><%= i18n.user.ucFirst() %></div></th>-->
+                                    <th><!--isComment--></th>
+                                    <!--<th>alertGroup</th>-->
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div><!--/grid-content-->
+                    </div><!--/grid-viewport-->
+                </div><!--/grid-container-->
+            </div><!--/tab-hor-content-->
+        </li>
+    </ul>
+</div><!--/tabs-hor-cont-->
+
+<div class="popover bottom log-popover">
+    <div class="popover-content selectable"></div>
+</div>

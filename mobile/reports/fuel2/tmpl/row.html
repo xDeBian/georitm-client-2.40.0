@@ -1,0 +1,14 @@
+<tr<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+    <td><%= date %></td>
+    <!--<td><%= objId %></td>-->
+    <td data-value="<%= dayDistance %>"><%= Math._round(dayDistance, 2) %></td>
+    <td data-value="<%= moveStart %>"><%= moveStartS %></td>
+    <td data-value="<%= moveEnd %>"><%= moveEndS %></td>
+    <td data-value="<%= moveTime %>"><%= Date.formatSeconds(moveTime) %></td>
+    <td data-value="<%= fuelValueStart %>"><%= Math._round(fuelValueStart, 1) %></td>
+    <td data-value="<%= fuelValueEnd %>"><%= Math._round(fuelValueEnd, 1) %></td>
+    <td data-value="<%= fuelFillings %>"><%= Math._round(fuelFillings, 1) %></td>
+    <td data-value="<%= fuelSteals %>"><%= Math._round(fuelSteals, 1) %></td>
+    <td data-value="<%= consumption100km %>"><%= consumption100kmS %></td>
+    <td data-value="<%= consumptionWhileMoving1h %>"><%= consumptionWhileMoving1hS %></td>
+</tr>

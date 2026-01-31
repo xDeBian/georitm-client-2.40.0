@@ -1,0 +1,14 @@
+<form method="post" action=""
+      class="page<% if('undefined' != typeof addClass) { print(' ' + addClass) } %>"
+      data-step="<%= step %>">
+
+    <div class="main">
+        <%= content %>
+    </div>
+
+    <div class="extra <% if('undefined' != typeof extraClassName) { print(extraClassName) } %>">
+        <%if('undefined' != typeof extra) { print(extra) }%>
+    </div>
+
+    <div class="clearfix"></div>
+</form>

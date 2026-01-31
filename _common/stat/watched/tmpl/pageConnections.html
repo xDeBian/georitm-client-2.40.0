@@ -1,0 +1,19 @@
+<div class="subheader">
+    <a data-target="summary" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%- i18n.connection.ucFirst() %></h5>
+</div>
+<div class="connections-content">
+    <% 
+        if (channels && channels.length && tmplRow) {
+            _.each(channels, function(channel, index){
+                print(tmplRow(_.extend({
+                    channel: channel, 
+                    index: index, 
+                    i18n: i18n
+                })));
+            })
+        }
+    %>
+</div>

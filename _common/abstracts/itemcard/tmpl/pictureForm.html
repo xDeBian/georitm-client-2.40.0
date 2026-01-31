@@ -1,0 +1,16 @@
+<form class="card-extra-action picture-form form-horizontal" method="post" action="<%= App.getBaseUrl() %>pictures/upload/" enctype="multipart/form-data">
+    <span>JPG, PNG <%= i18n.upto %> 1Mb</span>
+    <div class="file-upload-input">
+
+        <a data-placeholder="<%= i18n.chooseFile %>..." class="btn btn-file text-left" style="padding-left:10px">
+            <%= i18n.chooseFile %>...
+        </a>
+        <input class="file-upload" type="file" name="file" accept="image/gif|image/jpeg|image/pjpeg|image/png">
+        <input type="hidden" name="objectId" value="<%= objectId %>">
+
+    </div>
+    <input placeholder="<%= i18n.enterComment %>" type="text" name="caption" />
+    <button type="submit" class="btn btn-primary"><%= i18n.upload.ucFirst() %></button>
+    <a class="btn btn-cancel"><%= i18n.cancel %></a>
+
+</form>

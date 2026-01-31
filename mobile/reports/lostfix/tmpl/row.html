@@ -1,0 +1,41 @@
+<% if(rowClass == 'row-object') { %>
+<tr data-index=<%= rowIndex %> class="<%= rowClass %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+
+    <td data-key="id" class="text-left"><%= id %></td>
+    <td data-key="vehicleNumber"><%= number %></td>
+    <td data-key="name"><%= name %></td>
+    <td data-key="rev"><%= rev %></td>
+    <td data-key="glonassLosesCount"><%= glonassLosesCount %></td>
+    <td data-key="glonassLostPoint"></td>
+    <td data-key="glonassRestorePoint"></td>
+    <td data-key="losesLesser10min"><%= losesLesser10min %></td>
+    <td data-key="losesLonger10min" class="blue"><%= losesLonger10min %></td>
+    <td data-key="losesLonger30min" class="red"><%= losesLonger30min %></td>
+    <td data-key="onlineTime"><%= online %></td>
+    <td data-key="offlineTime"><%= offline %></td>
+
+</tr>
+<% } else if(rowClass == 'row-total') { %>
+<tr data-index=<%= rowIndex %> class="<%= rowClass %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+
+    <td data-key="empty" colspan="4" class="text-left"><%= i18n.summary %>:</td>
+    <td data-key="glonassLosesCount"><%= glonassLosesCount %></td>
+    <td data-key="empty" colspan="2"></td>
+    <td data-key="losesLesser10min"><%= losesLesser10min %></td>
+    <td data-key="losesLonger10min" class="blue"><%= losesLonger10min %></td>
+    <td data-key="losesLonger30min" class="red"><%= losesLonger30min %></td>
+    <td data-key="onlineTime"><%= online %></td>
+    <td data-key="offlineTime"><%= offline %></td>
+
+</tr>
+<% } else { %>
+<tr data-index=<%= rowIndex %> class="<%= rowClass %>"<% if(typeof rowPosition != 'undefined') { %> data-row="<%= rowPosition %>"<% } %>>
+
+    <td data-key="empty" colspan="5"></td>
+    <td data-key="glonassLostPoint"><%= start %></td>
+    <td data-key="glonassRestorePoint"><%= end %></td>
+    <td data-key="" colspan="4"></td>
+    <td data-key="offline"><%= offline %></td>
+
+</tr>
+<% } %>

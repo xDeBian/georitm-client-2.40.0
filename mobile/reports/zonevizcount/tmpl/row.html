@@ -1,0 +1,27 @@
+<tr>
+    <td class="zone">
+        <a data-geozoneid="<%= zoneId %>" href="#"><%- zoneName %></a>
+    </td>
+    <% _.each(data, function(row) {%>
+    <% if(row.nb) {%>
+    <td>
+        <% if(App.reportAllowedByType('ZONEVIZ')) {%>
+        <a href="#" class="build-another"
+           data-type="zoneviz" data-id="<%= row.objectId %>" data-geozoneid="<%= zoneId %>"
+           data-from="<%= from %>" data-to="<%= to %>">
+            <%= row.nb %>
+        </a>
+        <% } else { %>
+        <%= row.nb %>
+        <% } %>
+    </td>
+    <% } else { %>
+    <td class="negative">0</td>
+    <% } %>
+    <% }) %>
+    <% if(0) {%>
+    <th<% if(sum <= 0) {%> class="negative"<% } else if(sum < data.length) {%> class="medium"<% } %>>
+        <strong><%= sum %></strong>
+    </th>
+    <% } %>
+</tr>

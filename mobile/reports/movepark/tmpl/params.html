@@ -1,0 +1,26 @@
+<fieldset>
+    <legend><%= i18n.detailReport %></legend>
+    <label class="checkbox">
+        <input name="showMoves" type="checkbox" value="1"<% if(showMoves) { %> checked="checked"<% } %>>
+        <%= i18n.showAllMoves %>
+    </label>
+    <label class="checkbox">
+        <input name="showParks" type="checkbox" value="1"<% if(showParks) { %> checked="checked"<% } %>>
+        <%= i18n.showAllParks %>
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend><%= i18n.fuelConsumptionNorm %></legend>
+    <label class="radio">
+        <input type="radio" value="auto" <% if(season == 'auto') {%> checked<% } %> name="season"> <%= i18n.fuelNormAuto %>
+    </label>
+    <label class="radio">
+        <input type="radio" value="summer" <% if(season == 'summer') {%> checked<% } %> name="season"> <%= i18n.fuelNormSummer %>
+    </label>
+    <label class="radio">
+        <input type="radio" value="winter" <% if(season == 'winter') {%> checked<% } %> name="season"> <%= i18n.fuelNormWinter %>
+    </label>
+</fieldset>
+
+<%= propertiesHtml %>

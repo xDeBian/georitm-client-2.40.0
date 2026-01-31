@@ -1,0 +1,1 @@
+define(["underscore","_common/reports/alertjournal/AlertjournalReport"],function(r,n){var e=n.extend({constructor:function(){n.apply(this,arguments)}});return e});

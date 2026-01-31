@@ -1,0 +1,158 @@
+<div class="drivesafety-params">
+    <p style="margin: 0 0 5px" class="text-right">
+        <a class="set-defaults" href="#"><%= i18n.setDefaults %></a>
+    </p>
+    <fieldset>
+        <legend><%= i18n.drivesafety.styleParameters %></legend>
+        <table class="control-group control-group-table">
+            <tr class="control-row">
+                <td class="cell-label">
+                    <label><%= i18n.drivesafety.acceleration %>, <%= i18n.ms2 %></label>
+                </td>
+                <td class="cell-value">
+                    <input type="text" class="input-x-mini positive" autocomplete="off"
+                           name="accelerationLimit" value="<%= accelerationLimit %>" maxlength="3">
+                </td>
+                <td class="cell-label cell-label-weight">
+                    <label><%= i18n.drivesafety.weight %></label>
+                </td>
+                <td class="cell-value cell-value-weight">
+                    <input type="text" class="input-x-mini integer" autocomplete="off"
+                           name="accelerationWeight" value="<%= accelerationWeight %>" maxlength="2">
+                </td>
+            </tr><tr class="control-row">
+                <td class="cell-label">
+                    <label><%= i18n.drivesafety.braking %>, <%= i18n.ms2 %></label>
+                </td>
+                <td class="cell-value">
+                    <input type="text" class="input-x-mini negative" autocomplete="off"
+                           name="brakingLimit" value="<%= brakingLimit %>" maxlength="4">
+                </td>
+                <td class="cell-label cell-label-weight">
+                    <label><%= i18n.drivesafety.weight %></label>
+                </td>
+                <td class="cell-value cell-value-weight">
+                    <input type="text" class="input-x-mini integer" autocomplete="off"
+                           name="brakingWeight" value="<%= brakingWeight %>" maxlength="2">
+                </td>
+            </tr>
+        </table>
+        <div class="control-group form-horizontal">
+            <label class="label-inline label-mintime"><%= i18n.drivesafety.mintime %></label>
+            <input type="text" class="input-mini integer" autocomplete="off"
+                   name="accelerationMintime" value="<%= accelerationMintime %>" maxlength="5" />
+            <span class="help-inline"><%= i18n.sec %></span>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.drivesafety.speedParameters %></legend>
+        <table class="control-group control-group-table" data-limitsgroup="speed">
+            <% _.each(speedLimits, function(limit, i){%>
+            <tr class="control-row">
+                <td class="cell-label">
+                    <label><%= i18n.speedLimit %> <%= i+1 %>, <%= i18n.kmh %></label>
+                </td>
+                <td class="cell-value">
+                    <input type="text" class="input-x-mini positive" autocomplete="off"
+                           data-index="<%= i %>"
+                           name="speedLimits" value="<%= limit %>" maxlength="3">
+                </td>
+                <td class="cell-label cell-label-weight">
+                    <label><%= i18n.drivesafety.weight %></label>
+                </td>
+                <td class="cell-value cell-value-weight">
+                    <input type="text" class="input-x-mini integer" autocomplete="off"
+                           name="speedWeights" value="<%= speedWeights[i] %>" maxlength="2">
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+
+        <div class="control-group form-horizontal">
+            <label class="label-inline label-mintime"><%= i18n.drivesafety.mintime %></label>
+            <input type="text" class="input-mini integer" autocomplete="off"
+                   name="speedingMintime" value="<%= speedingMintime %>" maxlength="5" />
+            <span class="help-inline"><%= i18n.sec %></span>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.drivesafety.grade %></legend>
+
+        <table class="control-group control-group-table" data-limitsgroup="gradeThresholds">
+            <tr class="control-row">
+                <td class="cell-label">
+                    <label><%= i18n.drivesafety.gradeGoodParamLabel %></label>
+                </td>
+                <td class="cell-value">
+                    <input type="text" class="input-x-mini integer" autocomplete="off"
+                           data-index="0"
+                           name="gradeThresholds" value="<%= gradeThresholds[0] %>" maxlength="3" />
+                </td>
+            </tr><tr class="control-row">
+                <td class="cell-label">
+                    <label><%= i18n.drivesafety.gradeMiddleParamLabel %></label>
+                </td>
+                <td class="cell-value">
+                    <input type="text" class="input-x-mini integer" autocomplete="off"
+                           data-index="1"
+                           name="gradeThresholds" value="<%= gradeThresholds[1] %>" maxlength="3" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset class="opened">
+        <legend>
+            <%= i18n.geozones.ucFirst() %>
+        </legend>
+        <div class="group-params zones-list">
+            <select name="zoneId"
+                    data-placeholder="<%= i18n.chooseZones %>"
+                    class="input-block-level"
+                    multiple
+                    style="width: 240px; height: 30px; overflow: hidden">
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.detailReport %></legend>
+
+        <label class="checkbox checkbox-summary<% if(!isSummary) {%> hidden<% } %>">
+            <input name="showSummary" type="checkbox" value="1"<% if(showSummary) { %> checked<% } %>>
+            <%= i18n.drivesafety.showSummary %>
+        </label>
+
+        <label class="checkbox checkbox-summary<% if(!isSummary) {%> hidden<% } %>">
+            <input name="showTop" type="checkbox" value="1"<% if(showTop) { %> checked<% } %>>
+            <%= i18n.drivesafety.showTop %>
+        </label>
+
+        <div class="checkbox-summary<% if(!isSummary) {%> hidden<% } %>" style="margin-top: 5px">
+            <div><%= i18n.drivesafety.showList %></div>
+            <label class="checkbox checkbox-summary">
+                <input name="showListWithViolations" type="checkbox" value="1"<% if(showListWithViolations) { %> checked<% } %>>
+                <%= i18n.drivesafety.withViolations %>
+            </label>
+            <label class="checkbox checkbox-summary">
+                <input name="showListWithSumScore" type="checkbox" value="1"<% if(showListWithSumScore) { %> checked<% } %>>
+                <%= i18n.drivesafety.withTotalScore %>
+            </label>
+        </div>
+
+        <label class="checkbox checkbox-single<% if(isSummary) {%> hidden<% } %>">
+            <input name="showStatistics" type="checkbox" value="1"<% if(showStatistics) { %> checked<% } %>>
+            <%= i18n.drivesafety.objectStatistics %>
+        </label>
+        <label class="checkbox checkbox-single<% if(isSummary) {%> hidden<% } %>">
+            <input name="showCalculation" type="checkbox" value="1"<% if(showCalculation) { %> checked<% } %>>
+            <%= i18n.drivesafety.showCalculation %>
+        </label>
+
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

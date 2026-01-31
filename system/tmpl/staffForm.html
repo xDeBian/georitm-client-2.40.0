@@ -1,0 +1,17 @@
+<div class="form-horizontal">
+    <input type="hidden" name="id" value="<%= person.id || '' %>">
+    <% _.each(i18n.namesOrder, function(key){ %>
+        <div class="control-group">
+            <label class="control-label"><%= labels[key] %></label>
+            <div class="controls">
+                <input name="<%= key %>" type="text" value="<%- person[key] || '' %>" maxlength="255" autocomplete="off">
+            </div>
+        </div>
+    <% }) %>
+    <div class="control-group">
+        <label class="control-label"><%- i18n.phone.ucFirst() %></label>
+        <div class="controls">
+            <input name="phone" type="text" value="<%- person.phone || '' %>" maxlength="50" autocomplete="off">
+        </div>
+    </div>
+</div>

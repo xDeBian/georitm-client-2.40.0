@@ -1,0 +1,1 @@
+define(["underscore","jquery","dashboard/DashboardWidget","dashboard/info/views/InfoView"],function(i,t,e,n){var o=e.extend({constructor:function(){e.apply(this,arguments)},initialize:function(){this.set("title","TODO Info"),e.prototype.initialize.call(this,n)}});return o});

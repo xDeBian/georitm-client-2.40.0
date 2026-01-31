@@ -1,0 +1,7 @@
+<tr class="day <% if(isWeekend) {%>weekend <% } %>">
+    <td><%= dateStr %></td>
+    <% _.each(data, function(distance) {%>
+    <td data-value="<%= distance %>"><%= distance %></td>
+    <% }) %>
+    <td data-value="<%= sum %>"><%= sum %></td>
+</tr>

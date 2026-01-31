@@ -1,0 +1,44 @@
+<table>
+    <tr>
+        <td class="col sensors">
+            <table class="features">
+                <% _.each([1,2,3,4,5,6], function(i){%>
+                <tr>
+                    <td class="label"><%= i18n.discretSensor %> <%= i %> (<%= i18n.discret %>)</td>
+                    <td class="value"><%= settings['D'+i+'Name'] || emptyString %></td>
+                </tr>
+                <% }) %>
+            </table>
+        </td>
+        <td class="col sensors">
+            <table class="features">
+                <!-- analogue sensor -->
+                <% _.each([1,2], function(i){%>
+                <tr>
+                    <td class="label"><%= i18n.analogueSensor %> <%= i %> (<%= i18n.analogue %>)</td>
+                    <td class="value"><%= settings['AN_NAME'+i] || emptyString %></td>
+                </tr>
+                <% }) %>
+
+                <!-- controlling enters called "exits" -->
+                <% _.each([1,2], function(i){%>
+                <tr>
+                    <td class="label"><%= i18n.deviceOut %> <%= i %></td>
+                    <td class="value"><%= settings['C'+i+'Name'] || emptyString %></td>
+                </tr>
+                <% }) %>
+
+                <tr>
+                    <td class="label"><%= i18n.temperatureSensor %> (<%= i18n.external %>)</td>
+                    <td class="value"><%= settings['tempDetector'] || emptyString %>"</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table class="features">
+    <tr>
+        <td class="label"><%= i18n.indicateTrackedSensorState %></td>
+        <td class="value"><%= watchedSensorName %></td>
+    </tr>
+</table>

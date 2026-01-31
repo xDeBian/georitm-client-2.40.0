@@ -1,0 +1,25 @@
+<div class="subheader">
+    <a data-target="summary" class="back" href="#">
+        <i class="svg-icon svg-icon-chevron-circle-left"></i>
+    </a>
+    <h5><%- control.name %></h5>
+</div>
+<div class="operate-content">
+    <div class="operate-state <%= control.state == 1 ? 'on' : 'off' %>" data-state="<%= control.state == 1 ? 1 : 0 %>">
+        <div class="state-wrap">
+            <svg class="svg-icon">
+                <use xlink:href="#smb-power"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="operate-actions">
+        <button class="btn btn-block <%= control.state == 1 ? '' : ' btn-success' %>" data-index="<%= index %>" data-command="<%= commands[control.state == 1 ? 'off' : 'on'] %>">
+            <%= i18n[control.state == 1 ? 'turnOff' : 'turnOn'] %>
+        </button>
+        <% if(control.possibleStates.length > 2) {%>
+        <button class="btn btn-block btn-primary" data-index="<%= index %>" data-command="<%= commands.auto %>">
+            <%= i18n.autoMode %>
+        </button>
+        <% } %>
+    </div>
+</div>

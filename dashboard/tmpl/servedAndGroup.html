@@ -1,0 +1,13 @@
+<input type="hidden" name="groupId" value="<%= 'undefined' != typeof group && group ? group.id : '' %>" >
+<label><%= i18n.group %></label>
+<div class="form-search">
+    <input type="text" name="groupName" value="<%= 'undefined' != typeof group && group ? group.name : '' %>"
+        placeholder="<%= i18n.allObjects %>">
+    <i class="icon-clear svg-icon svg-icon-circle-remove"></i>
+    <i class="icon-spin svg-icon svg-icon-spinner"></i>
+</div>
+
+<label class="checkbox"><input type="checkbox" name="served" value="1"
+    <% if('undefined' != typeof served && served) {%> checked<% } %>>
+    <%= i18n.servedOnly %>
+</label>

@@ -1,0 +1,13 @@
+<% if('undefined' != typeof point) {%>
+<h4><%=point.text%></h4>
+<small><%= Math._round(point.lat, 4) %>,<%= Math._round(point.lon, 4) %></small>
+<% } %>
+<% if(step) {%>
+<div class="explain"><%= step.actionHtml || step.actionText %></div>
+<div class="params">
+    <strong class="length" data-value="<%= step.length %>"><%= step.roundLengthS %></strong>
+    <% if(step.time > 0) {%>
+    , <span class="time" data-value="<%= step.time %>"><%= step.roundTimeS %></span>
+    <% } %>
+</div>
+<% } %>

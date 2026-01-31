@@ -1,0 +1,28 @@
+<% if(isgroup) {%>
+    <% if(nbItems && App.reportsAllowed('mobile')) { %>
+        <li><a href="#" data-action="group_report"><%= i18n.buildReportByGroup %></a></li>
+    <% } %>
+    <% if(App.allowed('objectgroups.edit')) { %>
+        <li><a href="#" data-action="group_edit"><%= i18n.renameGroup %></a></li>
+    <% } %>
+    <% if(App.allowed('objects.create')) { %>
+        <li><a href="#" data-action="group_add_object"><%= i18n.addObject %></a></li>
+    <% } %>
+    <% if(App.allowed('objectgroups.create')) { %>
+        <li><a href="#" data-action="group_add_group"><%= i18n.addChildGroup %></a></li>
+    <% } %>
+<% } else {%>
+    <% if(App.hasModule('tracks')) { %>
+        <li><a href="#" data-action="obj_track"><%= i18n.buildTrack %></a></li>
+    <% } %><% if(App.reportsAllowed('mobile')) { %>
+        <li><a href="#" data-action="obj_report"><%= i18n.buildReport %></a></li>
+    <% } %>
+    <% if(App.allowed('control.followed')) { %>
+        <li><a href="#" data-action="obj_follow"><%= i18n[isFollowed == 0 ? 'objFollowOn' : 'objFollowOff' ] %></a></li>
+    <% } %>
+
+    <li><a href="#" data-action="obj_card"><%= i18n.openObjectCard %></a></li>
+
+    <li><a href="#" data-action="obj_history"><%= i18n.objectAlertsAndLog %></a></li>
+
+<% } %>

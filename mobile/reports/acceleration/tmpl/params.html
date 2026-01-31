@@ -1,0 +1,65 @@
+<div class="rep-acc-params">
+
+    <fieldset>
+        <legend><%= i18n.aggressiveDrivingDetection %></legend>
+        <div class="control-group">
+            <label><%= i18n.accIntensityMoreThan %></label>
+            <input class="input-mini positive" name="b1" type="text" value="<%= b1 %>"> <%= i18n.ms2 %>
+        </div>
+        <div class="control-group">
+            <label><%= i18n.brakingIntensityMoreThan %></label>
+            <input class="input-mini positive" name="b2" type="text" value="<%= b2 %>"> <%= i18n.ms2 %>
+        </div>
+        <div class="control-group">
+            <label><%= i18n.minExceedTime %></label>
+            <input type="number" min="1" max="10000" class="input-mini integer" name="mintime" value="<%= mintime %>" />
+            <span class="help-inline"><%= i18n.sec %></span>
+        </div>
+    </fieldset>
+
+    <fieldset class="opened">
+        <legend>
+            <%= i18n.geozones.ucFirst() %>
+        </legend>
+        <div class="group-params zones-list">
+            <select name="zoneId"
+                    data-placeholder="<%= i18n.chooseZones %>"
+                    class="input-block-level"
+                    multiple
+                    style="width: 240px; height: 30px; overflow: hidden">
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><%= i18n.detailReport %></legend>
+
+        <label class="checkbox">
+            <input name="showAccel" data-invert="1" data-invertname="hideAccel" data-invertempty="true"
+                   type="checkbox" value="1"<% if(showAccel) { %> checked="checked"<% } %>>
+            <%= i18n.showSharpAcceleration %>
+        </label>
+
+        <label class="checkbox">
+            <input name="showBraking" data-invert="1" data-invertname="hideBraking" data-invertempty="true"
+                   type="checkbox" value="1"<% if(showBraking) { %> checked="checked"<% } %>>
+            <%= i18n.showSharpBraking %>
+        </label>
+
+        <label class="checkbox">
+            <input name="showCorners" data-invert="1" data-invertname="hideCorners" data-invertempty="true"
+                   type="checkbox" value="1"<% if(showCorners) { %> checked="checked"<% } %>>
+            <%= i18n.showSharpCornering %>
+        </label>
+
+        <label class="checkbox">
+            <input name="showDetails" data-invert="1" data-invertname="hideDetails" data-invertempty="true"
+                   type="checkbox" value="1"<% if(showDetails) { %> checked="checked"<% } %>>
+            <%= i18n.showTimeAndPlaceOfViolation %>
+        </label>
+
+    </fieldset>
+
+    <%= propertiesHtml %>
+
+</div>

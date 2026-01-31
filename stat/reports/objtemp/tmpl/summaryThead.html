@@ -1,0 +1,10 @@
+<tr data-head="<%= headPosition %>">
+    <% for(var i = 0, l = properties.length; i < l; i++) { %>
+    <th data-key="<%= properties[i] %>"><%= names[properties[i]] %></th>
+    <% } %>
+    <th class="count"><%= i18n.below %> <%= thresholds[0] %>&nbsp;&deg;C</th>
+    <th class="count"><%= i18n.above %> <%= thresholds[1] %>&nbsp;&deg;C</th>
+    <th><%= i18n.violationDuration %></th>
+    <th class="deg">Tmin, &deg;C</th>
+    <th class="deg">Tmax, &deg;C</th>
+</tr>

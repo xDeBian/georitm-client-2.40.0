@@ -1,0 +1,80 @@
+<div class="control-group">
+    <label class="control-label"><%= i18n.notificationName %></label>
+    <div class="controls">
+        <input name="name" class="input-block-level" type="text" value="<%- name %>" maxlength="255">
+    </div>
+</div>
+
+<div class="control-group form-inline">
+    <label class="checkbox">
+        <input type="checkbox" name="isActive" value="true"<%= isActive ? ' checked' : ''%>>
+        <%= i18n.notificationSwitchedOn %>
+    </label>
+</div>
+
+<!--<h4>TODO addresses header</h4>-->
+<div class="row-fluid">
+    <div class="control-group span<%= App.isSmsAllowed() ? '6' : '12' %> no-bottom-margin">
+        <label class="control-label">E-Mail</label>
+        <div class="controls">
+            <textarea name="emails" class="input-block-level"><% print(emails.join("\r\n")) %></textarea>
+        </div>
+    </div>
+    <% if(App.isSmsAllowed()) {%>
+    <div class="control-group span6 no-bottom-margin">
+        <label class="control-label">SMS</label>
+        <div class="controls">
+            <textarea name="phones" class="input-block-level"><% print(phones.join("\r\n")) %></textarea>
+        </div>
+    </div>
+    <% } %>
+
+</div>
+<p class="help-block">
+    <%= i18n.notificationAddressesHelp %>
+    <% if(App.isSmsAllowed()) { print(i18n.notificationPhonesHelp) } %>
+</p>
+
+<!--<h4><%= i18n.alerts.ucFirst() %></h4>-->
+<label><%= i18n.alerts.ucFirst() %></label>
+<div class="row-fluid row-alerts">
+    <div class="alert-groups control-group span6">
+        <select name="alertGroups"
+                data-placeholder="<%= i18n.allAlertsGroups %>"
+                class="input-block-level"
+                multiple>
+        </select>
+    </div><div class="alerts control-group span6">
+        <select name="alerts"
+                data-placeholder="<%= i18n.allAlertsOffSelectedGroups %>"
+                class="input-block-level"
+                multiple>
+        </select>
+    </div>
+</div>
+
+<% if(objType == App.TYPE_STAT) {%>
+
+<!--<h4>TODO areas and zones</h4>-->
+<div class="row-fluid">
+    <div class="areas-list control-group span6">
+        <select name="areas" class="input-block-level" data-placeholder="<%= i18n.allObjAreas %>" multiple>
+            <option value="0"><%= i18n.zeroAreaName %></option>
+            <% _.each(areas, function(a) {%>
+            <option value="<%= a.num %>"<%= _.indexOf(areaNums, a.num) != -1 ? ' selected' : '' %>>
+                <%= a.name || i18n.objArea + ' ' + a.num %>
+            </option>
+            <% }) %>
+        </select>
+    </div>
+    <div class="zones-list control-group span6">
+        <select name="zones"
+                class="input-block-level"
+                data-placeholder="<%= i18n.allZonesOfSelectedAreas %>"
+                multiple>
+        </select>
+    </div>
+</div>
+
+<% } %>
+

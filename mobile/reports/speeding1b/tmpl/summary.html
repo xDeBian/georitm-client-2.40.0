@@ -1,0 +1,17 @@
+<div class="summary">
+    <h3 class="sum-header"><%= i18n.summaryData %></h3>
+    <div class="sum-content">
+        <table class="rep-table">
+
+            <tr data-head="<%= headIndex %>">
+                <% _.each(props, function(prop) {%>
+                <th data-key="<%= prop %>"><%= propNames[prop] %></th>
+                <% }) %>
+                <th><%= i18n.totalSpeedLimitExceeds %></th>
+            </tr>
+
+            <%= rowsHtml %>
+
+        </table>
+    </div>
+</div>

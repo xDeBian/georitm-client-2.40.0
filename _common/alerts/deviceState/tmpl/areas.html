@@ -1,0 +1,92 @@
+<div class="grid-header">
+    <%= i18n.objAreas %>
+</div>
+<div class="grid-viewport">
+    <div class="grid-content">
+        <table class="areas-list">
+            <colgroup>
+                <col class="col-expand">
+                <col class="col-num" style="width:50px">
+                <col class="col-name">
+                <col class="col-state col-guard" style="width:<%= operatable ? '170' : '80' %>px">
+                <col class="col-state" style="width:60px">
+                <col class="col-state" style="width:15%">
+            </colgroup>
+            <% _.each(areas, function(area){ if(area.num == 0 && !area.hasAlarm && !area.hasFault) return; %>
+            <tr class="area<% if(area.hasAlarm) {%> alarm-on<% } %>
+            <% if(area.hasAlarm || area.hasFault || 'undefined' != typeof openedAreas[area.id]) {%> opened<% } %>
+            <% if(area.hasFault) {%> fault-on<% } %>
+            <% if(area.isGuarded) {%> guard-on<% } %>
+            <% if('undefined' != typeof area.zones && area.zones.length) {%>expandable<% } %>
+            <% if(area.num == 0) {%>zero<% } %>"
+                data-id="<%= area.id %>">
+                <td class="col-expand">
+                    <i class="caret"></i>
+                </td>
+                <td>
+                    <%= area.num == 0 ? i18n.zeroAreaName : i18n.objArea + ' ' + area.num %>
+                </td>
+                <td>
+                    <%- area.name && area.name != i18n.objArea + ' ' + area.num ? area.name : '' %>
+                </td>
+                <td class="state-guard">
+                    <!--<i class="icon-state icon-state-guard"></i>-->
+                    <% if(area.num > 0) {%>
+                    <%= area.isGuarded ? i18n.guarded : i18n.notGuarded %>
+                        <% if(area.operatable) {%>
+                        <a href="#" class="operate"
+                           data-page="guard"
+                           data-index="<%= area.num %>"><%= area.isGuarded ? i18n.makeNotGuarded : i18n.makeGuarded %></a>
+                        <% } %>
+                    <% } %>
+                </td>
+                <td class="state-alarm">
+                    <!--<i class="icon-state icon-state-alarm"></i>-->
+                    <% if(area.hasAlarm) { print(i18n.alarm.ucFirst()) } %>
+                </td>
+                <td class="state-fault">
+                    <!--<i class="icon-state icon-state-fault"></i>-->
+                    <% if(area.hasFault) {%>
+                        <%= i18n.hasFault %>
+                    <% } %>
+                </td>
+            </tr>
+            <% if('undefined' != typeof area.zones && area.zones.length) {%>
+                <% _.each(area.zones, function(zone){%>
+                <tr class="zone<% if(zone.hasAlarm) {%> alarm-on<% } %><% if(zone.hasFault) {%> fault-on<% } %>
+                    <% if(!area.hasAlarm && !area.hasFault && 'undefined' == typeof openedAreas[area.id]) {%> hidden<% } %>"
+                    data-id="<%= zone.id %>" data-areaid="<%= area.id %>">
+                    <td></td>
+                    <td>
+                        <%= i18n.objZone + ' ' + zone.num %>
+                    </td>
+                    <td>
+                        <%- zone.name && zone.name != i18n.objArea + ' ' + zone.num ? zone.name : '' %>
+                    </td>
+                    <td></td>
+                    <td class="state-alarm">
+                        <!--<i class="icon-state icon-state-alarm"></i>-->
+                        <% if(zone.hasAlarm) { print(i18n.objZoneStateViolated) } else { print(i18n.objZoneStateNorm) } %>
+                    </td>
+                    <td class="state-fault">
+                        <!--<i class="icon-state icon-state-fault"></i>-->
+                        <% if(zone.hasFault) {%>
+                            <%= i18n.hasFault %>
+                            <% if(App.allowed('objects.clearfaults')) {%>
+                            <a href="#" class="operate"
+                               data-page="faults"
+                               data-area="<%= area.id %>"
+                               data-zone="<%= zone.id %>"><%= i18n.resolveFault %></a>
+                            <% } %>
+                        <% } %>
+                    </td>
+                </tr>
+                <% }) %>
+            <% } %>
+            <% }) %>
+        </table>
+    </div>
+</div>
+
+
+
